@@ -107,6 +107,55 @@ This is the fastest-moving area. Mark each row ⚠️ "verify current statute te
 
 ---
 
+## 3A. Special categories: political messages and "we buy houses / land" offers
+
+These two categories are among the most common kinds of spam, and they are also where the usual do-not-call claims are **weakest**. The key distinction is **content vs. technology**:
+- **DNC claims (§ 227(c))** depend on the *content* being a "telephone solicitation": encouraging you to *purchase, rent, or invest in* property, goods, or services.
+- **Robocall claims (§ 227(b))** depend on the *technology* (prerecorded or artificial voice, including AI voices and ringless voicemail; or a true autodialer). They apply **whatever the message is about**.
+
+### 3A.1 Political calls and texts
+
+| Type | Federal status | Claim? |
+|---|---|---|
+| Prerecorded / AI-voice call **to a cell phone** without prior express consent | Prohibited. Campaigns get no exemption (*Barr v. AAPC*, U.S. 2020, kept the robocall ban and struck only the government-debt exception) | **Yes, § 227(b)**, $500 / $1,500 per call. The strongest political claim |
+| Ringless voicemail from a campaign | FCC (2022) treats it as a "call" | Yes, § 227(b) (⚠️ FCC-interpretation dependent after *McLaughlin*) |
+| Prerecorded call to a **landline** | Allowed without consent for non-commercial / political calls | Generally no, but the message must **identify the caller at the start and give a callback number** (64.1200(b)). Failing to do that is a separate violation |
+| Political **texts** | Covered by § 227(b) only if sent with an autodialer. Most campaigns use **peer-to-peer (P2P)** platforms where a human clicks "send," which the FCC (2020) and *Duguid* treat as **not** autodialed | Usually **no federal claim**. Complaint routes only |
+| Live-agent political calls | Not "telephone solicitations," so DNC doesn't apply. Donation asks for a campaign also generally fall outside | No |
+| Deepfake / AI voice impersonating a candidate | FCC 2024 ruling: AI voice = "artificial." The New Hampshire primary deepfake drew a **$6M FCC fine** and criminal charges | Yes (§ 227(b)), plus refer to FCC, state AG, election officials |
+
+**App features for political spam:**
+- Classify it as "Political" and route it to: STOP / opt-out (carriers and 10DLC registration rules make campaigns honor STOP), **7726**, the FCC complaint form, and the **state AG / Secretary of State / election board** (several states restrict political robocalls or require disclaimers; ⚠️ needs a state survey).
+- Flag **prerecorded / AI voice on a cell phone** as the actionable case. Prompt the user to save the voicemail and note whether the message identified the sponsor and gave a callback number.
+- Seasonal: political volume spikes before elections, so this is a high-engagement feature, but most of it ends in **reporting rather than litigation**.
+
+### 3A.2 "We buy houses" / land / cash-offer calls and texts
+
+**DNC claim: mostly blocked, but contested.**
+- Most courts hold that a pure **offer to buy your property is not a "telephone solicitation,"** because you are not being asked to *purchase* anything:
+  - *Coffey v. Fast Easy Offer* (D. Ariz. June 2025)
+  - *Aussieker v. Aghazadeh* (E.D. Cal. July 2025)
+  - *Jance v. Homerun Offer* (D. Ariz.)
+  - *Hunsinger v. Offer, LLC* (N.D. Tex.)
+- **The counter-line:** the N.D. Ga. (March 4, 2026) let a claim proceed where the buyer allegedly handled appraisal, title, and escrow and **deducted a "substantial" fee from the purchase price**. That plausibly made the outreach a solicitation for **services**, even though the texts didn't mention services. Several N.D. Ga. judges have gone this way. ⚠️ Pull the case name and track it on appeal.
+- **Likely solicitations:** realtors or brokers calling to **list** your property, "free home valuation" offers that lead to brokerage services, and wholesalers whose model is an assignment fee you effectively pay. All of these sell you a service.
+- **Evidence the app should capture:** any mention of fees, closing services, "we handle everything," listing agreements, or "iBuyer" programs, plus the contract or offer terms if the user engages. This evidence is what turns an "offer to buy" into a solicitation.
+
+**Robocall claim (§ 227(b)): still available regardless of content.**
+- Prerecorded or AI-voice calls, or ringless voicemail, about buying your house **to a cell phone without consent are actionable.**
+- **"Clearly spamming area codes":**
+  - If the sender **generated numbers randomly or sequentially** (e.g., dialing through an exchange), that fits the *Duguid* definition of an autodialer, and § 227(b) covers **texts** too.
+  - In practice, most real-estate investors **skip-trace property records** to get owner phone numbers. That makes them list-based, so *not* an autodialer.
+  - **App heuristic:** does the message use your **name, property address, or parcel**? If yes → list-based (DNC/content theory only). If it's generic ("Do you own property in X county?") and many users with **adjacent numbers** got it at the same time → evidence of random or sequential dialing. **Pooling across users is exactly how you'd prove this**, which is a strong reason for the collaborative design.
+
+**State and other angles:**
+- State mini-TCPAs: check whether each one's definition ("commercial telephonic sales call," "telephone solicitation," Texas SB 140's "purchase, rent, claim, or receive") reaches offers to *buy*. Most probably don't, but ⚠️ verify. Their **autodialer / frequency / calling-hours** rules (FL, OK, MD) may still apply.
+- State consumer-protection (UDAP) claims: in the 2026 N.D. Ga. matter, some state consumer-protection claims survived (per Orrick).
+- **Real estate licensing:** several states regulate **wholesaling**, requiring a license or disclosures when someone markets a contract rather than buying outright (e.g., IL, OK, PA, SC; ⚠️ verify the current list). Complaints go to the **state real estate commission**. This is an underused, low-risk lever that fits the "collaborative" model well.
+- Calling hours and identification requirements still apply to the seller-identification and internal-DNC rules wherever the outreach counts as a solicitation.
+
+---
+
 ## 4. Collecting evidence lawfully (user side)
 
 ### 4.1 Recording calls (⚠️ high risk)
@@ -182,7 +231,8 @@ This is the fastest-moving area. Mark each row ⚠️ "verify current statute te
 5. UPL analysis of LLM-drafted demand letters and complaints in the launch states.
 6. Whether sharing pooled caller data with the ITG, FCC, or AGs needs any specific terms or consents.
 7. Insurance (media liability / E&O) for the shared-database defamation risk.
-8. Whether a "personal use" attestation plus Florida-style pre-suit timers should be required before the app produces a demand letter.
+8. Political: a state-by-state survey of political robocall/text restrictions and disclaimer rules. Real estate: which states regulate wholesaling, and whether the N.D. Ga. 2026 "hidden services" theory spreads.
+9. Whether a "personal use" attestation plus Florida-style pre-suit timers should be required before the app produces a demand letter.
 
 ---
 
@@ -197,4 +247,6 @@ This is the fastest-moving area. Mark each row ⚠️ "verify current statute te
 - Oklahoma OTSA: [Mintz](https://www.mintz.com/insights-center/viewpoints/2776/2022-06-28-tcpa-litigation-update-oklahoma-latest-state-enact-mini)
 - Washington CEMA 2026 amendments: [Nat'l Law Review](https://natlawreview.com/article/washington-amends-cema-plaintiffs-rush-file-actions-june-11-2026-effective-date), [ESHB 2274 session law](https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/House/2274-S.SL.pdf)
 - State trend overview: [Goodwin 2025 Year in Review](https://www.goodwinlaw.com/en/insights/publications/2026/03/insights-finance-cfs-yir-telephone-consumer-protection-act), [ByteBack Law](https://www.bytebacklaw.com/2026/07/looking-back-on-the-last-year-of-state-level-tcpa-updates/)
+- Real-estate offers: [TCPAWorld (Coffey)](https://tcpaworld.com/2025/06/06/buying-activity-vs-selling-activity-court-holds-offers-to-buy-houses-are-not-telephone-solicitations-and-of-course-they-arent-but-this-is-a-big-win-regardless/), [Nat'l Law Review (Aussieker)](https://www.natlawreview.com/article/buy-away-another-court-holds-offers-buy-real-estate-are-not-telephone-solicitations), [Mintz](https://www.mintz.com/insights-center/viewpoints/2776/2025-06-25-telephone-and-texting-compliance-wake-and-smell-coffey), [Klein Moynihan](https://kleinmoynihan.com/offers-to-buy-may-not-constitute-tcpa-marketing-violations/), [Orrick (N.D. Ga. 2026)](https://infobytes.orrick.com/2026-03-13/judge-allows-some-consumer-protection-claims-over-unsolicited-home-buying-texts-to-proceed/)
+- Political: [Wiley](https://www.wiley.law/wiley-connect/what-political-callers-and-texters-need-to-know-about-the-tcpa), [Venable ($5M FCC fine)](https://www.venable.com/insights/blogs/2023/06/fcc-levies-5-million-fine-for-political-calling-ca), [CallHub 2026 guide](https://callhub.io/blog/phone-banking/political-robocall-laws/)
 - Primary law to pull next: 47 U.S.C. § 227; 47 C.F.R. § 64.1200; 16 C.F.R. Part 310; 15 U.S.C. § 1692 et seq.; 12 C.F.R. Part 1006; Fla. Stat. § 501.059; Tex. Bus. & Com. Code ch. 302; RCW 19.190.
