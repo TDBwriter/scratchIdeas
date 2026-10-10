@@ -127,6 +127,26 @@ Precedent to study: **Brave / BAT** — advertisers pay, users earn a share for 
 - **Device respect:** explicit opt-in, charge-and-WiFi default, hard thermal/battery/data budgets, clear disclosure.
 - **Store policy:** Apple limits in-app currency, crypto, and unrelated background processing; Google Play limits on-device mining and real-money mechanics. A non-cash currency and opt-in, charge-only compute sit on the safer side; confirm current guideline text before submission and keep the open-web/PWA path as a fallback.
 
+## 7a. Resilience: transport independence, key isolation, and open hardware
+
+*From the gatekeeper-fragility brainstorming. The core insight is sound: anything that "hitches a ride" on corporate infrastructure (app stores, browser APIs, ISP tunnels) can be cut off by a single policy change. Build to degrade, not break.*
+
+**The dependency risk, worth designing against:**
+- **Browser/OS API deprecation.** If WebGPU, WebNN, or Web Bluetooth get restricted behind new permissions or removed, an un-rooted PWA loses NPU or local-radio access. Don't make the system depend on one API — detect capability and fall back.
+- **Traffic analysis (DPI / entropy).** Encrypted traffic with a regular, machine-timed cadence is a fingerprint even when the payload is opaque. Randomize timing and padding; avoid fixed-interval heartbeats. (This is also why the Layer-1 microsecond-sync idea is counterproductive — a strict pulse is *easier* to flag.)
+- **Local-radio lockout.** OS updates can strip background Web Bluetooth / WebUSB. Keep a path that doesn't rely on the phone's radios at all.
+
+**Graceful degradation ladder** (fastest first, each a fallback for the one above):
+1. Internet (wrapped in ordinary TLS) when available.
+2. Local device-to-device mesh (BLE, Wi-Fi Direct) in dense areas.
+3. Long-range sub-GHz radio for city-to-city links with no internet — LoRa, Meshtastic, Reticulum.
+   > **Feasibility note:** sub-GHz mesh is real and legitimate (disaster-response and rural connectivity use it), but it is *low-bandwidth* — bytes to a few kbps — and bound by ISM-band duty-cycle limits (and licensing above certain power levels). It carries tiny token/text payloads, not game assets or model seeds. A survival backchannel, not a primary transport.
+
+**Key isolation (standard security, kept for the right reason):** treating the phone OS as untrusted and holding identity keys off it — in the Secure Enclave, or in a separate low-cost device that signs while the phone does blind compute and transport — is ordinary sound practice (hardware wallets and air-gapped signing work this way). It protects an *adult* user's keys from a compromised OS and from corporate/state snooping; a duress-wipe is a legitimate feature in that model.
+   > **Scope note:** this is kept to protect keys from OS compromise and corporate/state surveillance of adults. It is **not** included or optimized to hide activity from parents or schools (see §8).
+
+**Open hardware worth tracking (radio/relay nodes, not compute):** ESP32-S3 and nRF52840 boards with SX1262 LoRa — Heltec LoRa 32 (~$15–20), RAK WisBlock (~$35–45, very low idle draw), LILYGO T-Deck / T-Echo (~$60–110, with keyboard/screen). Honest limit: these are microcontrollers — they relay and store small payloads and hold keys, but **cannot** run heavy AI, so they complement phones and desktops rather than replace them. Verify current prices and your region's radio regulations before relying on any of it.
+
 ## 8. Boundaries — what this design deliberately does not do, and why
 
 | Non-goal | Why it's out |
@@ -136,6 +156,7 @@ Precedent to study: **Brave / BAT** — advertisers pay, users earn a share for 
 | Barter "bypass" as an anonymity-for-value scheme | Direct barter is legal and taxable, but engineering it to be "resistant to external tracking" for value re-creates the same problem. |
 | Serving sanctioned jurisdictions / black markets | Sanctions evasion is strict-liability (IEEPA); legal humanitarian channels (OFAC general licenses) exist for that goal. |
 | Chance-for-cash mechanics | Gambling law. Avoided by having no cash prize. |
+| Helping minors evade parental or school supervision / defeating child-safety tools | Privacy here targets corporate ad-profiling and state censorship of adults' speech, not guardians' oversight of children. The design is not built to hide a minor's activity from parents or schools, or to defeat Family Link, Screen Time, or school content filters. The TI-83-camouflage / "parental-control defeat" brainstorming is explicitly excluded. |
 
 ## 9. Threat model
 
@@ -151,6 +172,7 @@ Precedent to study: **Brave / BAT** — advertisers pay, users earn a share for 
 | Key / device loss | Phone stolen, account lost | Social or federated recovery; never store large bearer balances on-device |
 | Untrusted workloads harm devices | Malware or illegal content via distributed compute | Sandboxed, signed, opt-in workloads; content policy + takedown at the federation |
 | Insider at the operator | Rogue admin alters issuance | Multi-party control of issuance keys; public, auditable ledger rules |
+| Platform cuts off the protocol | OS deprecates WebGPU/WebBluetooth, or DPI flags the traffic | Don't depend on one transport; degrade to local mesh then long-range radio (§7a); randomize timing to avoid a fixed-cadence signature |
 
 ## 10. Precedents
 
@@ -174,6 +196,7 @@ Precedent to study: **Brave / BAT** — advertisers pay, users earn a share for 
 5. **Federation membership.** Who runs the authoritative validators, and the path to widen the set.
 6. **Walk-away plan.** How far you step back, Satoshi-style — publish open-source, minimize the accountable core.
 7. **Store vs. open web.** Ship in app stores (accept policy limits) or lead with a PWA? Recommend both, open web as the censorship-resistant fallback.
+8. **Transport/hardware resilience (§7a).** How far down the degradation ladder to build — internet-only to start, or invest early in the local-mesh and sub-GHz radio fallbacks and companion hardware? Recommend internet + local mesh first; treat long-range radio and open hardware as a later resilience layer, not a launch dependency.
 
 ## 12. Sources
 
