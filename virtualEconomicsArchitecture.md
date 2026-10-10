@@ -156,7 +156,7 @@ Precedent to study: **Brave / BAT** — advertisers pay, users earn a share for 
 | Barter "bypass" as an anonymity-for-value scheme | Direct barter is legal and taxable, but engineering it to be "resistant to external tracking" for value re-creates the same problem. |
 | Serving sanctioned jurisdictions / black markets | Sanctions evasion is strict-liability (IEEPA); legal humanitarian channels (OFAC general licenses) exist for that goal. |
 | Chance-for-cash mechanics | Gambling law. Avoided by having no cash prize. |
-| Helping minors evade parental or school supervision / defeating child-safety tools | Privacy here targets corporate ad-profiling and state censorship of adults' speech, not guardians' oversight of children. The design is not built to hide a minor's activity from parents or schools, or to defeat Family Link, Screen Time, or school content filters. The TI-83-camouflage / "parental-control defeat" brainstorming is explicitly excluded. |
+| A covert anti-monitoring / anti-forensic evasion playbook | We build openly, not to hide from inspection. The design is not a guide to defeating oversight or destroying evidence on seizure — including, specifically, defeating child-safety tools (Family Link, Screen Time, school filters) so a minor can evade parents or schools. The TI-83-camouflage material is excluded. Legitimate protections for at-risk *adults* (key isolation, duress-wipe, deniability) are kept and framed openly in Appendix A. |
 
 ## 9. Threat model
 
@@ -208,4 +208,13 @@ Well-established references behind the claims above; the deeper research pass (r
 - Privacy/anti-profiling: Tor, mixnets (Loopix), delay-tolerant mesh (Briar).
 - Device attestation: Apple App Attest / DeviceCheck, Android Play Integrity / Keystore.
 - Verifiable computation / ZKML; trusted-execution attestation.
+- At-risk-user tooling referenced in Appendix A: Tor, Signal, GrapheneOS (duress PIN), Briar; deniable-encryption schemes.
+
+## Appendix A: At-risk users, and the open-not-covert stance
+
+This project is built to be used **openly**, including where a regime bans it. The stance is principled and public, not clandestine: publish the protocol, make it resilient, accept that an unjust censor may retaliate, and rely on the fact that a widely-distributed open tool cannot be stopped by silencing any one person. That is a recognized, legitimate posture for censorship-resistant communication.
+
+**Recognized use case.** People under surveillance or coercion — dissidents, journalists, researchers working under duress — are legitimate users, and the design keeps the standard protections that serve them: holding identity keys off an untrusted phone OS, an optional duress-wipe, plausible deniability as a property, and a mesh that survives an internet shutdown.
+
+**What we deliberately don't do, and why it wouldn't even work.** We don't build a covert camouflage / anti-forensic playbook — the "disguise it as innocent traffic so no authority suspects, and erase the evidence on seizure" material. Beyond the boundary reasons in §8, it is poor engineering for the threat it claims to counter: gadget camouflage such as a hidden radio in a calculator does not defeat a state adversary — baseband and cell-tower metadata, RF signatures, and a physical search all defeat it, and the tunnel collapses the moment a platform changes a policy. People genuinely at risk are better served by established, audited tools (Tor, Signal, GrapheneOS, well-studied operational security) than by bespoke camouflage, so we point there rather than reinvent it badly.
 ```
