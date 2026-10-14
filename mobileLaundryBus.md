@@ -74,6 +74,61 @@ Siting means **permission to park** — property-manager agreements, lot-use dea
 - **Weather/seasonality**, breakdowns (bus + machines = two things that fail), and the reality that one vehicle is a single point of failure.
 - **Regulatory surprise** in any of the checklist items stalling launch.
 
+## Premium protocol: concierge garment care
+
+*The high-margin tier for affluent, dense neighborhoods (big houses, busy families, expensive clothes). These customers aren't paying for pounds washed; they're paying for sorting, stain handling, and making garments last.*
+
+**The science behind it.** Cleaning comes from four interchangeable factors — **Temperature, Agitation, Chemistry, Time** (Sinner's Circle). Standard laundry turns all four up for every load. The premium protocol gives each load only what its soil and fabric need. That cleans better *and* is gentler on clothes, and it's the same discipline that keeps the bus's water and power budget in check.
+
+### How it works
+
+1. **Intake & tagging.** Each household gets bags by category (or we sort at pickup). Garments are tagged per family member. Stains are flagged on a card at handoff (what it is and when it happened), because the stain type sets the treatment.
+2. **Fine sort by soil × fabric**, not just lights and darks.
+3. **Stain triage before any wash**, using the protocols below.
+4. **Category-specific cycles** (table below).
+5. **Inspect before drying.** Dryer heat sets stains permanently, so nothing goes in the dryer until its stain is confirmed gone.
+6. **Finish:** fold, hang, or press per garment; returned by person and category.
+
+### Load categories (a typical family of four with pets: about 13 loads a week)
+
+| Category | Wash | Chemistry | Dry |
+|---|---|---|---|
+| Workwear (canvas, denim, work cotton) | Pre-soak, 40–60 °C, heavy-duty, extra rinse | Heavy-duty enzymatic + degreaser | Medium tumble |
+| Dress shirts / blouses | Pretreat collars and cuffs, 30–40 °C, low spin | Regular enzymatic | Hang / low, press |
+| Wool, silk, suits | Wet-clean or wool cycle, cold (or route to a dry-clean partner) | **Protease-free** wool detergent (proteases digest protein fibers) | Flat / professional |
+| Performance/athletic wear | Inside out, cold–30 °C, max 40 °C, gentle | Sport detergent; **no softener** | **Air dry** (heat breaks down elastane) |
+| Kids' everyday (teen odor, grass, food) | 30–40 °C; delicates in mesh bags on cold | Enzymatic + oxygen booster for teen odor | Low; air dry delicates |
+| Underwear & socks | Cotton 60 °C; elastane 40 °C + oxygen bleach | Enzymatic | Medium |
+| Bath towels | 60 °C, extra rinse | Enzymatic + oxygen bleach; **no softener** | Medium–high |
+| Kitchen linens | 60 °C, kept apart from bath towels | Heavy-duty + oxygen bleach | Tumble |
+| Sheets & bedding | 60 °C (kills dust mites, reduces pet dander); silk on cold | Enzymatic | Medium / line |
+| Pet bedding & throws | De-hair first, 60 °C, run alone, extra rinse | **Fragrance-free** enzymatic | Tumble; clean the drum afterward |
+| Darks & prized colors | Inside out, cold, gentle | Color-safe, no optical brighteners | Line / low |
+
+### Stain triage (the core skill customers pay for)
+
+- **Blood / protein** (nosebleed, scraped knee, kitchen cut): **cold water only**, because heat cooks protein into the fiber. Flush from the back, apply an enzymatic (protease) pretreat, and on colorfast whites use 3% peroxide after a spot test. Wool and silk get no protease: cold water plus wool wash, or route to the partner.
+- **Oil / grease** (food, cooking): blot, draw the oil out with cornstarch or talc, work in dish soap or a solvent pretreat, then wash in the **warmest water the fabric allows** with lipase. Oil is the opposite of blood: heat helps.
+- **Tannin / wine / coffee:** blot, cold flush from the back, **no heat and no true soap** early on (both set tannins), then an oxygen-bleach (percarbonate) soak if the fabric is colorfast.
+- **Grass / mud:** let mud dry and brush it off first; treat grass with enzymes before washing.
+
+### Pet add-on
+
+De-hair before washing (a 10-minute no-heat tumble plus a lint pass), use fragrance-free chemistry, add an extra rinse, and run pet loads alone with a drum and filter clean afterward. Households with a dog and a cat will pay for this on its own.
+
+### Pricing logic
+
+- Charge a **per-bag or per-household subscription**, not per-pound. The value is the sorting and handling, which pounds don't capture.
+- **Stain treatment** is included up to a set number of flagged stains per week, then billed per item.
+- **Pressing, wool/silk, and pet bedding** are add-ons. Dry-clean-only items route to the partner at a markup.
+- A **per-garment care record** (fabric, past stains, preferences) is the retention moat: once we know a family's wardrobe, switching services costs them that knowledge.
+
+### Operational implications
+
+- The tier runs on **many small, specialized loads**. That fits a fixed base or partner facility with several machines better than one onboard washer. **The bus does premium pickup, intake, and delivery; the base does the processing.**
+- It needs more detergent types on hand (heavy-duty, regular enzymatic, protease-free wool, sport, fragrance-free, color-safe, oxygen bleach) and staff trained in stain triage.
+- Only about a third of loads need 60 °C; the rest run cold or warm, which keeps energy use modest despite the higher load count.
+
 ## Phased rollout
 
 1. **Prove demand, logistics-only.** Buy the bus, brand it, run pickup/delivery with washing at a partner laundromat or small base. Land 2–3 anchor B2B accounts and a subscription base. Cheapest way to learn the routes and the numbers.
@@ -87,6 +142,7 @@ Siting means **permission to park** — property-manager agreements, lot-use dea
 3. **Dry-cleaning now (partner wholesaler) or skip until later?**
 4. **Service area & anchor sites** — which complexes/accounts to lock first.
 5. **Power path** — propane-forward (dryers + heat) vs battery/shore-power.
+6. **Lead with the premium concierge tier?** It has higher margin and steadier subscriptions in affluent neighborhoods, but it needs a base with several machines and trained stain-triage staff. (Recommend piloting it with a handful of households alongside basic wash-and-fold.)
 
 ---
 
