@@ -4,7 +4,7 @@ Planning notes. Nothing here is implemented yet.
 
 ## The project
 
-Run the home operating environment like a business: income, bills, accounts and investments, insurance and taxes, home and vehicle maintenance, repairs and projects, and records. Day-to-day logistics (errands, groceries, meals, chores, routines, kids' activity scheduling) are out of scope.
+Run the home operating environment like a business. Stage 1 covers income, bills, accounts and investments, insurance and taxes, home and vehicle maintenance, repairs and projects, and records. Day-to-day logistics (errands, groceries, meals, chores, routines, kids' activity scheduling) come in a later stage. See [householdAudit.md](householdAudit.md).
 
 The home lab is a separate project, a shared server system on the `homeLab` branch. Nothing here depends on it.
 
