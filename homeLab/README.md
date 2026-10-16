@@ -140,6 +140,16 @@ Proposed static addresses (subnet TBD, e.g. `192.168.1.0/24`):
 
 ---
 
+## Projects
+
+Ideas to build on the lab once it's running. Each has its own file in [`projects/`](projects/).
+
+| Project | Summary | Needs |
+|---|---|---|
+| [Ad replacement](projects/adReplacement.md) | Browser extension that fills blocked ad spaces with our own content (photos, calendar, story snippets, lab status) | Phases 2–3 |
+
+---
+
 ## Open questions
 
 1. **Raspberry Pis:** how many, and which models and RAM?
