@@ -140,6 +140,12 @@ Proposed static addresses (subnet TBD, e.g. `192.168.1.0/24`):
 
 ---
 
+## Household privacy
+
+[`privacy.md`](privacy.md) is a checklist of device and account settings that cut tracking on every device in the house, plus the lab pieces (Pi-hole, email aliases) as they come online. Most of it needs no server and can be done today.
+
+---
+
 ## Projects
 
 Ideas to build on the lab once it's running. Each has its own file in [`projects/`](projects/).

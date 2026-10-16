@@ -36,6 +36,8 @@ flowchart LR
 
 Anything placed directly into a web page can be read by that site's scripts, including the ad and tracking scripts we're trying to avoid. **Tiles must render in a frame the page can't read**, such as an extension-owned iframe, so a news site never sees family photos or calendar entries.
 
+**Keep the footprint plain.** A page can't see inside our frames, but it can notice they're there. Few people run this extension, so a visible, unusual change to the page becomes a fingerprint, a trait that helps pick your browser out of a crowd. Change as little of the page as possible, and keep the frames generic (no custom IDs, classes or telltale styling).
+
 Also remember the content is visible to anyone looking at the screen. Keep sensitive sources opt-in.
 
 ## Open questions
