@@ -103,7 +103,7 @@ Cheap power plus local raw materials make it practical to produce the heavy, bul
 
 **Recommendations:**
 1. **Make the North Campus jetty the hub's own secure port.** It needs a heavy-lift berth for reactor modules and transformers, container handling, and nuclear fuel delivery. It sits outside the city and inside the protected perimeter that Response Teams may guard as critical infrastructure.
-2. **At least two routes for everything critical:** the North Campus jetty and Cap-Haïtien, with the Dominican Republic border as a third.
+2. **At least two routes for everything critical:** the North Campus jetty and Cap-Haïtien, with the Dominican Republic border as a third. Regional shipping and outbound cargo are covered in `infrastructureHubMaritime.md`.
 3. **Twelve months of stockpiles on the island.**
    - What's stored: critical spares and supplies, including membranes, inverter boards, medical supplies, water chemicals, and vehicle parts.
    - Where: warehouses at the North Campus that withstand hurricanes and floods, plus smaller stocks at stations.
