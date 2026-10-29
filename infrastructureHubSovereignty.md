@@ -19,6 +19,7 @@ Companion to `infrastructureHubMission.md`, `infrastructureHubStabilization.md`,
   - **Unaccountable foreign presence.** The UN invoked immunity over the cholera epidemic linked to its peacekeepers, and its trust fund for victims raised about 2% of its goal.
 
   The plan avoids all three.
+- **A People's Charter guarantees services and rights whatever the rulers are called** (Section 12). Armed force can sit entirely under a UN mandate (Section 9), and distributed infrastructure gets built while the country waits for stability (Section 10).
 - **Resilience comes from being useful to many and owned by none.** The model is SESAME, a research center in Jordan built under UNESCO, where Israel, Iran, Palestine, Turkey, and others sit on one council.
 
 ---
@@ -162,7 +163,103 @@ But bypassing it doesn't work:
   - The regional disaster hub.
   - The neutral venue.
 
+## 9. Force chartered under the UN
+
+Putting the armed capability under a UN mandate, rather than owning it through the Haitian state, **strengthens the firewall.** The hub never owns force, and the mandate defines what force may do.
+
+**Two routes:**
+1. **A UN peacekeeping mission (blue helmets),** with Haitian-led units serving inside it. UN peacekeeping's own principles fit closely with the enemy-led-escalation rule:
+   - Consent of the host.
+   - Impartiality.
+   - Force only in self-defense and in defense of the mandate.
+2. **The current model:** a multinational force authorized by the Security Council, such as the Gang Suppression Force. It isn't UN peacekeeping, but it is backed by a UN support office.
+
+**Requirements and limits:**
+- **A Security Council vote,** which any of the five permanent members can veto. China and Russia abstained on the GSF.
+- **Funding and troops.** Peacekeeping is paid for by assessed contributions from UN members, and countries have to volunteer troops.
+- **Host consent.** Peacekeeping deploys at the invitation of a recognized national authority, which is another reason the state has to exist.
+- **Accountability from day one.** MINUSTAH's legacy (cholera, and sexual exploitation by peacekeepers) makes blue helmets unpopular in Haiti. Any mission needs, from the start:
+  - An agreement on the status of its forces that includes a real way to claim compensation.
+  - A complaints channel for communities.
+- **Haitian lead.** Units are led by Haitians, and there is no foreign command over Haitian streets.
+
+## 10. Building while waiting for stability
+
+The plan runs on two tracks.
+
+| Start now: doesn't depend on stability | Wait: depends on stability |
+|---|---|
+| Solar canopies, microgrids, and batteries | Reactors (behind the nuclear gate) |
+| Water kiosks and container sanitation | Renting data center capacity to clients, who need security and the subsea cable |
+| Clinics with their own power | The rail spine through contested areas |
+| School meals, the food reserve, and cold rooms | Heavy works at the North Campus port |
+| The Kreyòl library and offline copies at stations | The cement plant and the steel mini-mill |
+| Apprenticeships and Community Teams | |
+
+- **The first track is small, spread out, and hard to capture.** Each piece is built only where Community Teams can work without an armed escort.
+- **The first track also builds the people, the institutions, and the trust** that the second track needs.
+- **Each gated item opens only when measured conditions are met:**
+  - Security indicators in the area.
+  - IAEA readiness for the nuclear phases.
+  - Physical protection that meets the required standard.
+
+## 11. On ending the Haitian state
+
+**Four different things could be ended:**
+1. The political class.
+2. The government.
+3. The constitution.
+4. The state, meaning the legal entity itself.
+
+The first three can be replaced. **Ending the fourth would cost ordinary Haitians the most:**
+- **Nationality and passports** for about 11.7 million people and the diaspora.
+- **Haiti's UN seat and voice.**
+- **Membership in the NPT and the IAEA safeguards** the reactor depends on.
+- **CARICOM membership and trade preferences** such as HOPE/HELP, which apply to Haiti specifically.
+- **Treaties and maritime zones,** including fishing grounds and the seabed.
+- **The legal basis for inviting a UN mission at all.**
+
+**International law sets limits:**
+- **The UN Charter (Article 78) rules out trusteeship over any UN member state.** The UN can't take Haiti over as a trust territory.
+- **UN transitional administrations** (East Timor 1999–2002, and Kosovo from 1999) governed territories under Security Council authority. They did so as steps toward self-government, not to abolish a member state.
+
+**The charter-city warning:**
+- **Honduras created ZEDEs,** semi-autonomous zones that run under their own rules.
+- **Then it reversed course.** It repealed the ZEDE law in 2022, and its Supreme Court reportedly declared the framework unconstitutional in 2024.
+- **The Próspera zone's investors sued Honduras,** at one point for about $10.8B, and the case is still in international arbitration.
+
+Zones that bypass national sovereignty provoke backlash and legal wars.
+
+**What can be ended is the failed political order.**
+- **Haitians can replace their constitution.** The transitional authorities tried to between 2021 and 2025, dropped the attempt in October 2025, and may be reviving it.
+- **Haitians can elect new leaders,** with UN electoral assistance.
+- **The state continues underneath as the legal shell** that holds nationality, the UN seat, and the treaties.
+
+**The hub stays neutral about the form of government.** That decision belongs to Haitians, and the People's Charter holds under any form.
+
+## 12. The People's Charter
+
+These guarantees hold whatever the rulers are called. They are written into the founding treaty and the host-country agreement, enforced by the claims tribunal, and backed by mirrors abroad.
+
+1. **Power and water.** Every household gets its lifeline supply, and it is never cut for political reasons.
+2. **Health.** Clinics treat everyone by medical need alone.
+3. **Learning.** Free school meals, access to schooling, and the library in Kreyòl.
+4. **No conditions.** Food, water, health, and power are never tied to compliance or credits.
+5. **Due process.** No one is harmed by armed forces outside the enemy-led-escalation rule. Complaints can be made anonymously and go to an independent tribunal.
+6. **Privacy.** No tracking of anyone's movements, as little data collected as possible, and the firewall.
+7. **Transparency.** The public ledger shows the money, every use of force, and customs.
+8. **A way out.** Anyone leaving an armed group gets a path to a new life.
+9. **A voice.** Neighborhood seats on the Multi-Key Council.
+10. **Continuity.** The guarantees survive coups, new constitutions, and transitional administrations, and the endowment pays for services directly.
+
 ## Sources
+- [UN Charter, Chapter XII: International Trusteeship System (Article 78)](https://www.un.org/en/about-us/un-charter/chapter-12)
+- [$10.775 billion claim filed against the Government of Honduras (bilaterals.org)](https://bilaterals.org/10-775-billion-claim-filed-against)
+- [Arbitration, rule of law, and the ZEDEs in Honduras (DPLF)](https://dplf.org/en/?p=23408)
+- [Próspera (Wikiwand)](https://wikiwand.com/en/articles/Pr%C3%B3spera)
+- [Haiti abandons its costly effort to replace the 1987 Constitution (ConstitutionNet, 2025)](https://constitutionnet.org/fr/node/19942)
+- [Council of Ministers abandons the new-constitution project (HaitiLibre)](https://www.haitilibre.com/en/news-45956-haiti-flash-council-of-ministers-abandon-the-project-of-a-new-constitution.html)
+- [Constitutional referendum projected for this summer (Le Relief Haïti, 2026)](https://www.lereliefhaiti.com/en/articles/constitutional-referendum-projected-for-this-summer-according-to-government)
 - [The Ransom: Haiti's forced payments cost the economy $21 billion (EJI, summarizing the NYT)](https://eji.org/news/haitis-forced-payments-to-enslavers-cost-economy-21-billion-the-new-york-times-found/)
 - [Haiti paid France a costly ransom for independence (Irish Times, 2025)](https://www.irishtimes.com/opinion/2025/05/24/haiti-paid-france-a-costly-ransom-for-independence-some-say-it-must-be-paid-back)
 - [UN details plans for Haiti's cholera victims and apologizes (Devex, 2016)](https://www.devex.com/news/un-details-plans-for-haiti-s-cholera-victims-apologizes-for-role-in-epidemic-89255)

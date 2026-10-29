@@ -38,7 +38,7 @@ Three conditions make it work:
 | **Purpose** | Build and run clinics, resource centers, kiosks, sanitation, solar, and education | Respond to active threats to life |
 | **People** | Local hires, trained by the college | A Haitian-led specialized unit, with foreign special-forces personnel as advisers only |
 | **Armed** | Never | Yes |
-| **Authority** | The hub's civic charter and neighborhood councils | The Haitian state and the UN Security Council mandate |
+| **Authority** | The hub's civic charter and neighborhood councils | The Haitian state and a UN Security Council mandate, or a UN peacekeeping mission with Haitian-led units (see `infrastructureHubSovereignty.md`, Section 9) |
 | **Funding** | The hub (grant, endowment, at-cost revenue) | Public and UN channels. **No hub money, vehicles, or data.** |
 | **Base** | Stations and resource centers | Separate compounds, never civic sites |
 | **Appearance** | Clearly civilian; no uniforms or camouflage | Uniformed and visibly distinct |
