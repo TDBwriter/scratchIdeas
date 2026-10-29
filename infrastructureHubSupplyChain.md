@@ -85,7 +85,7 @@ Cheap power plus local raw materials make it practical to produce the heavy, bul
    Haiti's existing garment-assembly workforce is a starting base.
 9. **Medical isotopes.** Once the research reactor runs, Mo-99/Tc-99m and Lu-177 are made locally. Mo-99 has a 66-hour half-life, so it can also be flown to nearby Caribbean hospitals.
 10. **Knowledge:** curricula, software, and data, through the library.
-11. **Food, in part.** About 80–85% of Haiti's rice is imported. The hub won't change that alone, but compost and irrigation water help local farming.
+11. **Food, in part.** About 80–85% of Haiti's rice is imported. The hub won't change that alone, but compost, irrigation water, and cold storage help local farming (see `infrastructureHubFood.md`).
 
 **What will always be imported:** chips, solar and battery cells, reactor fuel, membranes, most medicines, and precision instruments. The plan is to accept that and manage it.
 

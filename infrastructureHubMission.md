@@ -15,6 +15,7 @@ Every other file in this set serves this purpose:
 | `infrastructureHubLibrary.md` | The Level -1 data center as a modern Library of Alexandria: training data, AI agent evaluation, and public access |
 | `infrastructureHubEconomics.md` | Free energy for locals, funded by exporting expertise and selling data center access |
 | `infrastructureHubSupplyChain.md` | What must be imported, what Haiti can make, and how to keep the import routes open |
+| `infrastructureHubFood.md` | Feeding the city through the hunger crisis, cutting food losses, and growing more locally |
 | `infrastructureHubMission.md` | This file: the purpose, the professional tracks, and the export model |
 
 **Bottom line:**
@@ -32,7 +33,7 @@ Every other file in this set serves this purpose:
 | **Education** (teachers, apprenticeship instructors, trainers of trainers) | Schools, resource centers, Community Teams | City Campus and stations | Teaching in the local language (Kreyòl first) for underserved language communities; teaching in disrupted settings |
 | **Military and security** | **A separate Security Academy under state authority** (see below) | A separate site | The enemy-led-escalation doctrine: stabilization with restraint, proven by public data. This expertise is rare anywhere in the world. |
 | **Healthcare** (physicians and residents, nurses, community health workers, radiotherapy physicists, nuclear medicine) | The Base Hospital as a teaching hospital, and the station clinics | City Campus and clinics | Health systems on limited resources; cholera control; trauma care; community health worker models |
-| **Science, research, and engineering** (reactor operators, neutron science, seismology, earthquake and hurricane engineering, solar and battery, water and sanitation, public health) | The research reactor, the active fault, the solar and battery lab, the Processing Yard | North Campus and City Campus | Disaster resilience and tropical infrastructure, studied in a living lab |
+| **Science, research, and engineering** (reactor operators, neutron science, seismology, earthquake and hurricane engineering, solar and battery, water and sanitation, public health, agronomy and food science) | The research reactor, the active fault, the solar and battery lab, the Processing Yard | North Campus and City Campus | Disaster resilience and tropical infrastructure, studied in a living lab |
 | **Library and data science** (librarians, archivists, data curators, machine-learning engineers, AI evaluators, Kreyòl linguists) | The Level -1 library and its evaluation cluster | North Campus and City Campus | Building lawful, open collections and AI evaluations for low-resource languages |
 
 **The military track keeps the firewall.** The hub funds open academic courses that officers can take like anyone else: law of armed conflict, human rights law, de-escalation, civilian-harm analysis, trauma medicine, and engineering. **Weapons and tactical training are funded by the state and UN** at a separate academy. No hub money, vehicles, or data go to armed units, and Community Team members never enter the military track while they serve.
