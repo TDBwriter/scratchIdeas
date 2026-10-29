@@ -6,6 +6,7 @@ Companion to `infrastructureHubPortAuPrince.md` and `infrastructureHubSolarMobil
 - **Teams are modeled on Green Beret Operational Detachment Alphas (ODAs)** and built around community educators, leaders, and medical personnel.
 - **Locals are trained to serve their communities, with no role in violence.**
 - **Armed teams respond only to active threats,** using precise force against hostile actors.
+- **Lethal force is authorized only where the escalation is enemy-led.**
 - **There is no general occupying military presence and no policing.**
 
 **Bottom line:** The concept holds up, but only as **two separate teams behind a firewall**, not one blended team.
@@ -86,12 +87,36 @@ The 12-person ODA maps onto a civic team. The two Weapons Sergeant slots become 
 
 Your limits, written as rules:
 - **Respond only to active threats to life.** No patrols that amount to policing, no occupation, no neighborhood raids, and no kill lists.
-- **Lethal force only when strictly unavoidable to protect life.** This is the standard in the UN Basic Principles on the Use of Force and Firearms. Legal advisers decide whether human rights law or the law of armed conflict governs, and the rules of engagement follow from that.
+- **Lethal force only where the escalation is enemy-led,** and only when strictly unavoidable to protect life. The full rule is below. It meets the UN Basic Principles on the Use of Force and Firearms. It is also stricter than the law of armed conflict, which allows targeting armed-group members by status alone if a conflict is recognized. Legal advisers confirm which body of law applies; the rule holds either way.
 - **Capture over killing whenever feasible.** Detainees go to the Haitian National Police and the courts within legal time limits, with no secret detention. **This requires a working justice system.** The 2024 mass breakout from the National Penitentiary shows the gap. Without courts and secure detention, capture becomes impossible and pressure to kill rises. Justice capacity is part of the buildout.
 - **No explosive weapons with wide-area effects in populated areas.** The drone record above shows why. More than 80 states endorsed the 2022 political declaration on explosive weapons in populated areas.
 - **Child protocols.** Assume any combatant may be a child. Separate children, protect them, and hand them to Haiti's social welfare institute (IBESR), not to detention.
 - **Haitian-led.** Teams are modeled on the ODA and staffed by Haitian specialized units, with foreign special forces as advisers only. Haiti's history makes foreign command unacceptable: the US occupation of 1915–1934, and the cholera epidemic linked to the 2004–2017 UN mission.
 - **Small footprint.** Teams respond from staging compounds; they don't occupy every street.
+
+### Lethal force: only when the escalation is enemy-led
+
+The Response Team never escalates first. Lethal force is authorized only after a hostile actor has escalated to lethal violence. Authorization is based on **what a person is doing at that moment, not who they are.**
+
+**What counts as enemy-led escalation:**
+- **A hostile act.** Someone is using deadly force against anyone: residents, Community Team staff, Response Team members, or patients.
+- **An imminent threat.** Someone is clearly and immediately about to use deadly force.
+- **A continuing hostile act.** Hostage-taking, or an armed siege of a clinic, station, or school, remains an escalation until it ends.
+- **An attack on infrastructure, only if it puts lives at immediate risk.** Cutting power to a hospital's life support counts. Damage to property alone never authorizes lethal force.
+
+**What never counts:**
+- **Status:** membership in an armed group, reputation, or appearing on a list. This rules out planned strikes on people who aren't escalating at that moment, such as the drone strikes on gatherings.
+- **Carrying a weapon** without threatening anyone.
+- **Fleeing, refusing orders, or committing property crime.**
+- **Escalation the team provoked.** No entering an area to draw fire, and no baiting.
+
+**How the rule is applied:**
+- **Before lethal force, where time allows:** warnings, de-escalation, non-lethal options, and withdrawal if withdrawing protects lives.
+- **Force goes only against the person escalating,** never the whole group or the people nearby.
+- **Authorization ends when the escalation ends.** Anyone who surrenders, is wounded and out of the fight, or stops threatening others is protected and gets arrest and medical care, not lethal force. Pursuit is for arrest only.
+- **The burden of proof is on the team.** Every lethal-force report must show what the other side did first, backed by body-camera footage and independent review. If it can't show that, the force is treated as unlawful and the halt rule applies.
+
+**Partners:** The hub coordinates only with forces that accept this rule at or near hub sites. That is a stricter standard than the Gang Suppression Force mandate, which allows targeted operations.
 
 **Making "surgical" provable:**
 - Log every use of force; use body cameras; require independent review.
@@ -100,7 +125,10 @@ Your limits, written as rules:
   - The Office for the Protection of Citizens (OPC), Haiti's ombudsman.
   - UN human rights reporting (BINUH).
   - An anonymous complaints channel at every station, which the Response Team can't trace.
-- **A halt rule.** If civilian harm crosses a set threshold, or an investigation finds unlawful force, operations in that area pause pending review.
+- **A halt rule.** Operations in an area pause pending review if any of these happens:
+  - Civilian harm crosses a set threshold.
+  - An investigation finds unlawful force.
+  - A lethal-force report can't show enemy-led escalation.
 - **The hub's response to violations.** If a force breaks the firewall or the rules of engagement, the hub's response is publicity and withdrawal of partnership. **It never cuts utilities;** the lifeline floors apply to everyone.
 
 ## 5. Claiming control and sequencing the buildout
