@@ -19,7 +19,7 @@ Companion to `infrastructureHubMission.md`, `infrastructureHubStabilization.md`,
   - **Unaccountable foreign presence.** The UN invoked immunity over the cholera epidemic linked to its peacekeepers, and its trust fund for victims raised about 2% of its goal.
 
   The plan avoids all three.
-- **A People's Charter guarantees services and rights whatever the rulers are called** (Section 12). Armed force can sit entirely under a UN mandate (Section 9), and distributed infrastructure gets built while the country waits for stability (Section 10).
+- **A cared-for populace won't care what its rulers are called.** Care is the foundation, and the People's Charter makes it durable (Section 12). Armed force can sit entirely under a UN mandate (Section 9), and distributed infrastructure gets built while the country waits for stability (Section 10).
 - **Resilience comes from being useful to many and owned by none.** The model is SESAME, a research center in Jordan built under UNESCO, where Israel, Iran, Palestine, Turkey, and others sit on one council.
 
 ---
@@ -237,7 +237,21 @@ Zones that bypass national sovereignty provoke backlash and legal wars.
 
 **The hub stays neutral about the form of government.** That decision belongs to Haitians, and the People's Charter holds under any form.
 
-## 12. The People's Charter
+## 12. A cared-for populace
+
+**The principle: a cared-for populace won't care what its rulers are called.** People judge whoever governs by daily life: power, water, clinics, food, schooling, and safety. Gangs know this too. The September 2025 drone strike in Simon Pelé hit a crowd gathered around a gang leader's gift distribution. Care buys loyalty, and the hub has to out-care everyone, reliably.
+
+**The evidence adds three conditions.** Research on service delivery and state legitimacy in conflict-affected countries finds that services are **necessary but not sufficient.** Legitimacy depends on what is delivered and also on how.
+1. **Fairness.** Care turns into legitimacy when it reaches everyone fairly. It turns into grievance when it follows contested lines: one neighborhood before another, or allies before rivals.
+   - **Universal and unconditional lifeline services.**
+   - **Spread small services everywhere early,** using the build-now track, instead of saturating a few areas.
+   - **Publish the rollout order and the criteria for it** on the ledger.
+2. **Dignity and voice.** People need to be treated with respect and to have a say: neighborhood seats on the council, anonymous complaints, and Kreyòl first. MINUSTAH also delivered services, but cholera and abuse without accountability destroyed the trust those services had earned.
+3. **Reliability.** Taking away care that people have come to depend on turns gratitude into anger, as Haiti's 2018 fuel riots showed. That is why the guarantee reserve exists and why allowances only ever go up.
+
+**One consequence to accept openly:** whoever delivers the care will be seen as the ruler in practice, whatever it is called. The guarantees below keep that power accountable.
+
+### The People's Charter: guarantees that make care durable
 
 These guarantees hold whatever the rulers are called. They are written into the founding treaty and the host-country agreement, enforced by the claims tribunal, and backed by mirrors abroad.
 
@@ -253,6 +267,10 @@ These guarantees hold whatever the rulers are called. They are written into the 
 10. **Continuity.** The guarantees survive coups, new constitutions, and transitional administrations, and the endowment pays for services directly.
 
 ## Sources
+- [Service delivery, public perceptions and state legitimacy: SLRC findings (UK FCDO)](https://www.gov.uk/research-for-development-outputs/service-delivery-public-perceptions-and-state-legitimacy-findings-from-the-secure-livelihoods-research-consortium)
+- [Are public services the building blocks of state legitimacy? (UK FCDO, input to the 2017 World Development Report)](https://www.gov.uk/research-for-development-outputs/are-public-services-the-building-blocks-of-state-legitimacy-input-to-the-world-bank-s-2017-world-development-report)
+- [Why we need to rethink state legitimacy to address fragility (World Bank blog)](https://blogs.worldbank.org/en/dev4peace/why-we-need-rethink-our-understanding-state-legitimacy-address-fragility)
+- [Complexities of service delivery and state-building (SLRC briefing)](https://assets.publishing.service.gov.uk/media/5901f117e5274a06b0000234/BP21-Complexities_of_service_delivery_and_state-building.pdf)
 - [UN Charter, Chapter XII: International Trusteeship System (Article 78)](https://www.un.org/en/about-us/un-charter/chapter-12)
 - [$10.775 billion claim filed against the Government of Honduras (bilaterals.org)](https://bilaterals.org/10-775-billion-claim-filed-against)
 - [Arbitration, rule of law, and the ZEDEs in Honduras (DPLF)](https://dplf.org/en/?p=23408)
