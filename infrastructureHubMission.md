@@ -17,6 +17,7 @@ Every other file in this set serves this purpose:
 | `infrastructureHubSupplyChain.md` | What must be imported, what Haiti can make, and how to keep the import routes open |
 | `infrastructureHubFood.md` | Feeding the city through the hunger crisis, cutting food losses, and growing more locally |
 | `infrastructureHubMaritime.md` | Regional shipping on transparent autonomous surface vessels, and what Haiti sends out so ships don't return empty |
+| `infrastructureHubCrimeEconomy.md` | How Haiti's gangs pay their way, and how the hub's design cuts off each revenue stream |
 | `infrastructureHubMission.md` | This file: the purpose, the professional tracks, and the export model |
 
 **Bottom line:**
