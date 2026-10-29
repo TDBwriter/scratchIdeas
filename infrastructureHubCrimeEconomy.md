@@ -67,6 +67,47 @@ The hub will be the richest prize in Haiti: construction budgets, jobs, contract
 - **Site security** under the stabilization model, with Response Teams guarding only critical infrastructure.
 - **Community ownership.** Services that neighborhoods depend on and help run are harder to capture and costlier to attack.
 
+## 5. Targeting the instigators without force
+
+**Starting point:** most gang members are followers, and 30–50% are children. The leverage lies with the instigators: gang leaders, financiers, and political and business patrons. That leverage can be applied without violence.
+
+### Tools that already exist
+- **UN sanctions,** renewed in October 2026 (Resolution 2831). They impose an asset freeze, a travel ban, and an arms embargo on 9 individuals and 2 groups. A new criterion covers embezzlement and diversion of public funds, which **for the first time reaches corrupt patrons, not just gunmen.**
+- **US terrorist designations.** Since May 2025, the US has designated Viv Ansanm and Gran Grif as Foreign Terrorist Organizations.
+  - Giving them "material support" is a federal crime.
+  - Doing business with them risks secondary sanctions.
+  - This hardens the hub's no-payment rule: a toll paid to a designated group could expose the hub and its contractors to US terrorism-financing law.
+- **US prosecutions.** Germine Joly, the former leader of the 400 Mawozo gang, received 35 years in prison (2024) for smuggling US guns paid for with laundered ransom money. He then received a life sentence (December 2025) for the 2021 kidnapping of US missionaries.
+
+### Why freezes have caught so little so far
+- **Only two sanctioned individuals have had accounts frozen,** and the sums were small (UN Panel, 2026).
+- **Gangs have become financially self-sufficient.** In 2024, GI-TOC found them funding guns and fighters from tolls, extortion, and kidnapping, the last estimated at about $25M a year. Leaders hold cash locally and have little need for banks or foreign travel. A UN expert says some gangs no longer need elite money at all.
+
+So freezing bank accounts alone catches little. **The pressure has to land where the cash must enter the formal system:**
+1. **Guns and ammunition.** These are bought abroad with dollars and need financiers to move the money and the shipments, as the Joly case shows. US and Dominican enforcement can target the buying networks.
+2. **Patrons' assets:** businesses, property, and accounts, in Haiti and in Florida, the Dominican Republic, and Canada. The new corruption criterion and foreign sanctions reach them, and foreign courts can seize assets held in their jurisdictions.
+3. **Laundering through businesses.** The hub's published procurement, supplier checks, and customs manifests make laundering through hub contracts visible.
+4. **Ransom flows,** which are often wired from abroad. Financial intelligence units can trace them to the kidnappers. **Families paying to free relatives are never the target;** US policy since 2015 has been not to prosecute them.
+5. **Big cash purchases** of property, vehicles, and businesses, flagged under reporting thresholds.
+
+### Recapturing cash
+- **Only accountable financial police and customs seize cash,** under court orders and with documented custody at every step. **Response Teams never seize cash.** When armed units take money, it disappears, and security work turns into looting.
+- **Every seizure is published on the ledger:** amount, date, and legal basis.
+- **Forfeited money goes, by court order, to victims and to programs in the affected neighborhoods,** also tracked on the ledger.
+
+### Due process
+- **Knowing who the instigators are is not enough.** Designations and seizures need evidence that holds up.
+- **The hub supplies records, not verdicts.**
+- **The Multi-Key Council has no role in choosing targets.** Otherwise financial pressure becomes a political weapon, another form of the Utility Valve.
+
+### The four-part approach
+| Who | What works |
+|---|---|
+| **Followers** | Jobs, apprenticeships, and exit paths through the resource centers |
+| **Leaders** | A legal choice: prosecution, or surrender on terms the state sets |
+| **Financiers and patrons** | Sanctions, asset seizures, and prosecution at home and abroad |
+| **The revenue itself** | Route around the chokepoints and make no payments |
+
 ## Sources
 - [Haitian gangs earn millions through cargo extortion and illegal tolls (Haitian Times, December 2025)](https://haitiantimes.com/2025/12/17/haiti-gangs-extort-millions-annually-cargo-illegal-tolls/)
 - [Haiti's gangs extort $8,000 daily from drivers and $20,000 from businesses (Haitian Times, 2024)](https://haitiantimes.com/2024/02/20/report-haitis-gangs-extort-8000-daily-from-drivers-20000-from-businesses/)
@@ -84,3 +125,11 @@ The hub will be the richest prize in Haiti: construction budgets, jobs, contract
 - [Surge in arms smuggling fuels violence in Haiti (Guardian Nigeria / UN)](https://guardian.ng/news/surge-in-arms-smuggling-fuels-violence-in-haiti-un-warns/)
 - [Haiti: gangs have "more firepower than the police" (UN News)](https://news.un.org/en/node/1148231)
 - [Why are 500,000 illegal weapons in circulation? (Caribbean Today)](https://caribbeantoday.com/sections/viewpoint/haiti-is-under-a-un-arms-embargo-so-why-are-500-000-illegal-weapons-in-circulation)
+- [Security Council renews the Haiti sanctions regime, Resolution 2831 (UN, October 2026)](https://press.un.org/en/2026/sc16476.doc.htm)
+- [UN Security Council renews Haiti sanctions (Jamaica Observer, October 2026)](https://www.jamaicaobserver.com/2026/10/15/un-security-council-renews-haiti-sanctions-amid-escalating-gang-violence/)
+- [Haiti sanctions renewal (Security Council Report)](https://www.securitycouncilreport.org/whatsinblue/2026/10/haiti-vote-on-a-draft-resolution-renewing-the-sanctions-regime-2.php)
+- [State Department labels Haitian gangs as terrorist organizations (NBC News, 2025)](https://www.nbcnews.com/news/us-news/state-department-labels-haitian-gangs-terrorists-rcna204475)
+- [US designates two Haitian groups as Foreign Terrorist Organizations (AML Watcher)](https://amlwatcher.com/news/u-s-designates-two-haitian-groups-as-foreign-terrorist-organizations/)
+- [Germine Joly sentenced to 35 years (WTOP, 2024)](https://wtop.com/news/2024/06/us-federal-judge-sentences-germine-joly-former-leader-of-the-powerful-400-mawozo-gang-in-haiti-to-35-years-in-prison)
+- [Haitian gang leader sentenced to life (Jamaica Observer, December 2025)](https://www.jamaicaobserver.com/2025/12/04/leader-notorious-haitian-gang-sentenced-life-prison/)
+- [Haitian gangs' growing funds and arsenals (The Star / Reuters, 2024)](https://thestar.com.my/news/world/2024/02/14/haitian-gangs039-growing-funds-arsenals-challenge-planned-intervention--report)
