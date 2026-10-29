@@ -14,6 +14,7 @@ Every other file in this set serves this purpose:
 | `infrastructureHubStabilization.md` | Community Teams, Response Teams, and the firewall between them |
 | `infrastructureHubLibrary.md` | The Level -1 data center as a modern Library of Alexandria: training data, AI agent evaluation, and public access |
 | `infrastructureHubEconomics.md` | Free energy for locals, funded by exporting expertise and selling data center access |
+| `infrastructureHubSupplyChain.md` | What must be imported, what Haiti can make, and how to keep the import routes open |
 | `infrastructureHubMission.md` | This file: the purpose, the professional tracks, and the export model |
 
 **Bottom line:**
