@@ -6,7 +6,7 @@ Companion to `infrastructureHubMission.md`, `infrastructureHubStabilization.md`,
 - Make the hub valuable to so many nations that keeping it safe is in everyone's interest.
 
 **Bottom line:**
-- **Sovereignty belongs to Haiti and its people, not to the hub.** For the hub, "independence" means it can't be captured. It never means independence from Haitian law.
+- **Sovereignty belongs to Haiti and its people, not to the hub.** For the hub, "independence" means it can't be captured. It never means independence from Haitian law. **The hub is independent of any government but anchored in the Haitian state** (Section 1).
 - **The opposite failure is the blueprint's own "Moral Coup," and Haiti has already lived a version of it.**
   - Of $2.29B in aid in 2010–2011, less than 1% went through the Haitian government.
   - NGOs ran about 80% of social services.
@@ -23,22 +23,49 @@ Companion to `infrastructureHubMission.md`, `infrastructureHubStabilization.md`,
 
 ---
 
-## 1. Legal status: a Haitian institution with international partners
+## 1. Legal status: anchored in the state, independent of any government
 
-- **A Haitian public-interest institution:** a university, a public utility, and a library foundation, established under Haitian law. It answers to:
-  - Haitian courts.
-  - Haiti's Superior Court of Auditors (CSCCA).
-  - Parliamentary oversight.
-- **The charter is protected.** Changing it requires a supermajority and public notice. It also rules out:
-  - Special legal status exempting the hub from Haitian law.
-  - Foreign military bases.
-  - Foreign control of customs.
-- **International partners join through cooperation agreements:**
-  - UNESCO for the library and the College.
-  - The IAEA for the nuclear program.
-  - WHO and PAHO for health.
+**The distinction.** The *government* is whoever holds office. The *state* is the permanent legal entity that signs treaties, grants land, licenses a reactor, and authorizes the use of force.
+- The hub doesn't need any particular government to survive, and it never props one up.
+- It does need the state.
 
-  The SESAME model applies: a science institution under UNESCO, organized like CERN, where rival states sit on the same council.
+### Why not bypass the government entirely?
+The government's record really is that bad.
+- Haiti has had no elected officials at all since January 2023, when the last ten senators' terms expired. The lower house had lapsed in 2020.
+- The state couldn't protect its president, who was assassinated in 2021, or hold its capital.
+
+But bypassing it doesn't work:
+- **It has been tried.** After the 2010 earthquake, less than 1% of $2.29B in aid went through the government, and NGOs ran about 80% of social services. The result was a weaker state and a vacuum that gangs filled.
+- **"No government role" isn't possible at this scale.** Once the hub runs water, power, transport, health, and security coordination for 3 million people, it is governing whether it claims the role or not. Governing without accountability is the blueprint's "Moral Coup."
+- **Key parts of the hub legally require a state:**
+  - **The reactor.** Only states join the NPT and sign IAEA safeguards agreements. Nuclear Suppliers Group rules require safeguards covering the whole recipient state before any fuel is supplied. Nuclear liability conventions run through the state where the reactor sits.
+  - **Lethal force.** Without state and UN authority, Response Teams are a private army.
+  - **Practical powers:** land, rights-of-way, port operation, customs, radio spectrum, cable landings, and courts for the strategy against gang leaders and their backers.
+- **Legitimacy.** A foreign-funded body that moves in and ignores the state invites the charge of occupation, given Haiti's history, and gang leaders would exploit it.
+- **A precedent for working around a captured government without replacing it** is Guatemala's CICIG, a UN-backed anti-impunity commission (2007–2019).
+  - **What it achieved:** it prosecuted a sitting president, Otto Pérez Molina, who resigned in 2015 and was jailed, and it kept public support above 70%.
+  - **How it ended:** it existed only by government consent. President Jimmy Morales shut it down in 2019, after his brother and son were indicted, calling it a violation of sovereignty.
+  - **Lessons:** anchor the institution in a treaty that doesn't need renewing, build broad public support, and expect a backlash from elites.
+- **The hub's best contribution to governance is training the next state.** The College's civic track produces the regulators, judges, customs officers, and administrators that Haiti lacks.
+
+### Recommended structure: a treaty-anchored institution
+- **Founded by an international agreement** between Haiti and partner states, in cooperation with UNESCO and the IAEA, on the SESAME and CERN model. Haiti is the host and a member, but never the owner.
+- **A host-country agreement fixes what Haiti grants:**
+  - Land and rights-of-way.
+  - A nuclear regulator.
+  - Authority to use force for Haitian-led Response Teams.
+  - Customs and free-zone status.
+  - Radio spectrum and cable landing rights.
+
+  Under international law these commitments bind the state, so they survive changes of government.
+- **Operationally independent:**
+  - No government official sits on the hub's boards or directs its operations.
+  - The hub pays nothing into government budgets and takes no money from them.
+- **Haitian law still applies to ordinary matters.** The hub is not an enclave. The agreement also rules out foreign military bases and foreign control of customs.
+- **No blanket immunity.** An independent claims tribunal hears complaints of harm caused by the hub (the cholera lesson).
+- **Audits** by an international audit body and by Haiti's Superior Court of Auditors (CSCCA), all published on the ledger.
+- **Parliamentary oversight** once Haiti has an elected parliament again.
+- **Partners join through cooperation agreements:** UNESCO for the library and the College, the IAEA for the nuclear program, and WHO and PAHO for health.
 - **No member, donor, or client holds a controlling share of anything.**
 
 ## 2. No single source of leverage
@@ -119,7 +146,7 @@ Companion to `infrastructureHubMission.md`, `infrastructureHubStabilization.md`,
 ## 8. Build order
 
 - **Phase 0:**
-  - Pass the charter law.
+  - Negotiate the founding international agreement and the host-country agreement with Haiti.
   - Set the donor caps and structure the endowment across jurisdictions.
   - Sign cooperation agreements with UNESCO and the IAEA.
   - Set up a sanctions-compliance unit.
@@ -149,3 +176,8 @@ Companion to `infrastructureHubMission.md`, `infrastructureHubStabilization.md`,
 - [Security Council adopts Resolution 2831 renewing Haiti sanctions (UN, 2026)](https://press.un.org/en/2026/sc16476.doc.htm)
 - [Resolution 2793 (2025) (UN Digital Library)](https://digitallibrary.un.org/record/4089907)
 - [US extends Haiti HOPE and HELP (Haitian Times)](https://haitiantimes.com/2026/02/06/haiti-hope-help-extension-2026/)
+- [Haiti has lost its last democratically elected officials (WFDD/NPR, 2023)](https://wfdd.org/story/haiti-has-lost-its-last-few-democratically-elected-officials)
+- [Political vacuum in Haiti deepens as senators' terms expire (theGrio, 2023)](https://thegrio.com/2023/01/11/political-vacuum-in-haiti-deepens-as-senators-terms-expire)
+- [Lessons from Guatemala's Commission Against Impunity (CFR)](https://www.cfr.org/report/lessons-guatemalas-commission-against-impunity)
+- [Too much success? The legacy and lessons of CICIG (Call, SSRN)](https://papers.ssrn.com/abstract=3526865)
+- [WOLA report on CICIG](https://www.wola.org/analysis/wola-report-on-the-international-commission-against-impunity-in-guatemala-cicig/)
