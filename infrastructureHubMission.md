@@ -13,6 +13,7 @@ Every other file in this set serves this purpose:
 | `infrastructureHubSolarMobility.md` | Solar, batteries, the electric fleet, and the donated-capital model |
 | `infrastructureHubStabilization.md` | Community Teams, Response Teams, and the firewall between them |
 | `infrastructureHubLibrary.md` | The Level -1 data center as a modern Library of Alexandria: training data, AI agent evaluation, and public access |
+| `infrastructureHubEconomics.md` | Free energy for locals, funded by exporting expertise and selling data center access |
 | `infrastructureHubMission.md` | This file: the purpose, the professional tracks, and the export model |
 
 **Bottom line:**
@@ -68,7 +69,7 @@ Every other file in this set serves this purpose:
    - **Voluntary, time-limited, and fully paid to the professional,** with no state or hub cut of salaries. **The counter-example:** in 2019, UN special rapporteurs warned that conditions in Cuba's medical missions abroad "could amount to forced labour."
    - **Follow the WHO Global Code of Practice on the international recruitment of health personnel.** Because Haiti is on the safeguards list, partners don't actively recruit its health workers, and every partnership spells out what Haiti gains.
    - **Fellowships for the diaspora.** Haitian professionals abroad come home for teaching terms. The diaspora becomes faculty, which reverses the drain.
-   - **Partner fees cover cost only and go to the endowment.** There is no profit motive.
+   - **Pricing follows ability to pay.** High-income clients pay market rates, and low-income partners pay cost or nothing. The surplus funds free local services and the endowment, and nothing is paid out to investors (see `infrastructureHubEconomics.md`).
 
 **What "a level playing field" means in practice:** success is the number of places that can run their own hubs **without needing Haiti's help.**
 

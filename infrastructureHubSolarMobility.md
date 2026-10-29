@@ -5,18 +5,18 @@ Companion to `infrastructureHubPortAuPrince.md`. This file adds the solar, batte
 - **One simple fleet:** Zero motorcycles, Slate trucks, and e-bikes.
 - **Durability and longevity first.**
 - **Self-sustaining and resource-efficient.**
-- **Money comes in as donated capital, with no expectation of a financial return.** This replaces the investor-style "revenue stacking" framing in `infrastructureHubRecommendations.md` Section 6. Revenue now pays only for running and replacing the hub, never for a return.
+- **Money comes in as donated capital, with no expectation of a financial return.** This replaces the investor-style "revenue stacking" framing in `infrastructureHubRecommendations.md` Section 6. Energy is free to locals, and the hub pays its way by exporting expertise and selling data center access (see `infrastructureHubEconomics.md`).
 
 **Bottom line:**
 - **Solar and batteries are the hub's first power plant,** not an add-on. They arrive in Phase 1, keep working under insecurity because they are spread out, and stay on as the resilience layer after the reactors come.
 - **The fleet runs on live sun by day and stored power at night.** It never needs fuel, so a fuel-terminal blockade like Varreux can't stop it.
-- **Donors pay for everything once:** the build plus an endowment. Local revenue covers only operation and replacement.
+- **Donors pay once,** for the build and an endowment. Export revenue covers operation, replacement, and free energy for locals.
 
 ---
 
-## 1. The money rule: donated capital, self-funded operations
+## 1. The money rule: donated capital, export-funded operations
 
-**Donated capital changes the design priority.** When donors pay for the build, the cost that matters is the one that never ends: operation and maintenance, which local revenue must cover forever. So every choice favors **the longest life and the lowest upkeep, not the lowest purchase price.** Here, a cheap item that needs frequent repair is the expensive option.
+**Donated capital changes the design priority.** When donors pay for the build, the cost that matters is the one that never ends: operation and maintenance, which revenue must cover forever. So every choice favors **the longest life and the lowest upkeep, not the lowest purchase price.** Here, a cheap item that needs frequent repair is the expensive option.
 
 **Haiti's own warning:** projects built with grants decay when nothing pays to run them. In 2017, NPR found a $2.1 million sewage facility in Port-au-Prince "all but abandoned."
 
@@ -26,7 +26,8 @@ Companion to `infrastructureHubPortAuPrince.md`. This file adds the solar, batte
 |---|---|---|
 | **1. Capital grant (one-time)** | Everything built, plus 10–15% spares, tools, and the first training cohorts | Spend on durability. Buy the spares up front, while the money is available. |
 | **2. Endowment (permanent)** | Major replacements, disaster recovery, and any shortfall in operating money | Held by an independent trust in a stable jurisdiction. Spend about 4% a year and never touch the principal, as university endowments do. This fits the College. |
-| **3. Local revenue (ongoing)** | Operation, maintenance, and the replacement fund | Priced at cost, recovering no capital and no profit. Sources: power, water, public charging, fares, truck-pool fees, compost and biogas sales, recyclable credits. Lifeline tiers are free or cross-subsidized. |
+| **3. Export revenue (ongoing)** | Operation, maintenance, the replacement fund, and free energy for locals | Expertise export and data center access, priced by ability to pay. See `infrastructureHubEconomics.md`. |
+| **4. Local charges (limited)** | Their own use only | Large commercial users above their allowance pay at cost, along with fares, compost and biogas sales, and recyclable credits. Households, public services, and small businesses get free energy within their allowances. |
 
 - **Disaster cover.** Haiti is a member of CCRIF, the Caribbean's pool for parametric hurricane and earthquake insurance, which pays out automatically when an event crosses set thresholds. The hub should carry its own cover, with the endowment paying the deductible.
 - **A replacement fund for every asset.** Each year sets aside the cost of eventual replacement, so nothing waits on a new grant.
@@ -85,8 +86,8 @@ A common rule of thumb is that battery aging roughly doubles with every 10 °C r
 
 ### Public charging
 - **Owners charge their own vehicles** at home, on their own solar, or at the public chargers under the station canopies.
-- **Public charging is paid per use, with no account and no vehicle registration.** Payment is by cash or prepaid token, so nothing links a vehicle or person to where and when they charged.
-- **Charging is priced at cost,** and cheapest at midday when solar is plentiful. Owners decide when to charge.
+- **Public charging is free, with no account and no vehicle registration.** Nothing links a vehicle or person to where and when they charged.
+- **Each session has a cap** so chargers are shared fairly. Sessions can run longer at midday, when solar is plentiful. Owners decide when to charge.
 
 ### Tracking, reuse, and recycling
 - **A battery passport for hub-owned packs only.** Every station battery and hub-fleet pack gets an ID and a health record on the Level -1 ledger. The EU's digital battery passport, required from 2027 for EV and large industrial batteries, is the precedent. **Batteries in personal vehicles are never tracked.**
@@ -118,8 +119,8 @@ A common rule of thumb is that battery aging roughly doubles with every 10 °C r
 
 ### Moto-taxis: run by their owners
 - **Drivers own, charge, and maintain their own bikes.** Switching to electric is their choice.
-- **The hub offers optional services at cost:**
-  - Public charging under the station canopies, with no account required.
+- **The hub offers optional services:**
+  - Free public charging under the station canopies, within session caps and with no account required.
   - Repair and maintenance training through the college's apprenticeship track, so petrol mechanics can move into EV work.
   - Rider safety training and helmets at resource centers. The 2017 study of Port-au-Prince moto-taxis found the trade unregulated and a growing source of crash injuries. Licensing stays with the state.
   - Drop-off for end-of-life batteries, for second life or recycling.
@@ -144,7 +145,7 @@ That takes roughly 30 MW of solar panels including losses, spread across station
 - **Make every surface do several jobs.** A station canopy provides shade, power, rain capture, battery cooling, public chargers, and a roof for the clinic.
 - **Capture rain.** Port-au-Prince gets more than a metre of rain a year, so a 1,500 m² canopy collects roughly 1,500 m³ annually. That covers non-drinking uses: washing sanitation containers, cleaning, and irrigating tree nurseries for the Massif reforestation.
 - **Recover energy on the way down.** All three vehicle families recover braking energy on the descent from Pétion-Ville.
-- **Schedule charging to the sun.** The hub charges its own fleet at midday. Public charging is cheapest at midday, but owners decide when to charge.
+- **Schedule charging to the sun.** The hub charges its own fleet at midday. Public charging sessions run longer at midday, but owners decide when to charge.
 - **Keep the parts list short:** a few vehicle models, one battery chemistry, one inverter model, and one shared spares depot.
 - **Close the loop:** second-life batteries, then recycling take-back.
 

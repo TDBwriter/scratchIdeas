@@ -33,7 +33,8 @@ Companion to `infrastructureHubMission.md`. The Level -1 data center becomes a *
 ### Open training data
 - **Curated, documented, versioned datasets.** Every item carries its license, its source, and a cryptographic hash, a digital fingerprint that proves it hasn't been altered.
 - **A registry of opt-outs that is always honored.** The EU AI Act requires general-purpose AI model providers to respect text-and-data-mining opt-outs and to publish summaries of their training content. The library's provenance records make both easy for anyone who uses it.
-- **Equal terms for everyone.** A student in Port-au-Prince and a frontier AI lab get the same access. There are no exclusive deals, and no one can buy priority.
+- **Equal terms for everyone.** A student in Port-au-Prince and a frontier AI lab get the same access to the collections. There are no exclusive deals, and no one can buy priority.
+- **The collections are free; services are paid.** High-income clients pay market rates for space, power, computing, and hosted evaluation, and that revenue funds free energy for locals (see `infrastructureHubEconomics.md`). Paying never buys a better score.
 
 ### Agentic evaluation
 - **Benchmarks drawn from real tasks in low-resource settings:**
@@ -88,6 +89,7 @@ Companion to `infrastructureHubMission.md`. The Level -1 data center becomes a *
 
 - **Storage:** start at about 10–20 PB across the network and grow past 100 PB. The Port-au-Prince copy holds the core collection plus the Haitian, Caribbean, and Kreyòl originals.
 - **Computing:** the evaluation and dataset-processing cluster fits inside the data center's 20–50 MW budget. Its waste heat goes to the digesters and to hot water, as already planned.
+- **Colocation for paying clients** adds 30–60 MW beyond that. It is interruptible: in a power shortage, client load is shed before any local supply.
 - **Scheduling follows the energy:** batch jobs run at night on surplus reactor power and at midday on solar, matching the hub's day and night shifts.
 
 ## 6. Governance and ethics
