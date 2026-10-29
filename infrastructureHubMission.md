@@ -78,6 +78,36 @@ Every other file in this set serves this purpose:
 
 **What "a level playing field" means in practice:** success is the number of places that can run their own hubs **without needing Haiti's help.**
 
+### Population, mobility, and quality of life
+
+**The proposal:** reduce the population through emigration and expertise export, and raise quality of life for those who stay.
+
+**The idea has a real pull:** fewer people sharing the same land, water, and power. **Haiti already runs a version of it.** Between 80% and 84% of its college graduates live abroad. Remittances were $4.1B in 2024, about 16% of GDP. That keeps families afloat, but it hasn't lifted life at home, because the people who leave are the ones the country most needs.
+
+**Why it can't be the main lever:**
+- **Losing skilled people is a net loss at Haiti's scale.** The chance to emigrate can push people to invest more in education. But a study of 127 developing countries found net losses wherever more than about 20% of the highly educated emigrate. Haiti's rate is about 80%.
+- **The doors are closing.**
+  - The US fully suspended entry for Haitian nationals in a June 2025 proclamation, and kept the suspension for 2026.
+  - The Supreme Court allowed the termination of Haiti's Temporary Protected Status in June 2026.
+  - The Dominican Republic deported more than 250,000 Haitians in the first eight months of 2025 and is building a border wall.
+- **The numbers don't add up.** Births exceed deaths by roughly 150,000 people a year. Shrinking the population would take sustained net emigration above that level, just as the main destinations close.
+- **Density isn't what holds Haiti back.** Haiti is less densely populated than the Netherlands. What limits life is security, institutions, and infrastructure, which is exactly what the hub targets.
+- **A population target invites coercion.** Moving abroad has to be a free choice, never a quota.
+
+**What works instead:**
+1. **Measure quality of life per person,** not the size of the population.
+2. **Let the demographic transition do the population work.** Births are already falling, from about 3.1 children per woman in 2015 to about 2.6 in 2024, with projections below replacement later this century. The fastest and most humane accelerators are things the hub already provides:
+   - Schooling for girls.
+   - Jobs for women.
+   - Child survival: families have fewer children when they expect them to live.
+   - Voluntary family planning at the clinics.
+3. **Make moving abroad a choice with structure:**
+   - **Circular labor programs with a path home.** New Zealand's Recognised Seasonal Employer scheme for Pacific Island workers is the evaluated model; evaluations found large gains in household income.
+   - **Training for jobs abroad only where Haiti trains more people than it needs.** Health workers stay protected under the WHO code.
+   - **Cheap, safe ways to send money home.**
+   - **Fellowships that bring the diaspora home** to teach.
+4. **Export expertise through rotating Export Teams.** They earn income without the country permanently losing its people.
+
 ## 4. Safety and stability come first
 
 - **Mirebalais is the warning.** A hospital that produced internationally accredited physicians closed when its town fell. Every campus has to sit inside a secured area from the start.
@@ -104,6 +134,19 @@ Every other file in this set serves this purpose:
 - **Phase 6:** the second Haitian hub becomes the **first export,** built by Haitian Export Teams. International partner sites follow.
 
 ## Sources
+- [Haiti remittances (TheGlobalEconomy / World Bank)](https://www.theglobaleconomy.com/Haiti/Remittances/)
+- [$4.1 billion in transfers recorded in 2024 (Le Nouvelliste)](https://lenouvelliste.com/en/article/252362/41-billion-in-unrequited-transfers-recorded-in-2024)
+- [US immigration policy and Haiti's remittance-dependent economy (Cornell Policy Review)](https://www.cornellpolicyreview.com/u-s-immigration-policies-and-the-risk-of-deepening-economic-collapse-in-a-remittance-dependent-economy-the-case-of-haiti/)
+- [Brain drain and human capital formation in developing countries: winners and losers (Beine, Docquier and Rapoport, Economic Journal 2008)](https://econpapers.repec.org/RePEc:ecj:econjl:v:118:y:2008:i:528:p:631-652)
+- [Brain drain and LDCs' growth: winners and losers (working paper)](https://econpapers.repec.org/RePEc:iza:izadps:dp819)
+- [Presidential Proclamation of June 4, 2025: travel ban (NAFSA)](https://www.nafsa.org/regulatory-information/presidential-proclamation-orders-travel-bans)
+- [Full entry ban for 12 countries (EIG Law)](https://eiglaw.com/eig-immigration-alert-president-trump-announces-full-entry-ban-for-12-countries-partial-suspension-for-7-countries/)
+- [Mullin v. Doe: Supreme Court allows termination of TPS for Haiti and Syria (Congressional Research Service)](https://www.congress.gov/crs-product/LSB11446)
+- [D.C. District Court lifts the stay blocking termination of Haiti TPS (2026)](https://www.globalimmigrationblog.com/2026/08/d-c-district-court-lifts-stay-blocking-termination-of-haiti-tps/)
+- [250,741 Haitians expelled from the Dominican Republic in 2025 (HaitiLibre)](https://www.haitilibre.com/en/news-45697-haiti-flash-250-741-haitians-expelled-from-the-dr-since-the-beginning-of-the-year.html)
+- [Haiti fertility rate (TheGlobalEconomy / UN WPP)](https://www.theglobaleconomy.com/Haiti/Fertility_rate/)
+- [Haiti fertility indicators (Measured World)](https://measuredworld.com/countries/haiti/births/fertility-indicators)
+- [Haiti population pyramid and projections](https://www.populationpyramid.net/de/haiti/)
 - [Brain drain versus remittances: World Bank report coverage (2005)](https://www.searchlight.vc/news/2005/10/28/brain-drain-versus-remittances)
 - [Latin American brain drain: World Bank research (UN DESA)](https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/unpd_om_200606_p10_ozden.pdf)
 - [Haiti's brain drain: educated youth are leaving (Yahoo News)](https://news.yahoo.com/haiti-brain-drain-educated-youth-110000620.html)
