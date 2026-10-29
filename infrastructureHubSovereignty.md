@@ -266,7 +266,68 @@ These guarantees hold whatever the rulers are called. They are written into the 
 9. **A voice.** Neighborhood seats on the Multi-Key Council.
 10. **Continuity.** The guarantees survive coups, new constitutions, and transitional administrations, and the endowment pays for services directly.
 
+## 13. Coups, usurpers, and mercenaries
+
+### How the international system responds to a coup
+- **Recognition belongs to states, and the UN seat follows the General Assembly's credentials decision.** A coup government doesn't automatically get the seat. The Taliban were never seated, and Myanmar's junta has been refused its seat since 2021.
+- **The Security Council can act under Chapter VII.** Otherwise the UN Charter bars interference in a state's internal affairs. Once the Council finds a threat to international peace, it can impose sanctions (Article 41) or authorize force (Article 42).
+- **Regional bodies move fastest.** The OAS can suspend a member under its Inter-American Democratic Charter; it suspended Honduras after the 2009 coup. The African Union routinely suspends members after coups.
+- **Haiti has been through this before.**
+  - **1991:** the military overthrew President Aristide.
+  - **1993:** the UN imposed an oil and arms embargo (Resolution 841), then reimposed and widened it when the regime broke the Governors Island agreement.
+  - **July 1994:** Resolution 940 authorized a US-led multinational force "to use all necessary means."
+  - **September 1994:** the force landed unopposed and restored the elected government.
+- **Who controls a state's assets abroad follows recognition.** In 2021, the UK Supreme Court decided which Venezuelan board controlled Venezuela's gold at the Bank of England based on which government the UK recognized.
+
+### Mercenaries
+- **They have no combatant status.** Under Additional Protocol I to the Geneva Conventions, mercenaries aren't entitled to combatant or prisoner-of-war status.
+- **There is a treaty against them,** the UN Mercenary Convention (1989), though few major powers have joined it.
+- **Home-country law reaches organizers.** The US Neutrality Act makes it a crime to launch a military expedition from the US against a country at peace with it.
+
+**Precedents:**
+- **Comoros, 1995.** Bob Denard took over the government with about 33 men. French paratroopers arrested him a week later.
+- **Equatorial Guinea, 2004 (the "Wonga coup").** The plot collapsed before it reached the country. Simon Mann was jailed, and Mark Thatcher pleaded guilty in South Africa to unwittingly helping fund it.
+- **Haiti, 2021.** About two dozen foreign mercenaries, mostly Colombian, assassinated President Moïse. By May 2026, ten people had been convicted in US courts over the plot, including four Florida-based men found guilty that month.
+
+### If a billionaire seized Haiti with a mercenary force
+- **No recognition.** The UN seat, the OAS, and the state's assets abroad stay with the recognized government.
+- **His wealth is the easiest money in the world to freeze.**
+  - It sits in global banks, companies, and property.
+  - Unlike gang cash, it can be sanctioned under the existing UN Haiti regime and by the US, EU, and Canada.
+  - Banks, partners, and boards would drop him.
+- **Prosecution at home,** as in the Moïse case, and no legal protection for his fighters.
+- **Force to reverse it.** The Security Council authorized force in 1994. A veto from a permanent member he had courted is the main risk.
+- **Scale works against him.** Haiti has 11.7 million people, up to 500,000 illegal guns, 10,000–20,000 gang members, and an international force on the ground. Mercenary seizures have held only in tiny states, and only briefly. Sanctions and naval interdiction would cut off his fuel and ammunition.
+
+**The real danger is quieter capture,** and the cared-for-populace principle cuts both ways: **a usurper who delivers care could win acceptance.** He could also arrive with legal cover, through a contract with a weak government (as a private military contractor already has in Haiti) or through funding that creates dependence. The hub must be impossible to buy or seize:
+- **No donor provides more than 20%,** and none gets a veto.
+- **Any donor who backs an unconstitutional seizure loses all standing.**
+- **The hub owns no armed force.**
+- **The hub is anchored by treaty,** and partners hold no controlling share.
+- **The endowment's money and the library's copies sit abroad.**
+- **The keys to the data are split among several institutions.**
+
+### What the hub does during a seizure
+1. **It follows the UN and OAS on recognition.** It does not cooperate with the usurper or the mercenaries, and it makes no payments to them.
+2. **Lifeline services continue for people,** run by Community Teams, with the endowment paying services directly (the People's Charter).
+3. **Data stays out of reach.** The decryption keys are held by several institutions, so seizing the building yields nothing readable, and the full collection lives in the mirrors abroad.
+4. **The reactor stays safe.**
+   - The IAEA is notified immediately.
+   - Operators keep the reactor safe, and no fuel ships.
+   - If the protected area is threatened, the reactor shuts down and cools itself without operators.
+   - A seized nuclear site is an international concern that pushes the Security Council to act.
+5. **Every step is published on the ledger.** Transparency is a defense.
+
 ## Sources
+- [Resolution 940 (1994), Chapter VII (Security Council Report)](https://www.securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Chap%20VII%20SRES%20940.pdf)
+- [Multinational Force in Haiti, 1993–1994 (Canada, National Defence)](https://www.canada.ca/en/department-national-defence/services/military-history/history-heritage/past-operations/caribbean/forward-action.html)
+- [UN Security Council Resolution 841 (Wikipedia mirror)](https://wiki.riteme.site/wiki/United_Nations_Security_Council_Resolution_841)
+- [Four convicted of conspiracy in the US trial over Moïse's assassination (WLRN/AP, May 2026)](https://www.wlrn.org/light/americas/2026-05-08/four-people-convicted-of-conspiracy-in-us-trial-tied-to-2021-assassination-of-haitis-president)
+- [Four convicted in Miami for roles in killing Haiti's president (Bloomberg)](https://www.bloomberg.com/news/articles/2026-05-08/four-convicted-in-miami-for-roles-in-killing-of-haiti-president)
+- [Simon Mann, jailed for leading an attempted coup in Equatorial Guinea (Yahoo)](https://www.yahoo.com/news/simon-mann-mercenary-jailed-leading-131402799.html)
+- [The gang that couldn't coup straight (NPR)](https://www.npr.org/2006/09/22/6119680/the-gang-that-couldnt-coup-straight)
+- [Comoros ex-leader Denard on trial (The Scotsman)](https://www.scotsman.com/news/world/comoros-ex-leader-denard-on-trial-2467985)
+- [Africa's white mercenaries (CS Monitor)](https://proof.csmonitor.com/World/Global-News/2009/1103/africas-top-5-white-mercenaries-how-does-simon-mann-stack-up)
 - [Service delivery, public perceptions and state legitimacy: SLRC findings (UK FCDO)](https://www.gov.uk/research-for-development-outputs/service-delivery-public-perceptions-and-state-legitimacy-findings-from-the-secure-livelihoods-research-consortium)
 - [Are public services the building blocks of state legitimacy? (UK FCDO, input to the 2017 World Development Report)](https://www.gov.uk/research-for-development-outputs/are-public-services-the-building-blocks-of-state-legitimacy-input-to-the-world-bank-s-2017-world-development-report)
 - [Why we need to rethink state legitimacy to address fragility (World Bank blog)](https://blogs.worldbank.org/en/dev4peace/why-we-need-rethink-our-understanding-state-legitimacy-address-fragility)
