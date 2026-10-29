@@ -140,6 +140,31 @@ But bypassing it doesn't work:
 
 ## 7. Why the world would want it to survive
 
+### The honest baseline: the world mostly doesn't care about Haiti for Haiti's own sake
+- **Help arrives thin and late.**
+  - In April 2026, the UN's central emergency fund drew on its window for *underfunded* emergencies for Haiti.
+  - The Gang Suppression Force began with a trust fund of about $113M, against the $600–800M a year its predecessor needed.
+  - It was still working toward about 2,000 of its 5,550 personnel in mid-2026, and the US Secretary of State called it "dangerously underfunded."
+- **What neighbors care about is spillover.**
+  - The Dominican Republic deported more than 250,000 Haitians in the first eight months of 2025 and is building a 160 km border wall.
+  - The US response centers on terrorist designations, deportations, and interdiction at sea.
+- **When force came, it followed self-interest.** The 1994 intervention came after a surge of boat people: more than 30,000 Haitians were held at Guantánamo. Clinton himself cited Americans' interest in preventing costly refugee flows.
+
+**So the plan assumes no rescue.** That is why the hub is spread out, self-funding, anchored by treaty, and has its endowment and library copies abroad. It also deliberately gives powerful outsiders **self-interested** reasons to protect it:
+- **Less migration.** Jobs, safety, and services reduce the pressures that make people leave, which is the top concern in Washington and Santo Domingo. Measure it and publish it.
+- **Fewer drugs and guns.** A transparent port, scanned ships, and published manifests shrink trafficking, in cooperation with US and Dominican enforcement.
+- **Constituencies with weight:**
+  - AI labs that rent data center capacity.
+  - Universities with students at the hub.
+  - Partner mirrors of the library.
+  - Research collaborators.
+  - Hospitals that receive isotopes.
+  - The Caribbean governments the disaster hub serves.
+- **The diaspora.** Haitians in the US, Canada, and France vote, and they have a direct stake in the hub's success.
+- **Nuclear attention.** A reactor guarantees close interest from the IAEA and the US. That cuts both ways, which is why it stays behind the stability gate.
+- **A success story.** Governments and donors like backing winners. Measured results draw attention that a crisis never did.
+
+### What gives the world a stake
 - **Many countries have something at stake.** Partner nations each have students, data, mirrors, research, or regional services tied to the hub. As with CERN and SESAME, harming it harms many.
 - **Its neighbors can see everything that matters.** The ledger shows money, the use of force, and customs.
 - **Its contribution to peace can be measured:** civilian-harm data, defections from gangs, and regional disaster response.
@@ -296,7 +321,7 @@ These guarantees hold whatever the rulers are called. They are written into the 
   - Unlike gang cash, it can be sanctioned under the existing UN Haiti regime and by the US, EU, and Canada.
   - Banks, partners, and boards would drop him.
 - **Prosecution at home,** as in the Moïse case, and no legal protection for his fighters.
-- **Force to reverse it.** The Security Council authorized force in 1994. A veto from a permanent member he had courted is the main risk.
+- **Force to reverse it, if anyone has the will.** The Security Council authorized force in 1994, but it took a refugee crisis to move the US (Section 7). A veto from a permanent member he had courted is the other risk. Cheap tools such as non-recognition, sanctions, and prosecution are likely. Troops are not, unless the seizure spills over onto powerful neighbors.
 - **Scale works against him.** Haiti has 11.7 million people, up to 500,000 illegal guns, 10,000–20,000 gang members, and an international force on the ground. Mercenary seizures have held only in tiny states, and only briefly. Sanctions and naval interdiction would cut off his fuel and ammunition.
 
 **The real danger is quieter capture,** and the cared-for-populace principle cuts both ways: **a usurper who delivers care could win acceptance.** He could also arrive with legal cover, through a contract with a weak government (as a private military contractor already has in Haiti) or through funding that creates dependence. The hub must be impossible to buy or seize:
@@ -319,6 +344,15 @@ These guarantees hold whatever the rulers are called. They are written into the 
 5. **Every step is published on the ledger.** Transparency is a defense.
 
 ## Sources
+- [UN releases $140.5M in emergency funding for Haiti, including from the underfunded-emergencies window (Caribbean National Weekly, 2026)](https://www.caribbeannationalweekly.com/news/un-releases-140-5-million-emergency-fund-to-support-1-million-people-in-haiti/)
+- [UN launches an $880M plan to assist 4.2 million people in Haiti (Caribbean National Weekly)](https://www.caribbeannationalweekly.com/news/un-launches-us880-million-plan-to-assist-4-2-million-people-in-haiti/)
+- [Haiti's new gang-fighting force exceeds funding expectations (AP via WTOP, April 2026)](https://wtop.com/world/2026/04/haitis-new-un-backed-gang-fighting-force-exceeds-funding-expectations/)
+- ["The GSF is dangerously underfunded," says Marco Rubio (HaitiLibre)](https://www.haitilibre.com/en/news-46215-haiti-security-the-gsf-is-dangerously-underfunded-says-marco-rubio.html)
+- [Update on the deployment of the Gang Suppression Force (iciHaiti)](https://www.icihaiti.com/en/news-47563-update-on-the-deployment-of-the-gang-supression-force-gsf.html)
+- [250,741 Haitians expelled from the Dominican Republic in 2025 (HaitiLibre)](https://www.haitilibre.com/en/news-45697-haiti-flash-250-741-haitians-expelled-from-the-dr-since-the-beginning-of-the-year.html)
+- [Dominican Republic reports a sharp rise in deportations (Jamaica Observer, 2025)](https://www.jamaicaobserver.com/2025/05/06/dominican-republic-reports-sharp-rise-haitian-migrant-deportations/)
+- [Operation Uphold Democracy (Wikipedia)](https://en.wikipedia.org/wiki/Operation_Uphold_Democracy)
+- [Haiti subject files (Clinton Library)](https://www.clintonlibrary.gov/research/archives/finding-aids/haiti-subject-files)
 - [Resolution 940 (1994), Chapter VII (Security Council Report)](https://www.securitycouncilreport.org/atf/cf/{65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9}/Chap%20VII%20SRES%20940.pdf)
 - [Multinational Force in Haiti, 1993–1994 (Canada, National Defence)](https://www.canada.ca/en/department-national-defence/services/military-history/history-heritage/past-operations/caribbean/forward-action.html)
 - [UN Security Council Resolution 841 (Wikipedia mirror)](https://wiki.riteme.site/wiki/United_Nations_Security_Council_Resolution_841)
