@@ -9,6 +9,7 @@ Companion to `infrastructureHubSupplyChain.md`, `infrastructureHubPortAuPrince.m
 
   The hub can't wait for new farms to produce. Its first job is keeping food moving and getting it to people.
 - **The city will import much of its staple food for a long time.** About 80% of Haiti's rice is imported. The Artibonite Valley grew most of the country's own rice, but gangs seized its irrigation canals and output has fallen by at least 48%. The goal is resilience and a rising local share, not self-sufficiency.
+- **Could Haiti feed itself?** Today it grows roughly half of its food. With Dominican-level yields on its existing farmland it could, on paper, cover its calories. That would take decades of irrigation, inputs, and security, and the country would still import wheat, cooking oil, and a buffer against hurricanes. A realistic target is about three-quarters of calories grown at home (Section 11).
 - **The hub's best food levers are things it is already building,** not high-tech farms:
   - Free power for cold storage (Haiti loses 30–40% of its mangoes after harvest).
   - Compost from the sanitation system.
@@ -147,7 +148,55 @@ Companion to `infrastructureHubSupplyChain.md`, `infrastructureHubPortAuPrince.m
   - The optional fertilizer plant.
   - The northern line toward the Artibonite, once the corridor is secure.
 
+## 11. Can Haiti feed itself?
+
+### Where it stands
+- **Haiti grows roughly half of its food.** Estimates from 2008–2011 put domestic production at 43–50% of needs. About 80–85% of rice is imported, and **all wheat** is imported, since Haiti grows none.
+- **Farmland:**
+  - About 870,000 ha of agricultural land.
+  - 135,000–150,000 ha that could be irrigated, of which only about 90,000 ha has been developed and about 80,000 ha is actually irrigated. Roughly a quarter of the irrigated land sits unused because of poor maintenance.
+  - In colonial times about 140,000 ha was irrigated.
+- **Yields are very low:**
+  - Rice: about 1.8 t/ha (unmilled) in Haiti, against about 4.8 t/ha in the Dominican Republic.
+  - All grains: about 0.8 t/ha in Haiti, against about 5.2 t/ha in the Dominican Republic.
+- **Haiti was self-sufficient in rice until the mid-1980s.** Since then its population has roughly doubled, to about 11.8 million, while rice tariffs were cut and rice farming stagnated.
+
+### The calorie arithmetic (rough and illustrative)
+- **Need:** 11.8 million people at 2,100 calories a day comes to about **9 trillion calories a year.**
+- **At today's yields:** the 870,000 ha of farmland produces roughly 4–5 million calories per hectare. That is a mix of grain, roots, plantain, and tree crops. It comes to about **40–50% of need**, which matches the observed share.
+- **With yields doubled and harvest losses cut:** roughly **75–90% of calories.**
+- **At Dominican-level yields:** roughly **95–115% of calories.**
+
+### Why "on paper" isn't the same as achievable
+- **The yield gap is large.** Grain yields would need to rise about sixfold to reach Dominican levels. The Dominican Republic took decades of irrigation, inputs, credit, and roads to get there.
+- **Calories are not a full diet.** Wheat, cooking oil, and much animal feed and protein would still be imported unless diets shift.
+- **Much of the land is steep and eroded.** Hillsides need tree crops and agroforestry (breadfruit, mango, plantain), not annual crops that wash the soil away.
+- **Hurricanes and droughts** make the ability to import a necessary buffer.
+- **The population is still growing.**
+- **Insecurity.** The Artibonite, the rice bowl, is held by gangs.
+
+### What would close the gap, and the hub's part
+1. **Irrigation.** Restore the unused quarter of irrigated land and develop the full 135,000–150,000 ha, with solar-powered pumps where they fit. The IDB has already piloted solar irrigation in the Artibonite.
+2. **Taking the canals back.** Return the Artibonite canals to farmers' control.
+3. **Inputs.** Compost and urine fertilizer from the Processing Yard, improved seeds from the seed bank, and agronomy research at the College.
+4. **Losses.** Cold rooms, crates, and dryers, which could add a large share of usable food without planting another hectare.
+5. **Demand.** School meals and hub canteens that buy local, so farmers have a reason to invest.
+
+**Target:** move from roughly half to about three-quarters of calories grown at home over 10–15 years. Keep imports of wheat, oil, and a hurricane reserve, and track progress against the measures in Section 9.
+
 ## Sources
+- [Haiti cannot feed itself (AP, 2010)](https://www.citizenstrade.org/ctc/wp-content/uploads/2011/05/20100320_haitcannotfeeditself_ap.pdf)
+- [Haiti food crisis report (OCHA, 2008)](https://reliefweb.int/report/haiti/haiti-food-crisis-report-jul-2008)
+- [Investigating food self-sufficiency challenges in Haiti (AgEcon Search)](https://ageconsearch.umn.edu/record/187332/files/Investigating%20Food%20Self%20Sufficiency%20Challenges%20in%20Haiti.pdf)
+- [Haiti Grain and Feed Annual (USDA)](https://agriexchange.apeda.gov.in/MarketReport/Reports/Grain%20and%20Feed%20Annual_Port-au-Prince_Haiti_HA2023-0003.pdf)
+- [Haiti irrigation sector, including irrigable and irrigated area (IDB)](https://ewsdata.rightsindevelopment.org/files/documents/27/IADB-HA-T1327_mW8eahT.pdf)
+- [An overview of the country's irrigation systems (Le Nouvelliste)](https://lenouvelliste.com/en/article/245275/jean-andre-victor-gives-an-overview-of-the-countrys-irrigation-systems)
+- [Solar-powered irrigation in the Artibonite (IDB)](https://iadb.org/en/blog/nature-climate-and-disaster-risk/empowering-agriculture-haitis-artibonite-department-solar-powered-irrigation)
+- [Haiti rice production (USDA, 2024)](https://ipad.fas.usda.gov/highlights/2024/04/Haiti/index.pdf)
+- [Dominican Republic crop assessment (USDA, 2021)](https://ipad.fas.usda.gov/highlights/2021/06/DominicanRepublic/index.pdf)
+- [Cereal yield comparison, Dominican Republic vs. Haiti (NationMaster)](https://www.nationmaster.com/country-info/compare/Dominican-Republic/Haiti/Agriculture/Produce/Cereal)
+- [Haiti no longer grows much of its own rice (Oxfam)](https://www.oxfamamerica.org/explore/stories/haiti-no-longer-grows-much-of-its-own-rice/)
+- [Rice production in Haiti (Wikipedia)](https://en.wikipedia.org/wiki/Rice_production_in_Haiti)
 - [Haiti acute food insecurity, September 2025 – June 2026 (IPC)](https://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1159760/)
 - [Haiti IPC projection update, March–June 2026](https://www.haitidocs.org/doc/cnsa-ipc-haiti-food-insecurity-2026-03-06-update)
 - [More than half of Haitians face acute food insecurity (FAO)](https://www.fao.org/newsroom/detail/more-than-half-of-haitians-still-facing-acute-food-insecurity--government-and-partners-urge-intensified-efforts-to-safeguard-progress/en)
