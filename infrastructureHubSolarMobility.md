@@ -26,7 +26,7 @@ Companion to `infrastructureHubPortAuPrince.md`. This file adds the solar, batte
 |---|---|---|
 | **1. Capital grant (one-time)** | Everything built, plus 10–15% spares, tools, and the first training cohorts | Spend on durability. Buy the spares up front, while the money is available. |
 | **2. Endowment (permanent)** | Major replacements, disaster recovery, and any shortfall in operating money | Held by an independent trust in a stable jurisdiction. Spend about 4% a year and never touch the principal, as university endowments do. This fits the College. |
-| **3. Local revenue (ongoing)** | Operation, maintenance, and the replacement fund | Priced at cost, recovering no capital and no profit. Sources: power, water, battery swaps, fares, truck-pool fees, compost and biogas sales, recyclable credits. Lifeline tiers are free or cross-subsidized. |
+| **3. Local revenue (ongoing)** | Operation, maintenance, and the replacement fund | Priced at cost, recovering no capital and no profit. Sources: power, water, public charging, fares, truck-pool fees, compost and biogas sales, recyclable credits. Lifeline tiers are free or cross-subsidized. |
 
 - **Disaster cover.** Haiti is a member of CCRIF, the Caribbean's pool for parametric hurricane and earthquake insurance, which pays out automatically when an event crosses set thresholds. The hub should carry its own cover, with the endowment paying the deductible.
 - **A replacement fund for every asset.** Each year sets aside the cost of eventual replacement, so nothing waits on a new grant.
@@ -38,8 +38,10 @@ Companion to `infrastructureHubPortAuPrince.md`. This file adds the solar, batte
 | Inverters | 10–15 years | **The weak link.** Use one model fleet-wide, stock spares, and train local technicians |
 | Stationary LFP batteries | About 15 years, or about 6,000 cycles | Keep them cool (Section 3) |
 | Slate Truck | 15+ years | Battery and powertrain warranty reported at 10 years / 110,000 miles |
-| Zero XB/XE | 10+ years (frame) | Swappable packs are replaced separately from the bike |
-| E-bikes | 10+ years (frame) | Packs replaced every 3–6 years depending on chemistry; belts and tyres as they wear |
+| Zero XB/XE (hub responders) | 10+ years (frame) | Removable packs are replaced separately from the bike |
+| E-bikes (hub fleet and bike-share) | 10+ years (frame) | Packs replaced every 3–6 years depending on chemistry; belts and tyres as they wear |
+
+Personal vehicles aren't hub assets. Their owners buy, maintain, and replace them.
 
 ## 2. Solar: the first power plant
 
@@ -78,45 +80,53 @@ A common rule of thumb is that battery aging roughly doubles with every 10 °C r
 - **Charge in the shade** and keep daily cycling between roughly 20% and 80% where possible.
 
 ### Sizing
-- **Station batteries:** 1–2 MWh each, enough to carry critical loads (clinic, kiosk pumps and chillers, communications, lighting) for 2–3 days, plus a buffer for the fleet.
+- **Station batteries:** 1–2 MWh each, enough to carry critical loads (clinic, kiosk pumps and chillers, communications, lighting) for 2–3 days, plus a buffer for public charging.
 - **Night freight can run on stored solar before any reactor exists.** About 3,500 t a night over roughly 25 km takes about 10–15 MWh, a few stations' worth of storage. Daytime passenger trains run directly on solar.
 
-### Battery swapping (battery-as-a-service)
-- **The hub owns the packs; riders own or lease the vehicle.** This applies to the Zero XB/XE swappable packs and to e-bike packs. Riders pay much less up front.
-- **Because the hub controls charging temperature and charge levels, packs last longer.** Gogoro in Taiwan and Ampersand in Rwanda run two-wheeler swap networks on this model.
+### Public charging
+- **Owners charge their own vehicles** at home, on their own solar, or at the public chargers under the station canopies.
+- **Public charging is paid per use, with no account and no vehicle registration.** Payment is by cash or prepaid token, so nothing links a vehicle or person to where and when they charged.
+- **Charging is priced at cost,** and cheapest at midday when solar is plentiful. Owners decide when to charge.
 
 ### Tracking, reuse, and recycling
-- **A battery passport.** Every pack gets an ID and a health record on the Level -1 ledger. The EU's digital battery passport, required from 2027 for EV and large industrial batteries, is the precedent.
-- **Second life.** Vehicle packs that fall to about 70–80% of their original capacity move to stationary duty in kiosks, clinic backup, and household solar kits.
+- **A battery passport for hub-owned packs only.** Every station battery and hub-fleet pack gets an ID and a health record on the Level -1 ledger. The EU's digital battery passport, required from 2027 for EV and large industrial batteries, is the precedent. **Batteries in personal vehicles are never tracked.**
+- **Second life.** Hub vehicle packs that fall to about 70–80% of their original capacity move to stationary duty in kiosks, clinic backup, and household solar kits. Owners can bring packs from personal vehicles to a resource center for second life or recycling if they choose.
 - **Take-back.** At end of life, cells ship to a recycler under contract, the same principle as reactor fuel take-back.
 
 ### Fire safety
-- **Only certified packs and chargers:** UL 2849 for e-bike electrical systems and UL 2271 for light-vehicle batteries.
-- **Fire-rated swap cabinets.**
-- **No home charging of uncertified packs.**
+- **Only certified packs and chargers in hub equipment and public chargers:** UL 2849 for e-bike electrical systems and UL 2271 for light-vehicle batteries.
+- **Fire-rated cabinets** for station batteries.
+- **Free guidance on safe home charging** at resource centers.
 
 ## 4. The fleet: three vehicle families
 
+**Who manages what:**
+- **Personal vehicles are owned and managed by their owners.** These are most e-bikes, all moto-taxis, and any privately bought Slate. The hub doesn't register, track, or service them.
+- **Hub vehicles are owned and maintained by the hub.** These are crew trucks, responder motorcycles, health-worker e-bikes, and the bike-share.
+
 | Vehicle | Role | Why it fits | Durability |
 |---|---|---|---|
-| **E-bikes** (personal, cargo, bike-share) | Most trips: getting to and from stations, climbing hills, cargo bikes swapping toilet containers at the door, community health workers, deliveries | Lowest energy per km (about 12 Wh/km), cheapest to buy, and still pedal if the battery runs out | Hub motors, belt drive (about three times a chain's life, no oil), internal gear hubs, puncture-resistant tyres, one standard swappable pack |
-| **Zero XB / XE** (2026 X Line) | **Electric moto-taxis,** converting the existing trade. Also responders: paramedics, clinic outreach, station security, and inspection along the rail spine. Reaches hillside and ravine neighborhoods on rough roads. | Light (XB 139 lb, XE 223 lb), **swappable batteries** (XB 2.4 kWh, about 40 mi; XE 4.3 kWh, about 65 mi), part of Zero's line of models under $10,000. Moto-taxi trips are short (median under 3 km) and bikes sit idle more than half the time, so about one swap a day per bike. | Few moving parts, no oil or fuel, and packs are replaced separately from the bike |
+| **E-bikes** (personal, cargo, bike-share) | Most trips: getting to and from stations, climbing hills, cargo bikes swapping toilet containers at the door, community health workers, deliveries | Lowest energy per km (about 12 Wh/km), cheapest to buy, and still pedal if the battery runs out | Hub motors, belt drive (about three times a chain's life, no oil), internal gear hubs, puncture-resistant tyres, a removable pack that can be carried indoors to charge |
+| **Zero XB / XE** (2026 X Line) | **Electric moto-taxis,** owned and run by their drivers. Also hub responders: paramedics, clinic outreach, station security, and inspection along the rail spine. Reaches hillside and ravine neighborhoods on rough roads. | Light (XB 139 lb, XE 223 lb), **removable batteries** (XB 2.4 kWh, about 40 mi; XE 4.3 kWh, about 65 mi), part of Zero's line of models under $10,000. Moto-taxi trips are short (median under 3 km) and bikes sit idle more than half the time, so about one full charge a day per bike. A driver can carry the pack inside to charge, or keep a spare. | Few moving parts, no oil or fuel, and packs are replaced separately from the bike |
 | **Slate Truck** (pickup, plus the SUV kit) | Maintenance crews, water and parts delivery, sanitation transfer runs between stations and neighborhoods, clinic outreach, community transport (SUV kit), emergency logistics | $24,950 base; 65 kWh LFP pack (63 usable), about 205 mi; 1,550 lb payload, 2,000 lb towing. Deliberately bare (no paint, minimal electronics), so there's less to break. Kits let one platform fill many roles. | Battery and powertrain warranty reported at 10 years / 110,000 mi; 120 kW DC fast charging and 11 kW AC; serviced at the college |
 
 ### Checks before committing to the fleet
-- **Zero XB/XE are off-road-oriented.** Before using them as moto-taxis, confirm the XE can carry a passenger and be fitted out for street use. If it can't, Zero's full-size models cover the passenger role, at a higher price and without battery swapping.
+- **Zero XB/XE are off-road-oriented.** Before using them as moto-taxis, confirm the XE can carry a passenger and be fitted out for street use. If it can't, Zero's full-size models cover the passenger role, at a higher price and without removable batteries.
 - **The Slate Truck enters production in late 2026** in Warsaw, Indiana. Start with a pilot fleet and scale up once it has proven reliable.
 - **Both companies are American,** so parts can come through the Miami-to-Haiti shipping lane.
 - **Lock in long-term support at purchase:** a right-to-repair agreement guaranteeing service manuals, diagnostic tools, and parts for 15 or more years.
 
-### Converting the moto-taxi trade
-- **A drivers' cooperative** with battery swapping, and trade-in of petrol bikes.
-- **Licensing through the station network.** The 2017 study of Port-au-Prince moto-taxis found them unregulated and a growing source of crash injuries.
-- **Rider safety training and helmets** as part of membership.
-- **Mechanics move into EV work** through the college's apprenticeship track.
+### Moto-taxis: run by their owners
+- **Drivers own, charge, and maintain their own bikes.** Switching to electric is their choice.
+- **The hub offers optional services at cost:**
+  - Public charging under the station canopies, with no account required.
+  - Repair and maintenance training through the college's apprenticeship track, so petrol mechanics can move into EV work.
+  - Rider safety training and helmets at resource centers. The 2017 study of Port-au-Prince moto-taxis found the trade unregulated and a growing source of crash injuries. Licensing stays with the state.
+  - Drop-off for end-of-life batteries, for second life or recycling.
+- **A drivers' cooperative,** if drivers choose to form one, could buy bikes and spare packs in bulk. The hub doesn't run it.
 
 ### Illustrative fleet energy budget
-Vehicle counts are assumptions; no current moto-taxi count was found.
+Vehicle counts are assumptions; no current moto-taxi count was found. This is total charging demand, whether it's met at home, on owners' own solar, or at public chargers.
 
 | Fleet | Count | km/day | kWh/km | MWh/day |
 |---|---|---|---|---|
@@ -130,20 +140,20 @@ That takes roughly 30 MW of solar panels including losses, spread across station
 
 ## 5. Resource efficiency
 
-- **Move people the cheapest way that works,** in this order: walking, then e-bike (about 12 Wh/km), rail, shared moto-taxi (about 50 Wh/km), and truck (about 190 Wh/km). Share and pool vehicles rather than putting them in private ownership.
-- **Make every surface do several jobs.** A station canopy provides shade, power, rain capture, battery cooling, a swap point, and a roof for the clinic.
+- **Move people the cheapest way that works,** in this order: walking, then e-bike (about 12 Wh/km), rail, shared moto-taxi (about 50 Wh/km), and truck (about 190 Wh/km). The hub pools its own vehicles rather than assigning one per person.
+- **Make every surface do several jobs.** A station canopy provides shade, power, rain capture, battery cooling, public chargers, and a roof for the clinic.
 - **Capture rain.** Port-au-Prince gets more than a metre of rain a year, so a 1,500 m² canopy collects roughly 1,500 m³ annually. That covers non-drinking uses: washing sanitation containers, cleaning, and irrigating tree nurseries for the Massif reforestation.
 - **Recover energy on the way down.** All three vehicle families recover braking energy on the descent from Pétion-Ville.
-- **Schedule charging to the sun.** Charge fleets at midday; overnight swaps draw on station batteries.
+- **Schedule charging to the sun.** The hub charges its own fleet at midday. Public charging is cheapest at midday, but owners decide when to charge.
 - **Keep the parts list short:** a few vehicle models, one battery chemistry, one inverter model, and one shared spares depot.
 - **Close the loop:** second-life batteries, then recycling take-back.
 
 ## 6. Security and the fleet
 
 - **No fuel means no fuel blockade.** The fleet runs on sunlight that falls on every station. The 2022 Varreux blockade could not have stopped it.
-- **Theft has less payoff.** Electric vehicles depend on the hub's swap and charging network, and every pack is registered on the ledger. A stolen bike or pack has little use or resale value.
-- **Theft locks must not become a Utility Valve.** Vehicles can be immobilized only for theft, only on the owner's report, and every lock is publicly logged. They are never disabled as a political lever.
-- **Swap cabinets** sit inside the station's security perimeter.
+- **The hub doesn't track or control personal vehicles.** It keeps no registry of them and has no remote lock. Theft protection is between owners and manufacturers. This also means personal vehicles can never be switched off as a political lever.
+- **Hub-owned vehicles** may carry theft trackers, used only to recover a stolen vehicle, with every use publicly logged.
+- **Public chargers** sit inside the station's security perimeter.
 - **Limit of the design.** Armed groups also ride motorcycles, and the hub can't change that. Its job is to avoid creating new chokepoints that someone could capture.
 
 ## 7. Changes to the build order
@@ -151,7 +161,7 @@ That takes roughly 30 MW of solar panels including losses, spread across station
 - **Phase 1:**
   - Station canopies and batteries.
   - E-bike share.
-  - A moto-taxi cooperative pilot on Zero XE with swap racks.
+  - Public charging under the station canopies, plus repair and safety training for moto-taxi drivers who switch to electric.
   - A small Slate pilot fleet as deliveries begin.
   - A battery and EV lab at the college.
   - Setting up the endowment.
@@ -160,7 +170,7 @@ That takes roughly 30 MW of solar panels including losses, spread across station
   - The North Campus solar field.
   - Night freight running on stored solar.
 - **Phases 3–4:**
-  - Scale up the fleets as reliability data comes in.
+  - Scale up the hub's own fleets as reliability data comes in.
   - Launch the second-life storage program.
 - **Phase 5, the reactors:** solar continues as the daytime and resilience layer, and the stations keep their ability to run on their own.
 

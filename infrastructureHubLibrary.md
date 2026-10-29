@@ -24,7 +24,7 @@ Companion to `infrastructureHubMission.md`. The Level -1 data center becomes a *
 
 **Never held:**
 - **Pirated works.**
-- **Personal data,** including the hub ledger, clinic records, and swap logs, which stay behind the firewall.
+- **Personal data,** including the hub ledger and clinic records, which stay behind the firewall.
 - **Security-sensitive details** of the hub's nuclear and physical protection systems, which IAEA physical protection rules require keeping confidential.
 - **Works whose creators have opted out.**
 

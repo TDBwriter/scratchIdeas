@@ -51,7 +51,7 @@ Three conditions make it work:
 
 **Firewall rules:**
 1. **No shared sites.** Response Teams never stage in, sleep in, or store weapons at clinics, schools, resource centers, or a station's public spaces. They may guard the perimeters of critical infrastructure, such as the North Campus and substations, but never civic spaces.
-2. **No intelligence from civic work.** Community Teams never report on individuals. Response Teams can't access clinic records, school rolls, ledger data, battery-swap logs, or vehicle locations without a court order. The hub's ledger knows where everyone goes and what they use, which would make it a ready-made targeting database, so the firewall must be technical (collect less data, encrypt it, and lock access behind keys) as well as legal. **Precedent:** the CIA's fake vaccination campaign in Pakistan in 2011 led to attacks on polio workers, and the US pledged in 2014 to stop using vaccination programs for intelligence.
+2. **No intelligence from civic work.** Community Teams never report on individuals. Response Teams can't access clinic records, school rolls, ledger data, or hub fleet logs without a court order. The hub's ledger knows what everyone uses and where, which would make it a ready-made targeting database, so the firewall must be technical (collect less data, encrypt it, and lock access behind keys) as well as legal. **Precedent:** the CIA's fake vaccination campaign in Pakistan in 2011 led to attacks on polio workers, and the US pledged in 2014 to stop using vaccination programs for intelligence.
 3. **Medical neutrality.** Clinics treat everyone by medical need alone, including wounded hostile actors and Response Team members. No armed person enters a clinic unless stopping an active attack.
 4. **The fleet stays civilian.** No hub vehicle (Slate, Zero, or e-bike) is ever used for operations.
 5. **No one points anyone out.** Community Team members are never asked to identify anyone. Their protection comes from neutrality and community ownership.
@@ -154,7 +154,7 @@ The Response Team never escalates first. Lethal force is authorized only after a
 
 - **The Multi-Key Council holds no key over armed force, and the armed force holds no key over utilities.** Putting the Utility Valve and weapons in the same hands is exactly the "Moral Coup" the blueprint's Section III warns about.
 - **Donors fund civic work only.** No hub money, vehicles, or data go to armed units. That keeps the hub from becoming a private military, a live issue given the state-licensed private contractor behind the drone campaign.
-- **For the story:** the firewall is where the drama is. Every crisis will tempt someone to cross it: a medic asked to name a patient, a swap log subpoenaed, a council member who wants the force to answer to the keys.
+- **For the story:** the firewall is where the drama is. Every crisis will tempt someone to cross it: a medic asked to name a patient, a ledger record subpoenaed, a council member who wants the force to answer to the keys.
 
 ## Sources
 - [Resolution 2793 (2025) (UN Digital Library)](https://digitallibrary.un.org/record/4089907)

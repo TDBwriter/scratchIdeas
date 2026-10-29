@@ -60,7 +60,7 @@ Every other file in this set serves this purpose:
 
 **The rule: export knowledge, institutions, and rotating teams, not a one-way flow of people.**
 
-1. **Open-source everything.** Curricula, designs (station canopies, swap cabinets, sanitation containers), operating manuals, and governance code are all openly licensed. This takes the blueprint's "Open-Source Proliferation" mandate global.
+1. **Open-source everything.** Curricula, designs (station canopies, public chargers, sanitation containers), operating manuals, and governance code are all openly licensed. This takes the blueprint's "Open-Source Proliferation" mandate global.
 2. **Export Teams.** The Community Team format becomes the export unit. A 12-person team deploys to a partner city for a fixed rotation, stands up services, trains local successors, and comes home. It is the same Green Beret logic, applied in reverse: work through local people and leave them in charge.
 3. **Replication kits.** The Phase 0–6 build sequence is adapted to each new site. The second hub in Haiti comes first, then sites abroad, starting with places in similar conditions: small island states, conflict-affected cities, and cities without sewers.
 4. **Partner students.** Students from partner countries train in Haiti and take the model home.
