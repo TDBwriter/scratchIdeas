@@ -155,6 +155,8 @@ On UV: a book read on a mountainside for a few hours a week absorbs a small frac
 
 ## 7. Build plan
 
+*The staged business plan (warehouse, then garage, then desktop) is in [roadmap.md](roadmap.md). The phases below are the technical steps within it.*
+
 | Phase | Build or buy | Exit test |
 |---|---|---|
 | 1. Prove the page and the book (weeks) | Buy commercial white and clear PET films and a desktop fiber laser marker; use a CO2 laser cutter for trimming and holes. Hand-bind a 20-page sample on rPET rings and set up typesetting from Gutenberg texts. Start damp-heat aging on the bought films right away, since it takes months | Sharp marks inside the skin; pages turn on the rings with no bending; aging tests underway |

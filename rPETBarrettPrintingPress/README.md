@@ -1,6 +1,6 @@
 # rPET Barrett Printing Press
 
-*Status: design v0.2 proposed (2026-10-30). This is a real product, not world-building. Next step: Phase 1 in [design.md](design.md), proving the page and the book with bought film and a desktop laser.*
+*Status: design v0.2 and roadmap v0.1 (2026-10-30). This is a real product, not world-building. The plan goes warehouse, then garage, then desktop; the machines only have to become one at the desktop stage. Next step: Stage 0 in [roadmap.md](roadmap.md), proving the book and its buyers with bought film and a desktop laser.*
 
 The goal is a standalone press: you feed it refuse, and it prints classic novels a page at a time into fully durable books made of 100% recycled plastic.
 
@@ -17,6 +17,7 @@ The goal is a standalone press: you feed it refuse, and it prints classic novels
 
 ## Files
 
+- [roadmap.md](roadmap.md): the staged plan (bench, warehouse, garage, desktop), with gates, money, team, permits and risks.
 - [design.md](design.md): the v0.2 book and machine design, rough numbers, durability tests, build plan and risks.
 - [chat.md](chat.md): the original AI Mode chat, word for word, with the sources Google showed.
 - [review.md](review.md): what's missing from the chat and what doesn't line up.
