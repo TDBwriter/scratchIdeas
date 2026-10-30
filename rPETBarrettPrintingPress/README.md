@@ -1,23 +1,25 @@
 # rPET Barrett Printing Press
 
-*Status: first source ingested and reviewed. Next step: settle the open questions at the end of [review.md](review.md).*
+*Status: design v0.2 proposed (2026-10-30). This is a real product, not world-building. Next step: Phase 1 in [design.md](design.md), proving the page and the book with bought film and a desktop laser.*
 
-A press that turns post-consumer plastic bottles into books meant to last millennia in a windowless, open-air high-rise.
+The goal is a standalone press: you feed it refuse, and it prints classic novels a page at a time into fully durable books made of 100% recycled plastic.
 
-## The design so far
+## The design so far (v0.2)
 
-This is the design as it stands in the AI Mode chat. The review covers what's wrong with it.
+[design.md](design.md) has the full spec and the reasoning behind it.
 
-- **Pages:** 250-micron recycled PET (rPET) film, compounded with a hydrolysis inhibitor (polycarbodiimide), stabilizers, and a laser-marking additive (antimony tin oxide).
-- **Printing:** no ink. A 1064 nm fiber laser chars the text into the page.
-- **Binding:** no metal posts, per your correction in turn 9. The pages are punched and braided together with cord made from the same rPET, and the cord ends are fused ultrasonically.
-- **Covers:** undecided. HDPE, titanium/ceramic, and rPET have all come up.
-- **Target:** about 10,000 years. The chat estimates 3,000–5,000 years of handling before pages snap at the hinge, but neither figure has a basis yet (review, section 5).
+- **Material:** recycled PET from bottles throughout (pages, rings and covers), so a finished book can be fed back into the machine.
+- **Pages:** 125 µm, three layers: clear skin / white core / clear skin. The core is turned white by bottle-cap polypropylene, with no pigment. The text is laser-charred inside the skins, with a trace of carbon black from black food trays as the laser absorber.
+- **Binding:** pages pivot on rPET rings and never bend. The book grows on its rings as each page is printed. Your braided cord remains an option for a hand-finished edition.
+- **Covers:** pressed from colored bottle flake.
+- **Machine:** two units. A feed unit turns refuse into clean, dry flake. A press unit forms, stretches, laser-prints, checks and binds each page.
+- **Durability:** whatever accelerated aging proves. The starting target is about 500 years indoors.
 
 ## Files
 
-- [chat.md](chat.md): the full AI Mode chat, word for word, with the sources Google showed.
-- [review.md](review.md): what's missing, what doesn't line up, and the open questions.
+- [design.md](design.md): the v0.2 book and machine design, rough numbers, durability tests, build plan and risks.
+- [chat.md](chat.md): the original AI Mode chat, word for word, with the sources Google showed.
+- [review.md](review.md): what's missing from the chat and what doesn't line up.
 
 ## Sources
 
