@@ -86,4 +86,46 @@ These keep each issue accurate whatever the playing order.
 
 ---
 
+## 6. Toolkit: the original's tools, applied
+
+The original rarely complained head-on. It took an institution, recast it through a frame you could picture, and let the frame do the arguing. Each frame below is paired with Night City material from the pre-Heist missions.
+
+### Frames
+
+| Original frame | Original example | *Cheap Truth* 2077 frame | Pre-Heist material |
+|---|---|---|---|
+| **Sick or decaying animal** | "American SF lies in a reptilian torpor" (#1) | **Night City as a body being parted out**: harvested, chromed, rejected | Scavengers keeping Sandra Dorsett on ice (The Rescue) · cyberpsychos · Viktor's €$21,000 bill for new eyes |
+| **The ghetto** | "Ghettos are insular places" (#9) | **Watson under lockdown**, literally walled off by the NCPD | The cordon on the drive home (The Rescue) · nobody leaves Watson until The Heist |
+| **Smokestack industry** | "publishing remains a smokestack industry" (#5) | **Night City's media and medicine as rusting industries** | Regina's station, FTF Radio, swallowed by News 54 · Trauma Team's platinum tier ("the only kind of love Night City guarantees") |
+| **Mom and Dad / the Dean's Office** | "stuff that Mom and Dad said it was okay to read" (#5) · "SON OF KENT STATE" (#10) | **Corps and the NCPD as parents and campus police** | Arasaka's Konpeki Plaza · NCPD cordons · an NCPD officer pushed off her own case (Woman of La Mancha) |
+| **Junk food for the brain** | "Junk food for the brain. And what's more, he's proud of it." (#8) | **Braindance, Glitter, and vending-machine dinners** | The Glitter lab (The Heisenberg Principle) · a message about Glitter (Ticket to the Major Leagues) · the Burrito XXL in V's building |
+| **Tabloid headline** | "SF WRITER EATS OWN FOOT TO SURVIVE!" (#11) | **Merc-economy tabloid** | Fixers, payouts, drop points · the "PTSD Shield – Policy Lapsed" message (Demons of War) |
+| **Cold War / samizdat** | KGB agents scalping *Cheap Truth* at twelve cents (#3) · "SERVING SF THROUGH SAMIZDAT" | **Corp war, and a zine passed hand to hand in Watson** | Militech's convoy and the Maelstrom (The Pickup) · Arasaka (The Heist) |
+| **Turning on itself** | "all movements… tend to breed storm troopers" (#9) · the editor's staged death (#17) | **Turning on merc culture and the legend business, including V's own** | The Afterlife, where legends are made · a crew chasing "the gig of a lifetime" |
+
+### Devices
+
+| Device | Original | *Cheap Truth* 2077 |
+|---|---|---|
+| **Pen names with labels** | "guest grump Sue Denim" · "guest agitatrix Hunilla de Cholo" · "Our New York correspondent" | Veritas, editing. Crew dispatches under labels (to be named), e.g. a Heywood correspondent, a voice from the net |
+| **Fake news with a place line** | "'NODE ZERO' DEMOLISHED! (Austin, Texas November 1986)" | The **news section**: headline, place line, report |
+| **Mock interviews** | Lovecraft, Raymond Chandler, the editor himself | Q&A with someone from the mission, or with the dead: the shards cyberpsychos leave behind (e.g. "Farewell," Six Feet Under) |
+| **Top Ten with verdicts** | "Makes more sense than the movie." | **CHEAP TRUTH TOP TEN**: gear, vendors, eats, ripperdocs from the mission (e.g. Wilson's Dying Night · the DA8 Umbra · the Burrito XXL) |
+| **A new slogan each issue** | "Xerox pirates, start your engines!" | A new slogan in each colophon (bank below) |
+
+### Slogan bank (2077 drafts)
+
+"Shard pirates, start your engines!" · "SERVING WATSON THROUGH SAMIZDAT" · "The Truth Cannot Be Chromed" · "Not Copyrighted. Not Insured." · "Unvetted by NetWatch" · "Eddies Optional" · "Pass It On Before It Flatlines"
+
+### Target
+
+The original's primary target was its own field: the science fiction establishment. *Cheap Truth* 2077's primary target is still open. Candidates from the frames above:
+- Night City's media (News 54)
+- the corps (Arasaka, Militech)
+- the NCPD
+- the merc and legend economy
+- chrome and medicine (Trauma Team, ripperdocs)
+
+---
+
 Sources: [FANAC.org — Cheap Truth scans](https://fanac.org/fanzines/Cheap_Truth/) · [Wikipedia — Cheap Truth](https://en.wikipedia.org/wiki/Cheap_Truth) · [SF Encyclopedia — Cheap Truth](https://www.sf-encyclopedia.com/entry/cheap_truth) · [Wikipedia — V (Cyberpunk 2077)](https://en.wikipedia.org/wiki/V_(Cyberpunk_2077))
