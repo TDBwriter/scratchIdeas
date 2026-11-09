@@ -60,9 +60,76 @@ Because KOReader ignores the pen, the most Scribe-specific work is in filling th
 
 ## 5. Games, emulators and utilities
 
-- Games: Game Boy emulators (Gambatte-K), chess, Wordle, Simon Tatham's Puzzle Collection, interactive fiction (Frotz, Gargoyle).
-- Study and focus: KAnki flashcards, KPomo timer, InkSights reading stats.
-- Networking and shell: KTerm terminal, Tailscale VPN, full-screen web browser, KindleCron.
+Most of these are listed on Kindle Mod Shelf. Many were built and tested on Paperwhites, so on a Scribe they usually work but haven't been checked.
+
+### No jailbreak needed (works on every Scribe, including 3rd gen and Colorsoft)
+
+- **ReKindle** (rekindle.ink): open it in the Kindle web browser.
+  - Tabs for Essentials, Tools, Lifestyle, Games and Multiplayer Games, with everything from Wordle to Doom.
+  - Also Note Pad, KindleChat, a Reading Log, and optional Google Tasks/Calendar sync.
+  - Freemium: ReKindle+ costs $2/month, $15/year or $30 lifetime, and unlocks Docs, Dropbox, an AI assistant and more.
+  - Expect some lag.
+- **KindlePlay.com**: a simpler games-only site (Minesweeper, Sudoku, Hangman).
+- **PDF puzzle and game notebooks** for the pen: sold on Gumroad and Etsy (contents not checked).
+- **Run on your computer, not the Kindle:**
+  - **Kindle Comic Converter**: optimizes manga and comics for e-ink.
+  - **WordDumb**: a Calibre plugin that builds Word Wise and X-Ray files for sideloaded books.
+  - **Inksetter**: optimizes manga from an OPDS server for KOReader.
+
+### Jailbroken: games
+
+- **Board and strategy games**: tuned for e-ink and controlled by touch. The "exact-" series by jckhng makes up most of these.
+  - GlChess (UCI chess engine)
+  - Gnome Chess & Mines
+  - Iagno (Reversi)
+  - Gnect (Connect Four)
+  - Draughts (8×8 and 10×10)
+  - Chinese Chess (Pikafish engine)
+  - Mahjongg solitaire
+  - Aisleriot (Klondike solitaire)
+- **Puzzles**:
+  - **Simon Tatham's Portable Puzzle Collection**: 30+ logic puzzles with a KUAL menu.
+  - KWordle, KShips (Battleship), TicTacToe, Conway's Game of Life.
+- **Interactive fiction**:
+  - **Frotz**: runs inside KOReader and plays Zork, Hitchhiker's Guide and hundreds of free Z-machine games.
+  - **Gargoyle**: adds Glulx, TADS and other formats.
+- **Emulation**:
+  - **Gambatte-K2** (Game Boy): built for firmware 5.16.3 and newer, which covers any Scribe you could jailbreak today. MobileRead users call it "exceptionally smooth for an e-reader", with some ghosting.
+  - The original **Gambatte-K** is for older Kindles.
+  - Bring your own ROMs.
+- **Pen games**: pen-solved daily crosswords in kindle-koreader-apps (requires its Notes plugin).
+- **Novelty**:
+  - **PokePal**: a Pokémon virtual pet you feed and play with while you read.
+  - **KindleKraft**: hosts a LAN Minecraft 1.7–1.8 server on the Kindle.
+
+### Jailbroken: utilities
+
+- **Study and focus**:
+  - **KAnki**: spaced-repetition flashcards with local decks.
+  - **RAnki**: a minimal reviewer powered by the real Anki backend.
+  - **KPomo**: a Pomodoro timer.
+  - **KNotes**: notes plus a Kanban board.
+  - **InkSights**: reading streaks, hours and a heat map for the stock reader (needs NiLuJe's Python 3).
+- **Getting files onto the Kindle**:
+  - **KoSend**: an Android app that sends files to KOReader over Wi-Fi.
+  - **Calibre Wireless**: sends books to the stock reader and syncs read status.
+  - **Kindle File Manager**: Filebrowser or Syncthing.
+  - **Kindle Browser Patch**: removes the browser's download limits and enables `file://` access.
+- **Remote access and networking**:
+  - **Tailscale**: SSH into the Kindle from anywhere.
+  - **ScreenControl**: view and tap the screen from a browser on your network.
+  - **KTerm**: an on-device terminal.
+  - **Fullscreen Web Browser**: a minimal full-screen browser.
+- **Housekeeping**:
+  - **StorageTool**: shows what is using your storage.
+  - **System Monitor**: battery health, RAM and CPU.
+  - **KindleCron**: scheduled jobs that run even while the Kindle sleeps. Jobs more often than every 3 minutes keep it awake and drain the battery.
+  - **Preserve Files**: run it before deregistering the Kindle so you don't lose files.
+- **Not for the Scribe**: Aristotle, a lighter replacement UI, is for the Paperwhite 4 only.
+
+### Good starter set for a jailbroken Scribe
+
+Simon Tatham's puzzles, Frotz, RAnki or KAnki, Tailscale + KTerm, and Gambatte-K2 if you want emulation. The large 10.2" screen suits board games and puzzle grids well.
 
 ## 6. No-jailbreak customization (what most owners actually do)
 
@@ -149,3 +216,8 @@ Ordered by impact. In 2026, the Kindle software version mattered more than any t
 - KOReader on Kindle (stop framework launcher): https://github.com/koreader/koreader/wiki/Installation-on-Kindle-devices
 - Blocking OTA updates on 5.11+: https://kindlemodding.org/jailbreaking/Legacy/post-jailbreak/disable-ota.html
 - KOReader plugin trimming: https://kabirnayeem99.medium.com/jailbreaking-kindle-paperwhite-10th-gen-adbreak-7ebc807253b2
+- ReKindle overview: https://www.bgr.com/2141133/kindle-trick-unlocks-dozens-of-apps-games/
+- ReKindle (Boing Boing): https://premium.boingboing.net/p/rekindle-adds-apps-and-games-to-your
+- Browser games on a Kindle: https://www.androidauthority.com/play-old-school-games-on-kindle-browser-3613531
+- Gambatte-K2 on e-ink (MobileRead): https://www.mobileread.com/forums/showthread.php?p=4525570
+- Gambatte-K2 project page: https://kindlemodshelf-me.pages.dev/gambatte-k2.html
