@@ -79,6 +79,49 @@ Because KOReader ignores the pen, the most Scribe-specific work is in filling th
 
 ---
 
+## Speed and efficiency: what actually helps
+
+Ordered by impact. In 2026, the Kindle software version mattered more than any tweak.
+
+### 1. Be on a good software version (biggest factor)
+
+| Version | Reported behavior |
+|---|---|
+| 5.18.6 | Severe UI lag |
+| 5.19.2 (Feb 2026) | Fixed the lag but caused fast battery drain |
+| 5.19.3 (Mar 2026) | **Pulled within hours**: drained a full charge in hours, slow page turns |
+| 5.19.3.0.1 | Replacement for all Scribe models. Users report battery and smoothness back to normal (Amazon hasn't confirmed) |
+
+- Check your version under Settings > Device Info.
+- There is **no rollback**, and a factory reset does **not** revert the software version.
+- Jailbreak tension: blocking updates also blocks fixes. On a 2022 or 2024 Scribe, get onto a good version that Vera still supports (it goes up to 5.19.6) *before* jailbreaking and blocking updates. (I haven't verified how 5.19.4 to 5.19.6 perform.)
+
+### 2. Fix stuck indexing (a hidden cause of battery drain and slowness)
+
+1. Search a random string on the home screen, then open "Text in Books" to see which titles aren't indexed.
+2. Delete any stuck title and download it again. Keep a copy of sideloaded files before deleting them.
+3. To avoid it: add big libraries in batches, and leave the Scribe charging until indexing finishes.
+
+### 3. Stock housekeeping
+
+- **Full restart**: hold the power button about 40 seconds. This clears stuck background processes.
+- **Free storage**: remove large files from the device. Amazon purchases can be downloaded again.
+- **Don't bulk-download while reading.** It competes for the processor.
+- **Use airplane mode while reading or writing** for better battery, and to avoid surprise updates.
+- **Wi-Fi/sync lag**: Settings > Advanced Options > Reset > Reset Network Settings.
+- **Heavily annotated books** drain the battery faster.
+
+### 4. Jailbroken-only tweaks
+
+- **Launch KOReader with "stop framework"**: shuts down Amazon's UI to free RAM. The trade-off is a slower exit back to the stock UI. Pairs with **Boot KOReader Automatically**.
+- **Turn off KOReader plugins you don't use**, such as Battery Statistics, HTTP Inspector and AutoTurn.
+- **Block updates** with the renameotabin KUAL extension ("Rename OTA Binaries"). Restore them before any factory reset.
+- **DISABLE_CORE_DUMP**: an empty file with this name in the Kindle's root folder reportedly stops crash dumps from filling storage (one user report).
+- **System Monitor / StorageTool** (Kindle Mod Shelf): show what is using the processor or storage.
+- **Remove Amazon Ads & UI**: removes clutter. I found no measured speed gain.
+
+---
+
 ## Open threads
 
 - Which Scribe do I have? That decides whether sections 1 to 5 are even possible.
@@ -99,3 +142,10 @@ Because KOReader ignores the pen, the most Scribe-specific work is in filling th
 - Custom fonts folder: https://blog.the-ebook-reader.com/2018/06/06/latest-kindle-software-update-5-9-6-adds-option-for-custom-fonts/
 - EMR pens that work: https://wiki.mobileread.com/wiki/Kindle_Scribe
 - Scribe 3rd gen / Colorsoft launch: https://techcrunch.com/2025/12/04/amazon-unveils-new-kindle-scribe-and-kindle-scribe-colorsoft
+- 5.19.3.0.1 fix: https://www.techwalla.com/13779365/kindle-update-519301-fixes-battery-drain-and-adds-pdf-tools
+- 5.19.x slowdown and battery drain: https://stuff.co.za/2026/04/01/kindle-caught-slacking-youre-not-alone/
+- Stuck indexing fix: https://bgr.com/2159249/how-to-fix-kindle-battery-stuck-indexing-problem/
+- General speed-up tips: https://www.bgr.com/2153426/how-to-speed-up-kindle-guide/
+- KOReader on Kindle (stop framework launcher): https://github.com/koreader/koreader/wiki/Installation-on-Kindle-devices
+- Blocking OTA updates on 5.11+: https://kindlemodding.org/jailbreaking/Legacy/post-jailbreak/disable-ota.html
+- KOReader plugin trimming: https://kabirnayeem99.medium.com/jailbreaking-kindle-paperwhite-10th-gen-adbreak-7ebc807253b2
