@@ -101,6 +101,10 @@ Its tensions are part of it: a pacifist in a shooter; an anti-corporate zine bui
 | T-Bug is a script kiddie with a fixed bag of tricks: she's only shown doing hacks seen in gameplay. Her canon can be played with, not changed | `Crew-Dialogue-T-BUG.md` |
 | The run-up to The Heist is "Edgerunners 0": The Streetkid first, then every job that can show the crew working together; order undecided | Zine rules |
 | Jackie calls V "choomie," and "hermano" when it counts | Crew Dialogue silo |
+| No romance in the crew: friendship like brotherhood, and stark differences | `Crew-Dialogue.md` |
+| Every gig, however small, carries four moments: one each for V, Jackie and T-Bug and one for the crew, tied to the gig's subject | `Crew-Dialogue-GIGS.md` |
+| The game's own lines are repeated wherever possible | `Crew-Dialogue.md` |
+| Every supporting character who works with V before The Heist is in scope, with unequal time, to serve the crew's development | `Crew-Dialogue-SUPPORTING.md` |
 | Invented scenes sit between the game's own beats and never contradict them | Crew Dialogue silo |
 
 ### The zine
@@ -117,6 +121,7 @@ Its tensions are part of it: a pacifist in a shooter; an anti-corporate zine bui
 | Every section ties to the issue's mission | Tests, group E |
 | Text only, in basic CommonMark and plain ASCII; photos are caption links; everything black on white | Zine rules sections 8 and 9 |
 | The zine and the crew storyline are two silos that stand independently of each other and of the video | This file's map |
+| The zine runs a numbered serial built from the NCPD jobs; each part stands alone; "Cops' Cash" is the final reveal, showing the cycle of money and violence that corporate rule keeps turning | `Cheap-Truth-screamsheet-SERIAL.md` |
 | The style guide and template work as pass/fail tests | `Cheap-Truth-screamsheet-TESTS.md` |
 | Interviews keep the original zine's voice and presentation. Two of them name real, living people as caricatures: fourth-wall easter eggs that break the "no real names" rule on purpose | `Cheap-Truth-screamsheet-INTERVIEWS.md` |
 
@@ -209,6 +214,7 @@ The screamsheet V fictionally publishes. It needs nothing from the video or the 
 | `Cheap-Truth-screamsheet-INTERVIEWS.md` | The Interview with the Dead department: rules, legends, index of drafts | Written |
 | `Cheap-Truth-screamsheet-INTERVIEW-<name>.md` | Eight interview drafts, each with its canon notes | Drafts; unassigned |
 | `Cheap-Truth-screamsheet-CLUES.md` | The FF:06:B5 hunt's steps and ten clues | Drafted; unchecked in game |
+| `Cheap-Truth-screamsheet-SERIAL.md` | A six-part story built from the NCPD scanner jobs, with an optional seventh on Regina | Outline; the notes at each scene are unread |
 
 ### The Crew Dialogue silo: `Crew-Dialogue/`
 
@@ -223,6 +229,9 @@ Our own storyline for V, Jackie and T-Bug, 100% compatible with what the game sh
 | `Crew-Dialogue-SCENES.md` | The 14 scenes, with dialogue | Drafted |
 | `Crew-Dialogue-GAPS.md` | What the game doesn't show: what players discuss, the montage's frames, existing quests to recreate | Written |
 | `Crew-Dialogue-GIGS.md` | The 51 side entries before The Heist, and the four moments each gig carries; seeds for the 22 gigs | Seeds drafted |
+| `Crew-Dialogue-SUPPORTING.md` | The supporting cast before The Heist, with what the game shows of each | Index; one character developed |
+| `Crew-Dialogue-REGINA.md` | Regina Jones: in the game, in our storyline, behavior, voice, with the crew | Written |
+| `Crew-Dialogue-NCPD.md` | The road to Regina: the five-beat arc the NCPD jobs carry | Drafted; the notes at each scene are unread |
 
 ### The playthrough and the project, at the repo root
 

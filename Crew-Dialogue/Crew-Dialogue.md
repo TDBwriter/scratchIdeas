@@ -10,6 +10,8 @@ Our own storyline for V, Jackie and T-Bug: who they are to each other, and what 
 - `Crew-Dialogue-SCENES.md`: the scenes, with their dialogue.
 - `Crew-Dialogue-GIGS.md`: the side content before The Heist, and the four moments each gig carries.
 - `Crew-Dialogue-GAPS.md`: what the game doesn't show, which is the room this storyline fills.
+- `Crew-Dialogue-SUPPORTING.md`: the supporting cast, with a file each once developed. So far: `Crew-Dialogue-REGINA.md`.
+- `Crew-Dialogue-NCPD.md`: the road to Regina, the arc the NCPD jobs carry.
 
 ---
 
@@ -82,11 +84,29 @@ Each character's own journey is in that character's file.
 
 ---
 
+## The game's own lines
+
+Repeat the game's lines wherever possible. It makes the invented scenes sound like the same people.
+
+- **In [GAME] scenes** the game's lines play as they are.
+- **In [OURS] scenes** each character echoes their own game lines: the catchphrases, the sign-offs, what they call each other.
+- **A line can be planted early.** If a character says a thing in our scene and then says it again in the game's, the game seems to be answering us.
+- **Mark every reused line** [GAME line] in a draft.
+- Each character file has a "Lines from the game" section to draw on.
+
+**What they call each other in the game**
+
+| Speaker | Calls V | Calls Jackie | Calls T-Bug |
+|---|---|---|---|
+| **V** | | "Jack" | "Bug" |
+| **Jackie** | "compa," "mano," "hermano," "holmes," "hombre" | | "Bug" |
+| **T-Bug** | "V" | [not found] | |
+
 ## Rules for writing scenes
 
 1. **Never contradict a [GAME] beat.** Jackie isn't in The Information, and T-Bug isn't in The Ripperdoc, The Ride or The Pickup, so on those days they only appear on calls before or after.
 2. **T-Bug is on remote comms** everywhere except the Afterlife. On screen the hacks are hers, covered in the edit by V's photos, and she only uses tricks seen in gameplay.
-3. **Check each line against the character's file.** Behavior and voice come from there.
+3. **Check each line against the character's file.** Behavior and voice come from there, and the game's own lines come first.
 4. **Every scene moves at least one arc** a step.
 5. **Every scene can be staged:** in photo mode, on the V-Jackie save, or as a call.
 6. **Keep Jackie's and T-Bug's endings in sight.** Plant what The Heist takes away.
@@ -96,4 +116,5 @@ Each character's own journey is in that character's file.
 ## Sources
 
 - What happens in the game: the character files and `Crew-Dialogue-GAPS.md`, which list their sources. The mission beats come from the pre-Heist planning log, which sits outside this silo.
+- The game's lines: [Cyberpunk 2077 Full Transcript](https://game-scripts-wiki.blogspot.com/2020/12/cyberpunk-2077-full-transcript.html), a fan transcript of a Streetkid run; [Game Quotes](https://game-quotes.com/en/quote/mADF9M9aum).
 - The hero's journey: Joseph Campbell, *The Hero with a Thousand Faces* (1949); Christopher Vogler's twelve-stage version, *The Writer's Journey*.

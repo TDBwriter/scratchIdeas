@@ -2,6 +2,8 @@
 
 The side content available before The Heist, and the four moments each gig carries. The rule is in `Crew-Dialogue.md`: every gig gives one personal development to each of the three and one bonding moment to the crew, and all four tie to the gig's subject, never to the action or the outcome.
 
+**Every gig carries them, no matter how small.** More gigs means more beats, more development, and more heartache in The Heist.
+
 Everything under a gig below is a **seed**: a starting point for dialogue, not the dialogue.
 
 ---
@@ -18,7 +20,7 @@ Apart from the main jobs, 51 entries are available before The Heist.
 | NCPD work | 14 | 11 single jobs, and 3 entries that group 24 "assault in progress" sites |
 | **Total** | **51** | |
 
-At four moments each, the 22 gigs alone carry 88 moments. All 51 would carry 204.
+The 3 assault entries cover 24 separate sites. Counting each site as a gig of its own makes **72 gigs and 288 moments**.
 
 ---
 
@@ -192,52 +194,219 @@ Each character meets the subject through their own end:
 
 ---
 
-## The other 29
+## The 9 side jobs
 
-Subjects only. No seeds yet.
+### The Gun
+**Subject:** a free gun, offered to someone who doesn't carry one.
+- **V:** a gift you can't use. V's trade borrowed the gun's word, "shooting," and V has never liked it.
+- **Jackie:** what a man hands down. His father handed down a belt. (The belt.)
+- **T-Bug:** "free" scares her. Who's it from, and what do they want? She tells V to keep it in a drawer, "so I don't have to hear about it."
+- **The crew:** what each was given that they never asked for.
 
-### Side jobs (9)
+### Beat on the Brat
+**Subject:** fighting for money, and a coach who wants to be your agent.
+- **V:** fists as a craft. How much force is enough is a question of skill.
+- **Jackie:** Vik in the ring. [GAME line, Viktor] "Keep your guard up, that's all." Boxing is where he learned to hit without hating.
+- **T-Bug:** "So he's a fixer with a towel." She has watched every one of V's fights, "for the odds."
+- **The crew:** who is in whose corner.
 
-| Side job | Subject |
-|---|---|
-| The Gun | A gunsmith gives a free pistol to someone who doesn't carry one |
-| Beat on the Brat | A coach, a boxing robot, and an offer to be V's fight agent |
-| Beat on the Brat: Kabuki | Two against one: twins who fight as one |
-| The Gift | T-Bug's own job (scene 6 in `Crew-Dialogue-SCENES.md`) |
-| The Gig | A job that can't be finished until the lockdown lifts |
-| Losing My Religion | A monk asks for his brother back from the Maelstrom |
-| The Prophet's Song | A street prophet with a new theory every visit |
-| Paid in Full | V's debt to Viktor for the eyes |
-| Psycho Killer | A fixer who wants the cyberpsychos stopped, and alive |
+### Beat on the Brat: Kabuki
+**Subject:** two who fight as one.
+- **V:** the double portrait. How do you photograph two people as one thing?
+- **Jackie:** brothers. He never had one. Until.
+- **T-Bug:** being that close to anyone is her nightmare: "Imagine never being alone. No thanks."
+- **The crew:** three who fight as three. They're bad at it, and say so.
 
-### Cyberpsycho sightings (6)
+### The Gift
+**Subject:** a tool handed on, and a first lesson. (T-Bug's own job; scene 6.)
+- **V:** a new way of seeing.
+- **Jackie:** he isn't in it, and hears about it after: "She give you homework?" He's proud and a little jealous.
+- **T-Bug:** giving a gift without calling it one. "It's a job."
+- **The crew:** the first time V and T-Bug work without Jackie between them.
 
-| Sighting | What's found there |
-|---|---|
-| Ticket to the Major Leagues | A message about the drug Glitter |
-| Demons of War | "PTSD Shield - Policy Lapsed" |
-| Lt. Mower | A flooded arena |
-| Six Feet Under | A shard called "Farewell" |
-| Bloody Ritual | A shard called "It's Time" |
-| Where the Bodies Hit the Floor | An archived conversation between two Maelstrom members |
+### The Gig
+**Subject:** a job that can't be finished yet.
+- **V:** the picture you can't take yet. Patience is part of the trade.
+- **Jackie:** [GAME line, said later in The Pickup] "Mi madre always said patience pays off, so..."
+- **T-Bug:** loose ends terrify her. An open job is an open door.
+- **The crew:** what each is waiting for.
 
-### NCPD work (14)
+### Losing My Religion
+**Subject:** faith, and a monk asking for his brother back.
+- **V:** photographing belief without mocking it.
+- **Jackie:** what he prays to, and the mandala he'll never admit helps. (The mandala.)
+- **T-Bug:** she believes in nothing she can't ping. Her sharpest mockery covers envy.
+- **The crew:** what each believes in. Jackie: family. V: the frame. T-Bug: "Backups."
 
-Paranoia, Dangerous Currents, Protect and Serve, One Thing Led to Another, Needle in a Haystack, Don't Forget the Parking Brake, Rooftops by Drake Ave, Market by Goldsmith St, The Clinic, The Camp, The Plant, and Assaults in Progress in Little China, Kabuki and Northside.
+### The Prophet's Song
+**Subject:** a street prophet with a theory for everything.
+- **V:** verification. The difference between a witness and a believer.
+- **Jackie:** he likes the prophet. Legends are theories with fans.
+- **T-Bug:** she half-believes one of them: the one about being watched.
+- **The crew:** the wildest thing each believes.
 
-These are fights over a stash. Their briefs give little subject to work with.
+### Paid in Full
+**Subject:** a debt to a friend.
+- **V:** owing your sight to someone.
+- **Jackie:** vouching. He put his name on V's debt, the way his father never put his name on anything.
+- **T-Bug:** she'd never owe a friend. She'd never have a friend to owe. She says both, and neither is true.
+- **The crew:** the things you can't pay back.
+
+### Psycho Killer
+**Subject:** stopping people who've broken, without killing them.
+- **V:** [GAME line, Regina] "But you're not there to execute anybody." V's pacifism finally has a client.
+- **Jackie:** learning to pull the punch. "Your way's harder."
+- **T-Bug:** she's afraid of becoming one, wired in as long as she is. She asks them to tell her if she starts.
+- **The crew:** a promise to bring each other in alive.
+
+---
+
+## The 6 cyberpsycho sightings
+
+Each is a person who broke, and one thing found beside them.
+
+### Ticket to the Major Leagues
+**Subject:** the big break that breaks you. (Found there: a message about the drug Glitter.)
+- **V:** photographing someone who isn't themselves. Consent isn't possible.
+- **Jackie:** the title is his own dream. He sees what a ticket can cost.
+- **T-Bug:** she won't take anything that dulls the edge. Losing control is the fear.
+- **The crew:** what each would give up for their ticket.
+
+### Demons of War
+**Subject:** a soldier whose cover ran out. (Found there: "PTSD Shield - Policy Lapsed.")
+- **V:** the caption is a document. Photograph the notice, not the man.
+- **Jackie:** what men carry home. (The belt.)
+- **T-Bug:** "Everyone's one missed payment from that bridge."
+- **The crew:** who is on each one's policy. They are each other's.
+
+### Lt. Mower
+**Subject:** someone with a rank, left where the water came in. (Thin; check in game.)
+- **V:** the scene before the subject. What a place says about who was left in it.
+- **Jackie:** rank and respect, and who salutes whom in Heywood.
+- **T-Bug:** a room filling with water is a room with no exits. She counts exits.
+- **The crew:** who each would go back in for.
+
+### Six Feet Under
+**Subject:** a goodbye note. (Found there: a shard called "Farewell.")
+- **V:** the last frame. What should a final picture be?
+- **Jackie:** "I'm not a letter guy. I'd leave stuff." (Everything that ends up on his ofrenda.)
+- **T-Bug:** she has a farewell script. It deletes everything. She has lately edited it to send one message first.
+- **The crew:** none of them says goodbye on a call. [GAME line, T-Bug] "Cuttin' my wires now" is the nearest any of them gets.
+
+### Bloody Ritual
+**Subject:** ritual, and deciding it's time. (Found there: a shard called "It's Time.")
+- **V:** a ritual is a staged picture. Never re-stage it.
+- **Jackie:** his mother builds altars for the dead. He knows what goes on one.
+- **T-Bug:** she is superstitious in secret: the same three checks before she jacks in, every time.
+- **The crew:** their own ritual. The stall. The number four.
+
+### Where the Bodies Hit the Floor
+**Subject:** what two friends said to each other before one of them broke. (Found there: an archived conversation.)
+- **V:** quoting people accurately. A transcript is evidence.
+- **Jackie:** what a friend should have said, and didn't.
+- **T-Bug:** she archives every conversation the three of them have. She rereads them.
+- **The crew:** say it now, not in an archive.
+
+---
+
+## The NCPD work
+
+Eleven single jobs and 24 assault sites. Together they also carry the road to Regina (`Crew-Dialogue-NCPD.md`). **Protect and Serve comes last:** its stash, "Cops' Cash," is the final reveal.
+
+### Paranoia
+**Subject:** two partners, and a stash one hid from the other.
+- **V:** two people in one frame. Who is looking at whom?
+- **Jackie:** you split it down the middle or you're nothing.
+- **T-Bug:** "Paranoia is pattern recognition." She hides things from her partners too.
+- **The crew:** the small things each is hiding from the others.
+
+### Dangerous Currents
+**Subject:** something sunk where nobody would look.
+- **V:** what's below the frame. The part of a picture nobody sees.
+- **Jackie:** things you put away because you can't bring yourself to use them. (The tequila.)
+- **T-Bug:** what matters to her, she keeps offline.
+- **The crew:** what each keeps where nobody would look.
+
+### One Thing Led to Another
+**Subject:** a chain, one clue to the next.
+- **V:** sequence. One frame leads to the next, and that's a story.
+- **Jackie:** how he got here: the Valentinos, his mother, the merc life. One thing led to another.
+- **T-Bug:** chains are how they find you. One link is enough.
+- **The crew:** the chain that put three strangers on one call.
+
+### Needle in a Haystack
+**Subject:** a dead man who left directions.
+- **V:** the dead as sources. Quoting them fairly.
+- **Jackie:** a will. "Somebody's gotta finish that bike." (The bike.)
+- **T-Bug:** she has left directions too. They lead nowhere, on purpose.
+- **The crew:** who would follow each one's directions.
+
+### Don't Forget the Parking Brake
+**Subject:** one small mistake that sank everything.
+- **V:** the missed shot.
+- **Jackie:** he looks after his ride like family. [GAME line] "I can't take the metro!"
+- **T-Bug:** she checks three times. The one dumb mistake is the fear.
+- **The crew:** each one's dumbest mistake.
+
+### Rooftops by Drake Ave
+**Subject:** who holds the high ground.
+- **V:** vantage. A high angle looks down on people, so choose it on purpose.
+- **Jackie:** "From up here everybody's small." He doesn't like it.
+- **T-Bug:** the roofs are full of cameras. She likes being the high ground.
+- **The crew:** V's world, shared with Jackie for once.
+
+### Market by Goldsmith St
+**Subject:** a gang squatting on a market.
+- **V:** the crowd shot. Every face in a market is working.
+- **Jackie:** his mother's bar pays somebody too.
+- **T-Bug:** [GAME] there's a netrunner working that market. "Amateur." Someone like her on the other side is a fear she doesn't name.
+- **The crew:** the stall they'd protect.
+
+### The Clinic
+**Subject:** a place of healing, taken over.
+- **V:** before and after. Going back to a place you've photographed.
+- **Jackie:** Vik's clinic, and what he'd do if somebody took it.
+- **T-Bug:** "Nothing stays fixed." The places you think are safe aren't.
+- **The crew:** the places each calls safe.
+
+### The Camp
+**Subject:** people living rough, with a rifle watching over them.
+- **V:** the long lens. A sniper and a photographer stand in the same spot.
+- **Jackie:** people with less than Heywood. He gives his food away and says he wasn't hungry.
+- **T-Bug:** being watched from far off by someone you can't see is her fear exactly.
+- **The crew:** T-Bug is their watcher, in the kind sense, and they tell her so.
+
+### The Plant
+**Subject:** a workplace held by force.
+- **V:** pictures of work, and who's missing from them.
+- **Jackie:** the honest job he could have had, behind his mother's bar.
+- **T-Bug:** "Robots don't get scared." She says it like envy.
+- **The crew:** the straight jobs each would have had.
+
+### Protect and Serve (last)
+**Subject:** the money goes in a circle. The stash is "Cops' Cash."
+- **V:** the first truth too dangerous to sign.
+- **Jackie:** the ladder is the wheel. The big league pays the same people.
+- **T-Bug:** the money finds everybody. She was right, and wishes she hadn't been.
+- **The crew:** they go on doing the work anyway, and nobody has to say it.
+
+### The 24 assault sites
+8 in Little China, 7 in Kabuki, 9 in Northside. Each is a fight and a bag nearby, and the guides say nothing more about them. Each still carries its four moments, small ones: a line apiece.
+
+**The subject of each is whatever is in the bag.** These can only be filled in as each site is played.
 
 ---
 
 ## Open
 
-- **Which entries get the four moments:** the 22 gigs only, or the side jobs, cyberpsychos and NCPD work too.
+- **Whether each of the 24 assault sites counts as its own gig.** I've read "no matter how small" as yes.
 - **Gigs whose brief asks for someone to be killed or "taken out":** Troublesome Neighbors, Small Man, Big Evil, Monster Hunt and Shark in the Water. How a pacifist V plays them is undecided.
-- **Thin subjects:** Small Man, Big Evil, Catch a Tyger's Toe, Last Login and Lousy Kleppers have one-line briefs in the planning log. Their subjects here are read from titles and need checking in game.
+- **Thin subjects,** read from titles and needing a check in game: Small Man, Big Evil; Catch a Tyger's Toe; Last Login; Lousy Kleppers; Lt. Mower; and most of the NCPD jobs.
 - **The basketball, and what the ofrenda's guests say:** not in the sources found, so Jackie has nothing to reference there yet.
-- **The order of the gigs,** which decides which moment comes first for each character.
+- **The order of the gigs,** which decides which moment comes first for each character. Only Protect and Serve is fixed, as the last NCPD job.
 
 ## Sources
 
 - The gigs and their briefs: the pre-Heist planning log (outside this silo).
+- The game's lines: the fan transcript listed in `Crew-Dialogue.md`.
 - Jackie's past and the ofrenda's objects: [TheGamer, Jackie Welles trivia](https://www.thegamer.com/cyberpunk-2077-jackie-welles-trivia/); [Attack of the Fanboy, the ofrenda choice](https://attackofthefanboy.com/guides/cyberpunk-2077-ofrenda-choice-heroes-quest-guide/); the Cyberpunk Wiki's Heroes page (via search results).

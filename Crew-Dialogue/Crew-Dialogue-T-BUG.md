@@ -8,7 +8,7 @@ Everything needed to keep T-Bug's behavior and voice right. What the game shows 
 
 **The facts**
 - **Real name:** none given in the sources found.
-- **Voice:** Cynthia Kaye McWilliams, per IMDb's credits. That page couldn't be opened directly to confirm.
+- **Voice:** not confirmed. Search results from IMDb show two names against the role, Cynthia Kaye McWilliams and Corinne Wellong, and neither page could be opened.
 - **Class:** Netrunner. One wiki lists her location as Westbrook, with no specific place.
 - **Background, from the wiki:**
   - "a textbook example of how solos and netrunners really aren't all that different," and she is "well-aware of this fact."
@@ -93,6 +93,7 @@ Everything needed to keep T-Bug's behavior and voice right. What the game shows 
 | Linking someone to a camera feed | The Heist (she links V to the CCTV) |
 | Distracting people with devices | Gigs and NCPD jobs in the planning log: a laptop, a radio, a vending machine, floodlights (the player's hack) |
 | Switching cameras off | Gigs and NCPD jobs in the planning log (the player's hack) |
+| Daemons | The Heist: "Love those daemons!" (she uses them) |
 | [more] | [fill from the footage] |
 
 **Also**
@@ -111,10 +112,41 @@ Everything needed to keep T-Bug's behavior and voice right. What the game shows 
 - **Numbers, cameras, odds.**
 - **Deflects with retirement jokes:** the porch, no signal.
 - **Says the true thing sideways, then changes the subject:** "The broth's too salty. Get the number four."
-- **Calls them "V" and "Jackie."**
-- **From the game:** "Relax, Judy. Everything'll be fine."
+- **Calls V "V."** In the game, V and Jackie both call her "Bug."
+- **Signs off like she's pulling a plug:** "Cuttin' my wires now."
+- **Quotes a philosopher** to people who won't get it, then tells them who it was.
 
-**Lines that sound like T-Bug**
+**Lines from the game**
+
+*From a fan transcript of the game (a Streetkid run with a male V, made at launch). Check the wording in play before recording.*
+
+- "Man, Militech can't encrypt for shit. But they clearly got drillin' jarheads in their blood." (Practice Makes Perfect)
+- "Hope you're ready to bust ass through this fascist playground." (Practice Makes Perfect)
+- "Never smart to leave behind any trace of your handiwork. Especially the dead kind." (Practice Makes Perfect)
+- "Target's Sandra Dorsett. Target's biomon went mute a couple hours back." (The Rescue)
+- "Hurry. Try hackin' the door." (The Rescue)
+- "Ugh, hate this life or death shit." (The Rescue)
+- "You want nice, supportive? Call a damn helpline." (The Rescue, to V)
+- "Keep it together, V. If she survives, she won't remember a thing." (The Rescue)
+- "Shitshow's over. Cuttin' my wires now. See ya in the near future." (The Rescue)
+- "Relax, Judy. Everything'll be fine." (The Information)
+- "Preem work, V." / "Nice work today. See ya soon." (The Information)
+- "First time in realspace." (The Heist, at the Afterlife)
+- "Goes without sayin' we do this on the hush - ideally no bodies, not a one." (The Heist)
+- "Want my brain to burst into flames? Just siddown and enjoy your snazzy suite." (The Heist)
+- "Whoop! Got him! Love those daemons!" (The Heist)
+- "Guys! Focus! The safe! And make it quick!" (The Heist)
+- "I been made..." (The Heist, her last line)
+- "The greatest crimes issue from a desire for excess and not from necessity." Then: "Aristotle. Guess you read me, then?"
+
+**What they show**
+- **The cutting mask is already in the game:** "Call a damn helpline."
+- **So is the fear:** "Ugh, hate this life or death shit." "Want my brain to burst into flames?"
+- **She wants no bodies** and no traces, which sits beside V's pacifism.
+- **"First time in realspace"** confirms the Afterlife is the first time they meet her in person.
+- **She tells V to do the hands-on hack** ("Try hackin' the door"). On screen we credit it to her.
+
+**Lines that sound like T-Bug** (ours)
 - "I'm the one who checks. Jackie vouches for everyone. I don't."
 - "I'm alive. Same thing."
 - "I don't do stools. Stools are how they find you."

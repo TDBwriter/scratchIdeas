@@ -41,8 +41,9 @@ An issue ships only when every test passes.
 ## D. Standalone accuracy
 | ID | Test | How to check |
 |---|---|---|
-| D1 | No references to other issues ("last issue," "next issue," "next time," "as we reported," "again"). | **[auto]** |
+| D1 | No references to other issues ("last issue," "next issue," "next time," "as we reported," "again"). *Exception:* a part of the serial carries its number and the serial's title, and nothing more. | **[auto]** |
 | D2 | No running totals (Street Cred, level, V's total eddies). | **[auto]** |
+| D5 | *If a part of the serial runs:* it reads complete on its own. A reader who has seen no other part can answer all three questions from this part alone. | **[read]** by someone who hasn't read the others |
 | D3 | Nothing beyond what the game guarantees by that main job. | **[read]** against the game |
 | D4 | Every claim matches the game as played. Anything unconfirmed is cut. | **[read]** against sources and what was captured in play |
 

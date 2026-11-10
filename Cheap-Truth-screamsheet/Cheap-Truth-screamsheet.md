@@ -12,6 +12,7 @@ V's screamsheet. **One issue per main job**, published after that main job is co
 - `Cheap-Truth-screamsheet-TESTS.md`: the pass/fail tests.
 - `Cheap-Truth-screamsheet-INTERVIEWS.md`: the Interview with the Dead department, with one `Cheap-Truth-screamsheet-INTERVIEW-<name>.md` file per draft.
 - `Cheap-Truth-screamsheet-CLUES.md`: the FF:06:B5 clues.
+- `Cheap-Truth-screamsheet-SERIAL.md`: a multi-part story built from the NCPD scanner jobs.
 
 **Order.** The Streetkid is the first mission toward The Heist, so it is issue [0]. The order of the rest is undecided.
 
@@ -174,7 +175,7 @@ These keep each issue accurate whatever the playing order.
 
 1. **The issue ID is the IEEE reference, numbered from 0** in main-job order. It's fixed to the main job, never "the 12th issue we've put out."
 2. **Only write what this mission guarantees.** Check what the game guarantees by that mission. For example, V's Kiroshi eyes only exist from The Ripperdoc on; T-Bug is only known from Practice Makes Perfect or The Rescue on.
-3. **No references to other issues.** No "last issue," "next time," "as we reported," and no running counts ("our third gig this week").
+3. **No references to other issues.** No "last issue," "next time," "as we reported," and no running counts ("our third gig this week"). *The one exception:* the serial's parts are numbered as parts of a larger story. Each still has to stand on its own if the others aren't read (`Cheap-Truth-screamsheet-SERIAL.md`).
 4. **No running totals.** Leave out Street Cred, V's level, and V's total eddies. Report only this mission's own payout.
 5. **Introduce people every time**, with a short epithet, as the original did. Any issue may be someone's first.
 6. **The timestamp is when the mission was completed,** in the world's time (the game is set in 2077).

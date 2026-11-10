@@ -92,7 +92,21 @@ V thinks in the ideas of the trade. Each gig gives V one of them to chew on.
 - **A Streetkid** who knows Heywood.
 - **In [GAME] scenes** V's lines are the game's own, in the voice picked at character creation. [OURS] lines have to sit beside them.
 
-**Lines that sound like V**
+**Lines from the game**
+
+*From a fan transcript of the game (a Streetkid run with a male V, made at launch). Check the wording in play before recording.*
+
+- "Some bastard tried to mug me. I handled it." (The Streetkid)
+- "Ya really think somebody local'd try to mug me, Pepe?" (The Streetkid)
+- "Shoulda known I'd have the PD on my ass." (The Streetkid)
+- "City like any other. Just bigger." (The Rescue, to Jackie)
+- "Won't leave you hangin', Jack. But don't get used to it." (to Jackie)
+- "Bug, ya could at least try to be... nice." (The Rescue, to T-Bug)
+- "Maybe she'd still be alive if we hadn't been so gung-fuckin'-ho!" (The Heist, about T-Bug)
+
+**What they show:** V clips words and drops endings, calls Jackie "Jack" and T-Bug "Bug," and understates.
+
+**Lines that sound like V** (ours)
 - "Just pictures."
 - "Then somebody should be watching them do it."
 - "I took her picture." / "Somebody should know she was there."

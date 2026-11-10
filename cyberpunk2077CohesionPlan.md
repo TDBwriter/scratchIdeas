@@ -23,6 +23,11 @@ Audit of every project file on the branch `cyberpunk2077-narrative-playthroughs`
 
 - **Two silos (Q13).** The zine lives in `Cheap-Truth-screamsheet/` and the crew's storyline in `Crew-Dialogue/`, each standing on its own, with a file per crew member. This also fixed X4 (the anonymity line), X12 (the issue file's number) and X18 (the style guide's title), and started the issue ledger (O3).
 
+- **Every gig carries the four moments, no matter how small:** one development each for V, Jackie and T-Bug, and one bonding moment, all tied to the gig's subject. Counting each assault site, that's 72 gigs.
+- **Every supporting character who works with V before The Heist is in scope,** with unequal time, to serve the crew's development.
+- **The game's own lines are repeated wherever possible.**
+- **The zine's serial is numbered,** and each part still stands alone. "Cops' Cash" is the final reveal, in the serial and in the crew's NCPD arc: the cycle of money and violence that corporate rule keeps turning.
+
 **New questions these raise**
 - **After The Heist, who does the story credit with the hacks?** T-Bug is dead and the player still hacks.
 - **How is the ending played?** The first plan ended in a solo raid on Arasaka by an "unhinged" V. V is now always a pacifist.

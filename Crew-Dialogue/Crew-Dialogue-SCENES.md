@@ -8,7 +8,7 @@ The storyline's scenes, in order. Each lists when it happens, where, who's in fr
 - **In frame:** V-media and Jackie.
 - **The shot:** two bruised faces over two bowls, the camera on the counter between them.
 
-> **JACKIE:** About the gun. Nothing personal, choomie. I had a guy, you had a guy. Our guys had the same idea.
+> **JACKIE:** About the gun. Nothin' personal, compa. Just biz. [GAME line] I had a guy, you had a guy. Our guys had the same idea.
 > **V:** Your guy get you out of the cuffs?
 > **JACKIE:** Some cop got us out of the cuffs. With his fist.
 > **JACKIE:** So what was in it for you? You don't look like you boost cars for fun.
@@ -41,7 +41,7 @@ The storyline's scenes, in order. Each lists when it happens, where, who's in fr
 > **V:** Both. Hold still.
 > **JACKIE:** Make me look like a legend.
 > **V:** You look like a guy with sauce on his chin.
-> **JACKIE:** Then that's the legend. *(He wipes it off and poses.)* Now?
+> **JACKIE:** Then that's the legend. Legends are born here, mano. [He says it again in the game, in The Rescue.] *(He wipes it off and poses.)* Now?
 > **V:** The first one was better.
 
 **Moves:** V-media's first portrait of Jackie; the legend Jackie wants against the man he is. Scene 12 calls back to it.
@@ -52,13 +52,13 @@ The storyline's scenes, in order. Each lists when it happens, where, who's in fr
 - **In frame:** V-media and Jackie. T-Bug on the call.
 
 > **JACKIE:** Got you a present. Militech training shard. Real deal.
-> **T-BUG:** *(cutting in)* Real deal. Sure. I've been inside it since breakfast.
+> **T-BUG:** *(cutting in)* Man, Militech can't encrypt for shit. [GAME line] I've been inside it since breakfast.
 > **JACKIE:** T-Bug! Say hi to V.
 > **T-BUG:** Hi, V. Jackie talks about you too much.
 > **V:** You're the netrunner.
 > **T-BUG:** I'm the one who checks. Jackie vouches for everyone. I don't.
 > **JACKIE:** She's picky.
-> **T-BUG:** I'm alive. Same thing. Slot it. Let's see what you've got.
+> **T-BUG:** I'm alive. Same thing. Slot it. Hope you're ready to bust ass through this fascist playground. [GAME line]
 
 **Moves:** T-Bug's Call (an audition); the crew's Mentor arrives; three of them together for the first time.
 
@@ -77,7 +77,7 @@ The storyline's scenes, in order. Each lists when it happens, where, who's in fr
 > **V:** Somebody should know she was there.
 > **T-BUG:** Nobody pays to know that, V.
 > **V:** I know.
-> **T-BUG:** *(a beat)* Send it to me. For the file. I keep files.
+> **T-BUG:** *(a beat)* Send it to me. For the file. I keep files. Cuttin' my wires now. [GAME line]
 
 **Moves:** V-media's witness theme starts; T-Bug's first crack (she keeps it); Jackie learns why V watches.
 
@@ -130,7 +130,7 @@ The storyline's scenes, in order. Each lists when it happens, where, who's in fr
 > **JACKIE:** Did you...
 > **V:** No.
 > **T-BUG:** You two chew like you're paid by the slurp.
-> **JACKIE:** T! Where are you?
+> **JACKIE:** Bug! Where are you?
 > **T-BUG:** Somewhere with better food. *(a beat)* That's a lie. It's protein paste.
 > **V:** Come down. Kabuki. We'll save you a stool.
 > **T-BUG:** I don't do stools. Stools are how they find you.
@@ -141,7 +141,7 @@ The storyline's scenes, in order. Each lists when it happens, where, who's in fr
 > **V:** For a job? Or to check on us?
 > *(A pause.)*
 > **T-BUG:** The broth's too salty. Get the number four.
-> **JACKIE:** *(to the cook)* Number four! *(to the phone)* So what's your number, T? For retirement. How much?
+> **JACKIE:** *(to the cook)* Number four! *(to the phone)* So what's your number, Bug? For retirement. How much?
 > **T-BUG:** More than this city wants to pay.
 > **JACKIE:** And where would you go?
 > **T-BUG:** Somewhere with no signal.
@@ -185,8 +185,8 @@ The storyline's scenes, in order. Each lists when it happens, where, who's in fr
 > **V:** It's Arasaka, Jackie.
 > **JACKIE:** That's why it's the one.
 > **T-BUG:** *(cutting in)* I don't do Arasaka.
-> **JACKIE:** T...
-> **T-BUG:** I don't. Do. Arasaka. *(a beat)* What's the cut?
+> **JACKIE:** Bug...
+> **T-BUG:** I don't. Do. Arasaka. Ugh, hate this life or death shit. [GAME line] *(a beat)* What's the cut?
 > **V:** Enough for a porch?
 > *(Silence.)*
 > **T-BUG:** Enough for a porch and a fence.

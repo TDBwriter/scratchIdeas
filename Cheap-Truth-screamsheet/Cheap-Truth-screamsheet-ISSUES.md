@@ -52,4 +52,5 @@ Nothing is assigned yet.
 |---|---|
 | Interviews | Eight drafts (`Cheap-Truth-screamsheet-INTERVIEWS.md`) |
 | Clues | Ten, numbered 0 to 9 (`Cheap-Truth-screamsheet-CLUES.md`) |
+| The serial | Six numbered parts, Cops' Cash last, plus an optional seventh (`Cheap-Truth-screamsheet-SERIAL.md`) |
 | Side content | The rule for assigning side jobs, gigs, cyberpsychos and NCPD work to issues is undecided |

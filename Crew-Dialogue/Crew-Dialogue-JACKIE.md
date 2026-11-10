@@ -99,13 +99,38 @@ Jackie obliquely references the things that will one day sit on his ofrenda, and
 
 - **Warm, loud, quick to laugh.** Longer, friendlier sentences than the other two.
 - **Spanish in the mix.**
-- **Calls V "choomie."** "Hermano" only when it counts: twice so far, in scenes 1 and 11.
-- **Calls T-Bug "T."**
+- **Calls V "choomie"** (ours). "Hermano" only when it counts: twice so far, in scenes 1 and 11.
+- **In the game he calls V** "compa," "mano," "hermano," "holmes" and "hombre."
+- **Calls T-Bug "Bug,"** as he does in the game.
 - **Talks in food, family and legends.**
 - **Teases, never cuts.**
-- **From the game:** "Afterlife's a sign for us."
 
-**Lines that sound like Jackie**
+**Lines from the game**
+
+*From a fan transcript of the game (a Streetkid run with a male V, made at launch). Check the wording in play before recording.*
+
+- "Nothin' personal, compa. Just biz." (The Streetkid)
+- "Sense a kind of chemistry, y'know?" (The Streetkid)
+- "You help my homies, you're OK in my book. No harm, no foul." (The Streetkid)
+- "I'm always never not nice." (The Rescue)
+- "Nah, mano. Not just any other city. Morgan Blackhand, Andrew Weyland, Adam Smasher. Legends are born here." (The Rescue)
+- "Man, I'm starvin'." (The Rescue)
+- "I got a date with Misty, but... heh, I can't take the metro!" (The Rescue)
+- "It's the biz, V. Everyone's got blood on their hands. You deal with it, you move on." (The Ripperdoc)
+- "Mi madre always said patience pays off, so..." (The Pickup)
+- "Primerito, I don't like this guy's tone." (The Pickup)
+- "Place used to be a morgue - you believe that?" (The Heist)
+- "Gotta live like a legend first, though, eh? Death... s'nothin' but the final flourish." (The Heist)
+- "Afterlife, here we come, baby! Yeah!" (The Heist)
+- "Ka-ching, baby!" (The Heist)
+- "Got static. Say somethin', Bug?" (The Heist)
+- "Misty... She knew... She always knew..." (The Heist, his last lines)
+- "Hold on to it. For me." (The Heist, his last lines)
+- To T-Bug's Aristotle: "Say what now?" and "Yeah, I read you. Not so much your Greek friend, though it was kind of exciting."
+
+**What they show:** food, his mother, Misty, legends by name, Spanish dropped in mid-sentence, and "baby!" when he's happy.
+
+**Lines that sound like Jackie** (ours)
 - "Hermano. That's the dumbest or the best thing I heard all year."
 - "You watch. I'll carry."
 - "Make me look like a legend."
