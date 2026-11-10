@@ -29,7 +29,7 @@ Everything needed to keep V's behavior and voice right. V is always neutral in e
 
 ## In our storyline
 
-- **Wants:** the perfect still frame; to survive and make art.
+- **Wants:** to snag the perfect storytelling still: one frame that tells the truth. Also to survive and make art.
 - **Needs:** to step out from behind the lens and be in the picture, with people. [OURS]
 - **Flaw:** watches instead of joining. [OURS]
 - **The line V walks:** a pacifist in a crew that carries guns. Always a pacifist, and always deeply conscientious about the appropriate level of violence.
@@ -62,6 +62,25 @@ Everything needed to keep V's behavior and voice right. V is always neutral in e
 - **Helps without being paid.** [GAME] V offers to help Pepe with his debt.
 - **Keeps some truths unpublished** (scene 11).
 - **Watches before joining.** That's the flaw the arc works on.
+
+## What V cares about: photojournalism
+
+V thinks in the ideas of the trade. Each gig gives V one of them to chew on.
+
+- **The decisive moment:** the one frame that tells the whole story.
+- **Get closer:** distance is a choice, and usually the wrong one.
+- **Bearing witness:** somebody should know this happened.
+- **Don't stage it. Don't alter it.** The frame is what was there.
+- **The caption:** who, what, where, when. A wrong caption makes a true picture lie.
+- **Context and the crop:** what's left out can lie too.
+- **Dignity and consent:** people at their worst are still people.
+- **Shoot or help?** The photographer's oldest question.
+- **Protect the source.**
+- **The edit:** what you choose not to run.
+- **Who's paying for the picture?** Independence.
+- **The observer changes the scene:** people act differently on camera.
+- **The archive:** what happens to the pictures after you.
+- **What looking does to the one who looks.**
 
 ## Voice
 

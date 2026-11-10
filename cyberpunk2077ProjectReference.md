@@ -222,6 +222,7 @@ Our own storyline for V, Jackie and T-Bug, 100% compatible with what the game sh
 | `Crew-Dialogue-T-BUG.md` | T-Bug: the same, with her canon rules and repertoire of tricks | Written to The Heist |
 | `Crew-Dialogue-SCENES.md` | The 14 scenes, with dialogue | Drafted |
 | `Crew-Dialogue-GAPS.md` | What the game doesn't show: what players discuss, the montage's frames, existing quests to recreate | Written |
+| `Crew-Dialogue-GIGS.md` | The 51 side entries before The Heist, and the four moments each gig carries; seeds for the 22 gigs | Seeds drafted |
 
 ### The playthrough and the project, at the repo root
 

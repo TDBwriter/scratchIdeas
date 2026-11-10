@@ -48,6 +48,7 @@ Everything needed to keep Jackie's behavior and voice right.
 - **Wants:** the big league, "the gig of a lifetime," a place among the legends at the Afterlife. [GAME]
 - **Needs:** to see that his people are the legacy: Mama Welles, Misty, Viktor, V. [OURS]
 - **Flaw:** bets everything on one big score. [OURS, built on his GAME ambition]
+- **Under the surface:** he wants to be a legend because he wants to care for his family, Mama, Misty and the Valentinos, better than his father did. [OURS, built on the GAME facts below]
 
 | # | Stage | When | What happens |
 |---|---|---|---|
@@ -62,6 +63,26 @@ Everything needed to keep Jackie's behavior and voice right.
 | 9 | Return, through others | Heroes | [GAME] The ofrenda at El Coyote Cojo: Mama Welles, Misty, Viktor; his book, basketball, belt and tequila; his bike. The legend he gets is the one his people give him. (Scene 14) |
 
 ---
+
+## What Jackie carries: the ofrenda
+
+Jackie obliquely references the things that will one day sit on his ofrenda, and what its guests say and bring. He never explains them. The audience who knows the game hears it; everyone else hears a man talking about his life.
+
+| The thing | What the game says about it | How he'd touch on it |
+|---|---|---|
+| **The book** | *For Whom the Bell Tolls*. A source notes his "surprising adoration" of it. | A book he keeps meaning to get back to |
+| **The belt** | His father, a gangster, beat Jackie and his mother with a leather belt. As a teenager Jackie fought back; his father ran and was never seen again. Jackie kept the belt "just in case his father ever came back." | Something he keeps, just in case |
+| **The tequila** | A sealed bottle of Centzon. An old woman in Mexico sold it to him, saying it was one of 100 made by the founder. | A bottle he's never opened |
+| **The basketball** | It's in his garage. The sources found don't say what it means to him. | [blank] |
+| **The mandala** | Misty helped him face things through spirituality. He tried to make a sand mandala, which she'd told him would clear the "dark energy." | Something Misty has him doing that he won't admit helps |
+| **The bike** | An Arch he tinkers with in his garage. | Always one part from finished |
+| **The guns** | Gold-plated pistols. | |
+| **Viktor** | Viktor boxed with him: "an arm like a cannon." | Sparring with Vik |
+| **The Valentinos** | He was shot in the chest, near the heart. He had to tell his mother, and she got him to leave. The Valentinos let him go without a fight. | A scar he doesn't show; people he still owes |
+| **The legends** | He talks about Johnny Silverhand and Adam Smasher, and wants a drink at the Afterlife. | Names he says like saints' names |
+| **What the guests say** | Guests share memories of him at the ofrenda. Their lines weren't in the sources found. | [blank: capture in game] |
+
+**Note:** in the game Misty is his girlfriend. The storyline adds no romance of its own.
 
 ## Behavior
 

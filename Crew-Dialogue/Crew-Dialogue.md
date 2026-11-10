@@ -8,6 +8,7 @@ Our own storyline for V, Jackie and T-Bug: who they are to each other, and what 
 - `Crew-Dialogue.md`: this file. The rules of the storyline and the crew's arc.
 - `Crew-Dialogue-V.md`, `Crew-Dialogue-JACKIE.md`, `Crew-Dialogue-T-BUG.md`: one file per character, to keep each one's behavior and voice right.
 - `Crew-Dialogue-SCENES.md`: the scenes, with their dialogue.
+- `Crew-Dialogue-GIGS.md`: the side content before The Heist, and the four moments each gig carries.
 - `Crew-Dialogue-GAPS.md`: what the game doesn't show, which is the room this storyline fills.
 
 ---
@@ -18,6 +19,26 @@ Our own storyline for V, Jackie and T-Bug: who they are to each other, and what 
 - **[OURS]** is what the playthrough makes appear to be true: scenes staged in photo mode or with the V-Jackie save, and voices laid over calls and messages in the edit.
 - What the game requires and what we make appear to be true are only at odds if that line is forgotten.
 - Every [OURS] scene sits between [GAME] beats and never contradicts them. Jackie and T-Bug die in The Heist, and every arc bends toward it.
+
+## The relationships
+
+- **No romance.** The crew's bond is friendship, like brotherhood.
+- **Stark differences.** The three are nothing alike, and the scenes play on it.
+- **Each chases their own end, together:**
+  - **V** wants the perfect storytelling still, one frame that tells the truth, and cares about the ideas of photojournalism.
+  - **Jackie** wants to be a legend, because underneath he wants to care for his family, Mama, Misty and the Valentinos, better than his father did.
+  - **T-Bug** is terrified and always protecting herself. She cuts sharp to hide it. Her care for the crew shows anyway, while her words deny it.
+
+## Four moments per gig
+
+Every gig carries exactly four moments:
+
+1. **One personal development for V.**
+2. **One for Jackie.**
+3. **One for T-Bug.**
+4. **One bonding moment for the crew.**
+
+All four tie to **the subject of the gig**: what the job is about. None ties to the action or to how the job turns out.
 
 ## Edgerunners 0
 

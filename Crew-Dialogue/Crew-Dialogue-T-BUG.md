@@ -54,6 +54,9 @@ Everything needed to keep T-Bug's behavior and voice right. What the game shows 
 - **Wants:** to "sail into retirement age," and to be picky about her contracts. [GAME]
 - **Needs:** to let someone close enough to miss her. [OURS]
 - **Flaw:** always on the line, never in the room. [OURS; in the game she's almost always on comms]
+- **Under the surface:** she is terrified. She is always protecting herself: from growing too close, from strangers, from getting hurt. [OURS]
+- **The mask:** she cuts sharp, like the edgy high-schooler, to hide the fear. [OURS]
+- **The tell:** her care for the crew is plain to see, even while her words deny it and serve herself. [OURS]
 
 | # | Stage | When | What happens |
 |---|---|---|---|
@@ -102,7 +105,9 @@ Everything needed to keep T-Bug's behavior and voice right. What the game shows 
 
 ## Voice
 
-- **Dry. Short sentences.** Often a one-word correction.
+- **Cutting and sharp,** like an edgy high-schooler: sarcasm, eye-rolls you can hear, "obviously," "whatever," "not my problem."
+- **Her words deny and self-serve; her actions don't.** She says she stayed on the line because she was bored. She stayed on the line.
+- **Short sentences.** Often a one-word correction.
 - **Numbers, cameras, odds.**
 - **Deflects with retirement jokes:** the porch, no signal.
 - **Says the true thing sideways, then changes the subject:** "The broth's too salty. Get the number four."
