@@ -17,7 +17,7 @@ The people around the crew before The Heist.
 | **Evelyn Parker** | The client. Shows V the target in The Information. | V | A plan with a lie in it. |
 | **Judy Alvarez** | Runs the braindance in The Information. | V, T-Bug | Another person who records the truth for a living. She doesn't want T-Bug in her rig. |
 | **Padre** | Heywood fixer. Gives V a ride and his contact in The Streetkid. | V | V's roots. |
-| **Pepe** | Bartender at El Coyote Cojo, in debt to Kirk. | V | The reason V helps for nothing. |
+| **Pepe** | Bartender at El Coyote Cojo, in debt to Kirk. | V | The reason V helps for a favor and not for money. |
 | **Kirk** | Holds Pepe's debt and sets up the car job. | V | The first person V sees profit. |
 | **Meredith Stout** | Militech. Offers the money chip in The Pickup. | Jackie | Corp money, in person. |
 | **Royce and Dum Dum** | Maelstrom, at All Foods in The Pickup. | Jackie | Where Jackie's nerve gives out. |

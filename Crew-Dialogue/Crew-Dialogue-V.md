@@ -20,7 +20,8 @@ Everything needed to keep V's behavior and voice right. V is always neutral in e
 
 **V before Jackie (The Streetkid)**
 - V turns up at the bar with a broken nose and says someone tried a mugging.
-- Pepe the bartender owes Kirk money, due tomorrow. **V offers to help.**
+- Pepe the bartender owes Kirk money, due tomorrow. **V offers to help,** on the condition that Pepe owes V a favor.
+- In Padre's car, Padre welcomes V back after about two years away. V says Atlanta wasn't better.
 - V takes Kirk's job to steal a Rayfield Aerondight and gets a ride from Padre and Marcus Barros. Padre gives V his contact.
 - At the car: Jackie, gun drawn. The NCPD arrests both of them, and a cop knocks them out after the owner, Kaoru Fujioka, talks to the police.
 - They wake on the street together and **decide to get lunch.**
@@ -59,7 +60,7 @@ Everything needed to keep V's behavior and voice right. V is always neutral in e
 - **A free runner.** V goes up and around, not through.
 - **Doesn't hack in the story.** On screen the hacks are T-Bug's. The player performs them, and the edit covers each with a photo V appears to have snapped.
 - **Talks people down.** [GAME] V talks an officer into letting them through the cordon (The Rescue), can tell Jackie to sit down (The Pickup), and can talk Max out of shooting himself (Freedom of the Press).
-- **Helps without being paid.** [GAME] V offers to help Pepe with his debt.
+- **Helps for a favor, not for money.** [GAME] V takes on Pepe's debt in return for a favor owed.
 - **Keeps some truths unpublished** (scene 11).
 - **Watches before joining.** That's the flaw the arc works on.
 

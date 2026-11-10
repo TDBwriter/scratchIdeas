@@ -12,6 +12,7 @@ Our own storyline for V, Jackie and T-Bug: who they are to each other, and what 
 - `Crew-Dialogue-GAPS.md`: what the game doesn't show, which is the room this storyline fills.
 - `Crew-Dialogue-SUPPORTING.md`: the supporting cast, with a file each once developed. So far: `Crew-Dialogue-REGINA.md`.
 - `Crew-Dialogue-NCPD.md`: the road to Regina, the arc the NCPD jobs carry.
+- `Crew-Dialogue-STREETKID-LATE.md`: a what-if. The Streetkid played after all of Regina's work.
 
 ---
 
