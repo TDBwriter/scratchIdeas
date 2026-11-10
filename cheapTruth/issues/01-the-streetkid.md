@@ -53,7 +53,7 @@ Then the NCPD settled it. Cuffs on both. I watched the owner have a word with th
             STILL PARKED. STILL FUJIOKA'S.
 ```
 
-**How it came to be.** A bartender's debt, passed down to whoever was dumb or kind enough to carry it. A creditor who'd rather collect in favors than in eddies, and lets the debtor's friends do the lifting.
+**How it came to be.** A bartender's debt, passed down to whoever was kind enough to carry it. A creditor who'd rather collect in favors than in eddies, and lets the debtor's friends do the lifting.
 
 **Who profited.** Before: Kirk, holding paper on a man who can't pay. After: Kaoru Fujioka, who kept his car, had a word with the cops, and lost nothing. Rick, for twenty minutes of looking away. Did Kirk get his money? Nobody's telling me.
 
@@ -66,16 +66,18 @@ Nobody got the car. The two thieves got each other. Some partnerships start with
 ## CHEAP TRUTH TOP TEN
 *Heywood to Embers, as I saw it.*
 
-1. **EL COYOTE COJO.** Heywood bar. Where the debt got poured. Cold drinks, warm trouble.
-2. **PEPE.** Bartender. Owes Kirk, due tomorrow. The only honest man I saw all night, and the one holding the debt.
-3. **KIRK.** Creditor, upstairs at the bar. Hands you the debt and the crowbar. Avoid.
-4. **BIG JOE.** Keeps Kirk company upstairs. Big name. I'll leave it there.
-5. **PADRE.** Heywood fixer. Gave the ride, took the heat from 6th Street. Worth knowing.
-6. **MARCUS BARROS.** Rode along with Padre. Nobody leaned on him. Lucky or connected.
-7. **6TH STREET.** A roadblock with opinions. Took nothing this time.
-8. **RICK.** Security booth, Embers. Sells twenty minutes of blindness. Fair price, bad security.
-9. **THE RAYFIELD AERONDIGHT.** The car everyone wanted and nobody got. Owned by an Arasaka man, kept with the NCPD's help.
-10. **THE NCPD.** Cuffed two thieves, took the owner's word, put two kids on the pavement. Protect and serve. Serve whom?
+0. **[PLACE, mission line with 1, FF:06:B5 line with 9].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+1. **[PLACE, mission line with 0, FF:06:B5 line with 8].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+2. **[PLACE, mission line with 3, FF:06:B5 line with 7].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+3. **[PLACE, mission line with 2, FF:06:B5 line with 6].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+4. **[PLACE, pairs with 5 both ways].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+5. **[PLACE, pairs with 4 both ways].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+6. **[PLACE, mission line with 7, FF:06:B5 line with 3].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+7. **[PLACE, mission line with 6, FF:06:B5 line with 2].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+8. **[PLACE, mission line with 9, FF:06:B5 line with 1].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+9. **[PLACE, mission line with 8, FF:06:B5 line with 0].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+
+[Neighbour lines cross at the mission's location, to be decided: El Coyote Cojo, where the job starts, or the garage under Embers, where the car never moved. Bracket lines cross at an FF:06:B5 location, to be decided. Places to be scouted in game.]
 
 ---
 

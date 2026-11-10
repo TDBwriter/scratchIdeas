@@ -18,12 +18,14 @@ An issue ships only when every test passes.
 | A5 | The sign-off matches: `CHEAP TRUTH, <address>. Veritas, editing. <name>, graphics. NOT COPYRIGHTED. "<slogan>"` then `Veritas - <timestamp>`. | **[auto]** |
 | A6 | The slogan is not used in any other issue. | **[auto]** |
 | A7 | The file closes with the copyright line, then the issue ID as the very last line. Both are identical to the opening two lines. | **[auto]** |
+| A8 | Every issue has a CHEAP TRUTH TOP TEN. | **[auto]** |
 
 ## B. Follow the money
 | ID | Test | How to check |
 |---|---|---|
 | B1 | Every article answers all three: **how did this come to be, who profited (before and after), who paid.** | **[read]** point to the sentence for each. Any one missing fails. |
 | B2 | Every cyberpsycho item says who profited before the break and who profits after. | **[read]** |
+| B3 | The issue shows at least one thing someone made or gave with no money in it (street art, music, film, protest, a kindness, a friendship), from this mission or its assigned side content. | **[read]** point to it |
 
 ## C. Voice and anonymity
 | ID | Test | How to check |
@@ -33,6 +35,8 @@ An issue ships only when every test passes.
 | C2 | The crew is never named, in text or captions (V, Vincent, Jackie, Welles, T-Bug). | **[auto]** |
 | C3 | Every person is introduced with a short label at first mention. | **[read]** |
 | C4 | Style over substance: attitude, image and rhythm carry the language. In every paragraph a reviewer can point to the line doing it. | **[read]** |
+| C5 | Kind to the street: no joke or verdict mocks anyone for being poor, chromed, desperate or broken. Hard words go to whoever profits. | **[read]** |
+| C6 | Violence is reported, never celebrated. | **[read]** |
 
 ## D. Standalone accuracy
 | ID | Test | How to check |
@@ -47,6 +51,13 @@ An issue ships only when every test passes.
 |---|---|---|
 | E1 | Every element (editorial, each department item, gripe, slogan, art) ties to this issue's main job or to side content assigned to it. | **[read]** for each element, name its tie |
 | E2 | Side content appears only in the issue it's assigned to. | **[read]** against the assignment list |
+| E3 | Every Top Ten entry is a place around this mission's story (an iconic spot, a photo location or a piece of art), names its district, and gives a way up that works in the game. | **[read]**, checked in game |
+| E4 | The Top Ten is numbered 0 to 9. On the 2D map, the line through each neighbour pair (0-1, 2-3, 4-5, 6-7, 8-9) passes through the mission's location: the quest marker where the job starts, or where the smoking gun the lead article discusses happened or can be found. | **[read]** plotted on the in-game map |
+| E4c | On the 2D map, the line through each bracket pair (0-9, 1-8, 2-7, 3-6, 4-5) passes through this issue's FF:06:B5 location. Neither target is one of the ten. | **[read]** plotted on the in-game map |
+| E4b | *Optional, doesn't block shipping.* In 3D, each line also passes through its target at the target's height. | **[read]** heights estimated in game |
+| E5 | The Top Ten, and Gripe Time if it runs, are about free-running life in Night City. | **[read]** |
+| E6 | The issue carries exactly one clue of the FF:06:B5 hunt, in the Top Ten, or in Gripe Time if it runs. The riddle stands alone, and it is the right clue for this issue's place in the hunt's order. | **[read]** against the clue list |
+| E7 | The Top Ten, with Gripe Time if it runs, uses all four moves: execute the lethargic, police the imitators, shameless self-hype, the anonymous shield. Hard words aim up. | **[read]** point to each |
 
 ## F. Real-world parallels
 | ID | Test | How to check |
@@ -61,7 +72,7 @@ An issue ships only when every test passes.
 | G1 | Every piece has at least one key image. | **[read]** |
 | G2 | The lead image tells the lead story alone. Cover the text: can a viewer say what happened? | **[read]** |
 | G3 | The lead article has images for how it came to be, who profited, and who paid. | **[read]** |
-| G4 | Each Top Ten and bulletin item has a thumbnail. | **[read]** |
+| G4 | Each Top Ten entry has the photo taken at that place; each bulletin item has a thumbnail. | **[read]** |
 | G5 | Everything is black on white: no color. | **[auto]** on the image files |
 
 ## H. Markup
@@ -77,4 +88,7 @@ An issue ships only when every test passes.
 - **Length:** the original ran about 1,200–2,000 words per issue.
 - **"Article":** do the editorial, Top Ten capsules and bulletin items each count as articles under B1?
 - **Side-content assignment rule** (needed for E2).
+- **Pacifism after The Heist** (needed for C6 in later issues): does the zine's voice stay pacifist when V doesn't?
+- **Top Ten targets** (needed for E4 and E4c): which target sits between its pairs (only one can); which FF:06:B5 location each issue targets; how close a line must pass to count; whether the issue prints the map with the lines.
+- **The puzzle** (needed for E6): how many clues, whether the Witcher 3 step is in, where each clue sits, which issues carry them.
 - **Crew in photos** and **photo conversion** (grayscale, threshold, halftone).

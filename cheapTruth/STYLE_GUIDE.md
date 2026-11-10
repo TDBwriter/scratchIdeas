@@ -2,6 +2,8 @@
 
 V's screamsheet. **One issue per main job**, published after that main job is complete; the main job is the issue's lead article. **Side jobs, gigs, cyberpsycho sightings and NCPD hustles supply the flavor**: the departments, bulletins and Top Ten items around the lead. Every issue stands alone, so it stays accurate no matter what order the missions are played in.
 
+**Who makes it.** V-media: a street kid with a camera, just trying to survive, make friends and make art. A pacifist, free-running, truth-telling documentarian who cares more about the perfect still frame than the perfect score. Into street art (graffiti, mixed media, film, music, protest), kindness and community. The zine is made the way V-media lives: by hand, free, passed along. (On the page, the narrator never names or speaks as V-media; see §2.)
+
 Modeled on the original *Cheap Truth* (Austin, Texas, 1983–1986), edited by "Vincent Omniaveritas" (Bruce Sterling): free, photocopied, **NOT COPYRIGHTED**. Male V's full name in the game is Vincent, which gives the title a second layer.
 
 ---
@@ -16,6 +18,9 @@ Modeled on the original *Cheap Truth* (Austin, Texas, 1983–1986), edited by "V
 
 *Cui bono?* ("who benefits?") sits beside *omnia veritas* ("all truth").
 
+**The other half of the truth: what the street makes anyway.** Following the money shows who takes. *Cheap Truth* also shows what people make and give with no money in it: street art (graffiti, mixed media, film, music, protest), kindness, friendship, community, and just getting through the night. The ledger tells who took. The wall tells who was here. Telling the truth means telling both.
+
+- **Running themes:** survival, friendship, art, kindness and community, told by a street kid who would rather get the shot than the score.
 - **Cyberpsychosis is a running theme.** Every cyberpsycho story asks who was profiting from that person before they broke, and who profits from it after.
 - **V's arc ends with the ledger turned on V.** After The Heist, V becomes the asset others profit from. The final issue follows the money to V.
 - **The in-game story comes first.** Most readers will take *Cheap Truth* as Night City reporting and nothing more, and every issue has to work that way.
@@ -33,7 +38,7 @@ Every issue has these parts, in this order.
 | 1 | **Masthead** | "CHEAP TRUTH" plus the issue number, redrawn every issue in a different display face (angled rub-down letters, stencil, outline, op-art, stacked vertically, boxed letters) | **ASCII art**, a different face every issue (FIGlet fonts plus hand-built layouts: stacked, vertical, boxed, glitched), drawing "CHEAP TRUTH [n]". **Above it, first thing on the page,** the issue ID as a plain-text line, then the copyright line (see below). |
 | 2 | **EDITORIAL.** | Opens nearly every issue. 1–5 sentences in a direct voice that set the issue's conceit, sometimes with a quoted tagline. *"Hi. You want to know the truth. We want to tell it to you."* | **A headline, then EDITORIAL.** The headline is the issue's title in its ID. First-person eyewitness voice (see §2). |
 | 3 | **Lead feature** | An ALL-CAPS headline (a pun, tabloid style, or a mock news headline), then the piece | The mission's news: how it came to be, who profited, who paid (see §0) |
-| 4 | **Departments** (0–2) | Recurring: **CHEAP TRUTH TOP TEN** (numbered capsules), **INTERVIEW** (Q&A, sometimes with the dead), **GRIPE TIME**, **BULLETIN**, correspondent dispatches | Pick what suits the mission (see §3) |
+| 4 | **Departments** | Recurring: **CHEAP TRUTH TOP TEN** (numbered capsules), **INTERVIEW** (Q&A, sometimes with the dead), **GRIPE TIME**, **BULLETIN**, correspondent dispatches | **TOP TEN in every issue**, plus 0–2 others, Gripe Time among them (see §3) |
 | 5 | **Images** | Black-and-white found images (engravings, technical diagrams, op-art, silhouettes) dropped into gaps, often running off the edge | **Key images for every piece** (photo-mode shots and footage stills) that carry its story. ASCII art for the masthead and small decorations (see §8). |
 | 6 | **Colophon** | A fixed formula, a new slogan each issue (see §4) | Same formula, V's details. After it, the copyright line and then the issue ID close the file (see below). |
 
@@ -79,6 +84,9 @@ Every issue has these parts, in this order.
 - **First person, eyewitness.** The writer says "I" and tells events as if they watched them happen: across the bar, from the street, through a lens.
 - **Never the crew's point of view.** The "I" is never anyone in the crew. No crew member's thoughts or feelings, no "we" doing the job, nothing only the crew could know (their plans, their private talk). The crew is never named.
 - **Style over substance.** Cyberpunk 2020's first tenet, applied to the language: attitude, image and rhythm carry the telling. Style governs how it's said. What's said still has to be true (§5).
+- **Kind to the street, hard on the ledger.** Hard words go to whoever profits. Never mock anyone for being poor, chromed, desperate or broken. The jokes punch up.
+- **The camera, not the gun.** Violence is reported plainly, never celebrated. The narrator is there for the shot, not the score.
+- **A photographer's eye.** The narrator notices what a still frame would catch: light, faces, walls, the art on the street.
 - Slang: *choom, choomba, eddies, chrome/chromed, output, virtu, flatline, gonk.*
 - Profanity is fine.
 - Signed **Veritas**.
@@ -87,12 +95,45 @@ Every issue has these parts, in this order.
 
 ## 3. Departments
 
-Use none, one or two per issue.
+Every issue runs the **CHEAP TRUTH TOP TEN**. Add none, one or two of the others; **GRIPE TIME** is one of them.
 
-- **CHEAP TRUTH TOP TEN**: numbered capsules on the people, places, gear and deals from this mission.
-  `3. VIKTOR VEKTOR. Ripperdoc, Little China. Steady hands, soft heart. Owed: 21,000 eddies.`
+### Top Ten and Gripe Time: the pattern
+
+The Top Ten, and Gripe Time when it runs, are about **free-running life in Night City** and about **the puzzle**. Together they use the original's four moves, with hard words aimed up (§2: kind to the street).
+
+1. **Execute the lethargic.** The original called the Nebula ballot "a list of stuff that Mom and Dad said it was okay to read" (#5) and handed out verdicts like "Heartening indication that Niven may escape total artistic collapse" (#1). *2077:* trash the dead, safe, paid-for Night City: corp-approved art, places you pay to see, views sold back to the street.
+2. **Police the imitators.** The original predicted "pale imitations" of a book it loved (#11) and, in its "sophomore class" satire (#15), mocked its own crowd too: "the kids who wear leather and those funny sunglasses because they would like to think it makes them look tough like real punks." *2077:* call out the fakes: corp ads dressed as street art, chrome worn for the look, the legend business. The zine's own scene included.
+3. **Shameless self-hype.** Sterling, as Omniaveritas, reviewed his own story: "Bruce Sterling's 'Cicada Queen' shows this ambitious writer manfully wrestling..." (#6). The zine pushed its friends' novels for the Nebula (#10). *2077:* Veritas hypes the zine's own shots and spots without shame, and never says who took them.
+4. **The anonymous shield.** Everyone wrote under a pen name, so they could say what would have cost them in publishing. *2077:* say what would get you flatlined, signed Veritas, crew never named.
+
+**The puzzle.** Each issue carries one clue of the FF:06:B5 hunt, in the Top Ten, or in Gripe Time when it runs, written as a riddle that stands alone. The clues follow the hunt's order through the issues.
+
+**Still open:** how many clues (about 8 if one per stage of the hunt, about 14 if each church keypad code gets its own); whether the step that needs *The Witcher 3* is in; whether a clue sits in the Top Ten or in Gripe Time when it runs; which issues carry them.
+
+### The departments
+
+- **CHEAP TRUTH TOP TEN**: ten places around this mission's story: iconic spots, preem photo locations, brilliant art. Night City shown by a free runner who can go anywhere. Each entry gives the place and its district, the shot, the way up, the art if there is any, and a one-line verdict, with the photo taken there.
+  `0. [PLACE]. [district]. [the shot]. [the way up]. [the art, if any]. [verdict]`
+
+  **Two hidden targets.** The ten places pair up two ways, and each way draws five lines on the map to a different spot.
+
+  - **Neighbours point to the mission:** 0 with 1, 2 with 3, 4 with 5, 6 with 7, 8 with 9. The five lines cross at the mission's location.
+  - **Brackets point to FF:06:B5:** from the outside in, the way the issue ID and copyright lines bracket the file: 0 with 9, 1 with 8, 2 with 7, 3 with 6, 4 with 5. The five lines cross at an FF:06:B5 location.
+  - 4 and 5 are partners both ways, so both sit on the line through the mission's location and the FF:06:B5 location.
+  - Neither target is one of the ten. A place can be any distance away.
+
+  **Only one target can sit between its pairs.** If the mission's location sat between the two places of every neighbour pair and the FF:06:B5 location sat between the two places of every bracket pair, the only layout that works puts all ten places on one straight line, where the lines can't cross at a point. So one target sits between its pairs, and the other only lies on the lines, beyond the places.
+
+  **The mission's location** is one of two points: where the quest marker sits to start the job, or where the smoking gun the lead article discusses happened or can be found.
+
+  - **Required: 2D.** On the map, each set of five lines crosses at its target. Two lines are enough to fix a spot; the other three confirm it.
+  - **Ambitious, where plausible: 3D.** A free runner can choose each place's height (street, balcony, roof, billboard), so a line can also pass through its target at the target's height. That works when the target's height falls in line with the two places' heights, in the same proportion as the distances: if the target is a third of the way from A to B on the map, its height is a third of the way from A's height to B's. The game shows no coordinates or altitude without mods, so heights are estimates (floors climbed, building heights).
+
+  **Still open:** which target sits between its pairs; which FF:06:B5 location each issue targets; how close a line must pass to count; whether the issue prints the map with the lines or leaves readers to draw them.
+- **STREET ART** (working name): the art found along this mission's route: graffiti, murals, posters, mixed media, film, music, protest. A photo of each, where it was, and who made it, if that's known.
 - **INTERVIEW**: a Q&A with someone from the mission. The original ran mock interviews (Lovecraft, Raymond Chandler) and ended its run interviewing its own editor.
-- **BULLETIN** / **GRIPE TIME**: short items, rumors, complaints.
+- **GRIPE TIME**: a rant about free-running life in Night City, using the four moves above. The original ran one Gripe Time (#9), in the voice of a fictional editor complaining about ungrateful writers.
+- **BULLETIN**: short items and rumors.
 - **DISPATCH**: a piece credited to a crew member under an epithet (Jackie, T-Bug).
 
 ---
@@ -142,6 +183,7 @@ The original rarely complained head-on. It took an institution, recast it throug
 | **Junk food for the brain** | "Junk food for the brain. And what's more, he's proud of it." (#8) | **Braindance, Glitter, and vending-machine dinners** | The Glitter lab (The Heisenberg Principle) · a message about Glitter (Ticket to the Major Leagues) · the Burrito XXL in V's building |
 | **Tabloid headline** | "SF WRITER EATS OWN FOOT TO SURVIVE!" (#11) | **Merc-economy tabloid** | Fixers, payouts, drop points · the "PTSD Shield – Policy Lapsed" message (Demons of War) |
 | **Cold War / samizdat** | KGB agents scalping *Cheap Truth* at twelve cents (#3) · "SERVING SF THROUGH SAMIZDAT" | **Corp war, and a zine passed hand to hand in Watson** | Militech's convoy and the Maelstrom (The Pickup) · Arasaka (The Heist) |
+| **The underground network** | "a globe-spanning network of CHEAP TRUTH shills and xerox pirates" (#2) · "All you need is something to say, and a xerox." (#17) | **Street kids as a network**: art, friends and favors passed hand to hand, with no money in it | Two thieves who met at gunpoint and became friends (The Streetkid) |
 | **Turning on itself** | "all movements… tend to breed storm troopers" (#9) · the editor's staged death (#17) | **Turning on merc culture and the legend business, including V's own** | The Afterlife, where legends are made · a crew chasing "the gig of a lifetime" |
 
 ### Devices
@@ -151,7 +193,7 @@ The original rarely complained head-on. It took an institution, recast it throug
 | **Pen names with labels** | "guest grump Sue Denim" · "guest agitatrix Hunilla de Cholo" · "Our New York correspondent" | Veritas, editing. Crew dispatches under labels (to be named), e.g. a Heywood correspondent, a voice from the net |
 | **Fake news with a place line** | "'NODE ZERO' DEMOLISHED! (Austin, Texas November 1986)" | The **news section**: headline, place line, report |
 | **Mock interviews** | Lovecraft, Raymond Chandler, the editor himself | Q&A with someone from the mission, or with the dead: the shards cyberpsychos leave behind (e.g. "Farewell," Six Feet Under) |
-| **Top Ten with verdicts** | "Makes more sense than the movie." | **CHEAP TRUTH TOP TEN**: gear, vendors, eats, ripperdocs from the mission (e.g. Wilson's Dying Night · the DA8 Umbra · the Burrito XXL) |
+| **Top Ten with verdicts** | "Makes more sense than the movie." · a recommended list with knives in the verdicts | **CHEAP TRUTH TOP TEN**: iconic places, photo spots and art around the mission, rated by a free runner who can go anywhere, using the four moves (§3) |
 | **A new slogan each issue** | "Xerox pirates, start your engines!" | A new slogan in each colophon (bank below) |
 
 ### Slogan bank (2077 drafts)
@@ -160,7 +202,7 @@ The original rarely complained head-on. It took an institution, recast it throug
 
 ### Target
 
-The original's primary target was its own field: the science fiction establishment. *Cheap Truth* 2077's target is **whoever profits** (§0). The frames above are ways of telling those stories: the body parted out, the walled-off ghetto, the rusting industry, corps as parents, junk food, the tabloid, corp war, and turning the lens on V.
+The original's primary target was its own field: the science fiction establishment. *Cheap Truth* 2077's target is **whoever profits** (§0). The frames above are ways of telling those stories: the body parted out, the walled-off ghetto, the rusting industry, corps as parents, junk food, the tabloid, corp war, the underground network, and turning the lens on V. The zine's love goes to the street: the people surviving it and the art they leave on it.
 
 ---
 
@@ -192,14 +234,17 @@ Primarily, *Cheap Truth* tells the in-game story. Underneath, the way the game i
 
 - **A lead image per piece.** It should tell the story on its own, so a reader who only looks at the pictures still gets it.
 - **Supporting images follow the money:** one for how it came to be, one for who profited, one for who paid.
-- **Small pieces get small images.** Each Top Ten entry or bulletin item gets a thumbnail of its subject.
+- **Small pieces get small images.** Each Top Ten entry gets the photo taken at that place. Each bulletin item gets a thumbnail of its subject.
 - **Captions:** short, in the eyewitness voice, and they don't name the crew.
 - **Sources:** photo-mode shots (free camera, lighting, added characters) and stills from gameplay footage. Many beats are scripted scenes, so check in the game where photo mode is available, and capture during play.
+- **The still frame over the score.** The lead image is the point of the issue, the way the payout is the point of a gig.
+- **Shoot the art.** Graffiti, murals, posters, buskers and protest signs along each mission's route are subjects in their own right.
 - **ASCII art** is for the masthead and small decorations, not for the story images.
 
 - **Black on white.** The whole zine is black on white: the photos, the type, the ASCII art. It's the look of the photocopied original.
 
 **Still open**
+- **Pacifism after The Heist:** V-media is a pacifist, but V's arc turns unhinged after Jackie dies. Does the zine's voice stay pacifist when V doesn't, or change with V?
 - **Crew in photos:** the text keeps the crew anonymous. In images: shown openly, or kept anonymous (from behind, in silhouette, out of focus, cropped)?
 - **Photo conversion:** grayscale, or pure black and white (hard threshold, or a halftone dot pattern like a photocopy)?
 
