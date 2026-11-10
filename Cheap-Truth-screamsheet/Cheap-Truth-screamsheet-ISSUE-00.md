@@ -66,18 +66,18 @@ Nobody got the car. The two thieves got each other. Some partnerships start with
 ## CHEAP TRUTH TOP TEN
 *Heywood to Embers, as I saw it.*
 
-0. **[PLACE, mission line with 1, FF:06:B5 line with 9].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
-1. **[PLACE, mission line with 0, FF:06:B5 line with 8].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
-2. **[PLACE, mission line with 3, FF:06:B5 line with 7].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
-3. **[PLACE, mission line with 2, FF:06:B5 line with 6].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
-4. **[PLACE, pairs with 5 both ways].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
-5. **[PLACE, pairs with 4 both ways].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
-6. **[PLACE, mission line with 7, FF:06:B5 line with 3].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
-7. **[PLACE, mission line with 6, FF:06:B5 line with 2].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
-8. **[PLACE, mission line with 9, FF:06:B5 line with 1].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
-9. **[PLACE, mission line with 8, FF:06:B5 line with 0].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+0. **[PLACE].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+1. **[PLACE].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+2. **[PLACE].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+3. **[PLACE].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+4. **[PLACE].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+5. **[PLACE].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+6. **[PLACE].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+7. **[PLACE].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+8. **[PLACE].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
+9. **[PLACE].** [district]. [the shot]. [the way up]. [the art, if any]. [verdict]
 
-[Neighbour lines cross at the mission's location, to be decided: El Coyote Cojo, where the job starts, or the garage under Embers, where the car never moved. Bracket lines cross at an FF:06:B5 location, to be decided. Places to be scouted in game.]
+[X marks the spot: lines through pairs of these places cross at up to three marked spots. One is the mission's location, to be decided: El Coyote Cojo, where the job starts, or the garage under Embers, where the car never moved. Places to be scouted in game.]
 
 ---
 

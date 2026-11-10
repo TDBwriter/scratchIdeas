@@ -1,6 +1,6 @@
 # CHEAP TRUTH: Interviews with the Dead
 
-An optional department. A dead (or presumed dead) Cyberpunk 2020 legend is called up and interviewed. It counts as one of an issue's 0-2 optional departments (STYLE_GUIDE §3).
+An optional department. A dead (or presumed dead) Cyberpunk 2020 legend is called up and interviewed. It counts as one of an issue's 0-2 optional departments (`Cheap-Truth-screamsheet.md`, section 3).
 
 ---
 
@@ -38,8 +38,18 @@ Checked against the scans. The original ran three of these.
 3. **Canon only (D4).** What they did and how they died, as the sources agree. Where the sources disagree, the interview can play with the disagreement instead of picking a side.
 4. **Follow the money (§0).** Who profited from their life, and from their death.
 5. **The dead refuse to be claimed.** The zine tries to make them its ancestor; they won't have it. The joke cuts both ways, and still never at the street (§2).
-6. **The voice.** The "I" asks the questions and the dead answer in their own voices. Nothing only the crew could know.
-7. **The images (G1):** the drink on the bar, the empty stool. Ordering at the Afterlife only becomes possible once The Heist starts.
+6. **The original's voice and presentation,** in every interview:
+   - **The opening:** "We got hold of [name]. Never mind how." Then the running gag ("There are things on the bottom shelf of the Afterlife that are best left unspoken"), how many years since their death, what they're wearing, and the year they were "called up from."
+   - **The editorial "we"** in the opening and closing, as the original used. This is the one place the zine doesn't say "I."
+   - **Plain labels:** `CT:` for the zine and the subject's initials. No bold.
+   - **Stage directions in brackets:** (uncomfortably), (laughs wildly), (to Miriam).
+   - **CT is eager, slangy and a little dim:** "Preem." "Far out." "OK, that's nova."
+   - **The subject talks money** and is funnier and meaner than CT expects.
+   - **The claim and the refusal:** CT says "may we say something?" and claims them for the zine. They refuse.
+   - **A sudden exit,** told in one bracketed paragraph with a dry last line.
+   - **Double hyphens** (`--`) for dashes, as typed in the original.
+   - **No references to other issues,** so no "see CT3."
+7. **The photo (G1):** one caption link. The drink on the bar, the empty stool. Ordering at the Afterlife only becomes possible once The Heist starts.
 8. **Stands alone (§5).** Introduce the legend fresh every time.
 
 ---
@@ -64,37 +74,39 @@ Cyberpunk 2020 characters, their fate by 2077, and where they could fit. Unknown
 
 ## Prepared drafts
 
-Each draft is in `interviews/`. Each file has two parts:
+Each draft is its own file, named `Cheap-Truth-screamsheet-INTERVIEW-<name>.md`. Each file has two parts:
 - **What canon says,** with sources and blanks where the sources are silent.
-- **A full draft** in the original's pattern, ready to edit down, in plain ASCII CommonMark (§9) with a caption link for the photo.
+- **A full draft** in the original's voice and presentation (rule 6), ready to edit down, in plain ASCII CommonMark (§9) with a caption link for the photo.
+- **A line listing what's invented for the joke,** so the accuracy test (D4) can tell canon from gag.
 
 None is tied to a mission or theme yet.
 
 | File | Who | Status by 2077 | Canon | Fits the department? |
 |---|---|---|---|---|
-| `morgan-blackhand.md` | Morgan Blackhand | Missing since 2023 | Cyberpunk 2020 | Yes: the "Heard you were dead" echo of #17 |
-| `spider-murphy.md` | Spider Murphy | Not found | Cyberpunk 2020 | Only if the rule opens to "fate unknown" |
-| `trace-santiago.md` | Trace Santiago | Unknown; his portrait hangs in the Afterlife | **Cyberpunk RED** (his father, Nomad Santiago, is 2020) | Only if the rule opens to RED and "fate unknown" |
-| `johnny-silverhand-2020.md` | Johnny Silverhand, called up from 2020 | Dead (2023) | Cyberpunk 2020 and RED | Yes. He knows nothing after 2020. |
-| `rache-bartmoss.md` | Rache Bartmoss | Dead (two versions) | Cyberpunk 2020 | Yes |
-| `richard-and-miriam-night.md` | Richard and Miriam Night, mostly talking to each other | Richard dead (1998); Miriam not found | 2020 source not confirmed | Richard yes; Miriam only if the rule opens to "fate unknown" |
-| `mike-pondsmith.md` | Mike Pondsmith, on censorship | **Living, real** | Real world | No |
-| `cd-projekt-trio.md` | Iwinski, Kicinski, Nielubowicz, praising trickle-down | **Living, real** | Real world | No |
+| `Cheap-Truth-screamsheet-INTERVIEW-morgan-blackhand.md` | Morgan Blackhand | Missing since 2023 | Cyberpunk 2020 | Yes: the "Heard you were dead" echo of #17 |
+| `Cheap-Truth-screamsheet-INTERVIEW-spider-murphy.md` | Spider Murphy | Not found | Cyberpunk 2020 | Only if the rule opens to "fate unknown" |
+| `Cheap-Truth-screamsheet-INTERVIEW-trace-santiago.md` | Trace Santiago | Unknown; his portrait hangs in the Afterlife | **Cyberpunk RED** (his father, Nomad Santiago, is 2020) | Only if the rule opens to RED and "fate unknown" |
+| `Cheap-Truth-screamsheet-INTERVIEW-johnny-silverhand-2020.md` | Johnny Silverhand, called up from 2020 | Dead (2023) | Cyberpunk 2020 and RED | Yes. He knows nothing after 2020. |
+| `Cheap-Truth-screamsheet-INTERVIEW-rache-bartmoss.md` | Rache Bartmoss | Dead (two versions) | Cyberpunk 2020 | Yes |
+| `Cheap-Truth-screamsheet-INTERVIEW-richard-and-miriam-night.md` | Richard and Miriam Night, mostly talking to each other | Richard dead (1998); Miriam not found | 2020 source not confirmed | Richard yes; Miriam only if the rule opens to "fate unknown" |
+| `Cheap-Truth-screamsheet-INTERVIEW-mike-pondsmith.md` | Mike Pondsmith, on censorship | **Living, real** | Real world | A fourth-wall easter egg, by design |
+| `Cheap-Truth-screamsheet-INTERVIEW-cd-projekt-trio.md` | Iwinski, Kicinski, Nielubowicz, praising trickle-down | **Living, real** | Real world | A fourth-wall easter egg, by design |
 
-### Real people
-- **The conflict:** the Pondsmith and CD Projekt pieces name living, real people. That breaks test F1 and §7 ("real events are never named"), and they can't be read as Night City reporting.
-- **Ways to run them:**
-  - outside the main-job issues, as a special, the way the original ran its Sturgeon issue;
-  - as a named exception to F1 and §7;
-  - or not at all.
-- **Labelled parody.** Both open with a line saying the interview never happened and the person didn't say it.
-- **Keep them to opinion and caricature.** Pondsmith's lines stay close to what he's said on the record: Cyberpunk as "a warning, not an aspiration," "inherently political," "don't preach." I found nothing on the record from him about censorship itself. The CD Projekt piece makes no factual claims about the three men's conduct; the satire is the economic theory.
-- **"Kiciński" is ambiguous:** Michał (co-founder) or Adam (longtime joint CEO). The draft uses the surname only.
+### The two fourth-wall interviews
+- **They break the rules on purpose.** The Pondsmith and CD Projekt pieces name living, real people. They're easter eggs meant to break the fourth wall, so test F1 and the "never named" rule (`Cheap-Truth-screamsheet.md`, section 7) don't apply to them.
+- **They're caricatures, humorously cynical:**
+  - **The Management** (Iwinski, Kicinski, Nielubowicz): three bumbling buffoons praising trickle-down economics with a champagne tower that never trickles.
+  - **The Creator** (Pondsmith, as his in-game radio persona Maximum Mike): a rich Streetkid who forgot his poor roots, explaining that nobody censors him because he has people for that.
+- **They use the #17 opening:** the zine goes looking for a spirit and finds the subject "apparently very much alive."
+- **Each ends by saying it's invented,** in the zine's voice: "None of this happened."
+- **What keeps them fair** is in each file's notes: they caricature public roles, lean only on public events, and claim nothing about anyone's private life.
+- **"Kicinski" is still ambiguous:** Michal (co-founder) or Adam (longtime joint CEO, and the one involved in the public events the piece echoes). The draft uses the surname only.
 
 ## Still open
 - Which issue and theme each interview goes with.
 - Whether the department opens to "fate unknown" (Spider Murphy, Trace Santiago, Miriam Night) and to Cyberpunk RED characters (Trace Santiago).
-- How to run the two real-people pieces, and which Kicinski.
+- Which Kicinski.
+- Which issues carry the two fourth-wall interviews.
 - Whether Johnny can be interviewed after The Heist at all.
 - Richard Night's Cyberpunk 2020 source.
 - Where Bartmoss's freezer is, and which quest it's in.
@@ -111,5 +123,5 @@ None is tied to a mission or theme yet.
 - [Dot Esports: Kold Mirage and Bartmoss' cyberdeck](https://dotesports.com/cyberpunk/news/cyberpunk-2077-kold-mirage-walkthrough-how-to-save-the-data-on-bartmoss-cyberdeck) (title only; the page couldn't be opened)
 - [TechRadar: Cyberpunk 2077 lore guide](https://www.techradar.com/news/cyberpunk-2077-lore-guide-fear-and-loathing-in-night-city) and [Space4Games: timeline](https://space4games.com/en/games-en/cyberpunk-2077-timeline/) (Richard Night)
 - [Wikipedia: Cyberpunk 2077](https://en.wikipedia.org/wiki/Cyberpunk_2077) (Saburo's death and the poisoning cover-up; Johnny; Alt)
-- Each file in `interviews/` lists its own sources.
+- Each interview file lists its own sources.
 - [Screen Rant: the Jackie Welles drink](https://screenrant.com/cyberpunk-2077-jackie-welles-drink-update-1-5/), [TheGamer: the Afterlife](https://www.thegamer.com/cyberpunk-2077-afterlife-bar-morgue-easter-egg-detail/) (drinks named after legends)
