@@ -10,7 +10,7 @@ An issue ships only when every test passes.
 | ID | Test | How to check |
 |---|---|---|
 | A1 | The masthead is ASCII art drawing "CHEAP TRUTH [n]", where n is the issue number. | **[auto]** characters are plain ASCII; **[read]** the art is legible |
-| A1b | The first line of the issue, above the masthead, is the issue ID as a valid IEEE reference: `[n] Veritas, "<editorial headline>," Cheap Truth, no. n, Night City, <Mon. DD, YYYY>.` n starts at 0 and follows main-job order; the title matches the editorial's headline (IEEE capitalization); the date is the real-world publication date. | **[auto]** pattern match; n matches the issue's place in main-job order |
+| A1b | The first line of the issue, above the masthead, is the issue ID as a valid IEEE reference: `[n] Veritas, "<editorial headline>," Cheap Truth, no. n, Night City, <YYYY:DDD>.` n starts at 0 and follows main-job order; the title matches the editorial's headline (IEEE capitalization); the date is the real-world publication date as `YYYY:DDD` (year, then the day of the year in three digits, 001 to 365 or 366). | **[auto]** pattern match; n matches the issue's place in main-job order |
 | A1c | The next line after the issue ID (skipping blank lines), before the masthead, is `NOT COPYRIGHTED ` followed by a joke about this issue. | **[auto]** the line starts `NOT COPYRIGHTED `; **[read]** the joke ties to this issue |
 | A2 | The masthead's face is not used in any other issue. | **[auto]** compare against the other issues |
 | A3 | After the masthead comes the editorial: a headline, then **EDITORIAL.** | **[auto]** |
@@ -32,7 +32,7 @@ An issue ships only when every test passes.
 |---|---|---|
 | C1 | The writer speaks in the first person ("I") and tells events as an eyewitness, as if watching them happen. | **[auto]** "I" appears outside quotes; **[read]** events are told as seen |
 | C1b | The "I" is never in the crew: no crew member's thoughts or feelings, no "we" doing the job, nothing only the crew could know (their plans, their private talk). | **[read]**; **[auto]** flags *we / us / our* outside quotes for review |
-| C2 | The crew is never named, in text or captions (V, Vincent, Jackie, Welles, T-Bug). | **[auto]** |
+| C2 | The crew is never named, in text or captions (V, Vincent, Valerie, Jackie, Welles, T-Bug). | **[auto]** |
 | C3 | Every person is introduced with a short label at first mention. | **[read]** |
 | C4 | Style over substance: attitude, image and rhythm carry the language. In every paragraph a reviewer can point to the line doing it. | **[read]** |
 | C5 | Kind to the street: no joke or verdict mocks anyone for being poor, chromed, desperate or broken. Hard words go to whoever profits. | **[read]** |
@@ -58,6 +58,7 @@ An issue ships only when every test passes.
 | E5 | The Top Ten, and Gripe Time if it runs, are about free-running life in Night City. | **[read]** |
 | E6 | The issue carries exactly one clue of the FF:06:B5 hunt, in the Top Ten, or in Gripe Time if it runs. The riddle stands alone, and it is the right clue for this issue's place in the hunt's order. | **[read]** against the clue list |
 | E7 | The Top Ten, with Gripe Time if it runs, uses all four moves: execute the lethargic, police the imitators, shameless self-hype, the anonymous shield. Hard words aim up. | **[read]** point to each |
+| E8 | *If an Interview with the Dead runs:* the subject is a Cyberpunk 2020 character dead or believed dead by 2077, never the crew; the tie to this mission is named; the facts match canon; it follows the money; the dead refuse to be claimed by the zine. | **[read]** against `INTERVIEWS_WITH_THE_DEAD.md` |
 
 ## F. Real-world parallels
 | ID | Test | How to check |
@@ -69,11 +70,12 @@ An issue ships only when every test passes.
 ## G. Imagery
 | ID | Test | How to check |
 |---|---|---|
-| G1 | Every piece has at least one key image. | **[read]** |
-| G2 | The lead image tells the lead story alone. Cover the text: can a viewer say what happened? | **[read]** |
-| G3 | The lead article has images for how it came to be, who profited, and who paid. | **[read]** |
-| G4 | Each Top Ten entry has the photo taken at that place; each bulletin item has a thumbnail. | **[read]** |
-| G5 | Everything is black on white: no color. | **[auto]** on the image files |
+| G1 | Every piece has at least one key photo, linked from its caption. | **[read]** |
+| G2 | The lead photo tells the lead story alone. Open it without the text: can a viewer say what happened? | **[read]** |
+| G3 | The lead article links photos for how it came to be, who profited, and who paid. | **[read]** |
+| G4 | Each Top Ten entry links the photo taken at that place; each bulletin item links a photo of its subject. | **[read]** |
+| G5 | Everything is black on white: no color. | **[auto]** on the photo files |
+| G6 | Every caption is a working link to its photo, and reads well as plain text. | **[auto]** links resolve; **[read]** the caption alone |
 
 ## H. Markup
 | ID | Test | How to check |
@@ -82,7 +84,8 @@ An issue ships only when every test passes.
 | H2 | Plain ASCII characters only. | **[auto]** |
 | H3 | A blank line between every block; no trailing-space line breaks. | **[auto]** |
 | H4 | All ASCII art sits in fenced code blocks. | **[auto]** plus **[read]** |
-| H5 | Opened in a browser, the rendered page shows every heading, list, rule, code block and image, with nothing garbled. | **[read]** |
+| H5 | Opened in a browser, the rendered page shows every heading, list, rule, code block and link, with nothing garbled. | **[read]** |
+| H6 | Text only: no embedded images (`![`). Every photo is a caption link. | **[auto]** |
 
 ## Not yet decided (these can't be tested until they are)
 - **Length:** the original ran about 1,200–2,000 words per issue.

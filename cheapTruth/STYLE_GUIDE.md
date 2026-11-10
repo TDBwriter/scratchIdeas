@@ -4,7 +4,7 @@ V's screamsheet. **One issue per main job**, published after that main job is co
 
 **Who makes it.** V-media: a street kid with a camera, just trying to survive, make friends and make art. A pacifist, free-running, truth-telling documentarian who cares more about the perfect still frame than the perfect score. Into street art (graffiti, mixed media, film, music, protest), kindness and community. The zine is made the way V-media lives: by hand, free, passed along. (On the page, the narrator never names or speaks as V-media; see §2.)
 
-Modeled on the original *Cheap Truth* (Austin, Texas, 1983–1986), edited by "Vincent Omniaveritas" (Bruce Sterling): free, photocopied, **NOT COPYRIGHTED**. Male V's full name in the game is Vincent, which gives the title a second layer.
+Modeled on the original *Cheap Truth* (Austin, Texas, 1983–1986), edited by "Vincent Omniaveritas" (Bruce Sterling): free, photocopied, **NOT COPYRIGHTED**. If V is played male, V's full name in the game is Vincent, which gives the title a second layer (a female V is Valerie).
 
 ---
 
@@ -39,14 +39,14 @@ Every issue has these parts, in this order.
 | 2 | **EDITORIAL.** | Opens nearly every issue. 1–5 sentences in a direct voice that set the issue's conceit, sometimes with a quoted tagline. *"Hi. You want to know the truth. We want to tell it to you."* | **A headline, then EDITORIAL.** The headline is the issue's title in its ID. First-person eyewitness voice (see §2). |
 | 3 | **Lead feature** | An ALL-CAPS headline (a pun, tabloid style, or a mock news headline), then the piece | The mission's news: how it came to be, who profited, who paid (see §0) |
 | 4 | **Departments** | Recurring: **CHEAP TRUTH TOP TEN** (numbered capsules), **INTERVIEW** (Q&A, sometimes with the dead), **GRIPE TIME**, **BULLETIN**, correspondent dispatches | **TOP TEN in every issue**, plus 0–2 others, Gripe Time among them (see §3) |
-| 5 | **Images** | Black-and-white found images (engravings, technical diagrams, op-art, silhouettes) dropped into gaps, often running off the edge | **Key images for every piece** (photo-mode shots and footage stills) that carry its story. ASCII art for the masthead and small decorations (see §8). |
+| 5 | **Images** | Black-and-white found images (engravings, technical diagrams, op-art, silhouettes) dropped into gaps, often running off the edge | **Key photos for every piece** (photo-mode shots and footage stills) that carry its story. The zine is **text only**: each photo appears as its caption, and the caption is a link to the photo. ASCII art for the masthead and small decorations (see §8, §9). |
 | 6 | **Colophon** | A fixed formula, a new slogan each issue (see §4) | Same formula, V's details. After it, the copyright line and then the issue ID close the file (see below). |
 
 **Length:** the originals ran about 1,200–2,000 words, typically about 1,500, on one sheet printed both sides.
 
-**Issue ID.** The first line of every issue is its own reference in **standard IEEE format**, numbered from **0**: the first main-job issue is `[0]`, the next `[1]`, and so on. **The title is the editorial's headline** (IEEE style: in quotes, first word and proper nouns capitalized). The date is the real-world publication date.
+**Issue ID.** The first line of every issue is its own reference in **standard IEEE format**, numbered from **0**: the first main-job issue is `[0]`, the next `[1]`, and so on. **The title is the editorial's headline** (IEEE style: in quotes, first word and proper nouns capitalized). The date is the real-world publication date as **`YYYY:DDD`**: the year, a colon, then the day of the year in three digits (January 1 is `001`, December 31 is `365`, or `366` in a leap year). For example, November 10, 2026 is `2026:314`.
 
-> `[0] Veritas, "<editorial headline>," Cheap Truth, no. 0, Night City, <Mon. DD, YYYY>.`
+> `[0] Veritas, "<editorial headline>," Cheap Truth, no. 0, Night City, <YYYY:DDD>.`
 
 **Copyright line.** The next line, between the issue ID and the ASCII art, is `NOT COPYRIGHTED ` followed by a lame joke about this issue.
 
@@ -55,7 +55,7 @@ Every issue has these parts, in this order.
 **Brackets.** The file closes with the same two lines in reverse order: the copyright line, then the issue ID as **the very last line**. The two pairs bracket the issue. Both copies of each line are identical.
 
 > ```
-> [0] Veritas, "<editorial headline>," Cheap Truth, no. 0, Night City, <Mon. DD, YYYY>.
+> [0] Veritas, "<editorial headline>," Cheap Truth, no. 0, Night City, <YYYY:DDD>.
 >
 > NOT COPYRIGHTED <lame joke>
 >
@@ -63,7 +63,7 @@ Every issue has these parts, in this order.
 >
 > NOT COPYRIGHTED <lame joke>
 >
-> [0] Veritas, "<editorial headline>," Cheap Truth, no. 0, Night City, <Mon. DD, YYYY>.
+> [0] Veritas, "<editorial headline>," Cheap Truth, no. 0, Night City, <YYYY:DDD>.
 > ```
 
 ---
@@ -112,7 +112,7 @@ The Top Ten, and Gripe Time when it runs, are about **free-running life in Night
 
 ### The departments
 
-- **CHEAP TRUTH TOP TEN**: ten places around this mission's story: iconic spots, preem photo locations, brilliant art. Night City shown by a free runner who can go anywhere. Each entry gives the place and its district, the shot, the way up, the art if there is any, and a one-line verdict, with the photo taken there.
+- **CHEAP TRUTH TOP TEN**: ten places around this mission's story: iconic spots, preem photo locations, brilliant art. Night City shown by a free runner who can go anywhere. Each entry gives the place and its district, the shot, the way up, the art if there is any, and a one-line verdict, with a caption linked to the photo taken there.
   `0. [PLACE]. [district]. [the shot]. [the way up]. [the art, if any]. [verdict]`
 
   **Two hidden targets.** The ten places pair up two ways, and each way draws five lines on the map to a different spot.
@@ -131,7 +131,8 @@ The Top Ten, and Gripe Time when it runs, are about **free-running life in Night
 
   **Still open:** which target sits between its pairs; which FF:06:B5 location each issue targets; how close a line must pass to count; whether the issue prints the map with the lines or leaves readers to draw them.
 - **STREET ART** (working name): the art found along this mission's route: graffiti, murals, posters, mixed media, film, music, protest. A photo of each, where it was, and who made it, if that's known.
-- **INTERVIEW**: a Q&A with someone from the mission. The original ran mock interviews (Lovecraft, Raymond Chandler) and ended its run interviewing its own editor.
+- **INTERVIEW**: a Q&A with someone from the mission.
+- **INTERVIEW WITH THE DEAD**: a dead, or believed dead, Cyberpunk 2020 legend, called up at the Afterlife by ordering their drink. It follows the original's pattern (Lovecraft in #3, Chandler in #11, the editor's own "post-mortem" in #17): the dead talk money and refuse to be claimed by the zine. Never the crew. The rules and the list of legends are in `INTERVIEWS_WITH_THE_DEAD.md`.
 - **GRIPE TIME**: a rant about free-running life in Night City, using the four moves above. The original ran one Gripe Time (#9), in the voice of a fictional editor complaining about ungrateful writers.
 - **BULLETIN**: short items and rumors.
 - **DISPATCH**: a piece credited to a crew member under an epithet (Jackie, T-Bug).
@@ -192,7 +193,7 @@ The original rarely complained head-on. It took an institution, recast it throug
 |---|---|---|
 | **Pen names with labels** | "guest grump Sue Denim" · "guest agitatrix Hunilla de Cholo" · "Our New York correspondent" | Veritas, editing. Crew dispatches under labels (to be named), e.g. a Heywood correspondent, a voice from the net |
 | **Fake news with a place line** | "'NODE ZERO' DEMOLISHED! (Austin, Texas November 1986)" | The **news section**: headline, place line, report |
-| **Mock interviews** | Lovecraft, Raymond Chandler, the editor himself | Q&A with someone from the mission, or with the dead: the shards cyberpsychos leave behind (e.g. "Farewell," Six Feet Under) |
+| **Mock interviews** | Lovecraft, Raymond Chandler, the editor himself | **Interview with the Dead**: Cyberpunk 2020 legends called up at the Afterlife (see `INTERVIEWS_WITH_THE_DEAD.md`). Or the shards cyberpsychos leave behind (e.g. "Farewell," Six Feet Under) |
 | **Top Ten with verdicts** | "Makes more sense than the movie." · a recommended list with knives in the verdicts | **CHEAP TRUTH TOP TEN**: iconic places, photo spots and art around the mission, rated by a free runner who can go anywhere, using the four moves (§3) |
 | **A new slogan each issue** | "Xerox pirates, start your engines!" | A new slogan in each colophon (bank below) |
 
@@ -230,22 +231,25 @@ Primarily, *Cheap Truth* tells the in-game story. Underneath, the way the game i
 
 ## 8. Imagery
 
-*Cheap Truth* is a vehicle for the photography. **Every piece needs key images that tell its story.**
+*Cheap Truth* is a vehicle for the photography. **Every piece needs key photos that tell its story.**
 
-- **A lead image per piece.** It should tell the story on its own, so a reader who only looks at the pictures still gets it.
-- **Supporting images follow the money:** one for how it came to be, one for who profited, one for who paid.
-- **Small pieces get small images.** Each Top Ten entry gets the photo taken at that place. Each bulletin item gets a thumbnail of its subject.
-- **Captions:** short, in the eyewitness voice, and they don't name the crew.
+**Linked, not embedded.** The zine is Markdown-styled text only. No photo appears on the page. Each photo is its caption, and the caption text is a link to the photo: `[Two kids wake on the pavement, unpaid.](<link to the photo>)`.
+
+- **A lead photo per piece.** It should tell the story on its own, so a reader who only opens the photos still gets it.
+- **Supporting photos follow the money:** one for how it came to be, one for who profited, one for who paid.
+- **Small pieces get one photo each.** Each Top Ten entry links the photo taken at that place. Each bulletin item links a photo of its subject.
+- **Captions:** short, in the eyewitness voice, and they don't name the crew. **The caption is the link.** It has to read well as a line of text, because for most readers it's all they'll see until they click.
 - **Sources:** photo-mode shots (free camera, lighting, added characters) and stills from gameplay footage. Many beats are scripted scenes, so check in the game where photo mode is available, and capture during play.
-- **The still frame over the score.** The lead image is the point of the issue, the way the payout is the point of a gig.
+- **The still frame over the score.** The lead photo is the point of the issue, the way the payout is the point of a gig.
 - **Shoot the art.** Graffiti, murals, posters, buskers and protest signs along each mission's route are subjects in their own right.
-- **ASCII art** is for the masthead and small decorations, not for the story images.
+- **ASCII art** is for the masthead and small decorations, not for the story photos. It's the only picture that sits on the page.
 
 - **Black on white.** The whole zine is black on white: the photos, the type, the ASCII art. It's the look of the photocopied original.
 
 **Still open**
 - **Pacifism after The Heist:** V-media is a pacifist, but V's arc turns unhinged after Jackie dies. Does the zine's voice stay pacifist when V doesn't, or change with V?
-- **Crew in photos:** the text keeps the crew anonymous. In images: shown openly, or kept anonymous (from behind, in silhouette, out of focus, cropped)?
+- **Where the photos live:** a folder next to each issue, or a host. The link is either a path or a URL.
+- **Crew in photos:** the text keeps the crew anonymous. In the photos: shown openly, or kept anonymous (from behind, in silhouette, out of focus, cropped)?
 - **Photo conversion:** grayscale, or pure black and white (hard threshold, or a halftone dot pattern like a photocopy)?
 
 ---
@@ -254,7 +258,8 @@ Primarily, *Cheap Truth* tells the in-game story. Underneath, the way the game i
 
 Every issue is a Markdown file written in the most basic Markdown there is, so any browser-side renderer shows it the same way.
 
-- **CommonMark only.** Use: `#` and `##` headings, paragraphs, `*italic*`, `**bold**`, numbered lists and `-` lists, `---` rules, fenced code blocks, `![caption](file)` images, `[text](url)` links.
+- **Text only.** No embedded images (no `![...](...)`). Every photo is its caption, linked: `[caption](photo link)`.
+- **CommonMark only.** Use: `#` and `##` headings, paragraphs, `*italic*`, `**bold**`, numbered lists and `-` lists, `---` rules, fenced code blocks, and `[text](link)` links.
 - **Nothing beyond it.** No raw HTML, comments included (a renderer in safe mode prints them as text). No tables, footnotes, task lists, strikethrough, or trailing-space line breaks. No underline headings (`===` or `---` under a line of text).
 - **Plain ASCII characters.** Straight quotes, `-` for every dash, no `·` or `→`. A page served without a declared encoding can garble anything else.
 - **A blank line between every block.** A `---` directly under a line of text turns that line into a heading, and two lines with no blank line between them run together.

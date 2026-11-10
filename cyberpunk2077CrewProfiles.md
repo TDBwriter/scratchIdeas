@@ -4,12 +4,12 @@ Who the three are in *Cyberpunk 2077* itself, before the playthrough adds anythi
 
 ---
 
-## V (male, Streetkid)
+## V (Streetkid)
 
 **The facts**
-- **Name:** Vincent. The game withholds it at first; it's confirmed in the main job "Automatic Love," after The Heist.
+- **Name:** Vincent if V is male, Valerie if female. The game withholds it at first; it's confirmed in the main job "Automatic Love," after The Heist.
 - **Age:** 27. A developer clarified V is "27 not 22 or whatever."
-- **Voice:** Gavin Drea (male V).
+- **Voice:** Gavin Drea (male V) or Cherami Leigh (female V).
 - **From:** Night City.
 - **Job:** an edgerunner, a mercenary with cyberware.
 - **Lifepath:** Streetkid. It sets V's background and the opening mission, The Streetkid, which starts in El Coyote Cojo in Heywood. Streetkid-only dialogue options turn up in later conversations.
@@ -89,22 +89,104 @@ Who the three are in *Cyberpunk 2077* itself, before the playthrough adds anythi
 | The Information | On V's third dive into the braindance, V brings T-Bug in. Judy resists; T-Bug: "Relax, Judy. Everything'll be fine." Jackie isn't in this job. |
 | The Heist | At Dex's briefing in the Afterlife, then leaves with Dex. At Konpeki check-in she helps with a receptionist who threatens to call Taki-san. Killed in the net during the lockdown. |
 
+**What she does in the game (her skills)**
+- **Practice Makes Perfect:** rewrites a Militech training shard and runs V through shooting, hacking, stealth and combat scenarios.
+- **The Rescue:**
+  - Briefs the crew over comms and marks a route through the scavenger den.
+  - Tells V to pull a shard from Sandra's biomonitor, which lets its call to Trauma Team get through.
+- **The Gift:** sends V to get the PING quickhack and try it on a camera.
+- **The Information:** joins a braindance through V's link.
+- **The Heist:**
+  - At check-in, tells V to stop the receptionist before she calls Taki-san.
+  - The Flathead goes through the vents to plug her into the hotel's systems. Once she's in, she links V to the CCTV.
+  - Tells V to escape through the window.
+
+**Her limits in the game**
+- **She works remotely,** through V and through devices on site. To get into Arasaka's systems she needed a physical way in: the Flathead and the netrunner chair.
+- **She directs; V does the hands-on hacking.**
+- **She's in the room once:** Dex's briefing at the Afterlife.
+- **She dies in the net.**
+
+**Canon to keep**
+- **Comms only:** T-Bug is on remote comms in every scene where the game doesn't put her in the room.
+- **Her real skills:** what she can do in any scene matches what she does in the game. To get into a system she needs a way in, and V does the hands-on work.
+- **Play, don't change:** we can play with her canon (what she eats, her porch, her jokes) but not change what she is.
+
 **After The Heist:** no messages, memorial or job about her turned up in the sources found. Left blank.
 
 ---
 
 ## What the game doesn't show
 
-This is the room the playthrough has to fill. Nothing below is in the game.
+This is the room the playthrough has to fill. For each gap: what's in the game, what players talk about, what can be recreated, and which existing quests can carry it.
 
-- **V and Jackie's six months.** The montage is the only record: about 80 seconds, no dialogue documented here. What jobs they did, and how lunch became a partnership, is unseen.
-- **How T-Bug joined them.** She first appears already working with Jackie (taking over his training shard). How Jackie or V found her, and how long she'd known Jackie, isn't shown.
-- **Jackie and T-Bug together, without V.** No scene found.
-- **T-Bug's life.** No real name, home, history or reason for the handle found. Only her outlook: picky about contracts, planning to retire.
-- **T-Bug after her death.** Nothing found: no funeral, no message, no one asking after her.
-- **Jackie's past.** The Valentinos and his mother's reaction are mentioned. The rest (his childhood, how he met Misty and Viktor) wasn't confirmed in the sources found.
-- **V's past before the bar.** The Streetkid lifepath opens with a broken nose and a story about a mugging; what came before isn't shown here.
-- **Jackie and T-Bug in the jobs they skip.** Jackie isn't in The Information; T-Bug isn't in The Ripperdoc, The Ride or The Pickup. In the game, V does those without them.
+### What players talk about most
+- **The six-month montage.** One of the most argued-over moments in the game. Jackie was in nearly every pre-launch trailer, so his short time in the game felt like a loss, and some fans believed playable missions with him had been cut. CD Projekt says it was always meant to be a montage: "not cut content. We always planned it like this." The cinematic designer said six months of playable gigs would have "no real tension."
+- **Jackie's death.** "Can you save Jackie?" is a common question. You can't.
+- **The Jackie Welles drink.** For a long time V couldn't order a drink for him. Update 1.5 added a Jackie Welles at the Afterlife: vodka, lime juice, ginger beer, and "a splash of love."
+- **T-Bug's death.** It passes so quickly that players only realize she's dead when V mentions it later. Commentary notes that V barely acknowledges her afterwards compared with Jackie, and some players think her story was cut short. These come from commentary pieces, not from CD Projekt.
+
+### 1. V and Jackie's six months
+- **In the game:** an 80-second montage, rendered in the game engine, with 79 cuts, 15 locations and about 45 characters. T-Bug isn't in it.
+- **Its frames, in order:**
+  1. A Japantown street, with V and Jackie walking.
+  2. Mama Welles' house.
+  3. Lizzie's Bar.
+  4. A basketball court in Heywood.
+  5. A car dealership.
+  6. Misty's shop.
+  7. Viktor's clinic.
+  8. An alleyway.
+  9. A nightclub.
+  10. The Welles house again.
+  11. A garage.
+  12. A gun shop: an arms dealer, with V and Jackie trying weapon after weapon.
+  13. Another alleyway.
+  14. The Welles house, where V and Jackie move out.
+  15. V's apartment.
+- **Also in it:**
+  - Three mirror scenes in Jackie's room, in three outfits.
+  - Jackie changes over the six months: shaved head and no cyberware at the start; hair, a beard and cyberware by the end. (This comes from a mod page describing the montage.)
+  - V's hair changes twice.
+- **To recreate:** the fifteen locations as photo-mode frames, in the same order. Lizzie's, Misty's, Viktor's and V's apartment are open in the game. Check whether Mama Welles' house, the dealership, the nightclub, the garage and the gun shop can be reached.
+- **Existing quests that can carry it:** the Watson side jobs, gigs and NCPD hustles, played as the crew. They're the missions CD Projekt chose not to make, and the crew journeys give them the goal and tension the designer said they'd lack. In the game they unlock after The Ripperdoc, after the six months, so showing them as those months is a choice for the edit.
+
+### 2. How T-Bug joined them
+- **In the game:** she first appears already working with Jackie, inside his training shard (Practice Makes Perfect). She isn't in the montage.
+- **What players say:** commentary calls her underdeveloped. Her main role is teaching V netrunning and merc work.
+- **Existing quests that carry her:** Practice Makes Perfect (her entrance), The Rescue (her first job on screen), The Gift (her lesson).
+- **To recreate:** nothing in the game shows how she joined. Any scene of it is ours, on comms, within her canon (above).
+
+### 3. Jackie and T-Bug together, without V
+- **In the game:** none. The two only work together, with V, on The Rescue and The Heist.
+- **To recreate:** calls only, since T-Bug is never in the room with them outside the Afterlife.
+
+### 4. T-Bug's life
+- **In the game:** no real name, home or history. Only her outlook: picky about contracts, planning to retire, a netrunner who knows she isn't so different from a solo.
+- **What players say:** some think her story was cut short, like Evelyn Parker's (commentary).
+- **To recreate:** texture only, kept within her canon.
+
+### 5. T-Bug after her death
+- **In the game:** nothing. Jackie gets an ofrenda and a drink. T-Bug gets neither.
+- **What players say:** the contrast is the point they notice.
+- **To recreate:** no game asset exists, so anything is ours, and it happens around V.
+
+### 6. Jackie's past
+- **In the game:**
+  - The Valentinos and his mother (one source).
+  - In Heroes, the things in his garage: a book, a basketball, a belt and a bottle of tequila.
+- **Montage frames that show it:** Mama Welles' house (three times), the basketball court in Heywood, a garage, Misty's shop.
+- **Existing quest:** Heroes, after The Heist, is the game's own look at his life.
+
+### 7. V's past before the bar
+- **In the game:**
+  - The broken nose, the mugging story and the offer to help Pepe.
+  - Streetkid dialogue options.
+  - In the montage, V's hair changes twice. It ends with V moving out of the Welles house into V's apartment.
+
+### 8. Jackie and T-Bug in the jobs they skip
+- **In the game:** Jackie isn't in The Information. T-Bug isn't in The Ripperdoc, The Ride or The Pickup.
+- **To recreate:** Jackie can appear on calls before or after those jobs. T-Bug is only ever on comms, and she only does what her canon allows.
 
 ---
 
@@ -121,3 +203,11 @@ This is the room the playthrough has to fill. Nothing below is in the game.
 - [Vulkk: Johnny and Jackie lore details](https://vulkk.com/2020/10/07/cyberpunk-2077-new-johnny-and-jackie-character-details/) (the Valentinos and his mother, via search results)
 - [PC Gamer: Cyberpunk 2077 characters](https://www.pcgamer.com/uk/cyberpunk-2077-characters), [PC Gamer: Can you save Jackie?](https://www.pcgamer.com/cyberpunk-2077-save-jackie-welles-death-remains)
 - Gamepressure and PC Gamer on the six-month montage
+- [Game Maker's Toolkit: The Secrets Behind That Cyberpunk 2077 Montage](https://gmtk.substack.com/p/the-secrets-behind-that-cyberpunk) (the montage's frames and numbers)
+- [TheGamer: the montage and missions with Jackie](https://www.thegamer.com/cybeerpunk-2077-quick-montage-jackie-missions/) (Dec. 6, 2021)
+- [Wccftech: the montage is not cut content](https://wccftech.com/no-the-half-year-montage-is-not-cut-content-cyberpunk-2077-act-1-was-designed-to-prevent-a-meandering-unfocused-experience/)
+- [Nexus Mods: 6 Months Change People](https://www.nexusmods.com/cyberpunk2077/mods/21108) (how Jackie and V look over the montage)
+- [Screen Rant: the Jackie Welles drink, Update 1.5](https://screenrant.com/cyberpunk-2077-jackie-welles-drink-update-1-5/), [Screen Rant: the recipe](https://screenrant.com/cyberpunk-2077-jackie-wells-drink-recipe-moscow-mule/)
+- [Fextralife: The Heist](https://cyberpunk2077.wiki.fextralife.com/The_Heist) and [The Rescue](https://cyberpunk2077.wiki.fextralife.com/The_Rescue) (T-Bug's actions)
+- [Game8: The Heist](https://game8.co/games/Cyberpunk-2077/archives/Quests-The-Heist) (the Flathead plugs T-Bug into the hotel's systems)
+- Commentary on T-Bug: "Cyberpunk 2077 did wrong by one character" (blog copies, low reliability)

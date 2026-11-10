@@ -1,4 +1,4 @@
-[0] Veritas, "Who got paid for a car that never moved?" Cheap Truth, no. 0, Night City, Nov. 10, 2026.
+[0] Veritas, "Who got paid for a car that never moved?" Cheap Truth, no. 0, Night City, 2026:314.
 
 NOT COPYRIGHTED Go ahead, steal it. Unlike the Aerondight, this one leaves the garage.
 
@@ -92,4 +92,4 @@ Veritas - 2077:001:2214.000
 
 NOT COPYRIGHTED Go ahead, steal it. Unlike the Aerondight, this one leaves the garage.
 
-[0] Veritas, "Who got paid for a car that never moved?" Cheap Truth, no. 0, Night City, Nov. 10, 2026.
+[0] Veritas, "Who got paid for a car that never moved?" Cheap Truth, no. 0, Night City, 2026:314.
