@@ -45,7 +45,7 @@ Everything needed to keep V's behavior and voice right. V is always neutral in e
 | 5 | Threshold | The Rescue | [GAME] The first crew job; V carries Sandra out to Trauma Team. [OURS] V photographs the woman they were too late for. (Scene 4) |
 | 6 | Tests, allies, enemies | Free roam | [GAME] The Gift, gigs, cyberpsychos. [OURS] Noodle calls, rooftop routes, the first portraits of Jackie. (Scenes 2, 7, 8) |
 | 7 | Approach | The Ride, The Information, The Pickup | [GAME] Dex's pitch; the braindance, where Judy records the truth for a living; Jackie's nerves at All Foods. [OURS] V goes along because they're going, on one condition: nobody gets hurt. (Scenes 9, 10, 11) |
-| 8 | Ordeal | The Heist | [GAME] V watches Yorinobu kill Saburo. T-Bug dies in the net. Jackie gives V the chip and dies. [OURS] The documentarian has seen the biggest story in Night City and can tell no one. |
+| 8 | Ordeal | The Heist | [GAME] V watches Yorinobu kill Saburo. T-Bug dies in the net. Jackie slots the chip, is shot and dying, and V slots it while he dies. [OURS] The documentarian has seen the biggest story in Night City and can tell no one. |
 | 9 | Reward | The Heist | [GAME] The Relic, which is a curse. [OURS] What V saw. It's the reason V-media's reporting has to stay anonymous. |
 | 10-12 | Road Back, Resurrection, Return | After The Heist | Open. Heroes [GAME] is the first step back. V-media stays a pacifist. |
 

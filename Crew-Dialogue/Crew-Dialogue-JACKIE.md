@@ -32,7 +32,7 @@ Everything needed to keep Jackie's behavior and voice right.
 | The Ripperdoc | Jackie calls V in the morning from a food stall downstairs and mentions another job. V takes his car keys and drives them both to Viktor's. Misty is at the front desk. |
 | The Ride | Jackie, at Misty's, tells V where to find Dex. After Dex's pitch, V calls Jackie and briefs him. |
 | The Pickup | Jackie explains the job: the Maelstrom took a Militech bot, the Flathead, and getting it back is a test before the bigger job. At the negotiation Jackie is nervous, a ganger pulls a gun on him, and V can tell him to sit down. |
-| The Heist | V and Jackie talk with Claire at the Afterlife. After Dex's briefing they are alone together. The chip's case breaks in the jump, so on Evelyn's instruction Jackie puts the chip in his own head. He is badly hurt in the escape. In the Delamain cab, V comforts him and can ask the cab to go to a ripperdoc. Jackie gives V the chip and dies. V chooses where his body goes and touches his shoulder before getting out. |
+| The Heist | V and Jackie talk with Claire at the Afterlife. After Dex's briefing they are alone together. The chip's case breaks in the jump, so on Evelyn's instruction Jackie slots the chip. He is badly hurt in the escape. In the Delamain cab, V comforts him and can ask the cab to go to a ripperdoc. Shot and dying, he watches V slot the chip, and dies. V chooses where his body goes and touches his shoulder before getting out. |
 
 **After The Heist (Heroes)**
 - **Trigger:** Heroes needs the main job Playing for Time, and Jackie's body sent to his family. If his body went to Viktor instead, V just picks up a package from Mama Welles with the bike keys in it.
@@ -59,7 +59,7 @@ Everything needed to keep Jackie's behavior and voice right.
 | 5 | Threshold | The Rescue | [GAME] The first crew job on screen. |
 | 6 | Tests, allies, enemies | Free roam | [OURS] Watching V-media refuse to shoot, and learning to take people down without killing them. "Your way's harder." (Scenes 2, 7, 8) |
 | 7 | Approach | The Ride | [GAME] V briefs him by phone. [OURS] He says yes before V finishes. (Scene 9) |
-| 8 | Ordeal | The Pickup, The Heist | [GAME] Nervous at the negotiation. In The Heist he puts the chip in his own head, gives it to V and dies. (Scene 11) |
+| 8 | Ordeal | The Pickup, The Heist | [GAME] Nervous at the negotiation. In The Heist he slots the chip after the case breaks, is shot and dying, and V slots it while he dies. (Scene 11) |
 | 9 | Return, through others | Heroes | [GAME] The ofrenda at El Coyote Cojo: Mama Welles, Misty, Viktor; his book, basketball, belt and tequila; his bike. The legend he gets is the one his people give him. (Scene 14) |
 
 ---
@@ -152,6 +152,8 @@ Jackie obliquely references the things that will one day sit on his ofrenda, and
 - Never survives The Heist. [GAME]
 
 ## Open
+
+- **Whose neural port Jackie slots the chip into.** Our first draft said his own. The planning log says only "put the chip in someone's neural port." Check in game.
 
 - His past: his childhood, the Valentinos, how he met Misty and Viktor. Not confirmed in the sources found.
 - How much force Jackie uses on screen, which sets the play style of the V-Jackie save.
