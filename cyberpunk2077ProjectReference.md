@@ -101,6 +101,7 @@ Its tensions are part of it: a pacifist in a shooter; an anti-corporate zine bui
 | T-Bug is a script kiddie with a fixed bag of tricks: she's only shown doing hacks seen in gameplay. Her canon can be played with, not changed | `Crew-Dialogue-T-BUG.md` |
 | The run-up to The Heist is "Edgerunners 0": The Streetkid first, then every job that can show the crew working together; order undecided | Zine rules |
 | Jackie calls V "choomie," and "hermano" when it counts | Crew Dialogue silo |
+| Two orders. Play order is the game's, with The Streetkid first. Story order tells every side gig first, then The Streetkid, then the road to The Heist | `Crew-Dialogue.md` |
 | No romance in the crew: friendship like brotherhood, and stark differences | `Crew-Dialogue.md` |
 | Every gig, however small, carries four moments: one each for V, Jackie and T-Bug and one for the crew, tied to the gig's subject | `Crew-Dialogue-GIGS.md` |
 | The game's own lines are repeated wherever possible | `Crew-Dialogue.md` |

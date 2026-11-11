@@ -2,6 +2,8 @@
 
 The side content available before The Heist, and the four moments each gig carries. The rule is in `Crew-Dialogue.md`: every gig gives one personal development to each of the three and one bonding moment to the crew, and all four tie to the gig's subject, never to the action or the outcome.
 
+**In story order, all of these come before The Streetkid.**
+
 **Every gig carries them, no matter how small.** More gigs means more beats, more development, and more heartache in The Heist.
 
 Everything under a gig below is a **seed**: a starting point for dialogue, not the dialogue.

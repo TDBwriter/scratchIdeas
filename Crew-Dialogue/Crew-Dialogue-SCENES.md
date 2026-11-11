@@ -1,38 +1,18 @@
 # Crew Dialogue: the scenes
 
-The storyline's scenes, in order. Each lists when it happens, where, who's in frame, the shot, the dialogue, and which arcs it moves. Locations marked "pick in game" still need scouting. The rules are in `Crew-Dialogue.md`; each character's behavior and voice are in that character's file.
+The storyline's scenes. Each lists when it happens, where, who's in frame, the shot, the dialogue, and which arcs it moves. Locations marked "pick in game" still need scouting. The rules are in `Crew-Dialogue.md`; each character's behavior and voice are in that character's file.
 
-### 1. Lunch with a stranger
-- **When:** The Streetkid, right after they wake. [GAME: they decide to get lunch]
-- **Where:** a food stall in Heywood (pick in game).
-- **In frame:** V-media and Jackie.
-- **The shot:** two bruised faces over two bowls, the camera on the counter between them.
+**Story order.** The numbers are fixed labels, not the order. The videos tell it as: 3, 4, 5, then 2, 6, 7, 8 among the side gigs, then the four Streetkid scenes (`Crew-Dialogue-STREETKID-LATE.md`), then 9, 10, 11, 12, 13, 14. Where the first three sit is still open (`Crew-Dialogue.md`).
 
-> **JACKIE:** About the gun. Nothin' personal, compa. Just biz. [GAME line] I had a guy, you had a guy. Our guys had the same idea.
-> **V:** Your guy get you out of the cuffs?
-> **JACKIE:** Some cop got us out of the cuffs. With his fist.
-> **JACKIE:** So what was in it for you? You don't look like you boost cars for fun.
-> **V:** Bartender owes money. Due tomorrow.
-> **JACKIE:** And you're his what? Family?
-> **V:** I drink there.
-> **JACKIE:** You stole a car for the guy who pours your drinks.
-> **V:** Tried to.
-> **JACKIE:** Hermano. That's the dumbest or the best thing I heard all year.
-> *(He nods at the camera.)*
-> **JACKIE:** And that? You shoot people with it?
-> **V:** Just pictures.
-> **JACKIE:** You don't carry?
-> **V:** Don't need to.
-> **JACKIE:** Everybody in this city needs to.
-> **V:** Then somebody should be watching them do it.
-> **JACKIE:** *(a beat)* Jackie Welles.
-> **V:** V.
-> **JACKIE:** Okay, V. Next job I get, you're on it. You watch. I'll carry.
+### 1. Lunch with a stranger (retired)
+The Streetkid is told late, so V and Jackie aren't strangers at this lunch any more. Scene D in `Crew-Dialogue-STREETKID-LATE.md` replaces it.
 
-**Moves:** the crew strikes its deal; V-media names the refusal; Jackie picks a partner by heart, not sense.
+Two things from the old scene need a new home:
+- The crew's deal: "You watch. I'll carry."
+- V's reason for the camera: "Then somebody should be watching them do it."
 
 ### 2. Sauce on his chin
-- **When:** the six months (the montage).
+- **When:** early in the side gigs.
 - **Where:** a rooftop in Watson (pick in game).
 - **In frame:** Jackie. V-media behind the camera.
 - **The shot:** Jackie against the skyline, eating, not posing.

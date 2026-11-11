@@ -28,6 +28,8 @@ Audit of every project file on the branch `cyberpunk2077-narrative-playthroughs`
 - **The game's own lines are repeated wherever possible.**
 - **The zine's serial is numbered,** and each part still stands alone. "Cops' Cash" is the final reveal, in the serial and in the crew's NCPD arc: the cycle of money and violence that corporate rule keeps turning.
 
+- **Two orders.** The Streetkid is played first, because the game requires it. The videos tell every side gig first, then The Streetkid, then the road to The Heist. Still open: where Practice Makes Perfect, The Rescue and The Ripperdoc sit in the story.
+
 **New questions these raise**
 - **After The Heist, who does the story credit with the hacks?** T-Bug is dead and the player still hacks.
 - **How is the ending played?** The first plan ended in a solo raid on Arasaka by an "unhinged" V. V is now always a pacifist.

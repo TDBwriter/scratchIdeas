@@ -38,13 +38,13 @@ Everything needed to keep V's behavior and voice right. V is always neutral in e
 
 | # | Stage | When | What happens |
 |---|---|---|---|
-| 1 | Ordinary World | The Streetkid | [GAME] A broken nose, a story about a mugging, and an offer to help Pepe with his debt. [OURS] A camera; V shoots Heywood. |
-| 2 | Call | The Streetkid | [GAME] Kirk's car job. [OURS] V takes it for Pepe, not the money. |
-| 3 | Refusal | Lunch after | [OURS] Jackie wants a partner. V-media doesn't carry. (Scene 1) |
-| 4 | Mentor | Montage, The Ripperdoc | [GAME] Viktor installs Kiroshi optics; V's first scan is Viktor. [OURS] The eyes become a second camera. Jackie teaches V the street, T-Bug the net. (Scenes 5, 6) |
-| 5 | Threshold | The Rescue | [GAME] The first crew job; V carries Sandra out to Trauma Team. [OURS] V photographs the woman they were too late for. (Scene 4) |
-| 6 | Tests, allies, enemies | Free roam | [GAME] The Gift, gigs, cyberpsychos. [OURS] Noodle calls, rooftop routes, the first portraits of Jackie. (Scenes 2, 7, 8) |
-| 7 | Approach | The Ride, The Information, The Pickup | [GAME] Dex's pitch; the braindance, where Judy records the truth for a living; Jackie's nerves at All Foods. [OURS] V goes along because they're going, on one condition: nobody gets hurt. (Scenes 9, 10, 11) |
+| 1 | Ordinary World | Before the story opens | [OURS] A Streetkid with a camera, already Jackie's partner. |
+| 2 | Call | The Rescue | [GAME] The first crew job; V carries Sandra out to Trauma Team. [OURS] V photographs the woman they were too late for. (Scene 4) |
+| 3 | Refusal | The Ripperdoc | [OURS] "I've got a camera." V doesn't want new eyes, and won't carry a gun. (Scene 5) |
+| 4 | Mentor | The Ripperdoc and every side gig | [GAME] Viktor installs Kiroshi optics; V's first scan is Viktor. The Gift, gigs, cyberpsychos. [OURS] The eyes become a second camera. Jackie teaches V the street, T-Bug the net, Regina the trade. (Scenes 2, 5, 6, 7, 8) |
+| 5 | Threshold | The Streetkid | [GAME] A broken nose, Pepe's debt, Kirk's car job taken for a favor, and Padre's number. [OURS] Back across the water after two years. The one who tells the truth kept a secret. (The Streetkid scenes) |
+| 6 | Tests, allies, enemies | The Ride, The Information, The Pickup | [GAME] Dex's pitch; the braindance, where Judy records the truth for a living; Jackie's nerves at All Foods. [OURS] V goes along because they're going, on one condition: nobody gets hurt. (Scenes 9, 10, 11) |
+| 7 | Approach | The night before | [OURS] "Hold still." The last portrait of Jackie. (Scene 12) |
 | 8 | Ordeal | The Heist | [GAME] V watches Yorinobu kill Saburo. T-Bug dies in the net. Jackie slots the chip, is shot and dying, and V slots it while he dies. [OURS] The documentarian has seen the biggest story in Night City and can tell no one. |
 | 9 | Reward | The Heist | [GAME] The Relic, which is a curse. [OURS] What V saw. It's the reason V-media's reporting has to stay anonymous. |
 | 10-12 | Road Back, Resurrection, Return | After The Heist | Open. Heroes [GAME] is the first step back. V-media stays a pacifist. |

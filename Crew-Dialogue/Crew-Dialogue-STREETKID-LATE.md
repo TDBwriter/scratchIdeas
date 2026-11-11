@@ -1,6 +1,6 @@
-# Crew Dialogue: The Streetkid, played late
+# Crew Dialogue: The Streetkid, told late
 
-**A what-if, not yet adopted.** How our dialogue looks if the story reaches The Streetkid after all of Regina's work: the crew's first job across the water, and the start of the big leagues. The files currently place The Streetkid first.
+**Adopted.** The game makes you play The Streetkid first. The videos tell it later, after all the side gigs that look as if the crew ran them together. It becomes the crew's first job across the water, and the start of the big leagues.
 
 ---
 
@@ -24,7 +24,7 @@ The game plays The Streetkid first, and its footage is fixed. Read as a later jo
 **What can't be cut, only lived with**
 - **Jackie's look.** In this mission he has a shaved head and no cyberware. In every Watson job he has hair, a beard and chrome.
 - **V's eyes.** V has no Kiroshi optics here. They arrive in The Ripperdoc, which opens Regina's gigs.
-- **The lockdown.** The Rescue ends with Watson sealed until The Heist. A trip to Heywood has to sit before that scene, or the story has to say how they got out.
+- **The lockdown.** The Rescue ends with Watson sealed until The Heist. If The Rescue is told before this, the story has to say how they got out.
 - **T-Bug isn't in this mission.** Everything of hers is a voice we add.
 
 **One correction to our own files:** V doesn't help Pepe for nothing. V asks for a favor in return.
@@ -138,12 +138,18 @@ The subject of the gig: carrying a debt for somebody else.
 
 ---
 
-## If this is adopted
+## What adopting it changed
 
-- `Crew-Dialogue.md` says The Streetkid comes first; that changes.
-- Scene 1, "Lunch with a stranger," is replaced by D above.
-- The six-month montage can't follow it. It would move ahead of Regina's gigs, or go.
-- In the zine, The Streetkid is issue [0] as "the first mission toward The Heist." That can still hold if the count starts where the heist story starts.
+- `Crew-Dialogue.md` now keeps two orders: play order and story order.
+- Scene 1, "Lunch with a stranger," is retired. Scene D above replaces it.
+- The crew's journey and each character's arc now cross their threshold here.
+- T-Bug has a moment in this mission, which she didn't before.
+
+**Still to settle**
+- **The six-month montage.** The game plays it straight after this mission. It can't follow it in the story. It moves to the front of the side gigs, or goes.
+- **How they leave a sealed Watson.**
+- **The crew's deal** ("You watch. I'll carry.") lost its scene with the old lunch.
+- **The zine** counts The Streetkid as issue [0], "the first mission toward The Heist." That still holds.
 
 ## Sources
 

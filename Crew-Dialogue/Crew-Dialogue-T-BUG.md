@@ -65,7 +65,7 @@ Everything needed to keep T-Bug's behavior and voice right. What the game shows 
 | 3 | Refusal | The Rescue | [OURS] She doesn't do scavenger dens in person. She does it from the line. |
 | 4 | Mentor (she is the mentor) | Practice Makes Perfect, The Gift | [GAME] She runs V's hacking training and sends the PING job. (Scene 6) |
 | 5 | Threshold | The Rescue | [GAME] The first crew job, on comms. |
-| 6 | Tests, allies, enemies | Free roam, The Information | [GAME] "Relax, Judy. Everything'll be fine." [OURS] She starts calling when there's no job. (Scenes 7, 8, 10) |
+| 6 | Tests, allies, enemies | The side gigs, The Streetkid, The Information | [GAME] "Relax, Judy. Everything'll be fine." [OURS] She starts calling when there's no job. Across the water she loses them for nine hours, and the fear shows. (Scenes 7, 8, 10; the Streetkid scenes) |
 | 7 | Approach | The Ride | [OURS] She breaks her own rule for the Arasaka job: it's the retirement score. (Scene 9) |
 | 8 | Ordeal | The Heist | [GAME] In the room at the Afterlife for Dex's briefing, the only time she's with them in person. Then killed in the net during the lockdown. (Scene 13) |
 | 9 | Return | After | [GAME] None. [OURS] V-media's one photo of her. (Scene 14) |

@@ -52,14 +52,14 @@ Everything needed to keep Jackie's behavior and voice right.
 
 | # | Stage | When | What happens |
 |---|---|---|---|
-| 1 | Ordinary World | Before The Streetkid | [GAME] Heywood, a former Valentino, a mother who wanted him out. [OURS] Small jobs, big talk. |
-| 2 | Call | The Streetkid | [GAME] Going after the same car as V. |
-| 3 | Refusal | Montage | [OURS] He left the Valentinos for his mother [GAME, one source], and keeps his jobs small to keep that promise. |
-| 4 | Mentor | The Afterlife | [GAME] Claire behind the bar; the legends the place is built on. [OURS] Mentors he's never met. |
-| 5 | Threshold | The Rescue | [GAME] The first crew job on screen. |
-| 6 | Tests, allies, enemies | Free roam | [OURS] Watching V-media refuse to shoot, and learning to take people down without killing them. "Your way's harder." (Scenes 2, 7, 8) |
-| 7 | Approach | The Ride | [GAME] V briefs him by phone. [OURS] He says yes before V finishes. (Scene 9) |
-| 8 | Ordeal | The Pickup, The Heist | [GAME] Nervous at the negotiation. In The Heist he slots the chip after the case breaks, is shot and dying, and V slots it while he dies. (Scene 11) |
+| 1 | Ordinary World | Before the story opens | [GAME] Heywood, a former Valentino, a mother who wanted him out. [OURS] Small jobs, big talk. |
+| 2 | Call | The scanner jobs | [GAME] Regina calls. [OURS] A fixer is saying their names. |
+| 3 | Refusal | Every side gig | [OURS] He left the Valentinos for his mother [GAME, one source], and keeps his jobs small to keep that promise. Watching V-media refuse to shoot, he learns to leave people alive. "Your way's harder." (Scenes 2, 7, 8) |
+| 4 | Mentor | The legends | [GAME line] "Morgan Blackhand, Andrew Weyland, Adam Smasher. Legends are born here." [OURS] Mentors he's never met. |
+| 5 | Threshold | The Streetkid | [GAME] Going after the same car as V, gun drawn. [OURS] His mother's bartender owes Kirk, and he goes alone. Being a legend and being a son pull apart. (The Streetkid scenes) |
+| 6 | Tests, allies, enemies | The Ride, The Pickup | [GAME] V briefs him by phone. He's nervous at the negotiation. [OURS] He says yes before V finishes, and his hands shake. (Scenes 9, 11) |
+| 7 | Approach | The night before, and the Afterlife | [GAME line] "Gotta live like a legend first, though, eh?" (Scenes 12, 13) |
+| 8 | Ordeal | The Heist | [GAME] He slots the chip after the case breaks, is shot and dying, and V slots it while he dies. |
 | 9 | Return, through others | Heroes | [GAME] The ofrenda at El Coyote Cojo: Mama Welles, Misty, Viktor; his book, basketball, belt and tequila; his bike. The legend he gets is the one his people give him. (Scene 14) |
 
 ---
@@ -99,7 +99,7 @@ Jackie obliquely references the things that will one day sit on his ofrenda, and
 
 - **Warm, loud, quick to laugh.** Longer, friendlier sentences than the other two.
 - **Spanish in the mix.**
-- **Calls V "choomie"** (ours). "Hermano" only when it counts: twice so far, in scenes 1 and 11.
+- **Calls V "choomie"** (ours). "Hermano" only when it counts: once so far, in scene 11.
 - **In the game he calls V** "compa," "mano," "hermano," "holmes" and "hombre."
 - **Calls T-Bug "Bug,"** as he does in the game.
 - **Talks in food, family and legends.**
@@ -158,4 +158,4 @@ Jackie obliquely references the things that will one day sit on his ofrenda, and
 - His past: his childhood, the Valentinos, how he met Misty and Viktor. Not confirmed in the sources found.
 - How much force Jackie uses on screen, which sets the play style of the V-Jackie save.
 - Whether photo mode can place him.
-- The line "Your way's harder" is quoted in his arc and has no scene yet.
+- The line "Your way's harder" has a seed in Psycho Killer (`Crew-Dialogue-GIGS.md`) and no written scene yet.

@@ -12,7 +12,7 @@ Our own storyline for V, Jackie and T-Bug: who they are to each other, and what 
 - `Crew-Dialogue-GAPS.md`: what the game doesn't show, which is the room this storyline fills.
 - `Crew-Dialogue-SUPPORTING.md`: the supporting cast, with a file each once developed. So far: `Crew-Dialogue-REGINA.md`.
 - `Crew-Dialogue-NCPD.md`: the road to Regina, the arc the NCPD jobs carry.
-- `Crew-Dialogue-STREETKID-LATE.md`: a what-if. The Streetkid played after all of Regina's work.
+- `Crew-Dialogue-STREETKID-LATE.md`: The Streetkid, told after all the side gigs.
 
 ---
 
@@ -43,9 +43,14 @@ Every gig carries exactly four moments:
 
 All four tie to **the subject of the gig**: what the job is about. None ties to the action or to how the job turns out.
 
-## Edgerunners 0
+## Two orders
 
-The run up to The Heist is the crew's prequel. The Streetkid comes first. After it come all the jobs that can show the three working together. The order of those is undecided.
+- **Play order** is the game's. The Streetkid has to be played first, to start the game. The planning log follows play order.
+- **Story order** is the order the videos tell it in:
+  1. **Edgerunners 0.** Every side gig, cut to look as if the crew ran them together.
+  2. **The Streetkid,** told late. It is the crew's first job across the water and the first mission toward The Heist (`Crew-Dialogue-STREETKID-LATE.md`).
+  3. **The road to The Heist:** The Ride, The Information, The Pickup, The Heist.
+- **Still open:** where Practice Makes Perfect, The Rescue and The Ripperdoc sit in story order. For now this file keeps them ahead of the side gigs, because the gigs lean on them: T-Bug's arrival, the first job as three, and V's new eyes.
 
 ## Staging
 
@@ -73,13 +78,13 @@ Each character's own journey is in that character's file.
 
 | # | Stage | When | What happens |
 |---|---|---|---|
-| 1 | Ordinary World | Before The Streetkid | Three strangers. |
-| 2 | Call | The Streetkid | [GAME] Two of them go after the same car. |
-| 3 | Refusal | Lunch | [OURS] Jackie's gun, V-media's camera. (Scene 1) |
-| 4 | Mentor | Practice Makes Perfect | [GAME] T-Bug arrives. (Scene 3) |
-| 5 | Threshold | The Rescue | [GAME] The first job as three. (Scene 4) |
-| 6 | Tests, allies, enemies | Free roam | [OURS] Noodle calls, rooftops, the ripperdoc bill. (Scenes 5-8) |
-| 7 | Approach | The Ride to The Pickup | [GAME] Dex's job. [OURS] Each one says yes for a different reason. (Scenes 9-12) |
+| 1 | Ordinary World | Edgerunners 0: the opening jobs and every side gig | [OURS] A local crew of three in a sealed Watson, with four moments in every gig. The story never shows V and Jackie meeting. (Scenes 2-8) |
+| 2 | Call | The scanner jobs | [GAME] Regina calls. [OURS] A fixer has been reading their work. |
+| 3 | Refusal | Regina's call | [OURS] T-Bug doesn't want to call back. Nobody is supposed to know their route. |
+| 4 | Mentor | Regina's gigs, to "Cops' Cash" | [OURS] The assignment editor. Her last lesson is that the work is rigged. |
+| 5 | Threshold | The Streetkid | [GAME] Two of them go after the same car. [OURS] Across the water for the first time, each alone. They leave with a second fixer's number. (The Streetkid scenes) |
+| 6 | Tests, allies, enemies | The Ride, The Information, The Pickup | [GAME] Dex's job, the client, the Maelstrom. [OURS] Each one says yes for a different reason. (Scenes 9-11) |
+| 7 | Approach | The night before | [OURS] The last night whole. (Scene 12) |
 | 8 | Ordeal | The Heist | [GAME] Two of them don't come back. (Scene 13) |
 | 9 | After | Heroes | [GAME] V alone at the ofrenda. (Scene 14) |
 
