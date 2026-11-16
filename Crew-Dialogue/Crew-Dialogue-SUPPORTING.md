@@ -22,7 +22,7 @@ The people around the crew before The Heist.
 | **Meredith Stout** | Militech. Offers the money chip in The Pickup. | Jackie | Corp money, in person. |
 | **Royce and Dum Dum** | Maelstrom, at All Foods in The Pickup. | Jackie | Where Jackie's nerve gives out. |
 | **Coach Fred** | Runs Beat on the Brat and offers to be V's fight agent. | V | Someone who wants a cut of V's fists. |
-| **Wilson** | The gunsmith in V's building. Gives away a pistol in The Gun. | V | The gun V won't carry. |
+| **Wilson** | The gunsmith in V's building. Gives away a pistol in The Gun. | V | A free gun. Whether it's the one V carries is blank. |
 | **Claire** | Bartender at the Afterlife. | Jackie | The door to the legends. |
 | **Garry the Prophet** | Preaches a new theory outside Misty's on each visit. | V | Truth's opposite number. |
 | **Yoko** | Sells the PING quickhack in The Gift. | T-Bug | Where T-Bug's tricks come from. |

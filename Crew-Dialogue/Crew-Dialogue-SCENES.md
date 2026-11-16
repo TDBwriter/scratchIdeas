@@ -2,12 +2,12 @@
 
 The storyline's scenes. Each lists when it happens, where, who's in frame, the shot, the dialogue, and which arcs it moves. Locations marked "pick in game" still need scouting. The rules are in `Crew-Dialogue.md`; each character's behavior and voice are in that character's file.
 
-**Story order.** The numbers are fixed labels, not the order. The videos tell it as: 3, 4, 5, then 2, 6, 7, 8 among the side gigs, then the four Streetkid scenes (`Crew-Dialogue-STREETKID-LATE.md`), then 9, 10, 11, 12, 13, 14. Where the first three sit is still open (`Crew-Dialogue.md`).
+**Story order.** The numbers are fixed labels, not the order. The videos tell it as: 3, 4, 5, then 2, 6, 7, 8 among the side gigs, then the four Streetkid scenes (`Crew-Dialogue-STREETKID-LATE.md`), then 9, 10, 11, 12, 13, 14. Scenes 3, 4 and 5 belong to the opening jobs, which come ahead of the side gigs.
 
 ### 1. Lunch with a stranger (retired)
 The Streetkid is told late, so V and Jackie aren't strangers at this lunch any more. Scene D in `Crew-Dialogue-STREETKID-LATE.md` replaces it.
 
-Two things from the old scene need a new home:
+Two lines from the old scene move to an early side-gig scene (decided). Which scene isn't picked:
 - The crew's deal: "You watch. I'll carry."
 - V's reason for the camera: "Then somebody should be watching them do it."
 
@@ -21,7 +21,7 @@ Two things from the old scene need a new home:
 > **V:** Both. Hold still.
 > **JACKIE:** Make me look like a legend.
 > **V:** You look like a guy with sauce on his chin.
-> **JACKIE:** Then that's the legend. Legends are born here, mano. [He says it again in the game, in The Rescue.] *(He wipes it off and poses.)* Now?
+> **JACKIE:** Then that's the legend. Legends are born here, mano. [GAME line: he said it first in The Rescue, which comes before this scene in story order.] *(He wipes it off and poses.)* Now?
 > **V:** The first one was better.
 
 **Moves:** V-media's first portrait of Jackie; the legend Jackie wants against the man he is. Scene 12 calls back to it.
@@ -77,7 +77,7 @@ Two things from the old scene need a new home:
 > **V:** Jackie.
 > **JACKIE:** Pay when the job pays. Vik's good for it. So are you.
 
-**Moves:** Jackie as V-media's mentor; the lens becomes part of V. It sets up the game's choice to pay Viktor now or later.
+**Moves:** Jackie as V-media's mentor; the lens becomes part of V. It sets up the game's choice to pay Viktor now or later. [GAME, this playthrough] V paid later, out of recovered weapons and ammo.
 
 ### 6. Every camera's a window
 - **When:** The Gift. [GAME: T-Bug sends V to Yoko for the PING quickhack, to try on a camera]

@@ -2,7 +2,7 @@
 
 **Status by 2077:** whereabouts unknown. Per the Cyberpunk Wiki, his portrait hangs in the Afterlife.
 **Canon:** Cyberpunk RED, not Cyberpunk 2020. His father, Nomad Santiago, is the 2020 character.
-**Fits the department:** only if it opens to RED characters and to "fate unknown."
+**Fits the department:** yes. The rule now admits Cyberpunk RED characters and "fate unknown."
 
 ## What canon says
 - A Media in Cyberpunk RED, and one of the edgerunners in Mike Pondsmith's RED fiction (R. Talsorian Games, June 2020).

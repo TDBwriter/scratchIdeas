@@ -14,7 +14,7 @@ A supporting character. Everything needed to keep her behavior and voice right w
   - Watson's gigs. All 22 before The Heist are hers.
   - The cyberpsycho sightings, 17 across the city and 6 in Watson. She wants them stopped alive. One guide says she wants the data on why each one snapped, and is trying to understand and cure cyberpsychosis.
 - **How she reaches V:**
-  - During The Ride she calls to say cyberpsycho attacks are rising.
+  - During The Ride she calls to say cyberpsycho attacks are rising. Her first call is in this mission too. **In story order it stays there** (decided), so it plays after the videos have already shown her gigs. How her gigs begin in the story is open.
   - After that she calls whenever V is near a sighting or a gig, and calls again to close each job.
   - V texts her the evidence found at each cyberpsycho scene.
   - Once every sighting is done, V meets her in Kabuki.

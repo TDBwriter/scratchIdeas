@@ -54,7 +54,7 @@ Everything needed to keep Jackie's behavior and voice right.
 |---|---|---|---|
 | 1 | Ordinary World | Before the story opens | [GAME] Heywood, a former Valentino, a mother who wanted him out. [OURS] Small jobs, big talk. |
 | 2 | Call | The scanner jobs | [GAME] Regina calls. [OURS] A fixer is saying their names. |
-| 3 | Refusal | Every side gig | [OURS] He left the Valentinos for his mother [GAME, one source], and keeps his jobs small to keep that promise. Watching V-media refuse to shoot, he learns to leave people alive. "Your way's harder." (Scenes 2, 7, 8) |
+| 3 | Refusal | Every side gig | [OURS] He left the Valentinos for his mother [GAME, one source], and keeps his jobs small to keep that promise. Watching V-media hold fire until the other party escalates, he learns to leave people alive. "Your way's harder." (Scenes 2, 7, 8) |
 | 4 | Mentor | The legends | [GAME line] "Morgan Blackhand, Andrew Weyland, Adam Smasher. Legends are born here." [OURS] Mentors he's never met. |
 | 5 | Threshold | The Streetkid | [GAME] Going after the same car as V, gun drawn. [OURS] His mother's bartender owes Kirk, and he goes alone. Being a legend and being a son pull apart. (The Streetkid scenes) |
 | 6 | Tests, allies, enemies | The Ride, The Pickup | [GAME] V briefs him by phone. He's nervous at the negotiation. [OURS] He says yes before V finishes, and his hands shake. (Scenes 9, 11) |
@@ -87,13 +87,13 @@ Jackie obliquely references the things that will one day sit on his ofrenda, and
 ## Behavior
 
 - **The muscle.** Jackie leads the solo work. [GAME] In The Rescue he and V split the first two scavengers between them.
-- **Picks people by heart.** He decides V is a partner over one lunch, and "vouches for everyone."
+- **Picks people by heart,** and "vouches for everyone." [GAME] He takes V on as a partner over one lunch. [OURS] In story order they are partners before the story opens, so that lunch isn't where it starts.
 - **Family first:** Mama Welles, Misty, Viktor. He picks up when his mother calls.
 - **Always eating, or about to.** [GAME] He calls V from a food stall in The Ripperdoc.
 - **Says his ambition out loud:** the big league, a seat at the Afterlife. [GAME] "Afterlife's a sign for us."
 - **Brave talk, real fear.** [GAME] He's nervous at the Maelstrom negotiation. [OURS] His hands shake, and he lets V see it.
 - **Generous.** He covers the bill and the introduction: "Pay when the job pays."
-- **Learns V's way over time.** He doesn't understand not carrying a gun, respects it anyway, and starts leaving people alive.
+- **Learns V's way over time.** He doesn't understand holding fire until the other party escalates, respects it anyway, and starts leaving people alive.
 
 ## Voice
 
@@ -156,6 +156,6 @@ Jackie obliquely references the things that will one day sit on his ofrenda, and
 - **Whose neural port Jackie slots the chip into.** Our first draft said his own. The planning log says only "put the chip in someone's neural port." Check in game.
 
 - His past: his childhood, the Valentinos, how he met Misty and Viktor. Not confirmed in the sources found.
-- How much force Jackie uses on screen, which sets the play style of the V-Jackie save.
+- Which fights are credited to him. Every fight on screen is V's footage, and each is credited to Jackie or V as it's cut. None is credited yet.
 - Whether photo mode can place him.
 - The line "Your way's harder" has a seed in Psycho Killer (`Crew-Dialogue-GIGS.md`) and no written scene yet.

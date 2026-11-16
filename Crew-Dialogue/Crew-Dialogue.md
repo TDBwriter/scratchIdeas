@@ -19,7 +19,7 @@ Our own storyline for V, Jackie and T-Bug: who they are to each other, and what 
 ## The line
 
 - **[GAME]** happens in the game. It can't change.
-- **[OURS]** is what the playthrough makes appear to be true: scenes staged in photo mode or with the V-Jackie save, and voices laid over calls and messages in the edit.
+- **[OURS]** is what the playthrough makes appear to be true: scenes staged in photo mode, and new lines shown as on-screen text and messages in the edit. The new lines are text only: nobody speaks them (decided).
 - What the game requires and what we make appear to be true are only at odds if that line is forgotten.
 - Every [OURS] scene sits between [GAME] beats and never contradicts them. Jackie and T-Bug die in The Heist, and every arc bends toward it.
 
@@ -43,20 +43,22 @@ Every gig carries exactly four moments:
 
 All four tie to **the subject of the gig**: what the job is about. None ties to the action or to how the job turns out.
 
+**The rule covers side content:** gigs, side jobs, cyberpsycho sightings and NCPD work. **Main jobs are carried by their scenes, not by four moments** (decided).
+
 ## Two orders
 
-- **Play order** is the game's. The Streetkid has to be played first, to start the game. The planning log follows play order.
+- **Play order** is the game's. The Streetkid has to be played first, to start the game. So far it has gone The Streetkid, Practice Makes Perfect, The Rescue, The Ripperdoc, then NCPD jobs. (The planning log keeps its own checklist order, which isn't play order.)
 - **Story order** is the order the videos tell it in:
-  1. **Edgerunners 0.** Every side gig, cut to look as if the crew ran them together.
+  1. **Edgerunners 0.** First the opening jobs: Practice Makes Perfect, The Rescue and The Ripperdoc. Then every side gig, cut to look as if the crew ran them together.
   2. **The Streetkid,** told late. It is the crew's first job across the water and the first mission toward The Heist (`Crew-Dialogue-STREETKID-LATE.md`).
   3. **The road to The Heist:** The Ride, The Information, The Pickup, The Heist.
-- **Still open:** where Practice Makes Perfect, The Rescue and The Ripperdoc sit in story order. For now this file keeps them ahead of the side gigs, because the gigs lean on them: T-Bug's arrival, the first job as three, and V's new eyes.
+- **The opening jobs come ahead of the side gigs** (decided). The gigs lean on them: T-Bug's arrival, the first job as three, and V's new eyes.
 
 ## Staging
 
 - **V** is the player character, V-media. V is always neutral: "V" or "V-media," never "he" or "she."
-- **Jackie** is placed with photo mode or played on the V-Jackie save. Photo mode in 2.2 can add characters; check in game that Jackie is one of them.
-- **T-Bug** is on remote comms (the phone and holocall screen, with her voice in the edit) in every scene where the game doesn't put her in the room. That means everywhere except the Afterlife.
+- **Jackie** is placed with photo mode. Photo mode in 2.2 can add characters; check in game that Jackie is one of them. The V-Jackie save is dropped (decided): there is one save, and every fight on screen is V's footage. Each fight is credited to Jackie or to V in the edit, decided as it's cut (decided). A fight credited to Jackie is covered with photos V appears to have snapped, the way the hacks are covered for T-Bug.
+- **T-Bug** is on remote comms (the phone and holocall screen; her new lines as on-screen text in the edit) in every scene where the game doesn't put her in the room. That means everywhere except the Afterlife.
 - **The hacks.** The player performs every hack. The edit covers each one with a still photo V appears to have snapped, the way the 1960s Batman show covered missed punches with a card, and the story credits T-Bug. She only uses tricks seen in gameplay (`Crew-Dialogue-T-BUG.md`).
 - **Roles.** Jackie is the muscle. T-Bug is the brains. V-media is the eyes: backup and documentation.
 
@@ -68,7 +70,7 @@ Each journey uses the twelve stages of the hero's journey (Christopher Vogler's 
 
 - **V-media's** runs the whole game. The Heist is V's Ordeal; stages 10-12 come after it.
 - **Jackie's and T-Bug's** are tragedies. They reach the Ordeal and don't come back. Their Return happens through other people: Jackie's in Heroes [GAME], and T-Bug's only if the playthrough gives her one [OURS].
-- **The crew's** journey treats the three as one hero, from strangers to the Heist. Jackie is the muscle (solo), T-Bug the brains (netrunner), V-media the eyes (backup and documentation).
+- **The crew's** journey treats the three as one hero, from a local crew in Watson to The Heist. Jackie is the muscle (solo), T-Bug the brains (netrunner), V-media the eyes (backup and documentation).
 
 Each character's own journey is in that character's file.
 
@@ -79,7 +81,7 @@ Each character's own journey is in that character's file.
 | # | Stage | When | What happens |
 |---|---|---|---|
 | 1 | Ordinary World | Edgerunners 0: the opening jobs and every side gig | [OURS] A local crew of three in a sealed Watson, with four moments in every gig. The story never shows V and Jackie meeting. (Scenes 2-8) |
-| 2 | Call | The scanner jobs | [GAME] Regina calls. [OURS] A fixer has been reading their work. |
+| 2 | Call | The scanner jobs | [OURS] A fixer has been reading their work. (The game's own first call from Regina stays in The Ride, which is told later. How her gigs begin in the story is open.) |
 | 3 | Refusal | Regina's call | [OURS] T-Bug doesn't want to call back. Nobody is supposed to know their route. |
 | 4 | Mentor | Regina's gigs, to "Cops' Cash" | [OURS] The assignment editor. Her last lesson is that the work is rigged. |
 | 5 | Threshold | The Streetkid | [GAME] Two of them go after the same car. [OURS] Across the water for the first time, each alone. They leave with a second fixer's number. (The Streetkid scenes) |
@@ -114,7 +116,7 @@ Repeat the game's lines wherever possible. It makes the invented scenes sound li
 2. **T-Bug is on remote comms** everywhere except the Afterlife. On screen the hacks are hers, covered in the edit by V's photos, and she only uses tricks seen in gameplay.
 3. **Check each line against the character's file.** Behavior and voice come from there, and the game's own lines come first.
 4. **Every scene moves at least one arc** a step.
-5. **Every scene can be staged:** in photo mode, on the V-Jackie save, or as a call.
+5. **Every scene can be staged:** in photo mode, or as a call.
 6. **Keep Jackie's and T-Bug's endings in sight.** Plant what The Heist takes away.
 
 ---

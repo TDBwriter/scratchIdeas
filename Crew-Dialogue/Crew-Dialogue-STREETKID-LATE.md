@@ -24,7 +24,7 @@ The game plays The Streetkid first, and its footage is fixed. Read as a later jo
 **What can't be cut, only lived with**
 - **Jackie's look.** In this mission he has a shaved head and no cyberware. In every Watson job he has hair, a beard and chrome.
 - **V's eyes.** V has no Kiroshi optics here. They arrive in The Ripperdoc, which opens Regina's gigs.
-- **The lockdown.** The Rescue ends with Watson sealed until The Heist. If The Rescue is told before this, the story has to say how they got out.
+- **The lockdown.** The Rescue ends with Watson sealed until The Heist, and The Rescue is told before this. The story never explains how they got out (decided). The lockdown isn't mentioned around The Streetkid.
 - **T-Bug isn't in this mission.** Everything of hers is a voice we add.
 
 **One correction to our own files:** V doesn't help Pepe for nothing. V asks for a favor in return.
@@ -121,17 +121,6 @@ So the gun in the garage is still real. It just belongs to a friend who was too 
 
 ---
 
-## The four moments
-
-The subject of the gig: carrying a debt for somebody else.
-
-- **V:** the one who tells the truth kept a secret, and learns that leaving something out is also a choice about what to show.
-- **Jackie:** being a legend and being a son pull in different directions, and the son went out alone with a gun. (His mother's bar; the debt his father never paid for anything.)
-- **T-Bug:** the fear comes out plainly for once. Nine hours of static is the thing she built every wall against.
-- **The crew:** after a whole act of working together, their first job outside Watson is the one each tried to do alone. They carry each other's debts from here.
-
----
-
 ## Another way to frame it
 
 **It's an act.** The crew agrees never to be seen together across the water, so V and Jackie play strangers for the cameras: the gun, "I was here first," even the introductions afterwards. Nothing has to be cut but Atlanta. The cost is that the stand-off stops being real, and the scene becomes a caper instead of a wound.
@@ -143,13 +132,13 @@ The subject of the gig: carrying a debt for somebody else.
 - `Crew-Dialogue.md` now keeps two orders: play order and story order.
 - Scene 1, "Lunch with a stranger," is retired. Scene D above replaces it.
 - The crew's journey and each character's arc now cross their threshold here.
-- T-Bug has a moment in this mission, which she didn't before.
+- T-Bug has a scene in this mission, which she didn't before.
+- The Streetkid is carried by scenes A to D only. Like the main jobs, it has no block of four moments (decided).
 
 **Still to settle**
-- **The six-month montage.** The game plays it straight after this mission. It can't follow it in the story. It moves to the front of the side gigs, or goes.
-- **How they leave a sealed Watson.**
-- **The crew's deal** ("You watch. I'll carry.") lost its scene with the old lunch.
-- **The zine** counts The Streetkid as issue [0], "the first mission toward The Heist." That still holds.
+- **The six-month montage.** The game plays it straight after this mission. It can't follow it in the story. Where it goes is undecided.
+- **The crew's deal** ("You watch. I'll carry.") lost its scene with the old lunch. It goes into an early side-gig scene (decided). Which scene isn't picked.
+- **The zine** now numbers its issues in story order, so The Streetkid is no longer issue [0]. Its number isn't set.
 
 ## Sources
 

@@ -20,6 +20,8 @@ flowchart LR
 - Character creation: every attribute starts at 3, plus 7 points to place (creation cap reported as 6).
 - Attribute points: 81 total with Phantom Liberty (level cap 60), 71 without (cap 50).
 - Perk points: about 80 with Phantom Liberty, 70 without (one guide), including the 10 from skills.
+- **This playthrough** is the base game with Update 2.5, without Phantom Liberty: level cap 50, 71 attribute points, about 70 perk points.
+- **Update 2.5's dual-wield perks are added to the Cool tree** (Double Trouble and the four perks around it). The rest of these charts predate Update 2.5 and haven't been rechecked against it. Whether the four side perks unlock in a set order wasn't found; the chart hangs all four off Double Trouble.
 - Respec: attributes can be reset **once** per playthrough; perks can be refunded **any time** (refund the end of a chain first).
 
 ### Per-point attribute bonuses
@@ -511,6 +513,11 @@ flowchart TD
         C9i["Pull!"]
         C9j["Head To Head"]
         C9k["Deep Breath"]
+        C9l["Double Trouble (2)"]:::milestone
+        C9m["Two Right Hands"]
+        C9n["Keep 'Em Comin'"]
+        C9o["Triple Tequila"]
+        C9p["Splash Of Love"]
     end
 
     subgraph C15["Cool 15"]
@@ -549,6 +556,7 @@ flowchart TD
     C9a -.-> C15c
     C9b -.-> C9g & C9h & C9i & C9j
     C9b -.-> C15a
+    C9l -.-> C9m & C9n & C9o & C9p
     C15a -.-> C15d & C15e & C15f
     C15a -.-> C20a
     C9b -.-> C20b
@@ -579,6 +587,11 @@ flowchart TD
 | 9 | Pull! | Easier to shoot grenades in Focus Mode |
 | 9 | Head To Head | Ranged kill in Focus Mode resets it |
 | 9 | Deep Breath | Focus slows time 25% |
+| 9 | Double Trouble (Update 2.5) | Dual-wield Power pistols or Power revolvers, each gun doing 37.5% less damage; rank 2: Heywood Hurricane, which replaces the quick melee attack, fires both guns for one second and refills ammo spent on hits |
+| 9 | Two Right Hands (Update 2.5) | -25% hip-fire stamina cost; -20% aimed recoil and spread |
+| 9 | Keep 'Em Comin' (Update 2.5) | Restores 40 stamina after a dual-wield kill |
+| 9 | Triple Tequila (Update 2.5) | Stacking mitigation after kills; Heywood Hurricane spends the stacks for damage |
+| 9 | Splash Of Love (Update 2.5) | +50% Heywood Hurricane fire rate, longer at full Triple Tequila stacks |
 | 15 | Deadeye | More headshot damage, less shooting stamina; rank 3: Deadeye Mode |
 | 15 | Ninjutsu | More crouch speed and mitigation; rank 3: crouch-sprint |
 | 15 | Juggler | Faster throwable recovery, +20% throwable headshot damage; rank 3: cooldown reset on kills |
@@ -647,3 +660,4 @@ flowchart LR
 - Skills: [Fextralife — Skills](https://cyberpunk2077.wiki.fextralife.com/Skills)
 - Points, caps, respec: [GGRecon — perk points](https://www.ggrecon.com/guides/cyberpunk-2077-max-perk-points/), [PC Gamer — level cap](https://pcgamer.com/cyberpunk-2077-max-level-cap), [Prima Games — creation cap](https://primagames.com/gaming/cyberpunk-2077-skills-guide-perks-attributes/2), [Game8 — respec](https://game8.co/games/Cyberpunk-2077/archives/Respec)
 - Cyberware notes: [Fextralife — Cyberware](https://cyberpunk2077.wiki.fextralife.com/Cyberware)
+- Update 2.5's dual-wield perks: the build guides listed under Sources in `cyberpunk2077JackieBuild.md` (Keengamer, GamesRadar, GamerHub, Beebom)

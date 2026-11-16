@@ -22,7 +22,7 @@ Apart from the main jobs, 51 entries are available before The Heist.
 | NCPD work | 14 | 11 single jobs, and 3 entries that group 24 "assault in progress" sites |
 | **Total** | **51** | |
 
-The 3 assault entries cover 24 separate sites. Counting each site as a gig of its own makes **72 gigs and 288 moments**.
+The 3 assault entries cover 24 separate sites. Each site is a gig of its own (decided), which makes **72 gigs and 288 moments**.
 
 ---
 
@@ -199,8 +199,8 @@ Each character meets the subject through their own end:
 ## The 9 side jobs
 
 ### The Gun
-**Subject:** a free gun, offered to someone who doesn't carry one.
-- **V:** a gift you can't use. V's trade borrowed the gun's word, "shooting," and V has never liked it.
+**Subject:** a free gun, offered to someone who would rather shoot pictures.
+- **V:** a gift V hopes not to need. V's trade borrowed the gun's word, "shooting," and V has never liked it.
 - **Jackie:** what a man hands down. His father handed down a belt. (The belt.)
 - **T-Bug:** "free" scares her. Who's it from, and what do they want? She tells V to keep it in a drawer, "so I don't have to hear about it."
 - **The crew:** what each was given that they never asked for.
@@ -249,6 +249,7 @@ Each character meets the subject through their own end:
 
 ### Paid in Full
 **Subject:** a debt to a friend.
+**In this playthrough:** done. V paid Viktor back out of recovered weapons and ammo, after The Ripperdoc. The planning log says this job opens with The Ride; check that against the footage.
 - **V:** owing your sight to someone.
 - **Jackie:** vouching. He put his name on V's debt, the way his father never put his name on anything.
 - **T-Bug:** she'd never owe a friend. She'd never have a friend to owe. She says both, and neither is true.
@@ -401,8 +402,7 @@ Eleven single jobs and 24 assault sites. Together they also carry the road to Re
 
 ## Open
 
-- **Whether each of the 24 assault sites counts as its own gig.** I've read "no matter how small" as yes.
-- **Gigs whose brief asks for someone to be killed or "taken out":** Troublesome Neighbors, Small Man, Big Evil, Monster Hunt and Shark in the Water. How a pacifist V plays them is undecided.
+- **Who fights in each gig.** The V-Jackie save is dropped (decided): there is one save, and every fight on screen is V's footage. (This replaces "gig by gig, Jackie or V.") Each fight is credited to Jackie or to V in the edit, decided as it's cut (decided). A fight credited to V follows V's rule of force, in `Crew-Dialogue-V.md`. None is credited yet. Four briefs ask for someone to be killed or "taken out": Troublesome Neighbors; Small Man, Big Evil; Monster Hunt; Shark in the Water.
 - **Thin subjects,** read from titles and needing a check in game: Small Man, Big Evil; Catch a Tyger's Toe; Last Login; Lousy Kleppers; Lt. Mower; and most of the NCPD jobs.
 - **The basketball, and what the ofrenda's guests say:** not in the sources found, so Jackie has nothing to reference there yet.
 - **The order of the gigs,** which decides which moment comes first for each character. Only Protect and Serve is fixed, as the last NCPD job.

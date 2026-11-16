@@ -59,9 +59,9 @@ NOT COPYRIGHTED [lame joke about this issue]
 
 ---
 
-## [OPTIONAL DEPARTMENTS, 0-2: GRIPE TIME / STREET ART / INTERVIEW / INTERVIEW WITH THE DEAD / BULLETIN / DISPATCH]
+## [OPTIONAL DEPARTMENTS, 0-2: GRIPE TIME / INTERVIEW / INTERVIEW WITH THE DEAD / BULLETIN / DISPATCH]
 
-[Gripe Time: a rant about free-running life in Night City, using the four moves, hard words aimed up. This issue's FF:06:B5 clue can hide here.]
+[Gripe Time: a rant about whatever fits this issue, using the four moves, hard words aimed up. This issue's FF:06:B5 clue can hide here.]
 
 [Every item follows the money too: how it came to be, who profited, who paid.]
 

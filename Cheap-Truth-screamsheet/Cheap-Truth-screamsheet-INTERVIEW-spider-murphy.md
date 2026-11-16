@@ -1,7 +1,7 @@
 # Interview prep: Spider Murphy
 
 **Status by 2077:** not found. One fan discussion says she survives the 2023 raid; nothing confirms her status in RED or 2077.
-**Fits the department:** only if "believed dead" is stretched to "fate unknown." See the open questions in `Cheap-Truth-screamsheet-INTERVIEWS.md`.
+**Fits the department:** yes. Her fate by 2077 is unknown, which the rule now admits.
 
 ## What canon says
 - A Cyberpunk 2020 netrunner.

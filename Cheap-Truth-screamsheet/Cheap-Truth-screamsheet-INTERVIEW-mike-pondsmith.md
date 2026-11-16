@@ -14,7 +14,6 @@
 ## Keeping it fair
 - **It caricatures a public role, not a private life.** The joke is the man who wrote the warning doing well out of it. "Streetkid" is the game's lifepath, and the piece says so: "It's on my sheet." It makes no claim about his real upbringing or money.
 - **The class jokes stay class jokes.** No dialect, nothing that leans on who he is.
-- **It says it's invented,** in the zine's own voice, in the last line.
 
 Sources: Cyberpunk Wiki, "Mike Pondsmith"; Gamers Decide, "All Cameos in Cyberpunk 2077"; WatchMojo, "Top 10 Cameos"; NME, "a warning, not an aspiration"; PC Gamer, "everything is political"; VGC interview.
 
@@ -96,6 +95,6 @@ CT: That's the idea.
 
 MM: (backing toward the stairs) I remember being like you. I think. It's on my sheet somewhere.
 
-(Maximum Mike leaves by AV, which is double-parked on the roof. We are informed that this interview has not been cleared, and that none of it happened. He made us up. It seemed only fair.)
+(Maximum Mike leaves by AV, which is double-parked on the roof. We are informed that this interview has not been cleared. He made us up. It seemed only fair.)
 
 [A private AV double-parked on the roof above the Afterlife.](photo-link)

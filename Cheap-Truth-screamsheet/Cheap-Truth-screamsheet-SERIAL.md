@@ -57,13 +57,13 @@ A part has to read complete to someone who has seen no other part:
 
 The headlines above follow the pattern of a street-level underground sheet: a blunt phrase, a colon, then exactly who, where and what. They are local and they name the human cost.
 
-Three habits of that kind of sheet, for the serial's text:
+Two habits of that kind of sheet, for the serial's text:
 
 1. **Specifics, always.** Names, places, dates and amounts in place of "the police are corrupt." Every figure has to come from the game: the note's own words, the name on the stash, what the scanner pays.
 2. **No "both sides."** The piece doesn't ask the NCPD or a corp for a comment. It assumes the arrangement is what it looks like.
-3. **It ends with something to do.** Where a paper would run an ad, each part closes with one line of use to the reader: where to stand to see it for yourself, or how to carry a camera past a cop.
+**The serial is written in the zine's voice throughout** (decided): first person, an eyewitness, style over substance. The specifics are added to that voice. They don't replace it with a dry one.
 
-**A tension to settle:** the zine's voice is "style over substance," and this habit is dry and exact. One way through is a loud headline over a plain, specific body. The other is to keep the zine's voice throughout and add the specifics to it.
+**Cut** (decided): the third habit in the note, a closing line that gives the reader something to do. The serial's parts end like any other piece in the zine.
 
 ---
 
@@ -100,4 +100,4 @@ Unnamed, as the rules require. Each part can sit on one of these, and a reader w
 
 - Gamer Guides, NCPD Scanner Hustles: [Little China](https://www.gamerguides.com/cyberpunk-2077/guide/ncpd-scanner-hustles/little-china/reported-crime), [Kabuki](https://www.gamerguides.com/cyberpunk-2077/guide/ncpd-scanner-hustles/kabuki/reported-crime), [Northside](https://www.gamerguides.com/cyberpunk-2077/guide/ncpd-scanner-hustles/northside/reported-crime)
 - [Fextralife: Regina Jones](https://cyberpunk2077.wiki.fextralife.com/Regina+Jones)
-- The headline pattern, the three habits and the four parallels: a note you supplied on what a street-level samizdat sheet would run today. Its model for tone is the Soviet-era *Chronicle of Current Events*.
+- The headline pattern, the habits and the four parallels: a note you supplied on what a street-level samizdat sheet would run today. Its model for tone is the Soviet-era *Chronicle of Current Events*.

@@ -4,13 +4,15 @@ Pass/fail tests for every finished issue. Each test is worded so an issue can cl
 
 An issue ships only when every test passes.
 
+**The IDs are out of order on purpose for now** (A1b, A1c, C1b, E4b; D5 sits before D3). Renumbering waits until the rules stop changing (decided).
+
 ---
 
 ## A. Structure
 | ID | Test | How to check |
 |---|---|---|
 | A1 | The masthead is ASCII art drawing "CHEAP TRUTH [n]", where n is the issue number. | **[auto]** characters are plain ASCII; **[read]** the art is legible |
-| A1b | The first line of the issue, above the masthead, is the issue ID as a valid IEEE reference: `[n] Veritas, "<editorial headline>," Cheap Truth, no. n, Night City, <YYYY:DDD>.` n starts at 0 and follows main-job order; the title matches the editorial's headline (IEEE capitalization); the date is the real-world publication date as `YYYY:DDD` (year, then the day of the year in three digits, 001 to 365 or 366). | **[auto]** pattern match; n matches the issue's place in main-job order |
+| A1b | The first line of the issue, above the masthead, is the issue ID as a valid IEEE reference: `[n] Veritas, "<editorial headline>," Cheap Truth, no. n, Night City, <YYYY:DDD>.` n starts at 0 and follows story order; the title matches the editorial's headline (IEEE capitalization); the date is the real-world publication date as `YYYY:DDD` (year, then the day of the year in three digits, 001 to 365 or 366). | **[auto]** pattern match; n matches the issue's place in story order |
 | A1c | The next line after the issue ID (skipping blank lines), before the masthead, is `NOT COPYRIGHTED ` followed by a joke about this issue. | **[auto]** the line starts `NOT COPYRIGHTED `; **[read]** the joke ties to this issue |
 | A2 | The masthead's face is not used in any other issue. | **[auto]** compare against the other issues |
 | A3 | After the masthead comes the editorial: a headline, then **EDITORIAL.** | **[auto]** |
@@ -19,6 +21,7 @@ An issue ships only when every test passes.
 | A6 | The slogan is not used in any other issue. | **[auto]** |
 | A7 | The file closes with the copyright line, then the issue ID as the very last line. Both are identical to the opening two lines. | **[auto]** |
 | A8 | Every issue has a CHEAP TRUTH TOP TEN. | **[auto]** |
+| A9 | The issue runs 1,200 to 2,000 words, as the original did. | **[auto]** word count. Whether the ASCII art and the bracket lines count isn't set |
 
 ## B. Follow the money
 | ID | Test | How to check |
@@ -31,7 +34,7 @@ An issue ships only when every test passes.
 | ID | Test | How to check |
 |---|---|---|
 | C1 | The writer speaks in the first person ("I") and tells events as an eyewitness, as if watching them happen. | **[auto]** "I" appears outside quotes; **[read]** events are told as seen |
-| C1b | The "I" is never in the crew: no crew member's thoughts or feelings, no "we" doing the job, nothing only the crew could know (their plans, their private talk). Interviews use the original's editorial "we"; that's expected. | **[read]**; **[auto]** flags *we / us / our* outside quotes for review |
+| C1b | The "I" is never in the crew: no crew member's thoughts or feelings, no "we" doing the job, nothing only the crew could know (their plans, their private talk). Interviews use the original's editorial "we"; that's expected. *Exception:* a DISPATCH, which a crew member writes under an epithet. | **[read]**; **[auto]** flags *we / us / our* outside quotes for review |
 | C2 | The crew is never named, in text or captions (V, Vincent, Valerie, Jackie, Welles, T-Bug). | **[auto]** |
 | C3 | Every person is introduced with a short label at first mention. | **[read]** |
 | C4 | Style over substance: attitude, image and rhythm carry the language. In every paragraph a reviewer can point to the line doing it. | **[read]** |
@@ -55,10 +58,10 @@ An issue ships only when every test passes.
 | E3 | Every Top Ten entry is a place around this mission's story (an iconic spot, a photo location or a piece of art), names its district, and gives a way up that works in the game. | **[read]**, checked in game |
 | E4 | The Top Ten is numbered 0 to 9 and uses one of two formats. **X marks the spot:** each marked spot is where two lines cross, each line running through two of the photo locations; at most three spots; no marked spot is one of the ten. **Ten finds:** every one of the ten locations is itself a unique item, secret or easter egg. | **[read]** plotted on the in-game map, or each find checked in game |
 | E4b | *Optional, doesn't block shipping.* In 3D, each line also passes through its spot at the spot's height. | **[read]** heights estimated in game |
-| E5 | The Top Ten, and Gripe Time if it runs, are about free-running life in Night City. | **[read]** |
+| E5 | The Top Ten is about free-running life in Night City. (Gripe Time is exempt: it is about whatever fits the issue.) | **[read]** |
 | E6 | Any FF:06:B5 clue in the issue comes from `Cheap-Truth-screamsheet-CLUES.md`, sits in an extra section (Top Ten, interview, Gripe Time and so on), stands alone as a riddle, and keeps the hunt's order across issues. | **[read]** against the clue list and the ledger |
 | E7 | The Top Ten, with Gripe Time if it runs, uses all four moves: execute the lethargic, police the imitators, shameless self-hype, the anonymous shield. Hard words aim up. | **[read]** point to each |
-| E8 | *If an Interview with the Dead runs:* the subject is a Cyberpunk 2020 character dead or believed dead by 2077, never the crew; the tie to this mission is named; the facts match canon; it follows the money; the dead refuse to be claimed by the zine; it keeps the original's voice and presentation (rule 6). The fourth-wall interviews are exempt from the "dead" and "never real" parts. | **[read]** against `Cheap-Truth-screamsheet-INTERVIEWS.md` |
+| E8 | *If an Interview with the Dead runs:* the subject is a legend from Cyberpunk 2020 or Cyberpunk RED who is dead, believed dead, or whose fate is unknown by 2077, never the crew; the tie to this mission is named; the facts match canon; it follows the money; the dead refuse to be claimed by the zine; it keeps the original's voice and presentation (rule 6). The fourth-wall interviews are exempt from the "dead" and "never real" parts. | **[read]** against `Cheap-Truth-screamsheet-INTERVIEWS.md` |
 
 ## F. Real-world parallels
 | ID | Test | How to check |
@@ -88,9 +91,8 @@ An issue ships only when every test passes.
 | H6 | Text only: no embedded images (`![`). Every photo is a caption link. | **[auto]** |
 
 ## Not yet decided (these can't be tested until they are)
-- **Length:** the original ran about 1,200–2,000 words per issue.
 - **"Article":** do the editorial, Top Ten capsules and bulletin items each count as articles under B1?
 - **Side-content assignment rule** (needed for E2).
-- **Top Ten lines** (needed for E4): how the reader is told which two places make a line; how close a line must pass to count; whether the issue prints the map.
+- **Top Ten lines** (needed for E4): how close a line must pass to count; whether the issue prints the map. (Decided: the reader isn't told which two places make a line.)
 - **The puzzle** (needed for E6): which issue carries which clue; whether the Witcher 3 step is in.
 - **Crew in photos** and **photo conversion** (grayscale, threshold, halftone).

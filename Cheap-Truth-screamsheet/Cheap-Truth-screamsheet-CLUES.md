@@ -85,10 +85,11 @@ Each has the riddle, what it leads to, and where it could hide. The hiding place
 
 ### 7. The seven numbers
 
-> When the game is over, look at the church again. The server racks have grown keypads. Seven numbers, left to right, and they only take them before four in the morning: 327670. 318308. 527766. 727862. 240. 108850. 204217. Get them all in, and the computer has a new file.
+> When the game is over, look at the church again. The server racks have grown keypads. Seven numbers, left to right, and they only take them before four in the morning. Get them all in, and the computer has a new file.
 
 - **Leads to:** the new file.
-- **Could hide in:** numbers scattered through one issue: prices in an interview, the colophon's timestamp, a Top Ten's verdicts.
+- **The zine doesn't give the seven numbers** (decided). The clue points at the keypads and stops. The numbers stay in the answer key above, for our own use. A reader can't finish the hunt from the zine alone at this step.
+- **Could hide in:** [blank]
 
 ### 8. The third file
 
@@ -104,11 +105,12 @@ Each has the riddle, what it leads to, and where it could hide. The hiding place
 - **Leads to:** the cutscene and the Demiurge.
 - **Could hide in:** a Top Ten X on the mattress; a closing copyright joke.
 
-### Beyond the game (optional)
+### Beyond the game (printed)
 
 > The last door doesn't open from this side. Its key is painted on a ruined wall in another world, an older one, where they still settle things with swords.
 
 - **Leads to:** *The Witcher 3*. It can't be followed inside *Cyberpunk 2077*.
+- **The zine prints this clue** (decided). Which issue carries it isn't set.
 
 ---
 
@@ -146,15 +148,13 @@ A Top Ten can mark up to three spots, so two issues are enough to put an X on al
 3. **The scratched number on the cabinet,** and that it reads 240891.
 4. **The clock value.** One guide says under 272 seconds; other reports say 271 or 270.
 5. **The times:** the 4 AM read, the keypads only before 4 AM, and how long the wait on the mattress is. Guides give 5:40 AM, "about 6 AM" and "about 55 in-game minutes."
-6. **Whether Phantom Liberty is needed.** The guides only say Update 2.0.
+6. **That the hunt can be finished without Phantom Liberty.** This playthrough is the base game with Update 2.5. The guides only say Update 2.0.
 7. **How many statues there are, and where.**
 8. **Which cutscene each route shows.**
 
 ## Still open
 
 - Which issue carries which clue.
-- Whether the *Witcher 3* step is printed.
-- Whether the zine gives the seven codes outright or hides them. No published source found explains how players derived them, so a riddle can't lead a reader to work them out.
 - Whether the zine mentions the shortcut.
 
 ## Sources

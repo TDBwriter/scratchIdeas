@@ -7,7 +7,7 @@
 
 ## What's on the record
 - **Marcin Iwiński** co-founded CD Projekt in 1994 with **Michał Kiciński**. Iwiński left executive work and became Co-Chair of the Supervisory Board in January 2025.
-- **"Kiciński" is ambiguous.** Michał is the co-founder. **Adam Kiciński** was the longtime joint CEO, left the management board at the end of 2024, and is the other Supervisory Board Co-Chair. The events below involve Adam. The draft uses the surname only. **Pick one before publishing.**
+- **The Kiciński in this piece is Adam** (decided: "the guys who rushed Cyberpunk out the door for money"). **Adam Kiciński** was the longtime joint CEO, left the management board at the end of 2024, and is the other Supervisory Board Co-Chair. The events below involve him. Michał Kiciński, the co-founder, is a different person and isn't in the piece. The draft's labels use surnames only.
 - **Piotr Nielubowicz** is the Chief Financial Officer and a member of the management board.
 - **Public events the jokes lean on:**
   - The company's reply to worries about online features: "We leave greed to others."
@@ -18,7 +18,6 @@
 ## Keeping it fair
 - **The target is an economic theory and a corporate way of talking.** The buffoonery is physical and obviously made up: a shared lanyard, a champagne tower, morgue drawers.
 - **The only real events are the public ones above,** and they're used as echoes, not accusations. The piece claims nothing about the three men's private conduct, pay or intentions.
-- **It says it's invented,** in the zine's own voice, in the last line.
 
 Sources: CD Projekt, Management Board and Supervisory Board pages; PAP Biznes, report 2/2025; PC Gamer, "We leave greed to others"; Engadget, Creative Bloq and Know Your Meme on the January 2021 apology video and roadmap.
 
@@ -110,6 +109,6 @@ IWINSKI: (horrified) Sideways?
 
 NIELUBOWICZ: That's not an economy. That's a rumor.
 
-(The Management leaves through a morgue drawer, on the second attempt. They tipped the bartender one glass from the bottom of the tower. It was empty, but they assured her it was scheduled. None of this happened. The gentlemen are real, alive, and were not consulted. We leave accuracy to others.)
+(The Management leaves through a morgue drawer, on the second attempt. They tipped the bartender one glass from the bottom of the tower. It was empty, but they assured her it was scheduled.)
 
 [A fallen champagne tower on the Afterlife floor, one bucket still full.](photo-link)

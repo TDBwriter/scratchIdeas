@@ -1,6 +1,6 @@
 # Cheap Truth: the screamsheet
 
-V's screamsheet. **One issue per main job**, published after that main job is complete; the main job is the issue's lead article. **Side jobs, gigs, cyberpsycho sightings and NCPD hustles supply the flavor**: the departments, bulletins and Top Ten items around the lead. Every issue stands alone, so it stays accurate no matter what order the missions are played in.
+V's screamsheet. **One issue per main job**, published after that main job is complete; the main job is the issue's lead article. The Streetkid, which the game calls a lifepath mission, counts as a main job here. **Side jobs, gigs, cyberpsycho sightings and NCPD hustles supply the flavor**: the departments, bulletins and Top Ten items around the lead. Every issue stands alone, so it stays accurate no matter what order the missions are played in.
 
 **This silo stands on its own.** *Cheap Truth* is the screamsheet V fictionally publishes. It needs nothing from the video or from the crew's storyline, and those don't depend on it.
 
@@ -14,9 +14,13 @@ V's screamsheet. **One issue per main job**, published after that main job is co
 - `Cheap-Truth-screamsheet-CLUES.md`: the FF:06:B5 clues.
 - `Cheap-Truth-screamsheet-SERIAL.md`: a multi-part story built from the NCPD scanner jobs.
 
-**Order.** The Streetkid is the first mission toward The Heist, so it is issue [0]. The order of the rest is undecided.
+**Order.** Issues are numbered in story order: the order the jobs are told in, which is not the order the game is played in. Story order runs: the opening jobs (Practice Makes Perfect, The Rescue, The Ripperdoc), then every side gig, then The Streetkid, then The Ride, The Information, The Pickup and The Heist. Practice Makes Perfect is issue [0], The Rescue is [1] and The Ripperdoc is [2]. The Streetkid is the first mission toward The Heist, and it is told late, so it is no longer issue [0]. Its number isn't set.
 
-**Who makes it.** V-media: a street kid with a camera, just trying to survive, make friends and make art. A pacifist, free-running, truth-telling documentarian who cares more about the perfect still frame than the perfect score. Always deeply conscientious about the appropriate level of violence: backup to Jackie, working with wits, a camera, a tomahawk and fists. Into street art (graffiti, mixed media, film, music, protest), kindness and community. The zine is made the way V-media lives: by hand, free, passed along. (On the page, the narrator never names or speaks as V-media; see §2.)
+**Reach.** An issue uses only the places that can be reached at that point in the game (decided). Before The Heist, Watson is sealed, so those issues draw on Watson and on a mission's own fixed route. Before The Heist the way up to a Top Ten place also has to work for a body with no added cyberware.
+
+**Not decided.** What the zine publishes during the side gigs, a long stretch with no main job in it. Until that is settled, no issue after [2] has a number.
+
+**Who makes it.** V-media: a street kid with a camera, just trying to survive, make friends and make art. A pacifist, free-running, truth-telling documentarian who cares more about the perfect still frame than the perfect score. Always deeply conscientious about the appropriate level of violence: V doesn't start it and doesn't take life wantonly, answers escalation, and goes loud in self-defense when attacked. Backup to Jackie, working with wits, a camera, a tomahawk, fists and a gun. Into street art (graffiti, mixed media, film, music, protest), kindness and community. The zine is made the way V-media lives: by hand, free, passed along. (On the page, the narrator never names or speaks as V-media; see §2.)
 
 Modeled on the original *Cheap Truth* (Austin, Texas, 1983–1986), edited by "Vincent Omniaveritas" (Bruce Sterling): free, photocopied, **NOT COPYRIGHTED**. V is kept neutral throughout. (In the game a male V's full name is Vincent, which gives the title a second layer; a female V is Valerie.)
 
@@ -36,7 +40,7 @@ Modeled on the original *Cheap Truth* (Austin, Texas, 1983–1986), edited by "V
 
 - **Running themes:** survival, friendship, art, kindness and community, told by a street kid who would rather get the shot than the score.
 - **Cyberpsychosis is a running theme.** Every cyberpsycho story asks who was profiting from that person before they broke, and who profits from it after.
-- **V's arc ends with the ledger turned on V.** After The Heist, V becomes the asset others profit from. The final issue follows the money to V.
+- **V's arc ends with the ledger turned on V.** After The Heist, V becomes the asset others profit from.
 - **The in-game story comes first.** Most readers will take *Cheap Truth* as Night City reporting and nothing more, and every issue has to work that way.
 - **Underneath, the real world shows through,** the way the game itself echoes it. Night City money trails parallel real ones (see §7).
 - **The indictment:** the world is run by corporations more than by governments. Night City is not exaggerating that. It is the plain version.
@@ -56,7 +60,7 @@ Every issue has these parts, in this order.
 | 5 | **Images** | Black-and-white found images (engravings, technical diagrams, op-art, silhouettes) dropped into gaps, often running off the edge | **Key photos for every piece** (photo-mode shots and stills captured in play) that carry its story. The zine is **text only**: each photo appears as its caption, and the caption is a link to the photo. ASCII art for the masthead and small decorations (see §8, §9). |
 | 6 | **Colophon** | A fixed formula, a new slogan each issue (see §4) | Same formula, V's details. After it, the copyright line and then the issue ID close the file (see below). |
 
-**Length:** the originals ran about 1,200–2,000 words, typically about 1,500, on one sheet printed both sides.
+**Length:** the originals ran about 1,200–2,000 words, typically about 1,500, on one sheet printed both sides. *Cheap Truth* 2077 matches that: an issue runs 1,200 to 2,000 words (decided).
 
 **Issue ID.** The first line of every issue is its own reference in **standard IEEE format**, numbered from **0**: the first main-job issue is `[0]`, the next `[1]`, and so on. **The title is the editorial's headline** (IEEE style: in quotes, first word and proper nouns capitalized). The date is the real-world publication date as **`YYYY:DDD`**: the year, a colon, then the day of the year in three digits (January 1 is `001`, December 31 is `365`, or `366` in a leap year). For example, November 10, 2026 is `2026:314`.
 
@@ -96,7 +100,7 @@ Every issue has these parts, in this order.
 
 **Night City's voice**
 - **First person, eyewitness.** The writer says "I" and tells events as if they watched them happen: across the bar, from the street, through a lens.
-- **Never the crew's point of view.** The "I" is never anyone in the crew. No crew member's thoughts or feelings, no "we" doing the job, nothing only the crew could know (their plans, their private talk). The crew is never named.
+- **Never the crew's point of view.** The "I" is never anyone in the crew. No crew member's thoughts or feelings, no "we" doing the job, nothing only the crew could know (their plans, their private talk). The crew is never named. *The one exception:* a DISPATCH (§3), which a crew member writes under an epithet. Even there the name is never printed.
 - **Style over substance.** Cyberpunk 2020's first tenet, applied to the language: attitude, image and rhythm carry the telling. Style governs how it's said. What's said still has to be true (§5).
 - **Kind to the street, hard on the ledger.** Hard words go to whoever profits. Never mock anyone for being poor, chromed, desperate or broken. The jokes punch up.
 - **The camera, not the gun.** Violence is reported plainly, never celebrated. The narrator is there for the shot, not the score.
@@ -113,7 +117,7 @@ Every issue runs the **CHEAP TRUTH TOP TEN**. Add none, one or two of the others
 
 ### Top Ten and Gripe Time: the pattern
 
-The Top Ten, and Gripe Time when it runs, are about **free-running life in Night City** and about **the puzzle**. Together they use the original's four moves, with hard words aimed up (§2: kind to the street).
+The Top Ten is about **free-running life in Night City** and about **the puzzle**. Gripe Time, when it runs, is about whatever fits the issue (decided); the free-running requirement on it is lifted. Together they use the original's four moves, with hard words aimed up (§2: kind to the street).
 
 1. **Execute the lethargic.** The original called the Nebula ballot "a list of stuff that Mom and Dad said it was okay to read" (#5) and handed out verdicts like "Heartening indication that Niven may escape total artistic collapse" (#1). *2077:* trash the dead, safe, paid-for Night City: corp-approved art, places you pay to see, views sold back to the street.
 2. **Police the imitators.** The original predicted "pale imitations" of a book it loved (#11) and, in its "sophomore class" satire (#15), mocked its own crowd too: "the kids who wear leather and those funny sunglasses because they would like to think it makes them look tough like real punks." *2077:* call out the fakes: corp ads dressed as street art, chrome worn for the look, the legend business. The zine's own scene included.
@@ -122,7 +126,9 @@ The Top Ten, and Gripe Time when it runs, are about **free-running life in Night
 
 **The puzzle.** The extra sections (the Top Ten, the interviews, Gripe Time and the rest) carry hidden clues that walk a player through the FF:06:B5 hunt inside the game. Each clue stands alone. The clues, and where each can hide, are in `Cheap-Truth-screamsheet-CLUES.md`.
 
-**Still open:** which issue carries which clue; whether the step that needs *The Witcher 3* is in.
+**Decided:** the clue for the step that needs *The Witcher 3* is printed. The seven keypad codes are not.
+
+**Still open:** which issue carries which clue.
 
 ### The departments
 
@@ -143,13 +149,17 @@ The Top Ten, and Gripe Time when it runs, are about **free-running life in Night
 
   **What the geometry asks.** One spot takes four places: two chosen freely, and two more each held to a line through the spot. Three spots take six lines and ten places make five pairs, so either a place serves two lines or one line passes through two spots. A far-off spot is harder: a small error in a photo's position swings a distant crossing a long way.
 
-  **Still open:** how the reader is told which two places make a line (fixed pairs, such as neighbours 0-1 and brackets 0-9, or pairs named by a clue elsewhere in the issue); how close a line must pass to count; whether the issue prints the map.
-- **STREET ART** (working name): the art found along this mission's route: graffiti, murals, posters, mixed media, film, music, protest. A photo of each, where it was, and who made it, if that's known.
+  **The reader isn't told which two places make a line** (decided). Any two entries might. Finding the pairs is part of the puzzle.
+
+  **Still open:** how close a line must pass to count; whether the issue prints the map.
+- **Street art has no department of its own** (decided). It appears as Top Ten entries.
+**The optional departments are placeholders** (decided). They aren't required in every issue. Each is a slot, filled with what makes the most appropriate sense for that issue.
+
 - **INTERVIEW**: a Q&A with someone from the mission.
-- **INTERVIEW WITH THE DEAD**: a dead, or believed dead, Cyberpunk 2020 legend, called up at the Afterlife by ordering their drink. It follows the original's pattern (Lovecraft in #3, Chandler in #11, the editor's own "post-mortem" in #17): the dead talk money and refuse to be claimed by the zine. Never the crew. Every interview keeps the original's voice and presentation, including its editorial "we." Two fourth-wall easter eggs interview living, real people as caricatures. The rules and the list of legends are in `Cheap-Truth-screamsheet-INTERVIEWS.md`.
-- **GRIPE TIME**: a rant about free-running life in Night City, using the four moves above. The original ran one Gripe Time (#9), in the voice of a fictional editor complaining about ungrateful writers.
+- **INTERVIEW WITH THE DEAD**: a legend from Cyberpunk 2020 or Cyberpunk RED who is dead, believed dead, or whose fate is unknown by 2077, called up at the Afterlife by ordering their drink. It follows the original's pattern (Lovecraft in #3, Chandler in #11, the editor's own "post-mortem" in #17): the dead talk money and refuse to be claimed by the zine. Never the crew. Every interview keeps the original's voice and presentation, including its editorial "we." Two fourth-wall easter eggs interview living, real people as caricatures. The rules and the list of legends are in `Cheap-Truth-screamsheet-INTERVIEWS.md`.
+- **GRIPE TIME**: a rant about whatever fits the issue, using the four moves above. (It no longer has to be about free-running.) The original ran one Gripe Time (#9), in the voice of a fictional editor complaining about ungrateful writers.
 - **BULLETIN**: short items and rumors.
-- **DISPATCH**: a piece credited to a crew member under an epithet (Jackie, T-Bug).
+- **DISPATCH**: a piece credited to a crew member under an epithet (Jackie, T-Bug). This is the one place the zine speaks from inside the crew, a stated exception to the voice rule (§2). The epithet stands in for the name.
 
 ---
 
@@ -173,7 +183,7 @@ Slogans from the original, for reference:
 
 These keep each issue accurate whatever the playing order.
 
-1. **The issue ID is the IEEE reference, numbered from 0** in main-job order. It's fixed to the main job, never "the 12th issue we've put out."
+1. **The issue ID is the IEEE reference, numbered from 0** in story order (see Order, at the top). The number is fixed to the job's place in that order, never "the 12th issue we've put out."
 2. **Only write what this mission guarantees.** Check what the game guarantees by that mission. For example, V's Kiroshi eyes only exist from The Ripperdoc on; T-Bug is only known from Practice Makes Perfect or The Rescue on.
 3. **No references to other issues.** No "last issue," "next time," "as we reported," and no running counts ("our third gig this week"). *The one exception:* the serial's parts are numbered as parts of a larger story. Each still has to stand on its own if the others aren't read (`Cheap-Truth-screamsheet-SERIAL.md`).
 4. **No running totals.** Leave out Street Cred, V's level, and V's total eddies. Report only this mission's own payout.

@@ -27,7 +27,7 @@ It started where Heywood always starts: a bar and a debt. I was at El Coyote Coj
 
 Somebody at the bar offered to help. I watched them climb the stairs to Kirk, the creditor who holds court up there with Big Joe, and word came down ahead of them: lift an Aerondight from the garage under Embers and Pepe's slate is clean. Kirk even supplied the tool, a little box that sweet-talks the car's security into saying yes. Generous. A man who holds your debt and then hands you the means to pay it owns you twice.
 
-The ride over belonged to Padre, the Heywood fixer, with Marcus Barros along for it. I watched a 6th Street crew pull that car over and lean on Padre. Then they let it go. In Heywood, that's a toll booth.
+The ride over belonged to Padre, the Heywood fixer, with Marcus Barros along for it. I watched a 6th Street crew pull that car over and lean on Padre. Then they let it go. In Heywood, that's a toll booth. Outside Embers I watched Padre hand his passenger a contact before the car pulled away. A fixer's number, for a kid who came to pay off somebody else's debt.
 
 Under Embers I watched a man named Rick, the one in the security booth, sell twenty minutes. Twenty minutes of dead cameras. That's what a security system is worth when the man watching it needs eddies too.
 
@@ -41,7 +41,7 @@ Under Embers I watched a man named Rick, the one in the security booth, sell twe
 
 The box worked. The car opened. It didn't matter. Someone else was already there for the same car on the same night, gun out. Two thieves, one Aerondight, zero plan for that.
 
-Then the NCPD settled it. Cuffs on both. I watched the owner have a word with the officers, and I watched one officer end the conversation the short way. Both thieves woke up on the pavement. Unpaid. Still breathing.
+Then the NCPD settled it. Cuffs on both. I watched the owner have a word with the officers, and I watched one officer end the conversation the short way. Both thieves woke up on the pavement. Unpaid. Still breathing. I watched them get up and decide to get lunch.
 
 ```
               ____________________
@@ -86,9 +86,9 @@ Two words run Heywood: *due tomorrow*. Not a figure, not a rate. A deadline. I'v
 
 ---
 
-CHEAP TRUTH, dead drop, Heywood. Veritas, editing. Ronnie Dight, graphics. NOT COPYRIGHTED. "Twenty Minutes Is All It Costs"
+CHEAP TRUTH, [in-world address]. Veritas, editing. [name], graphics. NOT COPYRIGHTED. "Twenty Minutes Is All It Costs"
 
-Veritas - 2077:001:2214.000
+Veritas - [timestamp of mission completion]
 
 NOT COPYRIGHTED Go ahead, steal it. Unlike the Aerondight, this one leaves the garage.
 

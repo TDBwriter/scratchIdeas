@@ -1,6 +1,6 @@
 # CHEAP TRUTH: Interviews with the Dead
 
-An optional department. A dead (or presumed dead) Cyberpunk 2020 legend is called up and interviewed. It counts as one of an issue's 0-2 optional departments (`Cheap-Truth-screamsheet.md`, section 3).
+An optional department. A legend from Cyberpunk 2020 or Cyberpunk RED who is dead, believed dead, or whose fate is unknown by 2077 is called up and interviewed. It counts as one of an issue's 0-2 optional departments (`Cheap-Truth-screamsheet.md`, section 3).
 
 ---
 
@@ -33,7 +33,7 @@ Checked against the scans. The original ran three of these.
 **The summoning: the Afterlife.** Night City's merc bar names its drinks after legends, and the drinks honor the dead. Since Update 1.5 there's even a Jackie Welles. In the zine, ordering a legend's drink at the Afterlife calls the legend up. Morgan Blackhand has no drink there, because nobody is sure he's dead, so he shows up anyway, the way Omniaveritas did in #17.
 
 **Rules**
-1. **Who:** a Cyberpunk 2020 character who is dead, or believed dead, by 2077, and who is part of 2077's world. Never the crew: Jackie has a drink, but the crew is never named.
+1. **Who:** a legend from Cyberpunk 2020 or Cyberpunk RED who is dead, believed dead, or whose fate is unknown by 2077. Never the crew: Jackie has a drink, but the crew is never named.
 2. **Tie to this mission (E1).** Name the tie.
 3. **Canon only (D4).** What they did and how they died, as the sources agree. Where the sources disagree, the interview can play with the disagreement instead of picking a side.
 4. **Follow the money (§0).** Who profited from their life, and from their death.
@@ -56,7 +56,7 @@ Checked against the scans. The original ran three of these.
 
 ## Who to interview
 
-Cyberpunk 2020 characters, their fate by 2077, and where they could fit. Unknowns are left blank.
+Legends from Cyberpunk 2020 and Cyberpunk RED, their fate by 2077, and where they could fit. Unknowns are left blank.
 
 | Legend | In Cyberpunk 2020 | By 2077 | In 2077's world | Possible issue | Watch out |
 |---|---|---|---|---|---|
@@ -68,7 +68,7 @@ Cyberpunk 2020 characters, their fate by 2077, and where they could fit. Unknown
 | **Alt Cunningham** | Netrunner; wrote Soulkiller; Johnny's partner. | Soulkilled. An AI beyond the Blackwall in 2077. | After The Heist. | After The Heist only | Whether Night City knows her name isn't confirmed. |
 | **Spider Murphy** | Netrunner; Bartmoss's apprentice and friend. | Not found. | Not found. | | |
 
-**Not dead by 2077, so not candidates:** Kerry Eurodyne, Rogue, Adam Smasher.
+**Known to be alive in 2077, so not candidates:** Kerry Eurodyne, Rogue, Adam Smasher.
 
 ---
 
@@ -98,14 +98,11 @@ None is tied to a mission or theme yet.
   - **The Management** (Iwinski, Kicinski, Nielubowicz): three bumbling buffoons praising trickle-down economics with a champagne tower that never trickles.
   - **The Creator** (Pondsmith, as his in-game radio persona Maximum Mike): a rich Streetkid who forgot his poor roots, explaining that nobody censors him because he has people for that.
 - **They use the #17 opening:** the zine goes looking for a spirit and finds the subject "apparently very much alive."
-- **Each ends by saying it's invented,** in the zine's voice: "None of this happened."
 - **What keeps them fair** is in each file's notes: they caricature public roles, lean only on public events, and claim nothing about anyone's private life.
-- **"Kicinski" is still ambiguous:** Michal (co-founder) or Adam (longtime joint CEO, and the one involved in the public events the piece echoes). The draft uses the surname only.
+- **"Kicinski" is Adam Kicinski** (decided), the longtime joint CEO: one of "the guys who rushed Cyberpunk out the door for money." Not Michal, the co-founder.
 
 ## Still open
 - Which issue and theme each interview goes with.
-- Whether the department opens to "fate unknown" (Spider Murphy, Trace Santiago, Miriam Night) and to Cyberpunk RED characters (Trace Santiago).
-- Which Kicinski.
 - Which issues carry the two fourth-wall interviews.
 - Whether Johnny can be interviewed after The Heist at all.
 - Richard Night's Cyberpunk 2020 source.

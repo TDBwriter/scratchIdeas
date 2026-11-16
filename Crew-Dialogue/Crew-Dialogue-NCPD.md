@@ -50,6 +50,7 @@ The reported crimes. Somebody hid something, and left a note about where.
 ### 3. Somebody else is reading
 Someone has noticed who keeps closing Watson's scanner calls without leaving bodies.
 - A call comes from a number none of them has. [GAME line] "Hey, V. Regina Jones here. If you're looking for work in Watson, give me a call."
+  - **Open:** the game plays this line in The Ride, and it stays there (decided). The Ride is told after her gigs. So this beat either needs a first contact of its own, or the line is heard twice.
 - When V calls, she describes their last three scenes back to them, including what V stopped to photograph. [GAME line] "I know where to gather my intel. Could even call me a collector."
 - **T-Bug** goes silent. Nobody is supposed to know their route.
 

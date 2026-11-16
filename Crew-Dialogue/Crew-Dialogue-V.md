@@ -33,28 +33,32 @@ Everything needed to keep V's behavior and voice right. V is always neutral in e
 - **Wants:** to snag the perfect storytelling still: one frame that tells the truth. Also to survive and make art.
 - **Needs:** to step out from behind the lens and be in the picture, with people. [OURS]
 - **Flaw:** watches instead of joining. [OURS]
-- **The line V walks:** a pacifist in a crew that carries guns. Always a pacifist, and always deeply conscientious about the appropriate level of violence.
-- **Tools:** wits, a camera, a tomahawk and fists. No gun. Backup to Jackie.
+- **The line V walks:** a pacifist who carries a gun. V doesn't start violence and doesn't take life wantonly, and answers escalation when the other party brings it. Always deeply conscientious about the appropriate level of violence.
+- **Tools:** wits, a camera, a tomahawk, fists, and a gun for self-defense. Backup to Jackie.
 
 | # | Stage | When | What happens |
 |---|---|---|---|
 | 1 | Ordinary World | Before the story opens | [OURS] A Streetkid with a camera, already Jackie's partner. |
 | 2 | Call | The Rescue | [GAME] The first crew job; V carries Sandra out to Trauma Team. [OURS] V photographs the woman they were too late for. (Scene 4) |
-| 3 | Refusal | The Ripperdoc | [OURS] "I've got a camera." V doesn't want new eyes, and won't carry a gun. (Scene 5) |
+| 3 | Refusal | The Ripperdoc | [OURS] "I've got a camera." V doesn't want new eyes. (Scene 5) |
 | 4 | Mentor | The Ripperdoc and every side gig | [GAME] Viktor installs Kiroshi optics; V's first scan is Viktor. The Gift, gigs, cyberpsychos. [OURS] The eyes become a second camera. Jackie teaches V the street, T-Bug the net, Regina the trade. (Scenes 2, 5, 6, 7, 8) |
 | 5 | Threshold | The Streetkid | [GAME] A broken nose, Pepe's debt, Kirk's car job taken for a favor, and Padre's number. [OURS] Back across the water after two years. The one who tells the truth kept a secret. (The Streetkid scenes) |
 | 6 | Tests, allies, enemies | The Ride, The Information, The Pickup | [GAME] Dex's pitch; the braindance, where Judy records the truth for a living; Jackie's nerves at All Foods. [OURS] V goes along because they're going, on one condition: nobody gets hurt. (Scenes 9, 10, 11) |
 | 7 | Approach | The night before | [OURS] "Hold still." The last portrait of Jackie. (Scene 12) |
 | 8 | Ordeal | The Heist | [GAME] V watches Yorinobu kill Saburo. T-Bug dies in the net. Jackie slots the chip, is shot and dying, and V slots it while he dies. [OURS] The documentarian has seen the biggest story in Night City and can tell no one. |
 | 9 | Reward | The Heist | [GAME] The Relic, which is a curse. [OURS] What V saw. It's the reason V-media's reporting has to stay anonymous. |
-| 10-12 | Road Back, Resurrection, Return | After The Heist | Open. Heroes [GAME] is the first step back. V-media stays a pacifist. |
+| 10-12 | Road Back, Resurrection, Return | After The Heist | Heroes [GAME] is the first step back. With Jackie and T-Bug dead, V stops holding back: quicker to escalate, readier to kill. In response to The Heist V chromes up. V goes from Streetkid sidekick to a one-person powerhouse, melting brains with quickhacks and stacking bodies like Jackie. The rest is open. |
 
 ---
 
 ## Behavior
 
-- **Always a pacifist,** and always deeply conscientious about the appropriate level of violence. V uses the least force a moment needs.
-- **Tools:** wits, a camera, a tomahawk and fists. No gun.
+- **A pacifist with a rule of force,** from the first job. V doesn't start violence and doesn't take life wantonly, and is always deeply conscientious about the appropriate level of it.
+- **Lethal in answer to escalation.** If the other party escalates, V answers. When attacked, V goes loud in self-defense, with a gun V carries.
+- **The tomahawk is for silenced kills,** if the situation calls for one.
+- **After The Heist, V stops holding back:** quicker to escalate and readier to kill. V goes from Streetkid sidekick to a one-person powerhouse, melting brains with quickhacks and stacking bodies like Jackie. From here V hacks openly, as V.
+- **The build waits for The Heist.** All of V's attributes stay at 3 until then, and V has only the cyberware the game installs. In response to The Heist, V chromes up.
+- **Tools:** wits, a camera, a tomahawk, fists, and a gun V carries. Which gun is blank. (The first plan named the DA8 Umbra.)
 - **Backup to Jackie.** Jackie leads the solo work. V covers, scouts, climbs and documents.
 - **Takes the picture.** At the turn of a job, V's answer is to frame it. The photo is how V acts.
 - **A free runner.** V goes up and around, not through.
@@ -117,21 +121,23 @@ V thinks in the ideas of the trade. Each gig gives V one of them to chew on.
 
 ## With the others
 
-- **Jackie:** the partner V picked over lunch. Jackie carries; V watches. V photographs him as he is, not as the legend he wants to be, and tells him the truth gently.
+- **Jackie:** V's partner since before the story opens. Jackie carries; V watches. V photographs him as he is, not as the legend he wants to be, and tells him the truth gently.
 - **T-Bug:** V keeps inviting her into the room. She shows V how the net watches. V's camera is the one thing that reaches her: "Send me that one."
 
 ## Never
 
-- Never carries or fires a gun.
-- Never enjoys violence, and never uses more of it than the moment needs.
+- Never starts the violence, and never takes a life wantonly.
+- Never enjoys violence. Before The Heist, never uses more of it than the moment needs.
 - Never makes a speech.
-- Never hacks on screen as V.
+- Before The Heist, never hacks on screen as V. T-Bug gets the credit.
 - Never "he" or "she" in any file.
 
 ## Open
 
 - V's arc after The Heist (stages 10 to 12).
-- How the solo Arasaka ending is played by a pacifist.
+- How the solo Arasaka ending is played. By then V has stopped holding back.
+- Which gun V carries.
+- How fast V "chromes up" after The Heist. (The build itself is in `cyberpunk2077ProjectReference.md`, outside this silo.)
 - The body and voice picked at character creation. The game requires one.
 - Which of the game's dialogue options fit V. No rule is set.
 - Whether the tomahawk can be used without killing. Check in game.
