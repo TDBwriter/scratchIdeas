@@ -78,7 +78,7 @@ Not applied to Part 1. Each note says what it rests on.
 - **Played so far:** The Streetkid, Practice Makes Perfect, The Rescue and The Ripperdoc, then NCPD jobs.
 - **Viktor is paid back,** out of recovered weapons and ammo.
 - **Build so far:** "I have chosen not to level, building skills and equipment where I can." V levels up from XP, and every attribute and perk point is banked, so attributes stay at 3. Skills rise by use.
-- **Videos:** every entry is edited into a full video of its own, each assault site included. Before The Heist that is 80: the 72 side entries and the 8 main jobs from The Streetkid to The Heist. Every game over, surprise and dumb death is cut out and goes into YouTube Shorts.
+- **Videos:** every entry is edited into a full video of its own, each assault site included. Before The Heist that is 80: the 72 side entries and the 8 main jobs from The Streetkid to The Heist. A few deaths before the success stay in the full video. Each mission also gets a Short of up to 3 minutes, cut in the style of a 90s skate-video part, with that mission's deaths in it (`cyberpunk2077ShortsTreatment.md`).
 
 **Warning: Steam's automatic recording overwrites old footage.** Background recording is a rolling buffer with a length or storage limit. When it fills, the oldest footage is overwritten. Only saved clips and exported files are kept, and they are stored separately.
 - Valve's support page says the length and quality of the background recording are set in Steam's settings, and that seeking back far enough can reach footage that has already been overwritten.
@@ -108,7 +108,7 @@ Not applied to Part 1. Each note says what it rests on.
 ### What the checklist leaves out
 
 - **Photo-mode stills.** The zine links a photo from every caption, in black on white. The checklist covers video only. File names, folders, the black-on-white conversion and hosting are all undecided (cohesion plan, O10).
-- **Shorts: now decided.** They are every game over, surprise and dumb death, cut out of the full videos. The routine in Part 1 cuts Shorts from one or two "cool moments" marked with Ctrl+F12 instead.
+- **Shorts: decided.** One per mission, up to 3 minutes, cut as a 90s skate-video part: vertical crop, MiniDV grade, analog texture, fisheye vignette, the game's own music, no narration, and the mission's deaths in its skit break. The rules and notes are in `cyberpunk2077ShortsTreatment.md`. The routine in Part 1 cuts Shorts from one or two "cool moments" marked with Ctrl+F12 instead.
 - **The paste's last line** offered a YouTube title, description and playlist template. It isn't included above. Episode numbering waits on what the zine publishes during the side gigs, which is undecided.
 
 ### Checked, and not checked

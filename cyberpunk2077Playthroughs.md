@@ -37,7 +37,7 @@ This file holds one entry per playthrough, in the template at the bottom. Only s
 - **Played so far:** The Streetkid, Practice Makes Perfect, The Rescue and The Ripperdoc, then NCPD jobs.
 - **Viktor is paid back,** out of recovered weapons and ammo.
 - **Build so far:** "I have chosen not to level, building skills and equipment where I can." V levels up from XP, and every attribute and perk point is banked, so attributes stay at 3. Skills rise by use.
-- **Videos:** every entry is edited into a full video of its own, each assault site included. Before The Heist that is 80: the 72 side entries and the 8 main jobs from The Streetkid to The Heist. Every game over, surprise and dumb death is cut out and goes into YouTube Shorts.
+- **Videos:** every entry is edited into a full video of its own, each assault site included. Before The Heist that is 80: the 72 side entries and the 8 main jobs from The Streetkid to The Heist. A few deaths before the success stay in the full video. Each mission also gets a Short of up to 3 minutes, cut in the style of a 90s skate-video part, with that mission's deaths in it (`cyberpunk2077ShortsTreatment.md`).
 
 **Ending:** the secret ending, a solo raid on Arasaka. After The Heist, V stops holding back and chromes up: quicker to escalate, readier to kill, a one-person powerhouse. How the raid itself is played is open. Nothing past The Heist is planned in detail.
 
@@ -46,6 +46,7 @@ This file holds one entry per playthrough, in the template at the bottom. Only s
 - **The crew's storyline:** `Crew-Dialogue/`. Our own scenes and seeds for V, Jackie and T-Bug, compatible with what the game shows. It stands on its own.
 - **The shooting plan to The Heist:** `cyberpunk2077PreHeistPlanningLog.pdf`, 61 entries. Its order is a checklist, not the order played (decided: it stays as it is). Its source is in `tools/planning-log/`.
 - **Recording and export:** `cyberpunk2077RecordingPipeline.md`.
+- **Shorts:** `cyberpunk2077ShortsTreatment.md`.
 - **Perks and skills:** `cyberpunk2077PerksAndSkills.md`.
 - **Pipeline:** plan, play and record, narrate, publish serially on YouTube. Each mission is a zine issue and an episode. A zine that appears inside the game is a stretch goal only.
 

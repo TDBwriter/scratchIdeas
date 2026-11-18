@@ -41,7 +41,8 @@ Audit of every project file on the branch `cyberpunk2077-narrative-playthroughs`
 - **The optional departments are placeholders,** filled with what makes the most appropriate sense for the issue. Gripe Time no longer has to be about free-running.
 - **Test IDs: renumbering waits.**
 - **Recording has started:** hours of footage, with Steam's automatic recording. Played: The Streetkid, Practice Makes Perfect, The Rescue, The Ripperdoc, then NCPD jobs. Viktor is paid back, out of recovered weapons and ammo. Steam's automatic recording overwrites old footage unless it's saved.
-- **Every entry gets a full video of its own,** each assault site included: 80 before The Heist. **Game overs, surprises and dumb deaths go into YouTube Shorts** (part of Q9).
+- **Every entry gets a full video of its own,** each assault site included: 80 before The Heist. **Game overs, surprises and dumb deaths go into YouTube Shorts** (part of Q9). Changed on November 18: a few deaths stay in the full video too, and each mission's Short is a skate-video part with its deaths in it (`cyberpunk2077ShortsTreatment.md`).
+- **Not decided:** how a full video's narration treats a death the crew's story says didn't happen.
 - **"Not leveling" means every attribute and perk point is banked.** Skills rise by use; equipment is gathered where possible.
 - **One save. The V-Jackie save is dropped,** and its build file is retired. Every fight on screen is V's footage. Each fight is credited to Jackie or to V in the edit, decided as it's cut.
 - **The 7 creation points were left unspent.** Every attribute is at 3.
@@ -131,7 +132,7 @@ Ordered by how much each one touches. Each lists the options without a recommend
 - **Touches:** test F1; every invented scene; the channel's risk.
 
 **Q9. What is an episode, and how does it tie to an issue?**
-- **Now:** "each mission will be a zine and an episode." Every entry, each assault site included, is edited into a full video of its own: 80 before The Heist. Game overs, surprises and dumb deaths are cut into Shorts.
+- **Now:** "each mission will be a zine and an episode." Every entry, each assault site included, is edited into a full video of its own: 80 before The Heist. A few deaths stay in the full video. Each mission also gets a Short of up to 3 minutes, cut as a 90s skate-video part, with that mission's deaths in it.
 - **Open:** one episode per issue or several; where the invented scenes sit; whether the video's narrator is the zine's eyewitness "I"; where the zine is published; where the photos are hosted, since every caption links to one.
 - **Touches:** test G6; the pipeline; issue length.
 
@@ -240,7 +241,7 @@ Crew-Dialogue/               our storyline, compatible with the game
   Crew-Dialogue-REGINA.md  -SUPPORTING.md
   Crew-Dialogue-GAPS.md
 tools/                       planning-log, issue-checker, mastheads, cheap-truth-original
-(repo root)                  the playthrough: the playthrough entry, perks, the retired Jackie build, the recording pipeline, planning log, this plan, the reference
+(repo root)                  the playthrough: the playthrough entry, perks, the retired Jackie build, the recording pipeline, the Shorts treatment, planning log, this plan, the reference
 ```
 
 **Still without a home:** the playthrough's own documents (V-media's build, mission order, the rest of the pipeline, in-game checklist), a decisions register, and photos.

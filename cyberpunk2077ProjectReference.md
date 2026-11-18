@@ -13,13 +13,14 @@ It is the pre-production package for two linked things:
 1. **A serialized, narrated YouTube playthrough of *Cyberpunk 2077*.** The base game with Update 2.5, unmodded, on the hardest difficulty. The footage is cut and narrated, with the crew's new lines shown as on-screen text, so that V, Jackie and T-Bug appear to work every job before The Heist as a crew of three, with invented scenes staged in photo mode filling the six months the game skips.
 2. ***Cheap Truth*, a text-only Markdown zine.** One issue per main job, written as Night City street reporting, with each photo present as a caption that links to it.
 
-Recording has started: hours of gameplay, captured with Steam's automatic recording. Played so far: The Streetkid, Practice Makes Perfect, The Rescue, The Ripperdoc, then NCPD jobs. Nothing is edited yet. Not counting this file and the cohesion plan, there are 32 Markdown files (about 49,000 words), one 141-page PDF and a folder of tools:
+Recording has started: hours of gameplay, captured with Steam's automatic recording. Played so far: The Streetkid, Practice Makes Perfect, The Rescue, The Ripperdoc, then NCPD jobs. Nothing is edited yet. Not counting this file and the cohesion plan, there are 33 Markdown files (about 51,000 words), one 141-page PDF and a folder of tools:
 - a **rulebook** for the zine: a style guide, 50 pass/fail tests and a template;
 - a **shooting plan** for Act 1: 61 entries, in a checklist order that isn't play order, with story beats, shot boxes and note space;
 - a **character bible:** a file on each of the three, their arcs, 17 scripted scenes (13 numbered, and 4 that tell The Streetkid late), and seeds for 48 of the 51 side entries;
 - **draft copy:** one issue and eight interviews;
 - a **build reference:** every perk tree and skill track (and a retired build for the dropped V-Jackie save);
 - a **recording pipeline:** a settings and export checklist, with notes on where it meets the project's decisions;
+- a **Shorts treatment:** a 90s skate-video style for the Shorts, with notes;
 - the **tools:** the planning log's source, the issue checker, the masthead shortlist and the original zine's text.
 
 About a quarter of the run is planned in detail (everything up to The Heist). The rest, about 21 issues' worth, has an outline only.
@@ -77,7 +78,8 @@ Its tensions are part of it: a pacifist with a gun, in a shooter; an anti-corpor
 | Photo mode is used heavily, including to place Jackie in scenes | Conversation; Crew Dialogue silo |
 | Ending: the secret ending, a solo raid on Arasaka | Conversation |
 | Pipeline: plan, play and record, narrate, publish serially on YouTube | Conversation |
-| Every entry gets a full video of its own, each assault site included: 80 before The Heist (72 side entries, 8 main jobs). Every game over, surprise and dumb death is cut out and goes into YouTube Shorts | Conversation; `cyberpunk2077RecordingPipeline.md` |
+| Every entry gets a full video of its own, each assault site included: 80 before The Heist (72 side entries, 8 main jobs). A few deaths before the success stay in the full video | Conversation; `cyberpunk2077RecordingPipeline.md` |
+| Each mission also gets a YouTube Short of up to 3 minutes, cut as a 90s skate-video part: vertical crop, MiniDV grade, analog texture, fisheye vignette, the game's own music, no narration, a camcorder date in YYYY:DDD (the day it's published), and the mission's deaths in its skit break. The full videos stay in the straight style | `cyberpunk2077ShortsTreatment.md` |
 | "Not leveling": V levels up from XP and every attribute and perk point is banked, so attributes stay at 3. Skills rise by use; equipment is gathered where possible | Conversation; `cyberpunk2077Playthroughs.md` |
 | Each mission is a zine issue and an episode | Conversation |
 | A zine that appears inside the game is a stretch goal only | Conversation |
@@ -267,6 +269,7 @@ Our own storyline for V, Jackie and T-Bug, 100% compatible with what the game sh
 | `cyberpunk2077Playthroughs.md` | One entry per playthrough, from the branch's first template. V-media's entry is filled in from the settled decisions | Current |
 | `cyberpunk2077PerksAndSkills.md` | Flow charts and tables of every perk tree and skill track (patch 2.x) | Complete; Update 2.5's six dual-wield perks are added, and the rest hasn't been rechecked against 2.5 |
 | `cyberpunk2077RecordingPipeline.md` | The recording and export checklist as pasted, with separate notes on where it meets other decisions | Checklist unchanged; notes list what is undecided |
+| `cyberpunk2077ShortsTreatment.md` | The 90s skate-video treatment as uploaded, with notes on how it applies to the Shorts | Treatment unchanged; decisions and checks in the notes |
 | `cyberpunk2077JackieBuild.md` | The build for the V-Jackie save: dual pistols on the base game with Update 2.5 | Retired: the V-Jackie save is dropped |
 | `cyberpunk2077PreHeistPlanningLog.pdf` | The print-and-write shooting plan for Act 1 | Complete to The Heist; its source is in `tools/planning-log/` |
 
