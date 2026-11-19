@@ -1,0 +1,249 @@
+<!doctype html>
+<!--
+  Mission Control: "Today" panel mockup for a Kindle Scribe (1860x2480 portrait, 300 ppi).
+  All data below is placeholder. In the real system the server fills this template
+  from live sources (calendar, tasks, mail bridge, Home Assistant, server health).
+
+  Any element with data-action becomes a tap target. render.mjs records its box
+  in today.hotspots.json so the Kindle app knows what each tap means.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mission Control: Today</title>
+<style>
+  :root {
+    --ink: #000;
+    --mid: #4a4a4a;
+    --soft: #9a9a9a;
+    --wash: #e6e6e6;
+    --paper: #fff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1860px; height: 2480px; background: var(--paper); color: var(--ink); overflow: hidden; }
+  body {
+    font-family: Inter, "DejaVu Sans", sans-serif;
+    font-size: 42px;
+    line-height: 1.22;
+    padding: 56px 80px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .mono { font-family: "JetBrains Mono", "DejaVu Sans Mono", monospace; }
+
+  /* Header */
+  header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    border-bottom: 8px solid var(--ink); padding-bottom: 16px;
+  }
+  .title { font: 800 60px/1 "JetBrains Mono", monospace; letter-spacing: 8px; }
+  .date { font-size: 50px; margin-top: 18px; color: var(--mid); }
+  .clock { font: 700 124px/0.9 "JetBrains Mono", monospace; text-align: right; }
+  .status { font: 500 30px/1.4 "JetBrains Mono", monospace; color: var(--mid); text-align: right; margin-top: 12px; }
+
+  /* Cards */
+  .row { display: grid; gap: 26px; }
+  .two { grid-template-columns: 1fr 1fr; }
+  .card { border: 4px solid var(--ink); padding: 26px 34px; }
+  .label {
+    font: 700 30px/1 "JetBrains Mono", monospace; letter-spacing: 4px; text-transform: uppercase;
+    display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px;
+  }
+  .label .meta { font-weight: 500; letter-spacing: 0; color: var(--mid); text-transform: none; }
+
+  /* Weather */
+  .temp { font: 700 130px/0.95 Inter, sans-serif; letter-spacing: -4px; }
+  .cond { font-size: 44px; margin-top: 10px; }
+  .hilo { font: 500 36px/1.4 "JetBrains Mono", monospace; color: var(--mid); margin-top: 6px; }
+  .hourly { display: flex; justify-content: space-between; margin-top: 16px; border-top: 3px solid var(--ink); padding-top: 12px;
+            font: 500 32px/1.3 "JetBrains Mono", monospace; }
+  .hourly div { text-align: center; }
+  .hourly b { display: block; font-size: 38px; }
+
+  /* Agenda */
+  .agenda { list-style: none; }
+  .agenda li { display: grid; grid-template-columns: 170px 1fr; padding: 10px 0; border-bottom: 2px solid var(--wash); }
+  .agenda li:last-child { border-bottom: none; }
+  .agenda .t { font: 700 40px/1.2 "JetBrains Mono", monospace; }
+  .agenda .soon { background: var(--ink); color: var(--paper); margin: 0 -16px; padding: 10px 16px; border-bottom: none; }
+  .agenda .sub { display: block; font-size: 32px; color: var(--mid); }
+  .agenda .soon .sub { color: var(--wash); }
+
+  /* Tasks */
+  .tasks { list-style: none; }
+  .tasks li { display: flex; align-items: center; gap: 28px; min-height: 84px; border-bottom: 2px solid var(--wash); }
+  .tasks li:last-child { border-bottom: none; }
+  .box { flex: 0 0 64px; height: 64px; border: 5px solid var(--ink); }
+  .tasks .due { margin-left: auto; font: 500 30px "JetBrains Mono", monospace; color: var(--mid); white-space: nowrap; }
+
+  /* Inbox */
+  .unread { font: 700 84px/1 Inter, sans-serif; }
+  .unread small { font-size: 36px; font-weight: 500; color: var(--mid); margin-left: 12px; }
+  .mail { list-style: none; margin-top: 16px; }
+  .mail li { padding: 10px 0; border-bottom: 2px solid var(--wash); }
+  .mail b { display: block; font-size: 38px; }
+  .mail span { font-size: 34px; color: var(--mid); }
+  .btns { display: flex; gap: 20px; margin-top: 16px; }
+  .btn {
+    flex: 1; min-height: 100px; display: flex; align-items: center; justify-content: center;
+    border: 5px solid var(--ink); font: 700 34px "JetBrains Mono", monospace; letter-spacing: 2px; text-transform: uppercase;
+  }
+  .btn.solid { background: var(--ink); color: var(--paper); }
+
+  /* Home tiles */
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .tile { border: 5px solid var(--ink); min-height: 140px; padding: 16px 22px; display: flex; flex-direction: column; justify-content: space-between; }
+  .tile .n { font-size: 34px; line-height: 1.15; }
+  .tile .s { font: 800 44px/1 "JetBrains Mono", monospace; letter-spacing: 2px; }
+  .tile.on { background: var(--ink); color: var(--paper); }
+
+  /* Systems */
+  .sys { display: grid; grid-template-columns: 210px 1fr 110px; align-items: center; row-gap: 14px; column-gap: 20px;
+         font: 500 34px "JetBrains Mono", monospace; }
+  .bar { height: 34px; border: 4px solid var(--ink); position: relative; }
+  .bar i { position: absolute; inset: 0 auto 0 0; background: var(--ink); }
+  .checks { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; font: 500 32px "JetBrains Mono", monospace; }
+  .ok::before { content: "\2713  "; font-weight: 800; }
+  .warn::before { content: "!  "; font-weight: 800; }
+  .warn { background: var(--wash); padding: 0 8px; }
+
+  /* From phone */
+  .push { list-style: none; }
+  .push li { padding: 10px 0; border-bottom: 2px solid var(--wash); }
+  .push li:last-child { border-bottom: none; }
+  .push b { font-size: 40px; display: block; }
+  .push span { font: 500 28px "JetBrains Mono", monospace; color: var(--mid); }
+
+  /* Capture */
+  .capture {
+    flex: 1; min-height: 220px; border: 5px dashed var(--ink); padding: 22px 34px; position: relative;
+  }
+  .capture::after {  /* writing lines, kept below the label row */
+    content: ""; position: absolute; inset: 96px 34px 12px;
+    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 86px, var(--soft) 86px, var(--soft) 89px);
+  }
+  .capture .label { background: var(--paper); display: inline-flex; gap: 24px; padding-right: 16px; }
+  .dest { position: absolute; top: 18px; right: 24px; display: flex; gap: 16px; }
+  .chip { border: 4px solid var(--ink); background: var(--paper); padding: 10px 22px; font: 700 28px "JetBrains Mono", monospace; text-transform: uppercase; }
+  .chip.sel { background: var(--ink); color: var(--paper); }
+
+  /* Footer nav */
+  nav { display: flex; justify-content: space-between; border-top: 8px solid var(--ink); padding-top: 10px;
+        font: 700 32px "JetBrains Mono", monospace; letter-spacing: 3px; }
+  nav a { padding: 8px 18px; color: inherit; text-decoration: none; }
+  nav .here { background: var(--ink); color: var(--paper); }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="title">MISSION CONTROL</div>
+    <div class="date">Thursday 19 November</div>
+  </div>
+  <div>
+    <div class="clock">07:42</div>
+    <div class="status">upd 07:40 · next 08:10 · batt 82% · desk mode</div>
+  </div>
+</header>
+
+<section class="row two">
+  <div class="card" data-action="panel:weather">
+    <div class="label">Weather <span class="meta">home</span></div>
+    <div class="temp">41°</div>
+    <div class="cond">Cloudy, rain after 3 pm</div>
+    <div class="hilo">H 48°  L 37°  wind 9 mph</div>
+    <div class="hourly">
+      <div>9a<b>42°</b></div><div>12p<b>46°</b></div><div>3p<b>45°</b>rain</div><div>6p<b>40°</b>rain</div>
+    </div>
+  </div>
+  <div class="card" data-action="panel:calendar">
+    <div class="label">Next up <span class="meta">3 more today</span></div>
+    <ul class="agenda">
+      <li class="soon"><span class="t">08:30</span><span>Stand-up<span class="sub">in 48 min · video</span></span></li>
+      <li><span class="t">12:00</span><span>Lunch<span class="sub">Market St</span></span></li>
+      <li><span class="t">19:00</span><span>Writing group<span class="sub">bring ch. 3</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="row two">
+  <div class="card">
+    <div class="label">Tasks <span class="meta" data-action="panel:tasks">+3 more ▸</span></div>
+    <ul class="tasks">
+      <li data-action="task.done:t1"><span class="box"></span>Outline chapter 3<span class="due">today</span></li>
+      <li data-action="task.done:t2"><span class="box"></span>Renew car registration<span class="due">fri</span></li>
+      <li data-action="task.done:t3"><span class="box"></span>Reply re: lease renewal<span class="due">fri</span></li>
+      <li data-action="task.done:t4"><span class="box"></span>Order printer toner</li>
+      <li data-action="task.done:t5"><span class="box"></span>Back up photo library</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="label">Inbox <span class="meta">via mail bridge</span></div>
+    <div class="unread">12<small>unread · 2 flagged</small></div>
+    <ul class="mail">
+      <li data-action="mail.open:m1"><b>Landlord</b><span>Lease renewal: options for 2027</span></li>
+      <li data-action="mail.open:m2"><b>Writing group</b><span>Tonight's pages attached (PDF)</span></li>
+    </ul>
+    <div class="btns">
+      <div class="btn" data-action="panel:inbox">Open</div>
+      <div class="btn solid" data-action="mail.compose">Write ✎</div>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="label">Home <span class="meta">tap to toggle</span></div>
+  <div class="tiles">
+    <div class="tile on" data-action="ha.toggle:light.living_room"><span class="n">Living room<br>lights</span><span class="s">ON</span></div>
+    <div class="tile" data-action="ha.toggle:lock.front_door"><span class="n">Front<br>door</span><span class="s">LOCKED</span></div>
+    <div class="tile" data-action="panel:climate"><span class="n">Thermostat<br>heat</span><span class="s">68°</span></div>
+    <div class="tile" data-action="ha.toggle:cover.garage"><span class="n">Garage<br>door</span><span class="s">CLOSED</span></div>
+  </div>
+</section>
+
+<section class="row two">
+  <div class="card" data-action="panel:systems">
+    <div class="label">Systems <span class="meta">home-server</span></div>
+    <div class="sys">
+      <span>CPU</span><span class="bar"><i style="width:23%"></i></span><span>23%</span>
+      <span>Memory</span><span class="bar"><i style="width:48%"></i></span><span>48%</span>
+      <span>Disk</span><span class="bar"><i style="width:61%"></i></span><span>61%</span>
+    </div>
+    <div class="checks">
+      <span class="ok">14/14 containers</span>
+      <span class="ok">backup 02:00</span>
+      <span class="ok">tailnet 4/4</span>
+      <span class="warn">2 updates</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label">From phone <span class="meta">share sheet</span></div>
+    <ul class="push">
+      <li data-action="push.open:p1"><b>Pick up dry cleaning before 6</b><span>iPhone · 07:12</span></li>
+      <li data-action="push.open:p2"><b>"How e-ink waveforms work"</b><span>link → read-later · 06:58</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="capture" data-action="capture.pen">
+  <div class="label">Write here <span class="meta">transcribed, then sent to →</span></div>
+  <div class="dest">
+    <span class="chip sel" data-action="capture.dest:task">task</span>
+    <span class="chip" data-action="capture.dest:note">note</span>
+    <span class="chip" data-action="capture.dest:phone">phone</span>
+    <span class="chip" data-action="capture.dest:email">email</span>
+  </div>
+</section>
+
+<nav>
+  <a data-action="panel:reading">◂ READING</a>
+  <a class="here">TODAY</a>
+  <a data-action="panel:home">HOME</a>
+  <a data-action="panel:systems">SYSTEMS</a>
+  <a data-action="panel:inbox">INBOX ▸</a>
+</nav>
+
+</body>
+</html>

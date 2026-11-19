@@ -1,0 +1,203 @@
+{
+  "panel": "today",
+  "width": 1860,
+  "height": 2480,
+  "hotspots": [
+    {
+      "action": "panel:weather",
+      "x": 80,
+      "y": 272,
+      "w": 837,
+      "h": 515
+    },
+    {
+      "action": "panel:calendar",
+      "x": 943,
+      "y": 272,
+      "w": 837,
+      "h": 515
+    },
+    {
+      "action": "panel:tasks",
+      "x": 717,
+      "y": 843,
+      "w": 162,
+      "h": 30
+    },
+    {
+      "action": "task.done:t1",
+      "x": 118,
+      "y": 891,
+      "w": 761,
+      "h": 84
+    },
+    {
+      "action": "task.done:t2",
+      "x": 118,
+      "y": 975,
+      "w": 761,
+      "h": 84
+    },
+    {
+      "action": "task.done:t3",
+      "x": 118,
+      "y": 1059,
+      "w": 761,
+      "h": 84
+    },
+    {
+      "action": "task.done:t4",
+      "x": 118,
+      "y": 1143,
+      "w": 761,
+      "h": 84
+    },
+    {
+      "action": "task.done:t5",
+      "x": 118,
+      "y": 1227,
+      "w": 761,
+      "h": 84
+    },
+    {
+      "action": "mail.open:m1",
+      "x": 981,
+      "y": 991,
+      "w": 761,
+      "h": 120
+    },
+    {
+      "action": "mail.open:m2",
+      "x": 981,
+      "y": 1110,
+      "w": 761,
+      "h": 120
+    },
+    {
+      "action": "panel:inbox",
+      "x": 981,
+      "y": 1246,
+      "w": 371,
+      "h": 100
+    },
+    {
+      "action": "mail.compose",
+      "x": 1372,
+      "y": 1246,
+      "w": 371,
+      "h": 100
+    },
+    {
+      "action": "ha.toggle:light.living_room",
+      "x": 118,
+      "y": 1480,
+      "w": 388,
+      "h": 164
+    },
+    {
+      "action": "ha.toggle:lock.front_door",
+      "x": 530,
+      "y": 1480,
+      "w": 388,
+      "h": 164
+    },
+    {
+      "action": "panel:climate",
+      "x": 942,
+      "y": 1480,
+      "w": 388,
+      "h": 164
+    },
+    {
+      "action": "ha.toggle:cover.garage",
+      "x": 1354,
+      "y": 1480,
+      "w": 388,
+      "h": 164
+    },
+    {
+      "action": "panel:systems",
+      "x": 80,
+      "y": 1700,
+      "w": 837,
+      "h": 387
+    },
+    {
+      "action": "push.open:p1",
+      "x": 981,
+      "y": 1778,
+      "w": 761,
+      "h": 122
+    },
+    {
+      "action": "push.open:p2",
+      "x": 981,
+      "y": 1900,
+      "w": 761,
+      "h": 120
+    },
+    {
+      "action": "capture.pen",
+      "x": 80,
+      "y": 2113,
+      "w": 1700,
+      "h": 224
+    },
+    {
+      "action": "capture.dest:task",
+      "x": 1193,
+      "y": 2136,
+      "w": 119,
+      "h": 65
+    },
+    {
+      "action": "capture.dest:note",
+      "x": 1328,
+      "y": 2136,
+      "w": 119,
+      "h": 65
+    },
+    {
+      "action": "capture.dest:phone",
+      "x": 1463,
+      "y": 2136,
+      "w": 136,
+      "h": 65
+    },
+    {
+      "action": "capture.dest:email",
+      "x": 1615,
+      "y": 2136,
+      "w": 136,
+      "h": 65
+    },
+    {
+      "action": "panel:reading",
+      "x": 80,
+      "y": 2381,
+      "w": 236,
+      "h": 59
+    },
+    {
+      "action": "panel:home",
+      "x": 868,
+      "y": 2381,
+      "w": 125,
+      "h": 59
+    },
+    {
+      "action": "panel:systems",
+      "x": 1195,
+      "y": 2381,
+      "w": 191,
+      "h": 59
+    },
+    {
+      "action": "panel:inbox",
+      "x": 1589,
+      "y": 2381,
+      "w": 191,
+      "h": 59
+    }
+  ]
+}
