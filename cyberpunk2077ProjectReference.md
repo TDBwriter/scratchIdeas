@@ -62,6 +62,8 @@ Its tensions are part of it: a pacifist with a gun, in a shooter; an anti-corpor
 
 "Conversation" means the decision was made while planning and was in no file before this one.
 
+**The style guides are guides.** Not every possibility needs to be decided ahead. A case a guide doesn't cover is decided when the work is done: in the edit, or when an issue is written.
+
 ### The run
 
 | Decision | Recorded in |

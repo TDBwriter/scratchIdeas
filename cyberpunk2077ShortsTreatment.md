@@ -81,6 +81,8 @@ Structure each video in the series like a classic skate "part" (typically 2 to 4
 
 Everything above this line is the treatment as it was uploaded, unchanged. Everything below is notes. The decisions were made on November 18, 2026. Where a decision changes part of the treatment, the treatment above is left as it is and the change is written here.
 
+**This is a guide, not a rulebook.** Not every possibility is decided ahead. Anything it doesn't cover is decided in the edit.
+
 ## Decided
 
 - **Shorts only.** The treatment applies to YouTube Shorts. The full mission videos stay in the straight style.
@@ -89,7 +91,7 @@ Everything above this line is the treatment as it was uploaded, unchanged. Every
 - **Deaths go in both places.** A few deaths before the success stay in the full video. In the Short, deaths are the cold open and the flashback slams (see "How a Short runs"). There are no separate death Shorts. (Until November 19 they went in the skit break.) This replaces the earlier rule that every game over, surprise and dumb death is cut out of the full videos into Shorts.
 - **Vertical crop, no 4:3.** Shorts are cropped straight to 9:16. The treatment's 4:3 frame with black sidebars is dropped. (YouTube also requires a Short to be vertical or square.)
 - **The look:** the MiniDV color grade, the analog texture (scanlines and tape grain; VHS glitches and static on hard transitions only), and the fisheye vignette on wide, high-energy shots.
-- **Title card:** one, over the loading screen after the cold open (decided November 19; it was "not chosen" before). Its typeface isn't set.
+- **Title card:** one, over the loading screen after the cold open (decided November 19; it was "not chosen" before). Its typeface is picked in the edit.
 - **Not chosen:** lower thirds.
 - **The camcorder overlay's date** uses the zine's YYYY:DDD form (year, then the day of the year in three digits), and shows the day the Short is published.
 - **No narration** in Shorts. Music, game sound and the overlays only.
@@ -98,14 +100,16 @@ Everything above this line is the treatment as it was uploaded, unchanged. Every
 
 ## How a Short runs (decided November 19, 2026)
 
-This is the sequence for every mission's Short. It replaces the treatment's four sections (opener, montage, skit break, ender) and their percentages. Whether any timing targets apply is open.
+This is the sequence for every mission's Short. It replaces the treatment's four sections (opener, montage, skit break, ender) and their percentages. Timing is judged in the edit.
 
 1. **Cold open: the previous game over.** The Short opens on V's last game over in this mission. It gives a hint of what the mission is.
 2. **Title card, over the loading screen.** The almost-all-black loading screen after the game over is where the title card is spliced in. It shows:
    - the mission's name;
    - its location on the minimap;
-   - V's stats: "a whole profile" (decided). Which fields that covers isn't listed;
-   - maybe a picture of V (not decided).
+   - V's stats: "a whole profile";
+   - maybe a picture of V.
+
+   Which fields the profile shows, and whether the picture goes on, are decided in the edit.
 3. **The run: the takedown of the mission.** Slow parts are sped up with a "skip ahead" effect that cuts frames, for a compressed look.
 4. **Skit breaks:** any cool thing V notices, or a slick takedown. They build up to the coup de grace.
 5. **The coup de grace** is the ender.
@@ -125,9 +129,9 @@ These are notes, not decisions.
 6. **DaVinci Resolve.** The checklist's Shorts step uses Smart Reframe, which may need the paid Studio version. Check which of the grade, grain and distortion effects the free version has.
 7. **Deaths in the full videos** sit inside the crew's story, where V can't die. How a full video's narration treats a death the story says didn't happen isn't decided.
 8. **The ender is the coup de grace** (decided).
-9. **Whether the crew's on-screen text lines appear in Shorts** isn't set.
+9. **The crew's on-screen text lines in Shorts:** decided in the edit.
 10. **YouTube's monetization.** Shorts with no narration rely on the edit for the original work YouTube's reused content policy looks for.
-11. **The cold open needs a game over.** What a Short opens on when V didn't die in that mission is left blank (decided).
+11. **The cold open needs a game over.** What a Short opens on when V didn't die in that mission is decided in the edit.
 12. **Keep the deaths.** The cold open and the flashback slams both need footage of earlier deaths, and Steam's background recording overwrites old footage unless it's saved.
 13. **The minimap for the title card.** The vertical crop cuts the minimap out of the frame, and the recording checklist turns it off. The location has to come from another capture, such as a screenshot of the minimap or the world map.
 14. **V's stats on the title card** are "a whole profile." With every point banked, V's attributes read 3 until The Heist.
