@@ -1,0 +1,91 @@
+{
+  "panel": "messagePopup",
+  "width": 1860,
+  "height": 2480,
+  "hotspots": [
+    {
+      "action": "msg.open:thread-wife",
+      "x": 70,
+      "y": 250,
+      "w": 1720,
+      "h": 737
+    },
+    {
+      "action": "msg.quick:on-my-way",
+      "x": 126,
+      "y": 698,
+      "w": 242,
+      "h": 85
+    },
+    {
+      "action": "msg.quick:yes",
+      "x": 386,
+      "y": 698,
+      "w": 131,
+      "h": 85
+    },
+    {
+      "action": "msg.quick:call-10",
+      "x": 534,
+      "y": 698,
+      "w": 275,
+      "h": 85
+    },
+    {
+      "action": "msg.quick:heart",
+      "x": 828,
+      "y": 698,
+      "w": 95,
+      "h": 85
+    },
+    {
+      "action": "msg.reply",
+      "x": 126,
+      "y": 817,
+      "w": 521,
+      "h": 120
+    },
+    {
+      "action": "msg.later",
+      "x": 669,
+      "y": 817,
+      "w": 521,
+      "h": 120
+    },
+    {
+      "action": "msg.thread",
+      "x": 1213,
+      "y": 817,
+      "w": 521,
+      "h": 120
+    },
+    {
+      "action": "msg.pad",
+      "x": 70,
+      "y": 1250,
+      "w": 1720,
+      "h": 1080
+    },
+    {
+      "action": "msg.pad.clear",
+      "x": 126,
+      "y": 2109,
+      "w": 521,
+      "h": 120
+    },
+    {
+      "action": "msg.pad.keyboard",
+      "x": 669,
+      "y": 2109,
+      "w": 521,
+      "h": 120
+    },
+    {
+      "action": "msg.send",
+      "x": 1213,
+      "y": 2109,
+      "w": 521,
+      "h": 120
+    }
+  ]
+}

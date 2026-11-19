@@ -1,0 +1,131 @@
+<!doctype html>
+<!--
+  Mockup: an incoming text pops up over a book in KOReader, with a pen reply pad open.
+  Kindle Scribe 1860x2480 portrait. All content is placeholder; the book text is original filler.
+  Render with:  node render.mjs messagePopup.html
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Message pop-up mockup</title>
+<style>
+  :root { --ink:#000; --mid:#4a4a4a; --soft:#9a9a9a; --wash:#e6e6e6; --paper:#fff; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1860px; height: 2480px; background: var(--paper); overflow: hidden; }
+  body { position: relative; font-family: Inter, "DejaVu Sans", sans-serif; color: var(--ink); }
+  .mono { font-family: "JetBrains Mono", "DejaVu Sans Mono", monospace; }
+
+  /* The book page underneath, greyed to read as "behind" the pop-up */
+  .page { position: absolute; inset: 0; padding: 110px 150px; color: var(--soft);
+          font: 46px/1.55 "DejaVu Serif", Caladea, serif; text-align: justify; hyphens: auto; }
+  .page h2 { font: 600 40px/1 "DejaVu Serif", serif; letter-spacing: 6px; text-align: center; margin-bottom: 70px; }
+  .page p { text-indent: 2em; margin-bottom: 0; }
+  .page .foot { position: absolute; left: 150px; right: 150px; bottom: 70px; display: flex; justify-content: space-between;
+                font: 32px "JetBrains Mono", monospace; }
+
+  /* Pop-up card */
+  .sheet { position: absolute; left: 70px; right: 70px; background: var(--paper); border: 6px solid var(--ink);
+           box-shadow: 18px 18px 0 var(--ink); }
+  .msg { top: 250px; padding: 40px 50px 44px; }
+  .kicker { display: flex; justify-content: space-between; font: 700 32px "JetBrains Mono", monospace; letter-spacing: 4px;
+            text-transform: uppercase; border-bottom: 4px solid var(--ink); padding-bottom: 18px; margin-bottom: 26px; }
+  .kicker span:last-child { font-weight: 500; letter-spacing: 0; color: var(--mid); text-transform: none; }
+  .ctx { font-size: 34px; color: var(--mid); margin-bottom: 18px; }
+  .ctx b { color: var(--ink); font-weight: 600; }
+  .from { font: 800 64px/1.1 Inter, sans-serif; }
+  .text { font: 500 56px/1.3 Inter, sans-serif; margin-top: 14px; }
+  .row { display: flex; gap: 22px; margin-top: 34px; }
+  .btn { flex: 1; min-height: 120px; display: flex; align-items: center; justify-content: center; border: 6px solid var(--ink);
+         font: 700 36px "JetBrains Mono", monospace; letter-spacing: 2px; text-transform: uppercase; }
+  .btn.solid { background: var(--ink); color: var(--paper); }
+  .chips { display: flex; gap: 18px; margin-top: 22px; }
+  .chip { border: 4px solid var(--ink); padding: 18px 26px; font: 600 34px Inter, sans-serif; }
+
+  /* Reply pad */
+  .pad { top: 1250px; bottom: 150px; padding: 34px 50px 40px; display: flex; flex-direction: column; }
+  .lines { position: relative; flex: 1; margin-top: 6px;
+           background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 150px, var(--soft) 150px, var(--soft) 153px); }
+  .lines svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .tx { border: 4px dashed var(--ink); padding: 22px 28px; margin-top: 26px; }
+  .tx .lbl { font: 700 28px "JetBrains Mono", monospace; letter-spacing: 3px; text-transform: uppercase; color: var(--mid); }
+  .tx .val { font: 500 50px/1.3 Inter, sans-serif; margin-top: 10px; }
+  .tx .val u { text-decoration: none; border-bottom: 5px dotted var(--ink); }
+  .note { font: 500 28px "JetBrains Mono", monospace; color: var(--mid); margin-top: 18px; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <h2>SEVEN</h2>
+  <p>The lamp room was colder than she remembered, and the glass hummed faintly in the wind as if it were trying to tell her something it had told a hundred keepers before. She set the kettle on the little stove and waited, counting the seconds between each sweep of the beam across the water.</p>
+  <p>Somewhere below, the radio crackled. It was only the weather, the same patient voice reading the same patient numbers, but tonight it sounded closer, like someone standing just outside the door. She did not get up. She told herself there was no one on the island but her and the gulls, and the gulls did not knock.</p>
+  <p>By the time the kettle sang, the fog had come in thick enough to swallow the beam a hundred yards out. She poured the tea, wrapped both hands around the cup, and opened the logbook to the last page in her father's handwriting.</p>
+  <p>Three words, underlined twice. She had read them every night for a month and still did not know what they meant.</p>
+  <div class="foot"><span>The Keeper's Year</span><span>p. 112 · 38%</span></div>
+</div>
+
+<section class="sheet msg" data-action="msg.open:thread-wife">
+  <div class="kicker"><span>Message · iMessage</span><span>now · via Mac relay</span></div>
+  <div class="ctx">earlier: <b>You</b>: leaving the bookstore in 20</div>
+  <div class="from">Wife</div>
+  <div class="text">Can you grab milk on the way home? And maybe those ginger cookies.</div>
+  <div class="chips">
+    <span class="chip" data-action="msg.quick:on-my-way">On my way</span>
+    <span class="chip" data-action="msg.quick:yes">Yes!</span>
+    <span class="chip" data-action="msg.quick:call-10">Call you in 10</span>
+    <span class="chip" data-action="msg.quick:heart">♥</span>
+  </div>
+  <div class="row">
+    <div class="btn solid" data-action="msg.reply">Reply ✎</div>
+    <div class="btn" data-action="msg.later">Later</div>
+    <div class="btn" data-action="msg.thread">Thread</div>
+  </div>
+</section>
+
+<section class="sheet pad" data-action="msg.pad">
+  <div class="kicker"><span>Reply to Wife · write below</span><span>pen</span></div>
+  <div class="lines"><svg id="ink" xmlns="http://www.w3.org/2000/svg"></svg></div>
+  <div class="tx">
+    <div class="lbl">Transcribed · tap a word to fix</div>
+    <div class="val">Yes, grabbing milk and the <u>ginger</u> cookies now. Home by 6 ♥</div>
+  </div>
+  <div class="row">
+    <div class="btn" data-action="msg.pad.clear">Clear</div>
+    <div class="btn" data-action="msg.pad.keyboard">Keyboard</div>
+    <div class="btn solid" data-action="msg.send">Send ▸</div>
+  </div>
+  <div class="note">sends as a normal iMessage from your Apple ID · book stays on p. 112</div>
+</section>
+
+<script>
+  // Fake handwriting: loopy cursive-like strokes on the first two ruled lines.
+  const svg = document.getElementById('ink');
+  const W = svg.getBoundingClientRect().width;
+  let seed = 7;
+  const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  // Prolate-cycloid loops (loop radius > advance) read as joined-up cursive.
+  function scribble(y, x0, x1) {
+    let d = '', x = x0;
+    while (x < x1) {
+      const wordLen = 150 + rnd() * 240;
+      const end = Math.min(x + wordLen, x1);
+      let th = 0, amp = 30, first = true;
+      while (x < end) {
+        if (th % (2 * Math.PI) < 0.25) amp = rnd() < 0.22 ? 64 + rnd() * 18 : 22 + rnd() * 12; // some tall letters
+        const px = x - Math.sin(th) * 13;
+        const py = y - 6 - (1 - Math.cos(th)) * amp / 2;
+        d += (first ? 'M' : 'L') + px.toFixed(1) + ' ' + py.toFixed(1) + ' ';
+        first = false; th += 0.25; x += 1.6 + rnd() * 0.5;
+      }
+      x += 50 + rnd() * 30;
+    }
+    const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    p.setAttribute('d', d); p.setAttribute('fill', 'none'); p.setAttribute('stroke', '#000');
+    p.setAttribute('stroke-width', '6'); p.setAttribute('stroke-linecap', 'round'); p.setAttribute('stroke-linejoin', 'round');
+    svg.appendChild(p);
+  }
+  scribble(140, 20, W - 40);
+  scribble(293, 20, W * 0.62);
+</script>
+</body>
+</html>
