@@ -283,6 +283,7 @@ Our own storyline for V, Jackie and T-Bug, 100% compatible with what the game sh
 | `tools/issue-checker/` | The script behind the scripted zine tests in groups A and H |
 | `tools/mastheads/` | The shortlist of 407 FIGlet faces that draw the masthead within 100 columns |
 | `tools/cheap-truth-original/` | Machine-read text of the original zine, one file per scanned page |
+| `tools/skate-short/` | Turns a raw recording into a skate-style Short: the look, the title card over the loading screen, and phase markers for Resolve. Claude Code runs it through `.claude/skills/skate-short/SKILL.md`. Tested only on a made-up recording |
 
 `tools/README.md` says how to run each one. **Still outside the repo:** the scans of the original zine.
 

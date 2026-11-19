@@ -138,6 +138,10 @@ These are notes, not decisions.
 15. **The "skip ahead" effect.** One way in DaVinci Resolve: speed the clip up with the retime process set to Nearest, so frames are dropped rather than blended. Check it on a clip.
 16. **Takedowns in Shorts are V's, as played** (decided). The Shorts sit outside the crew's story, so the full videos' crediting (each fight to Jackie or V, with photo covers for Jackie's) doesn't apply to them.
 
+## The tool
+
+`tools/skate-short/skate_short.py` applies this guide to a raw recording. It renders the look, puts the title card over the loading screen, and writes phase markers for Resolve. Free Resolve can no longer be scripted from outside, so the tool works on the video file itself with ffmpeg, and the markers come into Resolve by import. Setup and use are in `tools/README.md`. With Claude Code, give it the video's location and the mission's name.
+
 ## Sources for the notes
 
 - [CD PROJEKT RED: Fan Content Guidelines](https://www.cdprojektred.com/en/fan-content)
