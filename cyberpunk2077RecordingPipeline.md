@@ -108,7 +108,7 @@ Not applied to Part 1. Each note says what it rests on.
 ### What the checklist leaves out
 
 - **Photo-mode stills.** The zine links a photo from every caption, in black on white. The checklist covers video only. File names, folders, the black-on-white conversion and hosting are all undecided (cohesion plan, O10).
-- **Shorts: decided.** One per mission, up to 3 minutes, cut as a 90s skate-video part: vertical crop, MiniDV grade, analog texture, fisheye vignette, the game's own music, no narration, and the mission's deaths in its skit break. The rules and notes are in `cyberpunk2077ShortsTreatment.md`. The routine in Part 1 cuts Shorts from one or two "cool moments" marked with Ctrl+F12 instead.
+- **Shorts: decided.** One per mission, up to 3 minutes, cut as a 90s skate-video part: vertical crop, MiniDV grade, analog texture, fisheye vignette, the game's own music, no narration. It opens on the mission's last game over, puts a title card over the loading screen, speeds slow parts with a frame-cutting "skip ahead," builds through skit breaks to the coup de grace, and closes on V moving off into the city. The rules and notes are in `cyberpunk2077ShortsTreatment.md`. The routine in Part 1 cuts Shorts from one or two "cool moments" marked with Ctrl+F12 instead.
 - **The paste's last line** offered a YouTube title, description and playlist template. It isn't included above. Episode numbering waits on what the zine publishes during the side gigs, which is undecided.
 
 ### Checked, and not checked
