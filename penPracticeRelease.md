@@ -78,13 +78,17 @@ Titles are working names. Plus **R0: the free sampler** (already built), used fo
 
 **Promise:** learn to draw what's in front of you, not what you think it looks like.
 
+**Full lesson text: `sketchWhatYouSee.md`.** It builds lines → shapes → proportion → space → light → scenes, with one habit throughout: **Look → Measure → Mark → Check**.
+
 | Part | Lessons | Content |
 |---|---|---|
-| 0 | Start here | Pen grip for drawing, moving from the shoulder, warm-up lines (from L1.01) |
-| 1 | Seeing edges (5) | Blind contour · modified contour · drawing the shapes of the gaps · confident lines · 30 s / 1 min / 2 min gesture boxes |
-| 2 | Shape and proportion (5) | Outline shapes (block-ins) · sighting angles · measuring sizes against one unit · grid transfer (reference with grid → empty grid) · grid fading out |
-| 3 | Light and value (5) | 5-step value scale · squint and group values · shadow shapes · simple solids from life (box, cylinder, sphere) · light direction |
-| 4 | Putting it together (5) | Mug in 4 stages · three-object still life · plant · room corner · **10-minute sketch habit pages** |
+| 0 | Start here (1) | Set up to see: posture, grip, moving from the shoulder; day-1 "before" drawing |
+| 1 | Lines (5) | Straight lines · curves and arcs · seeing angles · contour line · blind contour |
+| 2 | Shapes (4) | The four basic shapes · ellipses · seeing shapes in things · negative space |
+| 3 | Proportion and placement (4) | The envelope · measuring with your pen · plumb lines and levels · the grid as training wheels |
+| 4 | Space and perspective (5) | Eye level and horizon · depth clues · 1-point · 2-point · everything is boxes and cylinders |
+| 5 | Light and value (4) | 5-step value scale · light on simple forms · squint and group shadow shapes · texture and edges |
+| 6 | Putting it together (4) | Thumbnails · the four-pass drawing · field sketching (people, time limits, notes) · capstone + day-1 comparison |
 
 - **Page types needed**:
   - `reference-and-draw`: photo on top, drawing area below
