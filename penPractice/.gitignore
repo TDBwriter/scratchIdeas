@@ -1,2 +1,6 @@
 out/*.html
 out/*/
+!out/sketch/
+out/sketch/refs/
+out/sketch/thumbs/
+out/sketch/*.html

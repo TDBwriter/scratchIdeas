@@ -78,6 +78,8 @@ Titles are working names. Plus **R0: the free sampler** (already built), used fo
 
 **Promise:** learn to draw what's in front of you, not what you think it looks like.
 
+**Status:** the e-ink edition is built (110 pages, `penPractice/out/sketch/sketch-what-you-see-eink.pdf`, builder in `penPractice/sketch/`) and is waiting for final approval. Print editions come next.
+
 **Full lesson text: `sketchWhatYouSee.md`.** It builds lines → shapes → proportion → space → light → scenes, with one habit throughout: **Look → Measure → Mark → Check**.
 
 | Part | Lessons | Content |

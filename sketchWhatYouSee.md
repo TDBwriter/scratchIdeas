@@ -719,6 +719,8 @@ Reference pictures come from the pencil-sketch generator (`sketchArt/`): farmhou
 
 ## What the generator needs to build these pages
 
+> **Built.** All of these page types now exist in `penPractice/sketch/build.mjs`, and the e-ink edition is generated from it (see `penPractice/sketch/README.md`). The table below is kept as the design record.
+
 Page types to add to `penPractice/build.mjs`. Several reuse what already exists.
 
 | Page type | Used in |

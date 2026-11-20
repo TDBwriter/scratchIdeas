@@ -45,6 +45,10 @@ const lerp2 = (a, b, t) => [lerp(a[0], b[0], t), lerp(a[1], b[1], t)];
 const between = (R, a, b) => lerp(a, b, R());
 const pick = (R, arr) => arr[Math.floor(R() * arr.length)];
 let clipN = 0;
+// Construction data for each scene (horizon, vanishing points, envelopes, shapes, alignments), written
+// next to the images as <scene>-<seed>.json so books can draw guide overlays on the references.
+let META = {};
+const bboxOf = pts => [Math.min(...pts.map(p => p[0])), Math.min(...pts.map(p => p[1])), Math.max(...pts.map(p => p[0])), Math.max(...pts.map(p => p[1]))];
 
 // ---------- pencil primitives
 // A pencil path through points: slight hand wobble, sometimes a lighter second pass.
@@ -389,6 +393,20 @@ const scenes = {
     g += hatch(R, [[mb[0] + 0.05 * ms, mb[1] - 1.05 * ms], [mb[0] + 0.26 * ms, mb[1] - 1.05 * ms], [mb[0] + 0.26 * ms, mb[1] - 1.3 * ms], [mb[0] + 0.05 * ms, mb[1] - 1.3 * ms]], { angle: 1.2, gap: 5, op: 0.4 });
     g += grass(R, 0, W, H * 0.985, 80, 26) + grass(R, 0, W * 0.7, lerp(hz, H, 0.25), 50, 12) + grass(R, mb[0] - 60 * U, mb[0] + 60 * U, mb[1] + 2 * U, 14, 22);
     g += notes(R, 'farmhouse', W * 0.04, H * 0.08, [7, 19]);
+    {
+      const vpOf = d => { const k = d[2] < 0 ? -1 : 1; return cam([cam.pos[0] + d[0] * k * 1e5, 1.6, cam.pos[2] + d[2] * k * 1e5]); };
+      const proj = (Tf, pts) => pts.map(q => cam(Tf.w(q)));
+      const side = hb.faces.left.vis ? 0 : 11;
+      const hc = [[0, 0, 0], [11, 0, 0], [11, 0, 8], [0, 0, 8], [0, 6, 0], [11, 6, 0], [11, 6, 8], [0, 6, 8], [-0.45, 9.2, 4], [11.45, 9.2, 4]];
+      const bc = [[0, 0, 0], [11, 0, 0], [11, 0, 9], [0, 0, 9], [0, 5.5, 0], [11, 5.5, 0], [11, 5.5, 9], [0, 5.5, 9], [0, 9.5, 4.5], [11, 9.5, 4.5]];
+      META = {
+        horizon: hz, vps: [vpOf(T.n([1, 0, 0])), vpOf(T.n([0, 0, 1]))],
+        envelopes: [bboxOf(proj(T, hc)), bboxOf(proj(B, bc)), bboxOf([base[iL], base[iR], top[iL], top[iR], cam([sx, sh + sr * 0.8, sz])])],
+        shapes: [proj(T, [[0, 0, 0], [11, 0, 0], [11, 6, 0], [0, 6, 0]]), proj(T, [[side, 0, 0], [side, 0, 8], [side, 6, 8], [side, 6, 0]]),
+          proj(T, [[side, 6, 0], [side, 6, 8], [side, 9.2, 4]]), proj(T, [[-0.45, 5.85, -0.45], [11.45, 5.85, -0.45], [11.45, 9.2, 4], [-0.45, 9.2, 4]])],
+        rays: [[0, 0, 0, 0], [0, 6, 0, 0], [11, 0, 0, 0], [11, 6, 0, 0], [side, 0, 0, 1], [side, 6, 0, 1], [side, 0, 8, 1], [side, 6, 8, 1]].map(([x, y, z2, v]) => [...cam(T.w([x, y, z2])), v]),
+      };
+    }
     return g;
   },
 
@@ -436,6 +454,16 @@ const scenes = {
       + ellipse(R, hyd[0], hyd[1] - 0.66 * hs2, 0.09 * hs2, 0.07 * hs2, { w: 0.8 });
     for (let k = 0; k < 3; k++) { const fx = between(R, -12, 12), fz = between(R, 16.5, 20.5); g += standing(R, cam([fx, 0, fz]), cam.scale([fx, 0, fz])); }
     g += notes(R, 'buildingFront', W * 0.03, H * 0.06, [6, 10]);
+    {
+      const mid = blocks[1], cols = Math.max(2, Math.floor((mid.x1 - mid.x0) / 2.4)), colX = c => mid.x0 + ((mid.x1 - mid.x0) / cols) * (c + 0.5);
+      META = {
+        horizon: hz,
+        alignV: [...blocks.map(b => P(b.x0, 0)[0]), P(blocks[2].x1, 0)[0], ...Array.from({ length: cols }, (_, c) => P(colX(c), 0)[0])],
+        alignH: [P(0, 4.1)[1], P(0, 4.8)[1], P(0, 6.6)[1], P(0, 8.0)[1], ...blocks.map(b => P(0, b.h)[1])],
+        unit: { x: P(colX(0), 0)[0], y0: P(0, 0)[1], px: P(0, 0)[1] - P(0, 1.8)[1], count: Math.floor(mid.h / 1.8), win: [P(colX(0) - 0.6, 4.8), P(colX(0) + 0.6, 6.6)] },
+        envelopes: [[P(blocks[0].x0, 0)[0], P(0, Math.max(...blocks.map(b => b.h)))[1], P(blocks[2].x1, 0)[0], P(0, 0)[1]]],
+      };
+    }
     return g;
   },
 
@@ -481,6 +509,8 @@ const scenes = {
     }
     for (let k = 0; k < 5; k++) { const fx = pick(R, [-5.6, 5.6]) + between(R, -0.5, 0.5), fz = between(R, 7, 30); g += standing(R, cam([fx, 0, fz]), cam.scale([fx, 0, fz])); }
     g += notes(R, 'cityStreet', W * 0.03, H * 0.07, [7, 22]);
+    META = { horizon: hz, vps: [cam([cam.pos[0], 1.6, 1e5])],
+      rays: [[-6.5, 0, 2], [6.5, 0, 2], [-4, 0, 2], [4, 0, 2], [-6.5, 18, 6], [6.5, 18, 6], [-6.5, 9, 6], [6.5, 9, 6]].map(q => [...cam(q), 0]) };
     return g;
   },
 
@@ -536,6 +566,13 @@ const scenes = {
       else g += ellipse(R, ...seat, 0.2 * s, 0.055 * s, { w: 0.8 }) + line(R, [seat[0], seat[1] + 0.05 * s], [seat[0], floorY], { w: 0.9, op: 0.7 });
     }
     g += notes(R, 'diner', W * 0.03, H * 0.07, [5, 10]);
+    {
+      const at = k => { const zz = 1.9 + k * 1.2; return [cam([0.72, 0.78, zz]), cam.scale([0.72, 0.78, zz])]; };
+      META = { horizon: hz, vps: [cam([cam.pos[0], 1.45, 1e5])],
+        rays: [[1.08, 1.08, 1.0], [1.15, 0, 1.0], [-3.1, 3.0, 0.6], [4, 3.0, 0.6], [-3.1, 1.25, 1.5], [-3.1, 0, 0.6]].map(q => [...cam(q), 0]),
+        ellipses: Array.from({ length: 10 }, (_, k) => { const [c, sc] = at(k); return [c[0], c[1], 0.2 * sc, 0.055 * sc]; }),
+        people: occupied.map(k => { const [c, sc] = at(k); return { head: [c[0] + 0.05 * sc, c[1] - 0.73 * sc, 0.09 * sc, 0.11 * sc], body: [c[0] - 0.23 * sc, c[1] - 0.6 * sc, c[0] + 0.24 * sc, c[1]] }; }) };
+    }
     return g;
   },
 
@@ -552,11 +589,14 @@ const scenes = {
     for (let k = 0; k < 4; k++) g += rock(R, between(R, 0.06, 0.58) * W, shoreY + between(R, 50, 120) * U, between(R, 50, 110) * U);
     const reedX = W * between(R, 0.02, 0.15);                // reeds at the water's edge
     for (let k = 0; k < 12; k++) { const x = reedX + between(R, 0, 140) * U, h = between(R, 120, 260) * U; g += curve(R, [[x, shoreY + 8 * U], [x + between(R, -10, 10) * U, shoreY - h * 0.5], [x + between(R, -25, 25) * U, shoreY - h]], { w: 0.6, op: 0.6 }); }
-    g += tree(R, [W * between(R, 0.72, 0.82), H * 0.98], H * between(R, 0.82, 0.92));
+    const tb = [W * between(R, 0.72, 0.82), H * 0.98], th = H * between(R, 0.82, 0.92);
+    g += tree(R, tb, th);
     g += tree(R, [W * between(R, 0.12, 0.22), shoreY + 10 * U], H * between(R, 0.3, 0.36), { op: 0.55 });
     g += grass(R, 0, W, H * 0.99, 100, 30);
     for (let k = 0; k < 3; k++) { const bx = between(R, 0.3, 0.6) * W, by = H * between(R, 0.12, 0.25), s = between(R, 12, 20) * U; g += curve(R, [[bx - s, by], [bx - s * 0.4, by - s * 0.5], [bx, by]], { w: 0.6 }) + curve(R, [[bx, by], [bx + s * 0.5, by - s * 0.5], [bx + s, by - 2]], { w: 0.6 }); }
     g += notes(R, 'nature', W * 0.03, H * 0.07, [7, 18]);
+    META = { horizon: hz, envelopes: [[tb[0] - th * 0.46, tb[1] - th * 1.02, tb[0] + th * 0.46, tb[1]]],
+      bands: [['far', 0, hz], ['middle', hz, shoreY], ['near', shoreY, H]] };
     return g;
   },
 };
@@ -589,10 +629,12 @@ try {
   for (const [name, scene] of Object.entries(scenes)) {
     if (opt.only && !opt.only.includes(name)) continue;
     clipN = 0;
+    META = {};
     const R = rng(opt.seed * 7919 + name.length * 131 + name.charCodeAt(0));
     const doc = svg(scene(R));
     const base = join(out, `${name}-${opt.seed}`);
     writeFileSync(`${base}.svg`, doc);
+    writeFileSync(`${base}.json`, JSON.stringify(META));
     await page.setContent(`<html><body style="margin:0">${doc}</body></html>`);
     await page.evaluate(() => document.fonts.ready);
     await page.screenshot({ path: `${base}.png`, clip: { x: 0, y: 0, width: W, height: H } });
