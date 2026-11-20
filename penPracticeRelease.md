@@ -93,7 +93,8 @@ Titles are working names. Plus **R0: the free sampler** (already built), used fo
   - `value-scale`
   - `timed-boxes`
   - `object-prompt`: "draw something near you"
-- **Reference images**: my own photos, or **CC0** collections (e.g. the Met and Smithsonian open-access libraries). **Log the source and licence of every image.**
+- **Illustrations and art direction**: naturalist sumi-e ink. **Generated ink art** (`inkArt/ink.mjs`) for covers, part openers and brush warm-ups. **Public-domain master copies** (Musashi, Bairei, Hokusai, Audubon) for copy-the-master plates. See `inkArt/README.md`.
+- **Reference images**: my own photos, or **CC0** collections (e.g. the Met and Smithsonian open-access libraries). **Log the source and licence of every image** in `inkArt/licences.csv`.
   - Convert to grayscale and check them on e-ink.
   - The reMarkable Paper Pro and Scribe Colorsoft show colour, but design for grayscale.
 
