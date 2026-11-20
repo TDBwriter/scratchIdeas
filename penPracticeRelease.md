@@ -175,7 +175,7 @@ Effort figures are rough estimates for one person part-time, with me writing the
 |---|---|---|---|
 | **0 Foundation** | Series name. Lesson format v1. Device-test the sampler on Scribe, reMarkable and print. Recruit 5–10 testers (adults and kids, at least one left-handed) | ~2 weeks | Sampler passes the device checks. Testers lined up |
 | **1 → R1** | New page types. Write ~22 lessons. Pick the example font. 3 editions. Store pages and preview images | ~4–6 weeks | Testers finish part 1 and the final test. Device checks pass |
-| **2 → R2** | Drawing page types. Reference photo set with a licence log. ~20 lessons. 3 editions | ~6–8 weeks | Same as above, plus every image licence checked |
+| **2 → R2** | Drawing page types (listed at the end of `sketchWhatYouSee.md`). Generated sketch references with construction overlays. 27 lessons. 3 editions | ~6–8 weeks | Same as above, plus every outside image licence checked |
 | **3 → R3** | iPad MVP with Print content first. TestFlight beta for PDF buyers. Then add the sketch book | ~10–14 weeks (can overlap phase 2) | Beta testers complete 5+ lessons. Scoring feels fair. App Review passes |
 | **4 → R4** | Stroke library (record letters in R3's authoring mode). Cursive curriculum. iOS app | ~10–14 weeks | Testers' cursive from memory improves over 2 weeks. Retention looks healthy |
 
