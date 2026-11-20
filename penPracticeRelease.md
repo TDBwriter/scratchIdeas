@@ -22,7 +22,7 @@ Titles are working names. Plus **R0: the free sampler** (already built), used fo
 | **Lesson format v1** | JSON per lesson: real-mm sizes, guide levels (trace / dots / free), self-check, the "why", audience, handedness | Draft in `penPractice/lessons/` |
 | **Generator** | Lesson JSON → PDF editions (+ PNG previews). Random seeds give fresh targets; `--left` gives left-handed | **Built** (`penPractice/build.mjs`): e-ink, Letter and A4 editions |
 | **Geometry sidecar** | For each page: where every target, dot and cell is. The apps use it as an answer key for scoring | To build (same data the generator already computes) |
-| **Stroke library** | Hand-recorded pen paths for each letter and shape: stroke order, direction, timing. Feeds stroke-order arrows in the PDFs, animations in both apps, and scoring in Cursive Coach | To build: record with Apple Pencil in an authoring mode inside R3 |
+| **Stroke library** | Pen paths for each letter and shape: stroke order, direction, timing. Feeds stroke-order arrows in the PDFs, animations in both apps, and scoring in Cursive Coach | **Started**: block print (capitals, lowercase, numbers) as drawn strokes in `penPractice/print/strokes.mjs`, used by R1. Still to do: timing, cursive, and hand-recorded paths from an authoring mode inside R3 |
 | **Scoring library** (Swift) | Line straightness, endpoint error, ellipse fit, shape match against an exemplar, stroke order and direction | To build with R3; reused by R4 |
 | **Look and feel** | Inter + JetBrains Mono (open licences), trace/dots/free icons, black-and-white first | Started (sampler) |
 
@@ -53,6 +53,12 @@ Titles are working names. Plus **R0: the free sampler** (already built), used fo
 
 **Promise:** handwriting anyone can read, at a speed you can actually use.
 
+**Status:** the e-ink edition is built as **front/back sheets** and is waiting for final approval.
+- 108 pages = 54 sheets: `penPractice/out/print/clear-quick-print-eink.pdf`.
+- The builder is in `penPractice/print/`.
+- It uses the same format rule as R2 (below).
+- Print editions come next.
+
 **Scope:** unjoined print, block **capitals** first (most legible), then **lowercase print**, then speed. Letterforms are simple and school-neutral: single-story a and g, no tails.
 
 | Part | Lessons | Content |
@@ -64,14 +70,28 @@ Titles are working names. Plus **R0: the free sampler** (already built), used fo
 | 4 | Speed (4) | Timed rows (30 s / 60 s) · pangrams · copy notes, lists and forms · "can someone else read it?" check |
 | 5 | Finish | **Final test**: repeat the day-1 sentence and compare legibility and letters per minute |
 
-- **About 22 lessons.** Each has a practice page and a **repeat page with fresh targets**, plus a "Why" page. Roughly 60–70 pages per edition.
-- **New page types needed**:
-  - `word-rows`
-  - `sentence-copy`
-  - `timed-row`: a box to write the time in, and a letters-per-minute tally
-  - `free-write` with a self-check list
-  - a progress tracker page
-- **Example font**: try **Andika** (an open-licence typeface designed for literacy, with single-story a and g) against Inter for the trace letters.
+- **23 lessons**, as built:
+  - Every lesson has a how-to / practice sheet.
+  - Letter lessons and 7 drills add an again / repeat sheet with less help.
+  - 5 lessons add a **use it** sheet for real writing: numbers, labels, forms, an envelope, a card, a list, a message, a read-back test.
+- **No font for the letters.** Every letter is drawn from our own **stroke model** (`penPractice/print/strokes.mjs`): ordered pen strokes for capitals, lowercase, numbers and punctuation. Exemplars (numbered stroke starts + arrows), trace letters, dotted letters and model sentences all come from it. This is the first piece of the shared **stroke library**. The apps can replay and score against it, and hand-recorded paths can replace it later.
+- **Help fades**:
+  - Letters go trace → dotted → free.
+  - Guide lines go four lines → two → one → blank paper.
+- **Page types built**:
+  - letter rows and word rows
+  - warm-ups
+  - day-one and final samples with letters-per-minute records
+  - spacing rows
+  - sentence rows with word-gap markers
+  - fading guide lines
+  - blank boxes
+  - 30-second timed trials
+  - pangrams
+  - copy-the-model
+  - confused-letter pairs
+  - form boxes
+  - progress tracker
 - **Kids edition later**: bigger guide lines, fewer rows, playful words.
 
 ## R2: Sketch What You See (PDF)

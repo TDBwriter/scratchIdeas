@@ -4,3 +4,7 @@ out/*/
 out/sketch/refs/
 out/sketch/thumbs/
 out/sketch/*.html
+!out/print/
+out/print/refs/
+out/print/thumbs/
+out/print/*.html
