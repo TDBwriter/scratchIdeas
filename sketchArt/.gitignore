@@ -1,0 +1,3 @@
+out/.palette16.png
+# SVGs are large; only seed 1 is tracked (regenerate others with --seed)
+out/*.svg
