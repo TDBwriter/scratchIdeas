@@ -2,10 +2,10 @@
 
 Builds the complete **Sketch What You See** workbook (release R2) from:
 
-- `lessons.mjs`: the content
+- `lessons.mjs`: the content, plus the facing-page extras (repeat tips, from-life approach, guide-line notes)
 - the pencil-sketch generator (`../../sketchArt/sketch.mjs`): the reference pictures
 
-**Status: e-ink edition built, waiting for approval.** After approval, the same builder produces the Letter and A4 print editions (`--page letter` / `--page a4`). Those layouts still need a review pass.
+**Status: e-ink edition built in facing spreads, waiting for approval.** After approval, the same builder produces the Letter and A4 print editions (`--page letter` / `--page a4`). Those need a review pass, plus a gutter margin and an even page count for binding.
 
 ```sh
 cd penPractice/sketch
@@ -16,42 +16,36 @@ node build.mjs --refs          # regenerate the reference sketches
 
 Requires Playwright (Chromium) and ImageMagick.
 
-## What's in the e-ink edition (110 pages)
+## Layout: everything comes in facing spreads
 
-- **Front matter**:
-  - cover
-  - "How this book works": the Look → Measure → Mark → Check habit, the four page types, and the trace → dots → free legend
-  - linked contents
-- **7 part openers**, each with a sketchbook illustration and links to its lessons.
-- **27 lessons**, each with:
+Each **left page** (even number) carries the instructions and details. The **right page** (odd number) facing it carries the prompt and the practice space.
 
-  | Page | What's on it |
-  |---|---|
-  | **Learn** | The idea, a diagram, numbered steps, the common slip |
-  | **Practice** | Help that fades: trace → dots → free |
-  | **Repeat** | Same drill, fresh targets, for drill lessons |
-  | **From life** | A prompt, a reference sketch (often with construction lines drawn over it), and a drawing frame |
+- In **print**, both lie open together.
+- On an **e-reader**, the instructions are always one swipe back.
+- **No jumping around**: there are no "Why?" buttons and no back-of-book section. Everything a reader needs for a practice page is on the page facing it.
+- **Page numbers** sit in the outer corners. The contents, part openers and progress tracker list page numbers.
+- **Footers** say "practice on the facing page ▸" and "◂ instructions on the facing page". The builder refuses to build if a spread would start on an odd page.
 
-- **Back matter**: "Why it works" (linked from every page's **Why?** button, with links back), a progress tracker, and "About this book".
-- **Page size**: 157.5 × 210 mm, true size on Kindle Scribe 2022/2024 and reMarkable 2. 328 internal links.
+## Spreads per lesson
 
-## Page types
+| Spread | Left page (instructions) | Right page (practice) |
+|---|---|---|
+| **How to → Practice** | The idea, diagram, steps, check yourself, common slip, why it works | The task line, then the drill with help that fades (trace → dots → free) |
+| **Step 2** (S3.4 only) | What changes with half the grid, steps, check | The half-grid transfer |
+| **Again → Repeat** (13 drill lessons) | "This time…" tip, the diagram, the steps again, check, slip | The same drill with fresh targets |
+| **From life: how to → From life** (24 lessons) | The subject, the Look/Measure/Mark/Check row, how to approach it, the skill step by step, real-things-first, what the guide lines on the sketch show, check, slip | The prompt, the reference sketch with guide lines, the drawing frame |
 
-- **Drills**:
-  - lines, curves, angles, contours, timed blind contours
-  - basic shapes, ellipses, negative space
-  - depth clues, one- and two-point perspective boxes, cylinders
-  - value scales, light on forms, texture swatches
-- **Reference pages**:
-  - shapes-in-things, envelope, measuring units, alignments
-  - grid transfer (full grid, then half grid, then none)
-  - find-the-horizon
-  - three-value squint comparison
-- **Planning pages**: thumbnails, the four-pass strip, field sketching (timed boxes, people, note lines), capstone.
+## The whole e-ink edition (149 pages)
 
-**Guide overlays** are drawn from data the sketch generator writes next to each picture (`<scene>-<seed>.json`): horizon, vanishing points with lines running to them, envelopes, basic shapes, stool ellipses, people as an oval and a box, alignment lines, a measuring unit with ticks, and near/middle/far bands.
+- **Page 1**: the cover, on its own.
+- **74 spreads**:
+  - how this book works / contents
+  - 7 part openers: part intro and lessons on the left, a sketchbook illustration on the right
+  - 65 lesson spreads
+  - progress tracker / about this book
+- **Page size**: 157.5 × 210 mm, true size on Kindle Scribe 2022/2024 and reMarkable 2.
 
 ## Review files
 
+- `../out/sketch/spreads-eink.png`: 8 representative spreads, as they'd lie open.
 - `../out/sketch/contact-eink.png`: every page.
-- `../out/sketch/highlights-eink.png`: 12 representative pages.

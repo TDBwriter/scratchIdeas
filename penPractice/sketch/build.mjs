@@ -13,7 +13,7 @@ import { existsSync, mkdirSync, writeFileSync, readFileSync, rmSync } from 'node
 import { execFileSync } from 'node:child_process';
 import { resolve, join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { book, parts, lessons } from './lessons.mjs';
+import { book, parts, lessons, extras, overlayNotes } from './lessons.mjs';
 
 const { chromium } = createRequire(import.meta.url)('playwright');
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -700,101 +700,165 @@ const D = {
   },
 };
 
-// ---------- pages
+// ---------- pages: everything comes in facing spreads — instructions on the left (verso), practice on the right (recto).
+// In print both pages are open together; on an e-reader, the instructions are one swipe back. No jumping around.
 const pageList = [];
+const pageOf = {};                                        // anchor id → page number (for contents and tracker)
 const partName = n => parts.find(p => p.n === n).name;
 const legend = () => `<div class="legend">${svg(42, 6, gl(2, 3, 12, 3) + dot(2, 3) + odot(12, 3) + txt(14.5, 4, '→', { size: 2.6 }) + dot(19, 3) + odot(26, 3) + txt(28.5, 4, '→', { size: 2.6 }) + poly([[32, 0.8], [41, 0.8], [41, 5.2], [32, 5.2]], { c: GUIDE, w: 0.35 }))}<div class="lg-t"><span>trace</span><span>dots</span><span>free</span></div></div>`;
 const head = (l, kind, extra = '') => `<header class="head${extra ? ' has-legend' : ''}"><div class="kick">PART ${l.part} · ${esc(partName(l.part).toUpperCase())} <b>${l.id}</b></div><div class="ttl">${esc(l.title)}</div><div class="kind">${kind}</div>${extra}</header>`;
-const foot = (l, opts = {}) => `<footer class="foot"><span>${esc(book.title)} · ${l ? l.id : ''}</span><span class="links">${l ? `<a href="#why-${l.id}">Why? ▸</a>` : ''}<a href="#contents">Contents</a></span></footer>`;
-const checks = l => `<div class="check"><b>Check yourself</b><ul>${l.check.map(c => `<li>${esc(c)}</li>`).join('')}</ul><div class="reps">reps ☐ ☐ ☐</div></div>`;
-function add(id, cls, body) { pageList.push(`<section class="page ${cls}"${id ? ` id="${id}"` : ''}>${body}</section>`); }
+const PH = AH - 14;                                       // practice area height on a recto page
+const ex = l => extras[l.id] || {};
+const list = (items, cls = '') => `<ul class="${cls}">${items.map(c => `<li>${esc(c)}</li>`).join('')}</ul>`;
+const checkBox = l => `<div class="vbox"><b>Check yourself</b>${list(l.check)}</div>`;
+const slipBox = l => `<div class="slip"><b>Common slip</b> ${esc(l.slip)}</div>`;
+const whyBox = l => `<div class="why"><b>Why it works</b> ${esc(l.why)}</div>`;
+const overlayNote = r => esc(overlayNotes[r.notes ? 'notes' : (r.overlay || 'none')]);
+
+function page(side, cls, body, { id = '', label = '', hints = true } = {}) {
+  const n = pageList.length + 1;
+  if (id) pageOf[id] = n;
+  const hint = !hints ? '' : side === 'verso' ? 'practice on the facing page ▸' : side === 'recto' ? '◂ instructions on the facing page' : '';
+  const footer = side === 'cover' ? '' : `<footer class="foot ${side}"><span class="pn">${n}</span><span class="fl-mid">${esc(label)}</span><span class="hint">${hint}</span></footer>`;
+  pageList.push(`<section class="page ${side} ${cls}"${id ? ` id="${id}"` : ''}>${body}${footer}</section>`);
+}
+function spread(verso, recto) {                            // verso always lands on an even page
+  if ((pageList.length + 1) % 2 !== 0) throw new Error(`spread would start on odd page ${pageList.length + 1}`);
+  page('verso', ...verso); page('recto', ...recto);
+}
 
 function buildPages(refs) {
-  // cover
-  add('', 'cover', `<div class="cv-series">${esc(book.series)}</div><div class="cv-title">${esc(book.title)}</div><div class="cv-sub">${esc(book.subtitle)}</div>
+  page('cover', 'cover', `<div class="cv-series">${esc(book.series)}</div><div class="cv-title">${esc(book.title)}</div><div class="cv-sub">${esc(book.subtitle)}</div>
     ${refs.img({ scene: 'farmhouse', seed: 31, notes: true }, { width: AW, overlay: null })}
-    <div class="cv-meta">27 lessons · lines → shapes → proportion → space → light → scenes</div><div class="cv-dev">For Kindle Scribe, reMarkable and pen tablets — write directly on the pages</div>`);
-  // how to use
-  add('how', 'how', `<div class="h-title">How this book works</div>
+    <div class="cv-meta">27 lessons · lines → shapes → proportion → space → light → scenes</div><div class="cv-dev">For Kindle Scribe, reMarkable, pen tablets and print — write directly on the pages</div>`);
+
+  const howBody = `<div class="h-title">How this book works</div>
+    <div class="h-lead">Every lesson is a spread: read on the left, draw on the right.</div>
+    <div class="spread-demo"><div><b>Left page</b><span>the idea, a diagram, the steps, what to check, the common slip and why it works</span></div><div><b>Right page</b><span>the prompt and the practice space</span></div></div>
+    <div class="h-note">In print, both pages lie open together. On an e-reader, the instructions are always one swipe back.</div>
     <div class="h-lead">One habit runs through every lesson:</div>
     <div class="habit">${book.habit.map((s, i) => `<div><b>${i + 1}</b><span>${s}</span><em>${['longer than feels necessary — at the real thing, not your page', 'by comparing one part with another: taller, wider, steeper', 'lightly — first lines are guesses', 'against the real thing, then go darker'][i]}</em></div>`).join('')}</div>
-    <div class="h-lead">Every lesson has the same pages:</div>
-    <table class="kinds"><tr><td><b>Learn</b></td><td>the idea in plain words, a diagram, and the steps</td></tr><tr><td><b>Practice</b></td><td>repetition with help that fades — then a <b>repeat</b> page with fresh targets for another day</td></tr><tr><td><b>From life</b></td><td>a real subject to draw, with a reference sketch when nothing is handy</td></tr><tr><td><b>Why?</b></td><td>tap it on any page to read the reason behind the lesson</td></tr></table>
+    <div class="h-lead">Each lesson has up to three spreads:</div>
+    <table class="kinds"><tr><td><b>Practice</b></td><td>repetition with help that fades</td></tr><tr><td><b>Repeat</b></td><td>the same drill with fresh targets, for another day</td></tr><tr><td><b>From life</b></td><td>a real subject, with a reference sketch for when nothing is handy</td></tr></table>
     <div class="h-lead">Help fades on every practice page:</div>${legend()}
-    <ul class="tips"><li>Use the pen, thin and black. Write straight onto the page; erase freely.</li><li>10–20 minutes a day beats an hour once a week.</li><li>Circle your best attempt on each page. Tick a rep box each time you repeat it.</li><li>For kids: bigger, looser, half the boxes — and praise the looking, not just the drawing.</li></ul>`);
-  // contents
-  const tocCol = ps => ps.map(p => `<div class="toc-part"><a href="#part-${p.n}">Part ${p.n} · ${esc(p.name)}</a></div>${lessons.filter(l => l.part === p.n).map(l => `<a class="toc-l" href="#${l.id}"><span>${l.id}</span>${esc(l.title)}</a>`).join('')}`).join('');
-  add('contents', 'toc', `<div class="h-title">Contents</div><div class="toc-cols"><div>${tocCol(parts.slice(0, 4))}</div><div>${tocCol(parts.slice(4))}<div class="toc-part"><a href="#why">Why it works</a></div><div class="toc-part"><a href="#progress">Progress tracker</a></div></div></div>`);
+    <ul class="tips"><li>Use the pen, thin and black. Write straight onto the page; erase freely.</li><li>10–20 minutes a day beats an hour once a week. Circle your best attempt on each page.</li><li>For kids: bigger, looser, half the boxes — and praise the looking, not just the drawing.</li></ul>`;
+  const tocCol = ps => ps.map(p => `<div class="toc-part"><span>Part ${p.n} · ${esc(p.name)}</span><em>{{p:part-${p.n}}}</em></div>${lessons.filter(l => l.part === p.n).map(l => `<div class="toc-l"><span>${l.id}</span>${esc(l.title)}<em>{{p:${l.id}}}</em></div>`).join('')}`).join('');
+  const tocBody = `<div class="h-title">Contents</div><div class="toc-cols"><div>${tocCol(parts.slice(0, 4))}</div><div>${tocCol(parts.slice(4))}<div class="toc-part"><span>Progress tracker</span><em>{{p:progress}}</em></div></div></div>`;
+  spread(['how', howBody, { id: 'how', label: 'how this book works', hints: false }], ['toc', tocBody, { id: 'contents', label: 'contents', hints: false }]);
 
   for (const p of parts) {
-    add(`part-${p.n}`, 'opener', `<div class="op-n">Part ${p.n}</div><div class="op-name">${esc(p.name)}</div><div class="op-intro">${esc(p.intro)}</div>
-      ${refs.img({ ...p.cover, notes: true }, { width: AW, overlay: null })}
-      <div class="op-list">${lessons.filter(l => l.part === p.n).map(l => `<a href="#${l.id}"><span>${l.id}</span>${esc(l.title)}</a>`).join('')}</div>`);
-    for (const l of lessons.filter(x => x.part === p.n)) lessonPages(l, refs);
+    const ls = lessons.filter(l => l.part === p.n);
+    spread(['opener', `<div class="op-n">Part ${p.n}</div><div class="op-name">${esc(p.name)}</div><div class="op-intro">${esc(p.intro)}</div>
+        <div class="op-list">${ls.map(l => `<div><span>${l.id}</span>${esc(l.title)}<em>{{p:${l.id}}}</em></div>`).join('')}</div>`, { id: `part-${p.n}`, label: `part ${p.n} · ${p.name.toLowerCase()}`, hints: false }],
+      ['plate', `<div class="plate-in">${refs.img({ ...p.cover, notes: true }, { width: AW, overlay: null })}<div class="plate-cap">from the sketchbook</div></div>`, { label: `part ${p.n} · ${p.name.toLowerCase()}`, hints: false }]);
+    for (const l of ls) lessonSpreads(l, refs);
   }
 
-  // why section
-  const per = 5;
-  for (let i = 0; i < lessons.length; i += per) {
-    add(i === 0 ? 'why' : '', 'why', `<div class="h-title">${i === 0 ? 'Why it works' : 'Why it works (cont.)'}</div>${lessons.slice(i, i + per).map(l => `<div class="why-i" id="why-${l.id}"><div class="kick">${l.id} · ${esc(partName(l.part))}</div><div class="why-t">${esc(l.title)}</div><p>${esc(l.why)}</p><a href="#${l.id}">◂ back to the lesson</a></div>`).join('')}`);
-  }
-  // progress tracker
-  add('progress', 'progress', `<div class="h-title">Progress tracker</div><table class="prog"><tr><th>lesson</th><th>practice</th><th>repeat</th><th>from life</th></tr>${lessons.map(l => `<tr><td><a href="#${l.id}"><b>${l.id}</b> ${esc(l.title)}</a></td><td>☐ ____</td><td>☐ ____</td><td>☐ ____</td></tr>`).join('')}</table>`);
-  add('', 'back', `<div class="h-title">About this book</div><p>Every illustration in this book is an original pencil sketch generated for it; nothing is copied from other books or courses. Typefaces: Inter and JetBrains Mono (SIL Open Font License); handwritten notes in Caveat (SIL Open Font License).</p><p>Pages are sized to the Kindle Scribe screen (157.5 × 210 mm) and the reMarkable 2. Print editions on Letter and A4 keep the same real sizes.</p><p class="small">${esc(book.series)} · ${esc(book.title)} · e-ink edition</p>`);
+  spread(['progress', `<div class="h-title">Progress tracker</div><table class="prog"><tr><th>lesson</th><th>page</th><th>practice</th><th>repeat</th><th>from life</th></tr>${lessons.map(l => `<tr><td><b>${l.id}</b> ${esc(l.title)}</td><td>{{p:${l.id}}}</td><td>☐ ____</td><td>${l.practice.repeat ? '☐ ____' : '—'}</td><td>${l.life ? '☐ ____' : '—'}</td></tr>`).join('')}</table>`, { id: 'progress', label: 'progress tracker', hints: false }],
+    ['back', `<div class="h-title">About this book</div><p>Every illustration in this book is an original pencil sketch generated for it; nothing is copied from other books or courses. Typefaces: Inter and JetBrains Mono (SIL Open Font License); handwritten notes in Caveat (SIL Open Font License).</p><p>Pages are sized to the Kindle Scribe screen (157.5 × 210 mm) and the reMarkable 2, and laid out in facing spreads so instructions always sit beside the practice. Print editions on Letter and A4 keep the same real sizes.</p><p class="small">${esc(book.series)} · ${esc(book.title)} · e-ink edition</p>`, { label: 'about', hints: false }]);
 }
 
-function lessonPages(l, refs) {
+function lessonSpreads(l, refs) {
   const R = rng(l.id.split('').reduce((a, c) => a * 31 + c.charCodeAt(0), 7));
-  const dh = 60;
-  add(l.id, 'learn', head(l, 'LEARN') + `<div class="body">
+  const lbl = s => `${l.id} · ${s}`;
+
+  // 1 · How to (left) + Practice (right)
+  const learn = `${head(l, 'HOW TO')}<div class="body">
     <div class="lead"><b>You’ll learn</b> ${esc(l.learn)}</div>
     <div class="idea">${esc(l.idea)}</div>
-    <div class="diagram">${svg(AW, dh, D[l.diagram](AW, dh))}</div>
+    <div class="diagram">${svg(AW, 50, D[l.diagram](AW, 50))}</div>
     <div class="steps-h">Do this</div><ol class="steps">${l.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
-    <div class="slip"><b>Common slip</b> ${esc(l.slip)}</div></div>` + foot(l));
+    <div class="vfill"></div>${checkBox(l)}${slipBox(l)}${whyBox(l)}</div>`;
+  spread(['learn', learn, { id: l.id, label: lbl('how to') }], ['practice', practiceRecto(l, l.practice, 'PRACTICE', R, refs), { label: lbl('practice') }]);
 
-  const practicePage = (spec, label, seedR) => {
-    const ph = AH - 30;
-    let inner;
-    if (spec.type === 'refPractice') inner = refAndDraw(refs, spec.ref, spec.task);
-    else if (spec.type === 'gridTransfer') inner = gridTransfer(refs, spec, ph);
-    else if (spec.type === 'horizonFind') inner = horizonFind(refs, ph);
-    else if (spec.type === 'threeValue') inner = threeValue(refs, spec, ph);
-    else if (spec.type === 'fourPassStrip') inner = fourPassStrip(refs, spec, ph);
-    else if (spec.type === 'fieldPage') inner = fieldPage(ph);
-    else if (spec.type === 'capstone') inner = capstonePage(ph);
-    else if (spec.type === 'thumbRow') inner = drills.thumbRow(seedR, AW, ph, spec, refs).html;
-    else inner = svg(AW, ph, drills[spec.type](seedR, AW, ph, spec));
-    const showLegend = !['refPractice', 'gridTransfer', 'horizonFind', 'threeValue', 'fourPassStrip', 'fieldPage', 'capstone', 'thumbRow', 'timedBoxes', 'setup', 'valueDrill', 'textureDrill'].includes(spec.type);
-    add('', 'practice', head(l, label, showLegend ? legend() : '') + `<div class="body"><div class="drill" style="height:${f(ph)}mm">${inner}</div>${checks(l)}</div>` + foot(l));
-  };
-  practicePage(l.practice, 'PRACTICE', R);
-  if (l.practice2) practicePage(l.practice2, 'PRACTICE · STEP 2', rng(99));
-  if (l.practice.repeat) practicePage(l.practice, 'PRACTICE · REPEAT', rng(R() * 1e9));
+  // 2 · Step 2 (left) + second practice (right)
+  if (l.practice2) {
+    const s2 = ex(l).step2;
+    const v = `${head(l, 'STEP 2')}<div class="body"><div class="lead"><b>${esc(s2.lead)}</b></div><div class="idea">${esc(s2.text)}</div>
+      <div class="diagram">${svg(AW, 50, D[l.diagram](AW, 50))}</div><div class="steps-h">Do this</div><ol class="steps">${s2.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
+      <div class="vfill"></div>${checkBox(l)}${slipBox(l)}</div>`;
+    spread(['learn', v, { label: lbl('step 2') }], ['practice', practiceRecto(l, l.practice2, 'PRACTICE · STEP 2', rng(99), refs), { label: lbl('practice, step 2') }]);
+  }
 
-  if (l.life) add('', 'life', head(l, 'FROM LIFE') + `<div class="body">${l.life.ref ? refAndDraw(refs, l.life.ref, l.life.prompt) : `<div class="prompt">${esc(l.life.prompt)}</div><div class="frame grow"></div>`}${checks(l)}</div>` + foot(l));
+  // 3 · Again (left) + Repeat (right)
+  if (l.practice.repeat) {
+    const v = `${head(l, 'AGAIN')}<div class="body"><div class="lead"><b>Same skill, fresh targets.</b> Do this page on a different day from the first one.</div>
+      <div class="thistime"><b>This time</b> ${esc(ex(l).again)}</div>
+      <div class="diagram">${svg(AW, 46, D[l.diagram](AW, 46))}</div>
+      <div class="steps-h">The steps again</div><ol class="steps">${l.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
+      <div class="vfill"></div>${checkBox(l)}${slipBox(l)}</div>`;
+    spread(['learn', v, { label: lbl('again') }], ['practice', practiceRecto(l, l.practice, 'REPEAT', rng(R() * 1e9), refs), { label: lbl('repeat') }]);
+  }
+
+  // 4 · From life: how to (left) + From life (right)
+  if (l.life) {
+    const r = l.life.ref;
+    const v = `${head(l, 'FROM LIFE · HOW TO')}<div class="body">
+      <div class="lead"><b>Your subject</b> ${esc(l.life.prompt)}</div>
+      <div class="habit mini">${book.habit.map((s, i) => `<div><b>${i + 1}</b><span>${s}</span></div>`).join('')}</div>
+      <div class="steps-h">How to approach it</div>${list(ex(l).lifeHow || [], 'how')}
+      <div class="steps-h">The skill, step by step</div><ol class="steps">${l.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
+      <div class="vbox"><b>Real things first</b> ${r ? 'Draw from the real subject whenever you can. The sketch on the right is for when nothing is handy — or for practice before you go out.' : 'Draw from the real thing in front of you; there is no reference sketch for this one.'}${r ? `<br><br><b>On the sketch</b> ${overlayNote(r)}` : ''}</div>
+      <div class="vfill"></div>${checkBox(l)}${slipBox(l)}</div>`;
+    spread(['learn', v, { label: lbl('from life, how to') }], ['life', lifeRecto(l, refs), { label: lbl('from life') }]);
+  }
 }
 
-function refAndDraw(refs, ref, text) {
+const NO_LEGEND = ['refPractice', 'gridTransfer', 'horizonFind', 'threeValue', 'fourPassStrip', 'fieldPage', 'capstone', 'thumbRow', 'timedBoxes', 'setup', 'valueDrill', 'textureDrill'];
+const TASKS = {
+  setup: 'Fill the loop boxes, then draw the day-one cups. Date them.', timedBoxes: 'Two minutes each. Eyes on the subject — never on the page.',
+  lineDrill: 'Ghost, then one stroke per line, filled dot to open dot.', curveDrill: 'Ghost through every dot, then one smooth stroke.',
+  angleDrill: 'Copy each angle on the right, starting at the dot.', contourDrill: 'Trace, then follow the dots, then draw from the sample.',
+  shapeDrill: 'Each row: trace → corner dots → free.', ellipseDrill: 'Axes first, ghost the loop, then one smooth stroke.',
+  gapDrill: 'Draw the gaps — the shaded shapes — not the object.', depthDrill: 'Near: big, low, dark. Far: small, high, light.',
+  perspDrill: 'Aim every line that goes away from you at a vanishing point.', cylDrill: 'Build each cylinder along its centre line.',
+  valueDrill: 'Match each sample bar: five even steps, white to near-black.', formDrill: 'Follow the arrow: light side, shadow side, cast shadow.',
+  textureDrill: 'Copy each mark, then invent your own. Suggest — don’t list.', gridTransfer: 'Copy square by square — only what is inside each square.',
+  horizonFind: 'Draw a level line through eye level in each picture.', threeValue: 'Squint: darks first, then middles. Leave the lights.',
+  fourPassStrip: 'One pass per box — light and simple until pass 4.', fieldPage: 'Set a timer. Whole scene first, every time.',
+  capstone: 'Thumbnails, four passes, a field note — then the cup again.', thumbRow: 'Six thumbnails, each one different. Circle the best.',
+};
+
+function practiceRecto(l, spec, kind, seedR, refs) {
+  let inner;
+  if (spec.type === 'refPractice') inner = refAndDraw(refs, spec.ref, overlayNote(spec.ref));
+  else if (spec.type === 'gridTransfer') inner = gridTransfer(refs, spec, PH);
+  else if (spec.type === 'horizonFind') inner = horizonFind(refs, PH);
+  else if (spec.type === 'threeValue') inner = threeValue(refs, spec, PH);
+  else if (spec.type === 'fourPassStrip') inner = fourPassStrip(refs, spec, PH);
+  else if (spec.type === 'fieldPage') inner = fieldPage(PH);
+  else if (spec.type === 'capstone') inner = capstonePage(PH);
+  else if (spec.type === 'thumbRow') inner = drills.thumbRow(seedR, AW, PH, spec, refs).html;
+  else inner = svg(AW, PH, drills[spec.type](seedR, AW, PH, spec));
+  const task = spec.task || TASKS[spec.type] || 'Follow the steps on the facing page.';
+  return `${head(l, kind, NO_LEGEND.includes(spec.type) ? '' : legend())}<div class="body"><div class="task">${esc(task)}</div><div class="drill" style="height:${f(PH)}mm">${inner}</div><div class="repline">date ________ · circle your best attempt<span>reps ☐ ☐ ☐</span></div></div>`;
+}
+
+function lifeRecto(l, refs) {
+  const r = l.life.ref;
+  return `${head(l, 'FROM LIFE')}<div class="body"><div class="task">${esc(l.life.prompt)}</div>${r ? refAndDraw(refs, r, overlayNote(r)) : '<div class="frame grow"></div>'}<div class="repline">date ________ · subject ______________________<span>reps ☐ ☐ ☐</span></div></div>`;
+}
+
+function refAndDraw(refs, ref, sideText) {
   const rw = AW * 0.66;
-  return `<div class="rad"><div class="rad-top">${refs.img(ref, { width: rw })}<div class="rad-text">${esc(text)}</div></div><div class="frame grow"></div></div>`;
+  return `<div class="rad"><div class="rad-top">${refs.img(ref, { width: rw })}<div class="rad-text small">${sideText}</div></div><div class="frame grow"></div></div>`;
 }
 function gridTransfer(refs, spec, h) {
-  const rh = (h - 8) / 2, rw = rh / 0.75;
+  const rh = (h - 8) / 2, rw = Math.min(AW, rh / 0.75), rh2 = rw * 0.75;
   const cols = spec.grid === 'half' ? 3 : 6, rows = spec.grid === 'half' ? 2 : 4;
-  let g = ''; for (let c = 1; c < cols; c++) g += ln(rw * c / cols, 0, rw * c / cols, rh, { c: GUIDE, w: 0.3 }); for (let r = 1; r < rows; r++) g += ln(0, rh * r / rows, rw, rh * r / rows, { c: GUIDE, w: 0.3 });
-  return `<div class="gt">${refs.img(spec.ref, { width: rw, overlay: null, grid: spec.grid })}<div class="gt-l">${spec.grid === 'half' ? 'Half the grid: copy each big square into the matching square below.' : 'Copy each square into the matching empty square below — only the lines inside it.'}</div>${svg(rw, rh, poly([[0, 0], [rw, 0], [rw, rh], [0, rh]], { w: 0.45 }) + g)}</div>`;
+  let g = ''; for (let c = 1; c < cols; c++) g += ln(rw * c / cols, 0, rw * c / cols, rh2, { c: GUIDE, w: 0.3 }); for (let r = 1; r < rows; r++) g += ln(0, rh2 * r / rows, rw, rh2 * r / rows, { c: GUIDE, w: 0.3 });
+  return `<div class="gt">${refs.img(spec.ref, { width: rw, overlay: null, grid: spec.grid })}<div class="gt-gap"></div>${svg(rw, rh2, poly([[0, 0], [rw, 0], [rw, rh2], [0, rh2]], { w: 0.45 }) + g)}</div>`;
 }
 function horizonFind(refs, h) {
   const set = [{ scene: 'cityStreet', seed: 21 }, { scene: 'diner', seed: 22 }, { scene: 'farmhouse', seed: 22 }, { scene: 'nature', seed: 22 }];
   const rw = (AW - 4) / 2;
-  return `<div class="hf-l">Find eye level in each picture: follow lines going away from you until they meet, then draw a level line through that point.</div><div class="hf">${set.map(r => refs.img(r, { width: rw, overlay: null })).join('')}</div><div class="hf-l small">Answers: the dashed lines in the From-life pages of S4.1–S4.4 show where eye level is.</div>`;
+  return `<div class="hf">${set.map(r => refs.img(r, { width: rw, overlay: null })).join('')}</div><div class="hf-l small">Tip: follow lines that go away from you until they meet. Eye level runs through that point. The From-life sketches of S4.1–S4.4 show it as a dashed line.</div>`;
 }
 function threeValue(refs, spec, h) {
   const rw = AW * 0.49;
   return `<div class="tv"><div>${refs.img(spec.ref, { width: rw, overlay: null })}<span>the scene</span></div><div>${refs.img(spec.ref, { width: rw, overlay: null, suffix: '-3v' })}<span>squinted: three values</span></div></div>
     <div class="tv"><div>${refs.img(spec.ref2, { width: rw, overlay: null })}<span>your turn: this scene…</span></div><div><div class="frame" style="height:${f(rw * 0.75)}mm"></div><span>…in three values: darks first, then middles</span></div></div>
-    <div class="fl small">Squinted versions are made by blurring away the lines — exactly what squinting does.</div>`;
+    <div class="tv"><div><div class="frame" style="height:${f(rw * 0.75 * 0.58)}mm"></div><span>a view from your window, three values</span></div><div><div class="frame" style="height:${f(rw * 0.75 * 0.58)}mm"></div><span>a room lit by one lamp, three values</span></div></div>`;
 }
 function fourPassStrip(refs, spec, h) {
   const m = refs.meta(spec.ref), pw = (AW - 9) / 4, ph = pw * 0.75, W = 1860, H = 1395;
@@ -809,13 +873,13 @@ function fourPassStrip(refs, spec, h) {
   const labels = ['1 envelope', '2 shapes', '3 structure', '4 light + line'];
   const empty = () => `<div class="fp-row">${labels.map(t => `<div><div class="frame" style="width:${f(pw)}mm;height:${f(ph)}mm"></div><span>${t}</span></div>`).join('')}</div>`;
   return `<div class="fp-l">Example — the farmhouse in four passes:</div><div class="fp-row">${[0, 1, 2, 3].map(k => `<div>${panel(k)}<span>${labels[k]}</span></div>`).join('')}</div>
-    <div class="fp-l">Your turn — a mug:</div>${empty()}<div class="fp-l">Your turn — a shoe, a lamp or a kettle:</div>${empty()}`;
+    <div class="fp-l">Your turn — a mug:</div>${empty()}<div class="fp-l">Your turn — a shoe, a lamp or a kettle:</div>${empty()}<div class="fp-l">Your turn — your choice:</div>${empty()}`;
 }
 function fieldPage(h) {
   const tw = (AW - 6) / 3;
   const noteLines = `<div class="nl"><i></i><i class="x"></i><i></i></div>`;
-  return `<div class="fl"><b>Same scene, three time limits</b></div><div class="fr">${['2 min', '5 min', '10 min'].map(t => `<div><div class="frame" style="width:${f(tw)}mm;height:${f(tw * 0.72)}mm"><span class="tl">${t}</span></div>${noteLines}</div>`).join('')}</div>
-    <div class="fl"><b>People in 30 seconds</b> — spine, oval, box, limbs. If they move, start another.</div><div class="fg">${Array.from({ length: 8 }, () => `<div class="frame" style="height:${f((AW - 9) / 4 * 0.7)}mm"></div>`).join('')}</div>
+  return `<div class="fl"><b>Same scene, three time limits</b></div><div class="fr">${['2 min', '5 min', '10 min'].map(t => `<div><div class="frame" style="width:${f(tw)}mm;height:${f(tw * 0.8)}mm"><span class="tl">${t}</span></div>${noteLines}</div>`).join('')}</div>
+    <div class="fl"><b>People in 30 seconds</b> — spine, oval, box, limbs. If they move, start another.</div><div class="fg">${Array.from({ length: 8 }, () => `<div class="frame" style="height:${f((AW - 9) / 4 * 0.8)}mm"></div>`).join('')}</div>
     <div class="fl"><b>Field note</b> — time, place, one thing you noticed (block print)</div>${noteLines}${noteLines}`;
 }
 function capstonePage(h) {
@@ -840,8 +904,13 @@ a { color: inherit; text-decoration: none; }
 .legend { position: absolute; right: 0; bottom: 1.2mm; }
 .lg-t { display: flex; justify-content: space-between; width: 42mm; font: 2mm "JetBrains Mono", monospace; color: #555; padding: 0 0.5mm; }
 .body { flex: 1; padding-top: 3mm; display: flex; flex-direction: column; min-height: 0; }
-.foot { height: ${FOOT}mm; flex: none; border-top: 0.35mm solid #000; display: flex; justify-content: space-between; align-items: center; font: 2.3mm "JetBrains Mono", monospace; color: #555; }
-.foot .links a { border: 0.35mm solid #000; color: #000; padding: 0.6mm 1.6mm; margin-left: 1.5mm; font-weight: 700; }
+.foot { height: ${FOOT}mm; flex: none; border-top: 0.35mm solid #000; display: flex; align-items: center; gap: 3mm; font: 2.3mm "JetBrains Mono", monospace; color: #555; }
+.foot { margin-top: auto; }
+.foot .pn { font: 700 3mm "JetBrains Mono", monospace; color: #000; }
+.foot .fl-mid { flex: 1; }
+.foot.recto { flex-direction: row-reverse; }
+.foot.recto .fl-mid { text-align: right; }
+.foot .hint { font-weight: 600; color: #000; }
 .lead { font: 3.5mm/1.35 Inter, sans-serif; }
 .lead b { font-weight: 800; margin-right: 1mm; }
 .idea { font: 3.25mm/1.42 Inter, sans-serif; margin-top: 2mm; color: #111; }
@@ -921,12 +990,35 @@ a { color: inherit; text-decoration: none; }
 .opener .op-name { font: 800 12mm/1.05 Inter, sans-serif; margin: 2mm 0 3mm; }
 .opener .op-intro { font: 3.6mm/1.45 Inter, sans-serif; margin-bottom: 5mm; max-width: 125mm; }
 .op-list { margin-top: 5mm; border-top: 0.5mm solid #000; }
-.op-list a { display: block; font: 600 3.6mm/1 Inter, sans-serif; padding: 2.6mm 0; border-bottom: 0.3mm solid #ccc; }
+.op-list div { font: 600 3.6mm/1 Inter, sans-serif; padding: 2.6mm 0; border-bottom: 0.3mm solid #ccc; }
 .op-list span { font: 700 2.7mm "JetBrains Mono", monospace; display: inline-block; width: 12mm; }
-.why-i { border-top: 0.5mm solid #000; padding: 3mm 0 4mm; }
-.why-t { font: 700 4.6mm Inter, sans-serif; margin: 0.8mm 0 1.5mm; }
-.why-i p { font: 3.3mm/1.45 Inter, sans-serif; }
-.why-i a { display: inline-block; margin-top: 2mm; font: 700 2.5mm "JetBrains Mono", monospace; border: 0.35mm solid #000; padding: 0.6mm 1.6mm; }
+.vfill { flex: 1; min-height: 1mm; }
+.vbox { border-top: 0.35mm solid #000; padding-top: 1.4mm; margin-top: 2mm; font: 2.85mm/1.38 Inter, sans-serif; }
+.vbox b, .why b, .thistime b { font: 700 2.4mm "JetBrains Mono", monospace; letter-spacing: 0.3mm; text-transform: uppercase; margin-right: 1mm; }
+.vbox ul, ul.how { padding-left: 4.5mm; margin-top: 0.6mm; }
+ul.how { font: 3.1mm/1.42 Inter, sans-serif; margin: 1mm 0 2mm; }
+ul.how li { margin-bottom: 0.8mm; }
+.slip { margin-top: 2mm !important; }
+.why { margin-top: 2mm; border: 0.35mm solid #000; padding: 1.6mm 2.5mm; font: 2.85mm/1.38 Inter, sans-serif; }
+.thistime { margin-top: 2.5mm; border: 0.5mm solid #000; padding: 2mm 2.5mm; font: 3.2mm/1.4 Inter, sans-serif; }
+.habit.mini { margin: 2.5mm 0 1mm; }
+.habit.mini div { padding: 1.2mm 1.5mm; flex-direction: row; align-items: baseline; gap: 1.5mm; }
+.habit.mini b { font-size: 3.6mm; }
+.habit.mini span { font-size: 3mm; }
+.task { font: 600 3.1mm/1.35 Inter, sans-serif; margin-bottom: 2mm; min-height: 4.2mm; }
+.repline { margin-top: auto; padding-top: 1.5mm; font: 2.4mm "JetBrains Mono", monospace; color: #555; display: flex; justify-content: space-between; }
+.repline span { font-weight: 700; color: #000; }
+.gt-gap { height: 4mm; }
+.spread-demo { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; }
+.spread-demo div { border: 0.4mm solid #000; padding: 2mm; display: flex; flex-direction: column; gap: 1mm; font: 2.7mm/1.35 Inter, sans-serif; }
+.spread-demo b { font: 800 3.4mm Inter, sans-serif; }
+.h-note { font: 2.8mm/1.4 Inter, sans-serif; margin-top: 1.5mm; color: #333; }
+.toc-part, .toc-l, .op-list div { display: flex; align-items: baseline; }
+.toc-part span { flex: 1; }
+.toc-l em, .toc-part em, .op-list em { margin-left: auto; font: 600 2.5mm "JetBrains Mono", monospace; font-style: normal; padding-left: 2mm; }
+.plate { justify-content: center; }
+.plate-in { margin: auto 0; }
+.plate-cap { font: 2.4mm "JetBrains Mono", monospace; color: #555; margin-top: 1.5mm; text-align: right; }
 .prog { border-collapse: collapse; width: 100%; font: 2.55mm/1.25 Inter, sans-serif; }
 .prog th { font: 700 2.2mm "JetBrains Mono", monospace; text-align: left; border-bottom: 0.4mm solid #000; padding: 0.8mm; }
 .prog td { border-bottom: 0.25mm solid #ccc; padding: 1.05mm 0.8mm; white-space: nowrap; }
@@ -938,9 +1030,10 @@ a { color: inherit; text-decoration: none; }
 mkdirSync(opt.out, { recursive: true });
 const refs = makeRefs();
 buildPages(refs);
+const pagesHtml = pageList.join('\n').replace(/\{\{p:([^}]+)\}\}/g, (_, id) => { if (!pageOf[id]) throw new Error(`no page for ${id}`); return String(pageOf[id]); });
 const html = `<!doctype html><html><head><meta charset="utf-8"><title>${esc(book.title)}</title><style>
 @font-face { font-family: 'Caveat'; src: url('${pathToFileURL(resolve(HERE, '../../sketchArt/fonts/caveat-latin-400-normal.woff2')).href}') format('woff2'); }
-${css}</style></head><body>${pageList.join('\n')}</body></html>`;
+${css}</style></head><body>${pagesHtml}</body></html>`;
 const htmlPath = join(opt.out, `sketch-what-you-see-${opt.page}.html`);
 writeFileSync(htmlPath, html);
 
@@ -952,7 +1045,7 @@ try {
   const pdf = join(opt.out, `sketch-what-you-see-${opt.page}.pdf`);
   await page.pdf({ path: pdf, width: `${PAGE.w}mm`, height: `${PAGE.h}mm`, printBackground: true });
   // overflow check: flag pages whose content spills past the page
-  const spill = await page.$$eval('section.page', ps => ps.map((p, i) => { const b = p.querySelector('.body'); return b && b.scrollHeight > b.clientHeight + 2 ? i + 1 : 0; }).filter(Boolean));
+  const spill = await page.$$eval('section.page', ps => ps.map((p, i) => { const b = p.querySelector('.body') || p; return b.scrollHeight > b.clientHeight + 2 ? i + 1 : 0; }).filter(Boolean));
   if (spill.length) console.warn('content overflows on pages:', spill.join(', '));
   const thumbs = join(opt.out, 'thumbs'); rmSync(thumbs, { recursive: true, force: true }); mkdirSync(thumbs, { recursive: true });
   const all = await page.$$('section.page');
