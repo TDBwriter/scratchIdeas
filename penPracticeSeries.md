@@ -2,7 +2,9 @@
 
 Status: brainstorming. Started from a long Google AI brainstorm. This doc keeps what's strong in it, corrects what's shaky, and turns it into a buildable plan.
 
-**Working prototype:** `penPractice/`. It turns lesson files into a true-size PDF for the Scribe.
+**Working prototype:** `penPractice/`. It turns lesson files into a true-size PDF for the Scribe (plus Letter and A4 print editions).
+
+**Release plan:** `penPracticeRelease.md`.
 
 ![Sampler pages](penPractice/out/page-2.png)
 

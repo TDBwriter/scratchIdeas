@@ -1,10 +1,11 @@
 // Pen Practice sheet builder: lesson JSON → true-size PDF for Kindle Scribe + PNG previews.
 //
-//   node build.mjs [--seed N] [--left] [--out DIR] lessons/*.json
+//   node build.mjs [--page eink|letter|a4] [--seed N] [--left] [--out DIR] lessons/*.json
 //
-// The page matches the Kindle Scribe 2022/2024 screen (157.5 × 210 mm, 3:4), so millimetre sizes
-// in a lesson are real millimetres on that device. The same 3:4 page fits reMarkable, iPad and
-// most pen tablets (scaled) and prints on A5. The PDF has working links (contents, "why" pages).
+// --page eink (default) is 157.5 × 210 mm (3:4): the Kindle Scribe 2022/2024 screen, and within
+// 0.5 mm of the reMarkable 2 screen, so millimetre sizes in a lesson are real millimetres on both.
+// It scales to the 11" Scribe, reMarkable Paper Pro and iPad (all 3:4). --page letter / a4 lay the
+// same lessons out again for print (more rows, same real sizes). PDFs have working links.
 //
 //   --seed N   new random layout of targets (fresh practice, same lesson)
 //   --left     left-handed variant (horizontal lines start on the right)
@@ -19,20 +20,27 @@ import { resolve, join } from 'node:path';
 const { chromium } = createRequire(import.meta.url)('playwright');
 
 // ---------- arguments
-const opt = { seed: 1, left: false, out: 'out', files: [] };
+const opt = { page: 'eink', seed: 1, left: false, out: 'out', files: [] };
 const argv = process.argv.slice(2);
 for (let i = 0; i < argv.length; i++) {
-  if (argv[i] === '--seed') opt.seed = Number(argv[++i]);
+  if (argv[i] === '--page') opt.page = argv[++i];
+  else if (argv[i] === '--seed') opt.seed = Number(argv[++i]);
   else if (argv[i] === '--left') opt.left = true;
   else if (argv[i] === '--out') opt.out = argv[++i];
   else opt.files.push(argv[i]);
 }
 if (!opt.files.length) {
-  console.error('usage: node build.mjs [--seed N] [--left] [--out DIR] lessons/*.json');
+  console.error('usage: node build.mjs [--page eink|letter|a4] [--seed N] [--left] [--out DIR] lessons/*.json');
   process.exit(1);
 }
 
-const PAGE = { w: 157.5, h: 210, pad: 9 };            // mm
+const PAGES = {                                        // mm
+  eink:   { w: 157.5, h: 210,   pad: 9 },               // Scribe 2022/2024 ≈ reMarkable 2 (true size)
+  letter: { w: 215.9, h: 279.4, pad: 13 },
+  a4:     { w: 210,   h: 297,   pad: 13 },
+};
+const PAGE = PAGES[opt.page];
+if (!PAGE) { console.error(`unknown --page ${opt.page} (use ${Object.keys(PAGES).join(', ')})`); process.exit(1); }
 const INK = '#000', GHOST = '#b0b0b0', RULE = '#8a8a8a', FAINT = '#c4c4c4';
 const HEAD_H = 31, FOOT_H = 20;
 
@@ -138,7 +146,12 @@ function letterRows(lesson) {
     + lesson.glyphs.map((g, k) => glyph(g, W * (k + 0.5) / lesson.glyphs.length, exBase, xs, 'exemplar', INK)).join('')
     + `</svg>`;
 
-  const rows = lesson.rows.map(row => {
+  // Use the lesson's rows, then fill any remaining height with free rows (more practice on big paper).
+  const avail = PAGE.h - 2 * PAGE.pad - HEAD_H - FOOT_H - exH - 6;
+  const plan = [...lesson.rows];
+  while ((plan.length + 1) * rowH <= avail) plan.push({ guide: 'free' });
+
+  const rows = plan.map(row => {
     const base = r.row_gap_mm * 0.55 + r.ascender_mm;
     let marks = '';
     seq.forEach((g, k) => {
@@ -271,7 +284,8 @@ ${lessons.map(lessonPage).join('')}
 // ---------- render
 const out = resolve(opt.out);
 mkdirSync(out, { recursive: true });
-writeFileSync(join(out, 'pen-practice-sampler.html'), html);
+const name = 'pen-practice-sampler' + (opt.page === 'eink' ? '' : `-${opt.page}`);
+writeFileSync(join(out, `${name}.html`), html);
 
 const browser = await chromium.launch();
 try {
@@ -280,9 +294,10 @@ try {
   await page.evaluate(() => document.fonts.ready);
   await page.evaluate(placeStartDots);
 
-  await page.pdf({ path: join(out, 'pen-practice-sampler.pdf'), width: `${PAGE.w}mm`, height: `${PAGE.h}mm`, printBackground: true });
+  await page.pdf({ path: join(out, `${name}.pdf`), width: `${PAGE.w}mm`, height: `${PAGE.h}mm`, printBackground: true });
 
-  const pages = await page.$$('section.page');
+  // PNG previews at exact Scribe pixels, for the e-ink edition only.
+  const pages = opt.page === 'eink' ? await page.$$('section.page') : [];
   for (let i = 0; i < pages.length; i++) {
     const png = join(out, `page-${i + 1}.png`);
     await pages[i].screenshot({ path: png });
@@ -290,7 +305,7 @@ try {
       execFileSync('convert', [png, '-resize', '1860x2480!', '-colorspace', 'Gray', '-posterize', '16', '-type', 'Grayscale', '-depth', '8', png]);
     } catch { /* ImageMagick missing: keep the colour screenshot */ }
   }
-  console.log(`wrote ${join(out, 'pen-practice-sampler.pdf')} and ${pages.length} PNG previews`);
+  console.log(`wrote ${join(out, `${name}.pdf`)}${pages.length ? ` and ${pages.length} PNG previews` : ''}`);
 } finally {
   await browser.close();
 }
