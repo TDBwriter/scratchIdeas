@@ -8,6 +8,8 @@ Four releases, one shared foundation. This builds on `penPracticeSeries.md` (con
 | R2 | **Sketch What You See**: freehand observational drawing | PDF workbook | Same as R1 |
 | R3 | **Walkthrough**: guided player for both workbooks | iPad app (Apple Pencil) | iPad |
 | R4 | **Cursive Coach**: cursive training with your finger | Phone app | iPhone first, Android later |
+| R5 | **Join It Up**: modern cursive workbook | PDF workbook | Same as R1 |
+| R6 | **Street Hand**: graffiti-style writing (street caps, bounce, handstyle, throw-ups) | PDF workbook | Same as R1 |
 
 Titles are working names. Plus **R0: the free sampler** (already built), used for device testing and as a giveaway that brings people to the paid books.
 
@@ -135,6 +137,27 @@ Titles are working names. Plus **R0: the free sampler** (already built), used fo
   - The reMarkable Paper Pro and Scribe Colorsoft show colour, but design for grayscale.
 
 ---
+
+## R5 and R6: Join It Up (cursive) and Street Hand (graffiti styles), PDF
+
+**Status:** both e-ink editions are built as front/back sheets and are waiting for approval:
+- Join It Up: 96 pages, `penPractice/out/cursive/join-it-up-eink.pdf`
+- Street Hand: 108 pages, `penPractice/out/street/street-hand-eink.pdf`
+
+Both use the same shared builder as R1 (`penPractice/hand/`) and the same format rule as R2. Details are in `penPractice/cursive/README.md` and `penPractice/street/README.md`.
+
+- **Join It Up** (21 lessons):
+  - **Hand:** our own looped modern cursive (`penPractice/cursive/hand.mjs`), joined and slanted ~10°. It has high joins after b, o, v and w, and dots and crosses go on after the word. Capitals and numbers are slanted print.
+  - **Curriculum:** the same as R4's (strokes → letter families → joins → capitals → flow and speed), so the PDF and the phone app teach one hand.
+- **Street Hand** (24 lessons): writing styles, not slow art pieces. There are four fast styles:
+  - street caps
+  - bounce
+  - handstyle (tag-style script)
+  - throw-ups (one-line bubble letters)
+
+  All four are built from the print stroke model with a few repeatable moves. A day-one and final sample uses your name.
+  - Content rule: made-up names only, no real writers' tags or crews, and the book tells readers to practise on paper and legal walls only.
+  - Adults' edition only. A kids' version would be renamed **Bubble & Block Letters** (see `penPracticeSeries.md`).
 
 ## R3: Walkthrough (iPad + Apple Pencil)
 

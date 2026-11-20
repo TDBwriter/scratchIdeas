@@ -8,6 +8,8 @@ Builds the complete **Clear & Quick Print** handwriting workbook (release R1) fr
 
 **Status: e-ink edition built as front/back sheets, waiting for approval.** After approval, the same builder makes the Letter and A4 loose-leaf print editions (`--page letter` / `--page a4`). Those need a review pass.
 
+The builder is shared with the cursive and street books (`../hand/`, see its README); `build.mjs` here runs it for this book.
+
 ```sh
 cd penPractice/print
 node build.mjs                 # e-ink edition → ../out/print/clear-quick-print-eink.pdf

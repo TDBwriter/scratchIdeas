@@ -8,3 +8,11 @@ out/sketch/*.html
 out/print/refs/
 out/print/thumbs/
 out/print/*.html
+!out/cursive/
+out/cursive/refs/
+out/cursive/thumbs/
+out/cursive/*.html
+!out/street/
+out/street/refs/
+out/street/thumbs/
+out/street/*.html
