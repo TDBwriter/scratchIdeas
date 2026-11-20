@@ -700,14 +700,15 @@ const D = {
   },
 };
 
-// ---------- pages: everything comes in facing spreads — instructions on the left (verso), practice on the right (recto).
-// In print both pages are open together; on an e-reader, the instructions are one swipe back. No jumping around.
+// ---------- pages: everything comes in sheets — instructions on the front, practice on the back.
+// Printed double-sided as loose leaf, every sheet stands on its own (pull it out, take it along, reprint it).
+// On an e-reader the practice is the next page and the instructions one swipe back. No jumping around.
 const pageList = [];
 const pageOf = {};                                        // anchor id → page number (for contents and tracker)
 const partName = n => parts.find(p => p.n === n).name;
 const legend = () => `<div class="legend">${svg(42, 6, gl(2, 3, 12, 3) + dot(2, 3) + odot(12, 3) + txt(14.5, 4, '→', { size: 2.6 }) + dot(19, 3) + odot(26, 3) + txt(28.5, 4, '→', { size: 2.6 }) + poly([[32, 0.8], [41, 0.8], [41, 5.2], [32, 5.2]], { c: GUIDE, w: 0.35 }))}<div class="lg-t"><span>trace</span><span>dots</span><span>free</span></div></div>`;
 const head = (l, kind, extra = '') => `<header class="head${extra ? ' has-legend' : ''}"><div class="kick">PART ${l.part} · ${esc(partName(l.part).toUpperCase())} <b>${l.id}</b></div><div class="ttl">${esc(l.title)}</div><div class="kind">${kind}</div>${extra}</header>`;
-const PH = AH - 14;                                       // practice area height on a recto page
+const PH = AH - 14;                                       // practice area height on the back of a sheet
 const ex = l => extras[l.id] || {};
 const list = (items, cls = '') => `<ul class="${cls}">${items.map(c => `<li>${esc(c)}</li>`).join('')}</ul>`;
 const checkBox = l => `<div class="vbox"><b>Check yourself</b>${list(l.check)}</div>`;
@@ -718,44 +719,46 @@ const overlayNote = r => esc(overlayNotes[r.notes ? 'notes' : (r.overlay || 'non
 function page(side, cls, body, { id = '', label = '', hints = true } = {}) {
   const n = pageList.length + 1;
   if (id) pageOf[id] = n;
-  const hint = !hints ? '' : side === 'verso' ? 'practice on the facing page ▸' : side === 'recto' ? '◂ instructions on the facing page' : '';
-  const footer = side === 'cover' ? '' : `<footer class="foot ${side}"><span class="pn">${n}</span><span class="fl-mid">${esc(label)}</span><span class="hint">${hint}</span></footer>`;
+  const hint = !hints ? '' : side === 'front' ? 'practice overleaf ▸' : side === 'back' ? '◂ instructions overleaf' : '';
+  const footer = side === 'cover' || side === 'backcover' ? '' : `<footer class="foot ${n % 2 ? 'odd' : 'even'}"><span class="pn">${n}</span><span class="fl-mid">${esc(label)}</span><span class="hint">${hint}</span></footer>`;
   pageList.push(`<section class="page ${side} ${cls}"${id ? ` id="${id}"` : ''}>${body}${footer}</section>`);
 }
-function spread(verso, recto) {                            // verso always lands on an even page
-  if ((pageList.length + 1) % 2 !== 0) throw new Error(`spread would start on odd page ${pageList.length + 1}`);
-  page('verso', ...verso); page('recto', ...recto);
+function sheet(front, back) {                              // front always lands on an odd page: one printed sheet
+  if ((pageList.length + 1) % 2 !== 1) throw new Error(`sheet would start on even page ${pageList.length + 1}`);
+  page(front[3] || 'front', front[0], front[1], front[2]); page(back[3] || 'back', back[0], back[1], back[2]);
 }
 
 function buildPages(refs) {
-  page('cover', 'cover', `<div class="cv-series">${esc(book.series)}</div><div class="cv-title">${esc(book.title)}</div><div class="cv-sub">${esc(book.subtitle)}</div>
+  const coverBody = `<div class="cv-series">${esc(book.series)}</div><div class="cv-title">${esc(book.title)}</div><div class="cv-sub">${esc(book.subtitle)}</div>
     ${refs.img({ scene: 'farmhouse', seed: 31, notes: true }, { width: AW, overlay: null })}
-    <div class="cv-meta">27 lessons · lines → shapes → proportion → space → light → scenes</div><div class="cv-dev">For Kindle Scribe, reMarkable, pen tablets and print — write directly on the pages</div>`);
-
+    <div class="cv-meta">27 lessons · lines → shapes → proportion → space → light → scenes</div><div class="cv-dev">For Kindle Scribe, reMarkable, pen tablets and loose-leaf print — write directly on the pages</div>`;
   const howBody = `<div class="h-title">How this book works</div>
-    <div class="h-lead">Every lesson is a spread: read on the left, draw on the right.</div>
-    <div class="spread-demo"><div><b>Left page</b><span>the idea, a diagram, the steps, what to check, the common slip and why it works</span></div><div><b>Right page</b><span>the prompt and the practice space</span></div></div>
-    <div class="h-note">In print, both pages lie open together. On an e-reader, the instructions are always one swipe back.</div>
+    <div class="h-lead">Every lesson comes as a sheet: read the front, draw on the back.</div>
+    <div class="spread-demo"><div><b>Front</b><span>the idea, a diagram, the steps, what to check, the common slip and why it works</span></div><div><b>Back</b><span>the prompt and the practice space</span></div></div>
+    <div class="h-note">Printed double-sided, every sheet stands on its own — pull it out, take it with you, or print it again for more practice. On an e-reader, the practice is the next page and the instructions are one swipe back.</div>
     <div class="h-lead">One habit runs through every lesson:</div>
     <div class="habit">${book.habit.map((s, i) => `<div><b>${i + 1}</b><span>${s}</span><em>${['longer than feels necessary — at the real thing, not your page', 'by comparing one part with another: taller, wider, steeper', 'lightly — first lines are guesses', 'against the real thing, then go darker'][i]}</em></div>`).join('')}</div>
-    <div class="h-lead">Each lesson has up to three spreads:</div>
+    <div class="h-lead">Each lesson has up to three sheets:</div>
     <table class="kinds"><tr><td><b>Practice</b></td><td>repetition with help that fades</td></tr><tr><td><b>Repeat</b></td><td>the same drill with fresh targets, for another day</td></tr><tr><td><b>From life</b></td><td>a real subject, with a reference sketch for when nothing is handy</td></tr></table>
     <div class="h-lead">Help fades on every practice page:</div>${legend()}
-    <ul class="tips"><li>Use the pen, thin and black. Write straight onto the page; erase freely.</li><li>10–20 minutes a day beats an hour once a week. Circle your best attempt on each page.</li><li>For kids: bigger, looser, half the boxes — and praise the looking, not just the drawing.</li></ul>`;
+    <ul class="tips"><li>Use the pen, thin and black, and write straight onto the page — or print double-sided, flipping on the long edge.</li><li>10–20 minutes a day beats an hour once a week. Circle your best attempt on each page.</li><li>For kids: bigger, looser, half the boxes — and praise the looking, not just the drawing.</li></ul>`;
+  sheet(['cover', coverBody, {}, 'cover'], ['how', howBody, { id: 'how', label: 'how this book works', hints: false }]);
+
   const tocCol = ps => ps.map(p => `<div class="toc-part"><span>Part ${p.n} · ${esc(p.name)}</span><em>{{p:part-${p.n}}}</em></div>${lessons.filter(l => l.part === p.n).map(l => `<div class="toc-l"><span>${l.id}</span>${esc(l.title)}<em>{{p:${l.id}}}</em></div>`).join('')}`).join('');
-  const tocBody = `<div class="h-title">Contents</div><div class="toc-cols"><div>${tocCol(parts.slice(0, 4))}</div><div>${tocCol(parts.slice(4))}<div class="toc-part"><span>Progress tracker</span><em>{{p:progress}}</em></div></div></div>`;
-  spread(['how', howBody, { id: 'how', label: 'how this book works', hints: false }], ['toc', tocBody, { id: 'contents', label: 'contents', hints: false }]);
+  const tocBody = `<div class="h-title">Contents</div><div class="toc-cols"><div>${tocCol(parts.slice(0, 4))}</div><div>${tocCol(parts.slice(4))}<div class="toc-part"><span>Progress tracker</span><em>{{p:progress}}</em></div><div class="toc-part"><span>About this book</span><em>{{p:about}}</em></div></div></div>`;
+  const progressBody = `<div class="h-title">Progress tracker</div><table class="prog"><tr><th>lesson</th><th>page</th><th>practice</th><th>repeat</th><th>from life</th></tr>${lessons.map(l => `<tr><td><b>${l.id}</b> ${esc(l.title)}</td><td>{{p:${l.id}}}</td><td>☐ ____</td><td>${l.practice.repeat ? '☐ ____' : '—'}</td><td>${l.life ? '☐ ____' : '—'}</td></tr>`).join('')}</table>`;
+  sheet(['toc', tocBody, { id: 'contents', label: 'contents', hints: false }], ['progress', progressBody, { id: 'progress', label: 'progress tracker', hints: false }]);
 
   for (const p of parts) {
     const ls = lessons.filter(l => l.part === p.n);
-    spread(['opener', `<div class="op-n">Part ${p.n}</div><div class="op-name">${esc(p.name)}</div><div class="op-intro">${esc(p.intro)}</div>
+    sheet(['opener', `<div class="op-n">Part ${p.n}</div><div class="op-name">${esc(p.name)}</div><div class="op-intro">${esc(p.intro)}</div>
         <div class="op-list">${ls.map(l => `<div><span>${l.id}</span>${esc(l.title)}<em>{{p:${l.id}}}</em></div>`).join('')}</div>`, { id: `part-${p.n}`, label: `part ${p.n} · ${p.name.toLowerCase()}`, hints: false }],
       ['plate', `<div class="plate-in">${refs.img({ ...p.cover, notes: true }, { width: AW, overlay: null })}<div class="plate-cap">from the sketchbook</div></div>`, { label: `part ${p.n} · ${p.name.toLowerCase()}`, hints: false }]);
     for (const l of ls) lessonSpreads(l, refs);
   }
 
-  spread(['progress', `<div class="h-title">Progress tracker</div><table class="prog"><tr><th>lesson</th><th>page</th><th>practice</th><th>repeat</th><th>from life</th></tr>${lessons.map(l => `<tr><td><b>${l.id}</b> ${esc(l.title)}</td><td>{{p:${l.id}}}</td><td>☐ ____</td><td>${l.practice.repeat ? '☐ ____' : '—'}</td><td>${l.life ? '☐ ____' : '—'}</td></tr>`).join('')}</table>`, { id: 'progress', label: 'progress tracker', hints: false }],
-    ['back', `<div class="h-title">About this book</div><p>Every illustration in this book is an original pencil sketch generated for it; nothing is copied from other books or courses. Typefaces: Inter and JetBrains Mono (SIL Open Font License); handwritten notes in Caveat (SIL Open Font License).</p><p>Pages are sized to the Kindle Scribe screen (157.5 × 210 mm) and the reMarkable 2, and laid out in facing spreads so instructions always sit beside the practice. Print editions on Letter and A4 keep the same real sizes.</p><p class="small">${esc(book.series)} · ${esc(book.title)} · e-ink edition</p>`, { label: 'about', hints: false }]);
+  sheet(['about', `<div class="h-title">About this book</div><p>Every illustration in this book is an original pencil sketch generated for it; nothing is copied from other books or courses. Typefaces: Inter and JetBrains Mono (SIL Open Font License); handwritten notes in Caveat (SIL Open Font License).</p><p>Pages are sized to the Kindle Scribe screen (157.5 × 210 mm) and the reMarkable 2. Every lesson is one sheet — instructions on the front, practice on the back — so it works as loose leaf printed double-sided, or page by page on an e-reader. Print editions on Letter and A4 keep the same real sizes.</p><p class="small">${esc(book.series)} · ${esc(book.title)} · e-ink edition</p>`, { id: 'about', label: 'about', hints: false }],
+    ['backcover', `<div class="bc-in"><div class="cv-series">${esc(book.series)}</div><div class="bc-title">${esc(book.title)}</div>${refs.img({ scene: 'nature', seed: 31, notes: true }, { width: AW, overlay: null })}<div class="bc-note">Want more practice? Print any sheet again — every sheet stands on its own.</div></div>`, { label: '', hints: false }, 'backcover']);
 }
 
 function lessonSpreads(l, refs) {
@@ -769,7 +772,7 @@ function lessonSpreads(l, refs) {
     <div class="diagram">${svg(AW, 50, D[l.diagram](AW, 50))}</div>
     <div class="steps-h">Do this</div><ol class="steps">${l.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
     <div class="vfill"></div>${checkBox(l)}${slipBox(l)}${whyBox(l)}</div>`;
-  spread(['learn', learn, { id: l.id, label: lbl('how to') }], ['practice', practiceRecto(l, l.practice, 'PRACTICE', R, refs), { label: lbl('practice') }]);
+  sheet(['learn', learn, { id: l.id, label: lbl('how to') }], ['practice', practiceRecto(l, l.practice, 'PRACTICE', R, refs), { label: lbl('practice') }]);
 
   // 2 · Step 2 (left) + second practice (right)
   if (l.practice2) {
@@ -777,7 +780,7 @@ function lessonSpreads(l, refs) {
     const v = `${head(l, 'STEP 2')}<div class="body"><div class="lead"><b>${esc(s2.lead)}</b></div><div class="idea">${esc(s2.text)}</div>
       <div class="diagram">${svg(AW, 50, D[l.diagram](AW, 50))}</div><div class="steps-h">Do this</div><ol class="steps">${s2.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
       <div class="vfill"></div>${checkBox(l)}${slipBox(l)}</div>`;
-    spread(['learn', v, { label: lbl('step 2') }], ['practice', practiceRecto(l, l.practice2, 'PRACTICE · STEP 2', rng(99), refs), { label: lbl('practice, step 2') }]);
+    sheet(['learn', v, { label: lbl('step 2') }], ['practice', practiceRecto(l, l.practice2, 'PRACTICE · STEP 2', rng(99), refs), { label: lbl('practice, step 2') }]);
   }
 
   // 3 · Again (left) + Repeat (right)
@@ -787,7 +790,7 @@ function lessonSpreads(l, refs) {
       <div class="diagram">${svg(AW, 46, D[l.diagram](AW, 46))}</div>
       <div class="steps-h">The steps again</div><ol class="steps">${l.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
       <div class="vfill"></div>${checkBox(l)}${slipBox(l)}</div>`;
-    spread(['learn', v, { label: lbl('again') }], ['practice', practiceRecto(l, l.practice, 'REPEAT', rng(R() * 1e9), refs), { label: lbl('repeat') }]);
+    sheet(['learn', v, { label: lbl('again') }], ['practice', practiceRecto(l, l.practice, 'REPEAT', rng(R() * 1e9), refs), { label: lbl('repeat') }]);
   }
 
   // 4 · From life: how to (left) + From life (right)
@@ -798,9 +801,9 @@ function lessonSpreads(l, refs) {
       <div class="habit mini">${book.habit.map((s, i) => `<div><b>${i + 1}</b><span>${s}</span></div>`).join('')}</div>
       <div class="steps-h">How to approach it</div>${list(ex(l).lifeHow || [], 'how')}
       <div class="steps-h">The skill, step by step</div><ol class="steps">${l.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
-      <div class="vbox"><b>Real things first</b> ${r ? 'Draw from the real subject whenever you can. The sketch on the right is for when nothing is handy — or for practice before you go out.' : 'Draw from the real thing in front of you; there is no reference sketch for this one.'}${r ? `<br><br><b>On the sketch</b> ${overlayNote(r)}` : ''}</div>
+      <div class="vbox"><b>Real things first</b> ${r ? 'Draw from the real subject whenever you can. The reference sketch overleaf is for when nothing is handy — or for practice before you go out.' : 'Draw from the real thing in front of you; there is no reference sketch for this one.'}${r ? `<br><br><b>On the sketch</b> ${overlayNote(r)}` : ''}</div>
       <div class="vfill"></div>${checkBox(l)}${slipBox(l)}</div>`;
-    spread(['learn', v, { label: lbl('from life, how to') }], ['life', lifeRecto(l, refs), { label: lbl('from life') }]);
+    sheet(['learn', v, { label: lbl('from life, how to') }], ['life', lifeRecto(l, refs), { label: lbl('from life') }]);
   }
 }
 
@@ -830,7 +833,7 @@ function practiceRecto(l, spec, kind, seedR, refs) {
   else if (spec.type === 'capstone') inner = capstonePage(PH);
   else if (spec.type === 'thumbRow') inner = drills.thumbRow(seedR, AW, PH, spec, refs).html;
   else inner = svg(AW, PH, drills[spec.type](seedR, AW, PH, spec));
-  const task = spec.task || TASKS[spec.type] || 'Follow the steps on the facing page.';
+  const task = spec.task || TASKS[spec.type] || 'Follow the steps overleaf.';
   return `${head(l, kind, NO_LEGEND.includes(spec.type) ? '' : legend())}<div class="body"><div class="task">${esc(task)}</div><div class="drill" style="height:${f(PH)}mm">${inner}</div><div class="repline">date ________ · circle your best attempt<span>reps ☐ ☐ ☐</span></div></div>`;
 }
 
@@ -908,8 +911,12 @@ a { color: inherit; text-decoration: none; }
 .foot { margin-top: auto; }
 .foot .pn { font: 700 3mm "JetBrains Mono", monospace; color: #000; }
 .foot .fl-mid { flex: 1; }
-.foot.recto { flex-direction: row-reverse; }
-.foot.recto .fl-mid { text-align: right; }
+.foot.odd { flex-direction: row-reverse; }
+.foot.odd .fl-mid { text-align: right; }
+.backcover { justify-content: center; }
+.bc-in { margin: auto 0; }
+.bc-title { font: 800 8mm/1.1 Inter, sans-serif; margin: 2mm 0 5mm; }
+.bc-note { font: 3.2mm/1.4 Inter, sans-serif; margin-top: 5mm; }
 .foot .hint { font-weight: 600; color: #000; }
 .lead { font: 3.5mm/1.35 Inter, sans-serif; }
 .lead b { font-weight: 800; margin-right: 1mm; }
@@ -1023,7 +1030,7 @@ ul.how li { margin-bottom: 0.8mm; }
 .prog th { font: 700 2.2mm "JetBrains Mono", monospace; text-align: left; border-bottom: 0.4mm solid #000; padding: 0.8mm; }
 .prog td { border-bottom: 0.25mm solid #ccc; padding: 1.05mm 0.8mm; white-space: nowrap; }
 .prog td:first-child { white-space: normal; }
-.back p { font: 3.2mm/1.5 Inter, sans-serif; margin-bottom: 3mm; }
+.about p { font: 3.2mm/1.5 Inter, sans-serif; margin-bottom: 3mm; }
 `;
 
 // ---------- render

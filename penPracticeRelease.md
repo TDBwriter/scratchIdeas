@@ -78,12 +78,13 @@ Titles are working names. Plus **R0: the free sampler** (already built), used fo
 
 **Promise:** learn to draw what's in front of you, not what you think it looks like.
 
-**Status:** the e-ink edition is built in **facing spreads** (149 pages, `penPractice/out/sketch/sketch-what-you-see-eink.pdf`, builder in `penPractice/sketch/`) and is waiting for final approval. Print editions come next.
+**Status:** the e-ink edition is built as **front/back sheets** (150 pages = 75 sheets, `penPractice/out/sketch/sketch-what-you-see-eink.pdf`, builder in `penPractice/sketch/`) and is waiting for final approval. Print editions come next.
 
 **Format rule for every edition:**
-- Instructions and details go on the left page, with the prompt and practice space on the facing right page. In print they lie open together; on an e-reader they're one swipe apart.
+- Print is **loose leaf, double-sided**, not bound.
+- Every lesson unit is one sheet: instructions on the front, prompt and practice space on the back. Each sheet stands on its own and can be reprinted for more practice. On an e-reader, front and back are one swipe apart.
 - No navigation that depends on tapping links.
-- Page numbers sit in the outer corners.
+- Page numbers sit on the outer edge.
 
 **Full lesson text: `sketchWhatYouSee.md`.** It builds lines → shapes → proportion → space → light → scenes, with one habit throughout: **Look → Measure → Mark → Check**.
 

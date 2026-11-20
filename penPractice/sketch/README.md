@@ -2,10 +2,10 @@
 
 Builds the complete **Sketch What You See** workbook (release R2) from:
 
-- `lessons.mjs`: the content, plus the facing-page extras (repeat tips, from-life approach, guide-line notes)
+- `lessons.mjs`: the content, plus the extras for each sheet (repeat tips, from-life approach, guide-line notes)
 - the pencil-sketch generator (`../../sketchArt/sketch.mjs`): the reference pictures
 
-**Status: e-ink edition built in facing spreads, waiting for approval.** After approval, the same builder produces the Letter and A4 print editions (`--page letter` / `--page a4`). Those need a review pass, plus a gutter margin and an even page count for binding.
+**Status: e-ink edition built as front/back sheets, waiting for approval.** After approval, the same builder produces the Letter and A4 loose-leaf print editions (`--page letter` / `--page a4`). Those need a review pass.
 
 ```sh
 cd penPractice/sketch
@@ -16,36 +16,40 @@ node build.mjs --refs          # regenerate the reference sketches
 
 Requires Playwright (Chromium) and ImageMagick.
 
-## Layout: everything comes in facing spreads
+## Layout: every lesson unit is one sheet, front and back
 
-Each **left page** (even number) carries the instructions and details. The **right page** (odd number) facing it carries the prompt and the practice space.
+- **Front** (odd page): the instructions and details. **Back** (even page): the prompt and the practice space.
+- **Loose-leaf print, double-sided** (flip on the long edge): every sheet stands on its own. You can pull it out, take it along, or reprint it for more practice.
+- **E-reader**: the practice is the next page, and the instructions are one swipe back.
+- **No navigation depends on tapping links.**
+  - Each lesson's "why" sits on its own front.
+  - Footers say "practice overleaf ▸" and "◂ instructions overleaf".
+  - Page numbers sit on the outer edge: right on fronts, left on backs.
+  - The contents, part openers and progress tracker list page numbers.
+- **The builder refuses to build if a sheet would start on an even page.**
 
-- In **print**, both lie open together.
-- On an **e-reader**, the instructions are always one swipe back.
-- **No jumping around**: there are no "Why?" buttons and no back-of-book section. Everything a reader needs for a practice page is on the page facing it.
-- **Page numbers** sit in the outer corners. The contents, part openers and progress tracker list page numbers.
-- **Footers** say "practice on the facing page ▸" and "◂ instructions on the facing page". The builder refuses to build if a spread would start on an odd page.
+## Sheets per lesson
 
-## Spreads per lesson
-
-| Spread | Left page (instructions) | Right page (practice) |
+| Sheet | Front (instructions) | Back (practice) |
 |---|---|---|
-| **How to → Practice** | The idea, diagram, steps, check yourself, common slip, why it works | The task line, then the drill with help that fades (trace → dots → free) |
+| **How to / Practice** | The idea, diagram, steps, check yourself, common slip, why it works | The task line, then the drill with help that fades (trace → dots → free) |
 | **Step 2** (S3.4 only) | What changes with half the grid, steps, check | The half-grid transfer |
-| **Again → Repeat** (13 drill lessons) | "This time…" tip, the diagram, the steps again, check, slip | The same drill with fresh targets |
-| **From life: how to → From life** (24 lessons) | The subject, the Look/Measure/Mark/Check row, how to approach it, the skill step by step, real-things-first, what the guide lines on the sketch show, check, slip | The prompt, the reference sketch with guide lines, the drawing frame |
+| **Again / Repeat** (13 drill lessons) | "This time…" tip, the diagram, the steps again, check, slip | The same drill with fresh targets |
+| **From life** (24 lessons) | The subject, the Look/Measure/Mark/Check row, how to approach it, the skill step by step, real-things-first, what the guide lines on the sketch show, check, slip | The prompt, the reference sketch with guide lines, the drawing frame |
 
-## The whole e-ink edition (149 pages)
+## The whole e-ink edition (150 pages = 75 sheets)
 
-- **Page 1**: the cover, on its own.
-- **74 spreads**:
-  - how this book works / contents
-  - 7 part openers: part intro and lessons on the left, a sketchbook illustration on the right
-  - 65 lesson spreads
-  - progress tracker / about this book
-- **Page size**: 157.5 × 210 mm, true size on Kindle Scribe 2022/2024 and reMarkable 2.
+| Sheet | Front | Back |
+|---|---|---|
+| 1 | Cover | How this book works |
+| 2 | Contents | Progress tracker |
+| 7 part dividers | Part intro and lesson list | Sketchbook illustration |
+| 65 lesson sheets | Instructions | Practice |
+| Last | About this book | Back cover |
+
+Page size: 157.5 × 210 mm, true size on Kindle Scribe 2022/2024 and reMarkable 2.
 
 ## Review files
 
-- `../out/sketch/spreads-eink.png`: 8 representative spreads, as they'd lie open.
+- `../out/sketch/sheets-eink.png`: 6 sheets, front and back side by side.
 - `../out/sketch/contact-eink.png`: every page.
