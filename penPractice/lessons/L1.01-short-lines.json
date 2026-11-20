@@ -1,0 +1,19 @@
+{
+  "id": "L1.01",
+  "track": "Drawing Foundations · Level 1",
+  "title": "Short straight lines",
+  "objective": "One confident stroke from the filled dot to the open dot. Move from the shoulder, not the wrist.",
+  "type": "line-drill",
+  "audience": "all",
+  "length_mm": [32, 55],
+  "cells": [
+    { "guide": "ghost", "orientation": "horizontal" },
+    { "guide": "ghost", "orientation": "diagonal" },
+    { "guide": "dots", "orientation": "vertical" },
+    { "guide": "dots", "orientation": "horizontal" },
+    { "guide": "dots", "orientation": "diagonal" },
+    { "guide": "free", "orientation": "horizontal" }
+  ],
+  "self_check": "Circle your straightest line in each box. Did any line curve or wobble at the end?",
+  "deep_dive": "Speed helps straightness: a slow line follows every wobble of your hand. Hover over the path a few times without touching, then draw once."
+}

@@ -1,0 +1,22 @@
+{
+  "id": "P1.05",
+  "track": "Everyday Print",
+  "title": "Arches: n m r h",
+  "objective": "Start at the dot, pull straight down, then spring back up into the arch. Keep every arch the same height.",
+  "type": "letter-rows",
+  "audience": "all",
+  "glyphs": ["n", "m", "r", "h"],
+  "start": { "n": "x", "m": "x", "r": "x", "h": "asc" },
+  "font": { "family": "Inter", "size_mm": 11.9 },
+  "ruling": { "x_height_mm": 6.5, "ascender_mm": 9.0, "descender_mm": 2.6, "row_gap_mm": 6.2, "slot_mm": 11.5 },
+  "rows": [
+    { "guide": "ghost" },
+    { "guide": "ghost" },
+    { "guide": "dots" },
+    { "guide": "dots" },
+    { "guide": "free" },
+    { "guide": "free" }
+  ],
+  "self_check": "Circle the best arch in each row. Does every arch reach the dashed line?",
+  "deep_dive": "Arches share one motion: down-stroke, retrace up the stem, then branch out about halfway up. Practise the motion and four letters come for free."
+}
