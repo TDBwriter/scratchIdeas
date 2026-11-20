@@ -67,6 +67,21 @@ The curriculum (lesson files plus stroke data) is the real asset. Each output is
 | **2. Tablet app** | **iPad + Apple Pencil** first (pressure, tilt and low latency all work well there), then Android styluses | Peek at the ideal guide over your own ink, replay strokes, gentle measurements, a progress timeline, endless generated drills, a kids mode | v2 |
 | **3. Jailbroken Scribe player** | KOReader plugin reading the same lesson files | The interactive features on e-ink. Wait until "Fast ink" pen mode is proven | Side project / open source |
 
+### Possible add-on: phone "pocket drills" (finger, no pen)
+
+**What the research suggests:**
+- **Finger practice helps you learn a shape, its stroke order and its direction.**
+  - Preschoolers who practised letters with a finger on a tablet wrote more letters correctly than a stylus group. The stylus and pencil groups did about the same (Patchan & Puranik 2016).
+  - Tracing with the index finger also improves learning in geometry (Hu, Ginns & Bobis).
+- **Handwriting carries over partly between body parts.** The overall shape and style survive when you write with a limb you never practise with, but the fine details change.
+- **Fine control only improves with the real tool.** Grip, pressure, line quality, size and the friction of the pen need pen practice (the "specificity of practice" principle).
+
+**How to use it:**
+- A **2-minute phone mode** to learn a new letter or shape: stroke-order animation → finger trace → trace from memory → a short look-away and recall.
+- **What it can score**: stroke order, direction, proportions and rhythm. It can't score line quality.
+- **Write big**: fill the screen, in landscape for drawing, so the motion isn't tiny.
+- **Then the real reps on the Scribe or tablet.** Market it as a companion, never as a replacement.
+
 ---
 
 ## Series lineup (draft)
