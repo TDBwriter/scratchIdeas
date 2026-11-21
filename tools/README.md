@@ -184,6 +184,23 @@ python tools/skate-short/opening_stats.py "D:\Recordings\takedown.mp4"
 
 **Tested** on November 21, 2026 (2026:325) on Windows 11 with ffmpeg 9.0.2, Python 3.14, scipy 1.17 and Pillow 13. On `545R-Takedown-000` it found the game over (0:09.3 to 0:10.9), the loading screen (0:10.96 to 0:23.87), V's turn (9:51.74 to 10:00.25), Skill Progression, a clear inventory frame (10:03.6) and the hub, and its build matched the hand-made edit; it took a minute and a half for the 15-minute clip, render included. Run on all 16 exported clips with the nine-element standard, only that one passed. The nearest misses had the game over and loading blank but no spinning model or Skill Progression (`545R-MarinePlaysVeryHardAndGetTriggered`, `545R-NCPD-Assassination-Ernesto`, `545R-Takedown-001.01`). The rest had no game over, or no menus at all. Checked against contact sheets of the whole clip, none of those rejections was a miss. The Steam session `545R-Takedown-000` was cut from (`bg_1091500_20261116_033455`, read through its folder) also passed, in about 3 minutes for its hour. Every element came from the menu visit that holds the most key elements, the same one the clip used. When an element has to come from another visit, the report says so. The layer hasn't been tried in Resolve yet.
 
+### `skate-short/menu_cut.py`: cut the menus out of a clip
+
+Cuts every menu and inventory screen out of a clip and writes the result beside it as `<clip> no menus.mp4`; the clip itself is never changed (decided November 21, 2026: "removing all the menus and inventory screens. not the loading screen"). With Claude Code it runs as the `menu-cut` skill, separate from `skate-short`.
+
+- **Cut:** every stretch where both outer 240-pixel strips stay black (brightest pixel 12 or under, read at 344x144) and the frame isn't a loading screen: the hub, inventory and backpack, map, journal, skills and perks, crafting, cyberware, breach protocol and the pause menu. Stretches under 0.4 seconds are flickers, not menus; a tenth of a second goes either side of each cut.
+- **Kept:** loading screens (mean brightness under 3, counter and all; the skills and game over screens are dark too, at 8 to 15, so ffmpeg's `blackdetect` won't separate them), and every game over: FLATLINED is looked for four times a second, and its whole stretch is kept, with the loading screen after it, until gameplay comes back. That also keeps a loading screen carrying the opening's stats overlay, which isn't black.
+- **Run the opening template first:** the overlay is cut from the menus this removes.
+
+```
+python tools/skate-short/menu_cut.py "D:\Recordings\takedown.mp4" --check-only
+python tools/skate-short/menu_cut.py "D:\Recordings\takedown.mp4"
+```
+
+`--check-only` writes the folder `<clip> menu cut` (`report.txt`, `cuts.csv`, and `cuts.jpg` with a still of each cut and each kept game over) and stops. The render joins the remaining pieces with ffmpeg's concat filter, in HEVC on an NVIDIA card (`hevc_nvenc`, else x264), keeping full-range color, with the sound re-encoded to AAC.
+
+**Tested** on November 21, 2026 on `545R-Takedown-000` (with its opening overlay): it cut the 5 minutes 34 seconds of menus (8:57.8 to 14:32.1) and kept the game over and loading screen, taking the clip from 14:53 to 9:19 (written 9:19.08 against 9:19.06 expected; sound and picture within 43 milliseconds). Reading took 2 minutes and the render 3.
+
 ### `skate-short/blind_test.py`: does the pattern pick what you would?
 
 A blind test of how moments, key frames and framing get picked. You mark the moments you'd put in a Short, and the key frames of two or three of them, from a marking copy of a recording; Claude picks separately and seals its picks with a SHA-256 of each file, so it can be checked afterwards that nothing changed. The scoring is fixed in the script before anyone marks anything:
