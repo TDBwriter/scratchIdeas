@@ -90,8 +90,12 @@ Everything above this line is the treatment as it was uploaded, unchanged. Every
 - **Up to 3 minutes, not 4.** YouTube treats a video as a Short only if it runs 3 minutes or less, so a part runs 2 to 3 minutes.
 - **Deaths go in both places.** A few deaths before the success stay in the full video. In the Short, deaths are the cold open and the flashback slams (see "How a Short runs"). There are no separate death Shorts. (Until November 19 they went in the skit break.) This replaces the earlier rule that every game over, surprise and dumb death is cut out of the full videos into Shorts.
 - **Vertical crop, no 4:3.** Shorts are cropped straight to 9:16. The treatment's 4:3 frame with black sidebars is dropped. (YouTube also requires a Short to be vertical or square.)
+- **The crop tells the story** (decided November 19, 2026): "a powerful storytelling aspect of the skate vibe and slam footage experience." The 9:16 window isn't fixed in the middle: it's placed shot by shot and can move during a Short, cutting for a slam, panning or tilting to carry the eye between subjects ("the crop can easily follow pan tilt in order to transition subjects"), or punching in to a tighter window. Its only focus is the action between V and the NPCs: "whatever is telling the dramatic story, cool kill, bad death, funny moment." Each crop is suggested as a red outline on stills of the full frame and settled before the Short is made.
+- **No dead space** (decided November 19, 2026): "a short and snappy action video like an old skateboard reel." Every menu is cut, "except frames with V stats at the beginning and end of the clip," which are sliced to fit the 9:16 frame ("slice and dice those frames to fit that final crop"). Other dead space is cut by hand. Every jump cut gets a VHS glitch.
+- **Shorts are finished in DaVinci Resolve** (decided November 19, 2026). Every clip gets the same kit as a frame of reference for the edit, "repeatable for a variety of clips": a guide video of the whole frame with the planned crop drawn on it, the crop plan with Resolve's numbers, and the phase markers. The tool's own render is a preview.
 - **The look:** the MiniDV color grade, the analog texture (scanlines and tape grain; VHS glitches and static on hard transitions only), and the fisheye vignette on wide, high-energy shots.
 - **Title card:** one, over the loading screen after the cold open (decided November 19; it was "not chosen" before). Its typeface is picked in the edit.
+- **The opening template** (decided November 21, 2026): every opening video "opens with a game over which leads to a loading screen with all the stats." The approved edit is `545R-Takedown-000`, 0:11 to 0:20: on the black of the loading screen, with its counter left in place, V turning in the inventory preview sits on the left, Skill Progression to its right, then the inventory bar along the bottom with Level, Street Cred, carry weight, money, unspent attribute and perk points and the affinity card above it. Everything is cut from the same clip's menus, and spaced so the stats and gear the game adds later fit. A clip is rejected only for a missing key element: "FLATLINE FRAMES, LOADING BLANK, SPINNING MODEL, INVENTORY GRID, SKILL PROGRESSION, LEVEL, STREET CRED, ENCUMBRANCE, GOLD." The rest are minor details and don't block ("minor details should be non-blocking"): without a hub screen, the affinity card and unspent points are left out. The layout is made for the full 3440x1440 frame; how it sits in a 9:16 Short, and the rest of that clip's edit, are decided later.
 - **Not chosen:** lower thirds.
 - **The camcorder overlay's date** uses the zine's YYYY:DDD form (year, then the day of the year in three digits), and shows the day the Short is published.
 - **No narration** in Shorts. Music, game sound and the overlays only.
@@ -102,8 +106,9 @@ Everything above this line is the treatment as it was uploaded, unchanged. Every
 
 This is the sequence for every mission's Short. It replaces the treatment's four sections (opener, montage, skit break, ender) and their percentages. Timing is judged in the edit.
 
+0. **V's stats** close the Short (see "No dead space" above). Until November 21 they opened it too, ahead of the cold open; the opening template (above) moved them onto the loading screen.
 1. **Cold open: the previous game over.** The Short opens on V's last game over in this mission. It gives a hint of what the mission is.
-2. **Title card, over the loading screen.** The almost-all-black loading screen after the game over is where the title card is spliced in. It shows:
+2. **Title card, over the loading screen.** The almost-all-black loading screen after the game over is where the title card is spliced in. Since November 21 V's stats there follow the opening template (above). It shows:
    - the mission's name;
    - its location on the minimap;
    - V's stats: "a whole profile";
@@ -123,7 +128,7 @@ These are notes, not decisions.
 
 1. **The game's music is already in the footage.** The game's audio is recorded as one mixed track, so whatever score or radio was playing is under any track added in the edit. A music dropout before the ender drops only the added track.
 2. **Music rights.** CD Projekt allows its own music in videos about its games, and says some music in the game isn't theirs. Check each track before it's used. Whether "Disable Copyrighted Music" was on for the hours already recorded isn't known.
-3. **The vertical crop keeps about a third of the width.** A 9:16 crop from a 16:9 frame keeps about 32% of it. The HUD at the edges goes, and so may dialogue choices and anything off-center. Check each shot.
+3. **The vertical crop keeps about a third of the width.** A 9:16 crop from a 16:9 frame keeps about 32% of it, and from the 3440x1440 ultrawide recordings about 24%. The HUD at the edges goes, and so may dialogue choices and anything off-center. That's why the crop is placed shot by shot (decided; see above).
 4. **The clean-plate settings fit.** The recording checklist turns the game's own film grain and chromatic aberration off, so the analog texture is added in the edit, where it can be kept to Shorts.
 5. **The fisheye vignette is an edit effect.** The field of view is whatever the game was set to when the footage was recorded.
 6. **DaVinci Resolve.** The checklist's Shorts step uses Smart Reframe, which may need the paid Studio version. Check which of the grade, grain and distortion effects the free version has.
@@ -131,7 +136,7 @@ These are notes, not decisions.
 8. **The ender is the coup de grace** (decided).
 9. **The crew's on-screen text lines in Shorts:** decided in the edit.
 10. **YouTube's monetization.** Shorts with no narration rely on the edit for the original work YouTube's reused content policy looks for.
-11. **The cold open needs a game over.** What a Short opens on when V didn't die in that mission is decided in the edit.
+11. **The cold open needs a game over** (decided November 21). A clip with no game over leading into a loading screen is rejected, along with any clip missing the opening template's other key elements.
 12. **Keep the deaths.** The cold open and the flashback slams both need footage of earlier deaths, and Steam's background recording overwrites old footage unless it's saved.
 13. **The minimap for the title card.** The vertical crop cuts the minimap out of the frame, and the recording checklist turns it off. The location has to come from another capture, such as a screenshot of the minimap or the world map.
 14. **V's stats on the title card** are "a whole profile." With every point banked, V's attributes read 3 until The Heist.
@@ -140,7 +145,9 @@ These are notes, not decisions.
 
 ## The tool
 
-`tools/skate-short/skate_short.py` applies this guide to a raw recording. It renders the look, puts the title card over the loading screen, and writes phase markers for Resolve. Free Resolve can no longer be scripted from outside, so the tool works on the video file itself with ffmpeg, and the markers come into Resolve by import. Setup and use are in `tools/README.md`. With Claude Code, give it the video's location and the mission's name.
+`tools/skate-short/skate_short.py` applies this guide to a raw recording. For each clip it makes the same kit for finishing in Resolve: the guide video with the planned crop, the crop plan, and the phase markers. It also renders a preview with the look and the title card over the loading screen. Free Resolve can no longer be scripted from outside, so the tool works on the video file itself with ffmpeg, and the markers come into Resolve by import. Setup and use are in `tools/README.md`. With Claude Code, give it the video's location and the mission's name.
+
+`tools/skate-short/opening_stats.py` applies the opening template. It checks every clip for the key elements (FLATLINE frames, the loading blank, the spinning model, the inventory grid, Skill Progression, Level, Street Cred, encumbrance and gold), rejects any clip missing one, and otherwise builds the stats overlay for the loading screen from the clip's own menus, with a layer for Resolve.
 
 ## Sources for the notes
 

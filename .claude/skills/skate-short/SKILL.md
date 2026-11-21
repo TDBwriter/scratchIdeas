@@ -1,11 +1,11 @@
 ---
 name: skate-short
-description: Make a skate-style YouTube Short from a raw Cyberpunk 2077 recording. Use when the user gives the location of a video file or a Steam clip folder and wants the skate look, the title card over the loading screen, or phase markers for DaVinci Resolve.
+description: Make a skate-style YouTube Short from a raw Cyberpunk 2077 recording, and check every clip for the opening template (a game over, then the loading screen with V's stats), rejecting any clip that lacks its key frames. Use when the user gives the location of a video file or a Steam clip folder and wants the skate look, the opening's stats overlay, the title card over the loading screen, or phase markers for DaVinci Resolve.
 ---
 
 # Skate Short
 
-Turns a raw recording into a vertical Short with the skate look, the title card over the loading screen, and a marker at the start of each phase. The tool is `tools/skate-short/skate_short.py`. The style it follows is in `cyberpunk2077ShortsTreatment.md`. That file is a guide, not a rulebook: anything it doesn't cover is the user's call in the edit.
+Turns a raw recording into the kit for finishing a vertical Short in DaVinci Resolve: a guide video of the whole frame with the planned 9:16 crop drawn on it, the crop plan with Resolve's numbers, a marker at the start of each phase, and a preview with the skate look and the title card over the loading screen. The tool is `tools/skate-short/skate_short.py`. The style it follows is in `cyberpunk2077ShortsTreatment.md`. That file is a guide, not a rulebook: anything it doesn't cover is the user's call in the edit.
 
 ## What you need from the prompt
 
@@ -15,13 +15,23 @@ Turns a raw recording into a vertical Short with the skate look, the title card 
 
 ## Steps
 
+0. **Check the opening template first, for every clip.** Every opening video "opens with a game over which leads to a loading screen with all the stats," and a clip without the template's key frames is rejected. Run:
+
+   ```
+   python tools/skate-short/opening_stats.py "<video>" --check-only
+   ```
+
+   Only the key elements block (the user's standard, November 21): FLATLINE frames, the LOADING BLANK after them, the SPINNING MODEL (V turning in the inventory preview), the INVENTORY GRID, SKILL PROGRESSION, and LEVEL, STREET CRED, ENCUMBRANCE and GOLD (read from the top bar of the hub, the inventory or the skills page). The template is one file, `cyberpunk2077-opening-template.json`, kept beside the videos being checked (the user's Videos folder) with a copy in `tools/skate-short/`; the tool reads the one beside the video first and prints which it used. The key frames the user set are inside it, under `spec`. If it prints **REJECTED**, stop there: tell the user which key elements are missing, show them `key frames.jpg` from the output folder, and make nothing else for that clip. Minor details never block; the report notes them: no hub screen (so no affinity card or LEVEL UP), a game over late in the clip, a short turn, a pop-up over the inventory bar.
+
+   If it's accepted, run the same command without `--check-only`. That builds the stats overlay for the loading screen, cut from the clip's own menus in the approved layout (`545R-Takedown-000`, 0:11 to 0:20): a preview, a layer for Resolve (Composite Mode: Lighten), a still and a layout guide. Show the user the still and the report's notes. Its `--length` follows the approved edit; don't change it unless the user asks.
+
 1. **Find the loading screen and make contact sheets.** Run:
 
    ```
    python tools/skate-short/skate_short.py "<video>" --mission "<mission>" --detect-only
    ```
 
-   Add `--start` and `--end` if the user gave them. It writes contact sheets (stills every 5 seconds, each labelled with its time) and a report into a folder next to the video.
+   Add `--start` and `--end` if the user gave them. It writes contact sheets (stills every 5 seconds, each labelled with its time, with a red outline where the 9:16 crop falls) and a report into a folder next to the video. For a Steam recording folder, pass `--out` with a folder of the user's choosing, so nothing new lands among Steam's own recordings. If `ffmpeg` isn't found right after it was installed with winget, put `%LOCALAPPDATA%\Microsoft\WinGet\Links` on the PATH for the command.
 
 2. **Propose the phases.** Read the report and look at the contact sheets. Propose a start time for each phase the tool can't find:
    - `run`: the takedown of the mission begins;
@@ -30,21 +40,50 @@ Turns a raw recording into a vertical Short with the skate look, the title card 
    - `coup-de-grace`: the ender;
    - `close`: V moving off into the city.
 
-   The cold open is the start of the range (the previous game over) and the title card sits on the loading screen; the tool places both. Say plainly that the times come from stills a few seconds apart, not from watching the video, and let the user correct them.
+   The cold open is the start of the range (the previous game over) and the title card sits on the loading screen; the tool places both. The opening's stats from step 0 belong on that loading screen too; how they sit in the 9:16 frame hasn't been decided, so ask before combining them. Say plainly that the times come from stills a few seconds apart, not from watching the video, and let the user correct them.
 
-3. **Render.** With the times settled:
+3. **Cut the dead space and pick V's stats.** The Short is a short, snappy action reel, like an old skateboard video. Menus are cut on their own (the report lists them, and their stills are marked CUT). Propose `--cut FROM-TO` for any other stretch with no action between V and an NPC that the sequence doesn't need: walking between fights, terminals V reads, hacking boxes. Then pick 2-3 seconds of a menu with V in it (the inventory screen, with V standing clear of any pop-up) for `--stats-close FROM-TO`; it closes the Short. (The opening's stats are on the loading screen, step 0, so don't use `--stats` or `--stats-open`.) Run step 1 again with it and look at the `_stats-close.jpg` still: if the default slices (Level and Street Cred, then V head to toe) miss, propose `--stats-slices`.
+
+4. **Suggest the crop.** The crop tells the story in these Shorts: the 9:16 window keeps about a third of a 16:9 frame and less of an ultrawide one, so what it holds and what it leaves out is a choice. On the first sheets the red outline sits in the middle.
+
+   **The only focus is the action between V and the NPCs:** whatever is telling the dramatic story, such as a cool kill, a bad death or a funny moment. Frame the NPC V is dealing with and what happens between them. Don't frame the HUD, the minimap or scenery for their own sake. Where nothing is happening between V and an NPC, leave the window where it is.
+
+   For each stretch, propose where the window should sit (`left`, `center`, `right`, or a number from 0 at the left edge to 1 at the right) and say which moment between V and an NPC it frames. Move it only where that action moves, in one of two ways:
+   - **Pan** (`--crop FROM-TO=POSITION`): the window glides there between FROM and TO, easing in and out like a camera. Use it to carry the eye from one subject to the next.
+   - **Cut** (`--crop TIME=POSITION`): the window jumps there at TIME. Use it for a slam or a hard reframe.
+   - **Punch-in** (`--punch TIME=ZOOM`, back out with `TIME=out`): a cut to a tighter window, 2 for half the height, to close in on a kill, a death or a reaction. It's soft, so use it where the moment is worth it.
+   - **Tilt:** once punched in, the window can also move up and down. A position is `X,Y`: X is `left`, `center`, `right` or 0 to 1; Y is `top`, `center`, `bottom` or 0 to 1. Leave one blank to keep it (`=,top` only tilts). A pan and a tilt can run together.
+
+   Crop moves can't overlap; start one after the last one ends.
+
+   Then run step 1 again with the proposed `--crop` and `--phase` values, so the new sheets show the red outline where each suggested crop falls:
 
    ```
-   python tools/skate-short/skate_short.py "<video>" --mission "<mission>" --phase run=<t> --phase skit=<t> --phase coup=<t> --phase close=<t> [--minimap <png>] [--profile <png>] [--photo <png>] [--fisheye coup-de-grace]
+   python tools/skate-short/skate_short.py "<video>" --mission "<mission>" --detect-only --crop <t>=<position> --crop <t>=<position> ...
    ```
 
-   Times are in recording time. Put the fisheye only on phases the user names.
+   Give `--start` and `--end` so the scan is short. Show the user the sheets and let them move the outlines before anything is rendered.
 
-4. **Report what was made:** the rendered Short, the title card, the marker EDL and CSV, and the LUT. Tell the user how to bring the markers into Resolve: on the Edit page, Timelines > Import > Timeline Markers from EDL, on a timeline holding the rendered Short from its start. Import the markers before cutting, because timeline markers don't move with trimmed clips.
+5. **Make the kit.** With the cuts, V's stats, the times and the crop settled:
+
+   ```
+   python tools/skate-short/skate_short.py "<video>" --mission "<mission>" --start <t> --end <t> --stats-close <from>-<to> --cut <from>-<to> ... --phase run=<t> --phase skit=<t> --phase coup=<t> --phase close=<t> --crop <t>=<position> --punch <t>=<zoom> ... [--minimap <png>] [--profile <png>] [--photo <png>] [--fisheye coup-de-grace]
+   ```
+
+   Times are in recording time. Put the fisheye only on phases the user names. Add `--no-preview` if the user only wants the guide.
+
+6. **Report the kit**, the same way for every clip. The user finishes the Short in DaVinci Resolve, so lead with what guides the edit:
+   - `<mission>_guide.mp4`: the whole frame in the Short's order, with the red window through every move, V's stats slices, the phase, the move in progress, each jump cut and the timeline timecode;
+   - `<mission>_cuts.csv`: the pieces in order with their recording in and out, and what was cut;
+   - `<mission>_crop-plan.csv`: one row per keyframe, with the Zoom and Position for Resolve's Inspector;
+   - `<mission>_markers.edl`: the phase markers (Edit page: Timelines > Import > Timeline Markers from EDL; import them before cutting, because timeline markers don't move with trimmed clips);
+   - then the preview, the title card and the LUT.
+
+   Point to "Finishing in Resolve" in `tools/README.md` for how they fit together, and say that the Resolve numbers haven't been checked in Resolve yet.
 
 ## Limits
 
-- You can't watch video. Phase times come from stills.
+- You can't watch video. Phase times and crop suggestions come from stills, so a crop can miss action that moves between them.
 - The original recording is never changed. The tool only writes new files.
 - A Short has to be 3 minutes or less. The tool warns when the range is longer; the user cuts it down in the edit.
 - The game's music is already in the recording's audio. Added music goes on in Resolve.
