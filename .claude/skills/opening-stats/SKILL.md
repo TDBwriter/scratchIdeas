@@ -14,7 +14,7 @@ The gate for every clip, and the step that populates its loading screens. Nothin
 3. **menu-cut** takes the menus out of the trimmed version.
 4. **vhs-transitions** puts a VHS glitch on the cuts the user picks.
 
-The `skate-short` skill (vertical Shorts) also runs only on an accepted clip.
+The `skate-short` skill (vertical Shorts) and the `story-cut` skill (a story cut to the user's beats, wide and vertical) also run only on an accepted clip. The report's `frames` record the menu frames each element came from; `vertical_loading.py` reads them to build the vertical loading screen from the template's `vertical` section.
 
 ## What you need
 

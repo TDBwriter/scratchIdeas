@@ -851,6 +851,10 @@ def main():
                       ("ENCUMBRANCE", "carry weight"), ("GOLD", "money")):
         check[key] = stats_t if name in best else None
     report["stats_from"] = stats_page
+    # The menu frames each element is cut from; vertical_loading.py reads these too.
+    report["frames"] = {k: (None if v is None else round(v, 2)) for k, v in
+                        {"skills": chosen.get("skills"), "inventory": chosen.get("inventory"),
+                         "hub": chosen.get("hub"), "stats": stats_t}.items()}
     # Optional: the hub's affinity card and LEVEL UP badge.
     if "hub" not in chosen:
         report["warnings"].append("no hub screen, so the affinity card and LEVEL UP are left out (optional)")

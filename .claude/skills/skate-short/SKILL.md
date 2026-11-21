@@ -17,6 +17,8 @@ Turns a raw recording into the kit for finishing a vertical Short in DaVinci Res
 
 0. **Only on an accepted clip.** The `opening-stats` skill gates every clip first (decided November 21). If it hasn't accepted this clip, run that skill before anything here, and stop if it rejects the clip. Its populated copy, `<clip> with stats.mp4`, already has V's stats on every loading screen.
 
+   **The vertical version of a story cut** (the `story-cut` skill) comes in as `<name> for vertical.mp4`, with the vertical loading screen already in the 9:16 window (decided November 21). For it: give `--keep-menus --no-loading`, so nothing is cut and there's no title card (the loading screen carries the stats); keep the crop at the template's window position (0.5) from the start of the loading screen to its end, with no move or punch-in in between; and move the rendered `<mission>_skate.mp4` out under the story's vertical name.
+
 1. **Find the loading screen and make contact sheets.** Run:
 
    ```

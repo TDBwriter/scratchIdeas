@@ -68,7 +68,7 @@ Every clip gets the same kit, with the same names, so it works the same way in R
 - **`<mission>_markers.edl` and `.csv`:** the phase markers, for Resolve's Edit page (Timelines > Import > Timeline Markers from EDL).
 - **`<mission>_skate.mp4`, a preview of the Short:** cut and cropped to the plan, opening and closing on V's stats, with the MiniDV grade, tape grain and scanlines, a VHS glitch on each jump cut and each change of phase, the camcorder overlay (`PLAY`, `SP` and the publish date as YYYY:DDD) for a moment at each phase, the fisheye on the phases you name, and the title card over the loading screen. `--no-preview` skips it.
 - **`<mission>_titlecard.png`:** the mission's name, the minimap location and V's profile, from images you supply. A missing image leaves a labelled empty box.
-- **Contact sheets:** stills every 5 seconds, each labelled with its time in the recording and outlined in red where the 9:16 crop falls, for picking the phases and the crop. A still in a cut is labelled CUT and has no outline.
+- **Contact sheets:** stills every 5 seconds, each labelled with its time in the recording and outlined in red where the 9:16 crop falls, for picking the phases and the crop. A still in a cut is labelled CUT and has no outline. Each still is the frame at its label (before November 21, 2026 each came from half a step later, 2.5 seconds at the default spacing).
 - **`minidv.cube`:** the grade as a LUT, so it can also be applied in Resolve.
 
 **What it finds on its own, and what it doesn't**
@@ -158,6 +158,8 @@ Every clip goes through these steps, in this order (decided November 21, 2026):
 
 Cutting the individual clips out of a longer recording comes later. The vertical Shorts (`skate_short.py`, the `skate-short` skill) also come after step 1.
 
+**The story cut** (decided November 21, 2026) does the trim and the transitions to your direction, on the menu cut's version: `story_cut.py` (the `story-cut` skill) joins the pieces picked for your beats, with a VHS glitch on every join, into a wide version with the widescreen loading screen and a version ready for the vertical crop, with the vertical loading screen (`vertical_loading.py`). `skate_short.py` makes the vertical Short from the second.
+
 ### `skate-short/opening_stats.py`: the opening template
 
 Every opening video opens with a game over, which leads to a loading screen with V's stats laid over its black (decided November 21, 2026; the approved edit is `545R-Takedown-000`, 0:11 to 0:20). `opening_stats.py` checks a clip for the template's key elements and builds that overlay from the clip's own menus. A clip missing a key element is rejected: it gets a report and a contact sheet of what was found, and nothing else, and the script exits with status 2. An accepted clip has **every** loading screen populated, not just the opening's, in a full copy of the clip (decided November 21, 2026).
@@ -232,7 +234,52 @@ python tools/skate-short/vhs_transitions.py "D:\Recordings\takedown no menus.mp4
 python tools/skate-short/vhs_transitions.py "D:\Recordings\takedown no menus.mp4" --cut 2,3 --at 4:12 --markers trims.edl
 ```
 
-**Tested** on a made-up 12-second clip in a Linux container: menu cuts, a time and a Resolve marker all landed where expected, the glitch showed on each cut and nowhere else, and the length and sound were unchanged. Not yet run on real footage, or on a marker file exported from Resolve itself.
+**Tested** on a made-up 12-second clip in a Linux container: menu cuts, a time and a Resolve marker all landed where expected, the glitch showed on each cut and nowhere else, and the length and sound were unchanged. Then, on November 21, 2026, on real footage: the 15 and 18 joins of `545R-Takedown-000`'s story cuts, by `--at`, with every frame kept. Not yet run on a marker file exported from Resolve itself.
+
+### `skate-short/vertical_loading.py`: the vertical loading screen
+
+On the vertical (9:16) version of a clip, the loading screen after the game over gets its own layout, the whole loading screen long (decided November 21, 2026, on `545R-Takedown-000` story v3):
+
+- **The whole time:** V turns once, lower left: one full turn, found inside the inventory preview's turn (the two poses a turn apart that match best, where V is moving), slowed to fill the loading screen exactly, with motion interpolation. The loading bar runs live, top right.
+- **First half:** Level and Street Cred along the top, the affinity card under them, LEVEL UP (attribute and perk points) just above Skill Progression, which sits beside V over the ROTATE prompt. They come in one by one, Skill Progression line by line, and leave the same way in reverse by the midpoint.
+- **Second half:** the eddies and carry weight, then every item tile one by one. The inventory grid is cut into its tiles on the game's slot pitch: the wide ones (the weapons) at the top, the rest in a column beside V.
+
+Every piece is cut from the clip's own menus, at the frames `opening_stats.py` found (its `report.json`, which records them under `frames`). The layout, sizes and timings are the template's `vertical` section, in `cyberpunk2077-opening-template.json`. The result is an 810x1440 clip at 60 fps, lossless (FFV1, RGB): the size of the skate crop's 9:16 window on a 3440x1440 frame, at the window position the template gives (0.5, x 1315). `story_cut.py` lays it into that window. It also writes a still from each half and a `.json` of what it placed.
+
+```
+python tools/skate-short/opening_stats.py "D:\Recordings\takedown.mp4" --check-only
+python tools/skate-short/vertical_loading.py "D:\Recordings\takedown.mp4"
+```
+
+`--loading FROM-TO` sets the loading screen when the report has none (a clip whose loading screen already carries the widescreen stats won't show a loading blank); `--bar-from` takes the loading bar from another clip with the loading screen at the same time.
+
+**Tested** on November 21, 2026 on `545R-Takedown-000`: built from the untouched original's menus, it matched the approved v3 loading screen to within a quarter of a level in the first half, with the same tile layout in the second, and V turning through the last frame. About a minute for the 12.9-second loading screen.
+
+### `skate-short/story_cut.py`: a story cut to your beats, wide and vertical
+
+Cuts a clip down to a story the way you direct it, with the VHS glitch on every join, in two versions (decided November 21, 2026). It runs on the menu cut's `<clip> no menus.mp4`. The pieces come from a CSV, one per row, in the clip's time (seconds, MM:SS or HH:MM:SS; an empty `to` runs to the end):
+
+```
+from,to,beat
+0,30,"Game over, the loading screen, sneaking in"
+0:43,0:46.6,"Tag 1: the Racketeer by the dumpster"
+```
+
+Each piece's ends move to the nearest frame, and the sound fades over 15 milliseconds at each join, so nothing pops. The story has to stay under three minutes (`--max`).
+
+- **Wide:** the pieces as they are, the widescreen loading screen and all, as `<name> wide.mp4` beside the clip.
+- **For the vertical crop:** the same, with the vertical loading screen (`vertical_loading.py`) over black for the whole loading screen, in the 9:16 window, as `<name> cut/<name> for vertical.mp4`. It looks wrong wide; `skate_short.py` makes the vertical Short from it with `--keep-menus --no-loading` and the crop at the window position (0.5) through the loading screen. The first piece has to run from the start of the clip through the loading screen.
+
+The folder `<name> cut` gets `plan.csv` (each piece's place in the story and in the clip, and what happens), `joins.json`, `transitions.csv` and each version without its glitches. `--versions wide` or `vertical` makes one; `--check-only` plans and stops.
+
+```
+python tools/skate-short/story_cut.py "D:\Recordings\takedown no menus.mp4" --picks picks.csv --name "takedown story" --check-only
+python tools/skate-short/story_cut.py "D:\Recordings\takedown no menus.mp4" --picks picks.csv --name "takedown story" --vertical-loading "D:\Recordings\takedown vertical loading.mkv"
+```
+
+With Claude Code it runs as the `story-cut` skill, which also holds the user's recipe for a takedown story (every enemy tagged, each stalk cut in two, distractions with their payoff, hiding until the alert is over, the quest loot, backing away from civilians, running from the scene) and how to find those beats in stills.
+
+**Tested** on November 21, 2026 on `545R-Takedown-000` with the picks for its story v2 and v3 (19 pieces, 2:27.9): the wide version came out identical to v2, frame for frame, and the version for the vertical crop matched v3's but for V's starting pose on the loading screen; all 18 joins landed at the same times. About three and a half minutes for both versions.
 
 ### `skate-short/blind_test.py`: does the pattern pick what you would?
 

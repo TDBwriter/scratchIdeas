@@ -215,8 +215,10 @@ def contact_sheets(src, start, length, every, outdir, stem, crops, punches, segs
     labelled CUT and has no outline."""
     frames = os.path.join(outdir, "_frames")
     os.makedirs(frames, exist_ok=True)
+    # round=up: each still is the frame at its label. With fps's default rounding
+    # it's the last frame of the window centred on the label, half a step late.
     run(["ffmpeg", "-hide_banner", "-nostats", "-y", "-ss", f"{start:.3f}", "-t", f"{length:.3f}",
-         "-i", src, "-an", "-vf", f"fps=1/{every},scale={thumb_w}:-2", "-q:v", "4",
+         "-i", src, "-an", "-vf", f"fps=1/{every}:round=up,scale={thumb_w}:-2", "-q:v", "4",
          os.path.join(frames, "f_%05d.jpg")])
     files = sorted(f for f in os.listdir(frames) if f.endswith(".jpg"))
     label_font = font(26)

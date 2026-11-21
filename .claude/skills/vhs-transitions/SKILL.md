@@ -5,7 +5,7 @@ description: Put a VHS glitch and tape static on the cuts the user picks in a Cy
 
 # VHS Transitions
 
-Step 4 of the clip pipeline: after the `opening-stats` skill has accepted and populated the clip, the user has trimmed it, and `menu-cut` has taken the menus out. The tool is `tools/skate-short/vhs_transitions.py`; `tools/README.md` has the details. The glitch is the treatment's (`cyberpunk2077ShortsTreatment.md`): the colors split, tape static washes over the picture, and a bright tracking line rolls down the frame, for a moment either side of each cut. The sound isn't touched.
+Step 4 of the clip pipeline: after the `opening-stats` skill has accepted and populated the clip, the user has trimmed it, and `menu-cut` has taken the menus out. The tool is `tools/skate-short/vhs_transitions.py`; `tools/README.md` has the details. The glitch is the treatment's (`cyberpunk2077ShortsTreatment.md`): the colors split, tape static washes over the picture, and a bright tracking line rolls down the frame, for a moment either side of each cut. The sound isn't touched. A story cut (the `story-cut` skill) puts the same glitch on every one of its joins itself.
 
 ## What you need
 
