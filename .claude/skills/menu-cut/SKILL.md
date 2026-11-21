@@ -5,7 +5,7 @@ description: Cut every menu and inventory screen out of a Cyberpunk 2077 clip, k
 
 # Menu Cut
 
-Removes the menus from a 3440x1440 Cyberpunk 2077 clip and writes the result as a new file beside it, "`<clip> no menus.mp4`". The clip itself is never changed. The tool is `tools/skate-short/menu_cut.py`. It's separate from the `skate-short` skill (vertical Shorts) and from the opening template (`opening_stats.py`), but shares the template file for the game over reference.
+Removes the menus from a 3440x1440 Cyberpunk 2077 clip and writes the result as a new file beside it, "`<clip> no menus.mp4`". The clip itself is never changed. The tool is `tools/skate-short/menu_cut.py`. It's step 3 of the clip pipeline: the `opening-stats` skill gates the clip and populates its loading screens, the user trims the populated copy for content, this cuts the menus from the user's trimmed version, and `vhs-transitions` comes after. It shares the template file for the game over reference.
 
 ## What it cuts and what it keeps
 
@@ -16,7 +16,7 @@ Removes the menus from a 3440x1440 Cyberpunk 2077 clip and writes the result as 
 ## What you need
 
 - **The clip's location:** an MP4 at 3440x1440. A Steam recording folder has to be exported to MP4 first. On 16:9 footage there are no bars to find menus by, and the tool says so and stops.
-- **The order:** if the clip still needs its opening, run the opening template first (step 0 of the `skate-short` skill). The opening's stats overlay is cut from the very menus this removes, so the original keeps them.
+- **The order:** only on a clip the `opening-stats` skill has accepted, and normally on the user's trimmed version of its populated copy. If the clip hasn't been through `opening-stats`, run that first; if it rejects the clip, stop. The stats overlay is cut from the very menus this removes, so the original keeps them.
 
 ## Steps
 
@@ -28,7 +28,7 @@ Removes the menus from a 3440x1440 Cyberpunk 2077 clip and writes the result as 
 
    It reads every frame once (about 2 minutes for a 15-minute clip) and writes a folder "`<clip> menu cut`" beside the clip with `report.txt`, `cuts.csv` (each cut, each kept game over, and the pieces that remain) and `cuts.jpg` (a still from the middle of each cut in red, each kept game over in green). If `ffmpeg` isn't found right after a winget install, put `%LOCALAPPDATA%\Microsoft\WinGet\Links` on the PATH for the command.
 
-2. **Show the user the cuts.** Give the count, the total cut, the new length, and `cuts.jpg`. Say plainly that a cut is judged from the frame's edges, not by watching. If a cut looks wrong in the sheet, say which and why before rendering.
+2. **Show the user the cuts.** Give the count, the total cut, the new length, and `cuts.jpg`. Say plainly that a cut is judged from the frame's edges, not by watching. If a cut looks wrong in the sheet, say which and why before rendering. A loading screen with stats on it marked CUT is wrong: run the check again with `--keep FROM-TO` around it (`--keep` protects any stretch the user names).
 
 3. **Make the cut version.** Run the same command without `--check-only`. It joins the remaining pieces into "`<clip> no menus.mp4`" beside the clip (`--out` names another file): HEVC on the NVIDIA card where there is one, full-range color kept, the sound re-encoded to AAC. Report the new length against the expected one; they should agree to within a frame or two.
 

@@ -1,6 +1,6 @@
 ---
 name: skate-short
-description: Make a skate-style YouTube Short from a raw Cyberpunk 2077 recording, and check every clip for the opening template (a game over, then the loading screen with V's stats), rejecting any clip that lacks its key frames. Use when the user gives the location of a video file or a Steam clip folder and wants the skate look, the opening's stats overlay, the title card over the loading screen, or phase markers for DaVinci Resolve.
+description: Make a skate-style YouTube Short from a Cyberpunk 2077 recording that the opening-stats skill has accepted. Use when the user gives the location of a video file or a Steam clip folder and wants the skate look, the 9:16 crop plan, the title card over the loading screen, or phase markers for DaVinci Resolve.
 ---
 
 # Skate Short
@@ -15,15 +15,7 @@ Turns a raw recording into the kit for finishing a vertical Short in DaVinci Res
 
 ## Steps
 
-0. **Check the opening template first, for every clip.** Every opening video "opens with a game over which leads to a loading screen with all the stats," and a clip without the template's key frames is rejected. Run:
-
-   ```
-   python tools/skate-short/opening_stats.py "<video>" --check-only
-   ```
-
-   Only the key elements block (the user's standard, November 21): FLATLINE frames, the LOADING BLANK after them, the SPINNING MODEL (V turning in the inventory preview), the INVENTORY GRID, SKILL PROGRESSION, and LEVEL, STREET CRED, ENCUMBRANCE and GOLD (read from the top bar of the hub, the inventory or the skills page). The template is one file, `cyberpunk2077-opening-template.json`, kept beside the videos being checked (the user's Videos folder) with a copy in `tools/skate-short/`; the tool reads the one beside the video first and prints which it used. The key frames the user set are inside it, under `spec`. If it prints **REJECTED**, stop there: tell the user which key elements are missing, show them `key frames.jpg` from the output folder, and make nothing else for that clip. Minor details never block; the report notes them: no hub screen (so no affinity card or LEVEL UP), a game over late in the clip, a short turn, a pop-up over the inventory bar.
-
-   If it's accepted, run the same command without `--check-only`. That builds the stats overlay for the loading screen, cut from the clip's own menus in the approved layout (`545R-Takedown-000`, 0:11 to 0:20): a preview, a layer for Resolve (Composite Mode: Lighten), a still and a layout guide. Show the user the still and the report's notes. Its `--length` follows the approved edit; don't change it unless the user asks.
+0. **Only on an accepted clip.** The `opening-stats` skill gates every clip first (decided November 21). If it hasn't accepted this clip, run that skill before anything here, and stop if it rejects the clip. Its populated copy, `<clip> with stats.mp4`, already has V's stats on every loading screen.
 
 1. **Find the loading screen and make contact sheets.** Run:
 
@@ -40,9 +32,9 @@ Turns a raw recording into the kit for finishing a vertical Short in DaVinci Res
    - `coup-de-grace`: the ender;
    - `close`: V moving off into the city.
 
-   The cold open is the start of the range (the previous game over) and the title card sits on the loading screen; the tool places both. The opening's stats from step 0 belong on that loading screen too; how they sit in the 9:16 frame hasn't been decided, so ask before combining them. Say plainly that the times come from stills a few seconds apart, not from watching the video, and let the user correct them.
+   The cold open is the start of the range (the previous game over) and the title card sits on the loading screen; the tool places both. On the populated copy the opening's stats are already on that loading screen; how they sit in the 9:16 frame hasn't been decided, so ask before combining them with the title card. Say plainly that the times come from stills a few seconds apart, not from watching the video, and let the user correct them.
 
-3. **Cut the dead space and pick V's stats.** The Short is a short, snappy action reel, like an old skateboard video. Menus are cut on their own (the report lists them, and their stills are marked CUT). Propose `--cut FROM-TO` for any other stretch with no action between V and an NPC that the sequence doesn't need: walking between fights, terminals V reads, hacking boxes. Then pick 2-3 seconds of a menu with V in it (the inventory screen, with V standing clear of any pop-up) for `--stats-close FROM-TO`; it closes the Short. (The opening's stats are on the loading screen, step 0, so don't use `--stats` or `--stats-open`.) Run step 1 again with it and look at the `_stats-close.jpg` still: if the default slices (Level and Street Cred, then V head to toe) miss, propose `--stats-slices`.
+3. **Cut the dead space and pick V's stats.** The Short is a short, snappy action reel, like an old skateboard video. Menus are cut on their own (the report lists them, and their stills are marked CUT). Propose `--cut FROM-TO` for any other stretch with no action between V and an NPC that the sequence doesn't need: walking between fights, terminals V reads, hacking boxes. Then pick 2-3 seconds of a menu with V in it (the inventory screen, with V standing clear of any pop-up) for `--stats-close FROM-TO`; it closes the Short. (The opening's stats are on the loading screen, from the `opening-stats` skill, so don't use `--stats` or `--stats-open`.) Run step 1 again with it and look at the `_stats-close.jpg` still: if the default slices (Level and Street Cred, then V head to toe) miss, propose `--stats-slices`.
 
 4. **Suggest the crop.** The crop tells the story in these Shorts: the 9:16 window keeps about a third of a 16:9 frame and less of an ultrawide one, so what it holds and what it leaves out is a choice. On the first sheets the red outline sits in the middle.
 

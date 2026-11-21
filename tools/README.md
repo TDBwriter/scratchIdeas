@@ -147,9 +147,20 @@ The crop plan's Resolve numbers assume a 1080x1920 timeline and Resolve's defaul
 - **Markers:** import them before cutting. Timeline markers don't move with trimmed clips. The EDL's form follows what Resolve exports for timeline markers; it hasn't yet been tested in free Resolve, and the CSV lists the same times if it fails.
 - **Tested** on a made-up recording in a Linux container, then on November 19, 2026 (2026:323) on Windows 11 with ffmpeg 9.0.2, Python 3.14 and Pillow 13, on a real Steam background recording read through its `session.mpd`: detection, contact sheets, and a 45-second render with the title card, glitches, camcorder overlay and fisheye, and three more with the crop cutting, panning, punching in and tilting, where the preview matched the red outlines and the guide; then a 70-second range with its menus cut (15 seconds of journal and map) and V's stats from the inventory screen at both ends, which came out at 60 seconds with the guide's recording times matching the cut list. The markers, the cut list and the crop plan's numbers haven't been tried in Resolve yet.
 
+### The clip pipeline
+
+Every clip goes through these steps, in this order (decided November 21, 2026):
+
+1. **The opening template gates the clip and populates its loading screens** (`opening_stats.py`, the `opening-stats` skill). A clip missing a key element is rejected, and nothing after this runs on it. An accepted clip gets a full copy, `<clip> with stats.mp4`, with V's stats on every loading screen.
+2. **You trim the populated copy for content,** in DaVinci Resolve or however you like, and export it.
+3. **The menu cut** takes every menu and inventory screen out of your trimmed version (`menu_cut.py`, the `menu-cut` skill).
+4. **The transitions** put a VHS glitch on the cuts you pick (`vhs_transitions.py`, the `vhs-transitions` skill).
+
+Cutting the individual clips out of a longer recording comes later. The vertical Shorts (`skate_short.py`, the `skate-short` skill) also come after step 1.
+
 ### `skate-short/opening_stats.py`: the opening template
 
-Every opening video opens with a game over, which leads to a loading screen with V's stats laid over its black (decided November 21, 2026; the approved edit is `545R-Takedown-000`, 0:11 to 0:20). `opening_stats.py` checks a clip for the template's key elements and builds that overlay from the clip's own menus. A clip missing a key element is rejected: it gets a report and a contact sheet of what was found, and nothing else, and the script exits with status 2.
+Every opening video opens with a game over, which leads to a loading screen with V's stats laid over its black (decided November 21, 2026; the approved edit is `545R-Takedown-000`, 0:11 to 0:20). `opening_stats.py` checks a clip for the template's key elements and builds that overlay from the clip's own menus. A clip missing a key element is rejected: it gets a report and a contact sheet of what was found, and nothing else, and the script exits with status 2. An accepted clip has **every** loading screen populated, not just the opening's, in a full copy of the clip (decided November 21, 2026).
 
 **The key elements** (the only ones that block, decided November 21, 2026)
 
@@ -168,13 +179,13 @@ They're found by matching parts of the game's UI that look the same in every cli
 
 **What it makes,** in `<clip> opening` beside the clip, or in `--out`:
 
-- `report.txt` and `report.json`: accepted or rejected, what's missing, where each key frame is, and every game over that leads into a loading blank anywhere in the clip (the overlay is built for the first);
+- `report.txt` and `report.json`: accepted or rejected, what's missing, where each key frame is, every game over that leads into a loading blank, and every loading screen populated;
 - `key frames.jpg`: a still of each key frame it used, or NOT FOUND;
-- once accepted: `preview <from> to <to>.mp4`, the opening with the stats on it; `layer for <from> to <to> (Lighten).mov`, the stats alone on black in ProRes 422 HQ, for Resolve; a still; `layout guide.png`, with every element boxed and the open slots marked; and `layer_static.png`, everything but V.
+- once accepted: **`<clip> with stats.mp4`, beside the clip** (or `--video-out`): the whole clip with V's stats on every loading screen, blended with Lighten so the black drops out and each loading screen's counter shows through. The clip itself is never changed. Also `loading screens.jpg`, a still from each populated loading screen; `layout guide.png`, with every element boxed and the open slots marked; and `layer_static.png`, everything but V.
 
-**In Resolve,** put the layer on the track above the clip, starting at the time in its name, and set Inspector > Composite > Composite Mode to Lighten. The black drops out and the loading screen's counter shows through.
+**Every loading screen** is found from the keyframes and then read frame by frame for where it starts and ends, game over or not. Each gets the same layout, cut from the same menu visit, for `--length` seconds or until it ends. Loading screens shorter than `--min-loading` (default 1.5 seconds) are left as they are and listed in the report. The copy is encoded in HEVC on an NVIDIA card where one works (it's tried on a few frames first), else in x264, keeping full-range color; the sound is copied untouched. Before November 21's change the tool made a ProRes layer for Resolve and a preview of the opening alone; those are gone.
 
-**The layout** is the approved edit's, made for 3440x1440 footage: V's preview panel, ROTATE prompt and all, at the game's own scale on the left; Skill Progression from the top line (y 300) to the bottom line (y 1310); in the right column, the inventory bar on the bottom line with room above it for two more rows, and the affinity card and a two-column grid of stats above that, with three slots open for what the game adds later. The panels' backgrounds are keyed out by brightness. The stats cover `--length` seconds (default 8.98, as in the approved edit) from the moment the loading screen turns black, never past its end. V's turn is slowed to fill that, by up to 1.25x, and then its last frame is held.
+**The layout** is the approved edit's, made for 3440x1440 footage: V's preview panel, ROTATE prompt and all, at the game's own scale on the left; Skill Progression from the top line (y 300) to the bottom line (y 1310); in the right column, the inventory bar on the bottom line with room above it for two more rows, and the affinity card and a two-column grid of stats above that, with three slots open for what the game adds later. The panels' backgrounds are keyed out by brightness. The stats cover `--length` seconds (default 8.98, as in the approved edit) from the moment the loading screen turns black, never past its end. V's turn is slowed to fill that, by up to 1.25x, and then its last frame is held, on each loading screen.
 
 ```
 python -m pip install numpy scipy Pillow
@@ -182,7 +193,9 @@ python tools/skate-short/opening_stats.py "D:\Recordings\takedown.mp4" --check-o
 python tools/skate-short/opening_stats.py "D:\Recordings\takedown.mp4"
 ```
 
-**Tested** on November 21, 2026 (2026:325) on Windows 11 with ffmpeg 9.0.2, Python 3.14, scipy 1.17 and Pillow 13. On `545R-Takedown-000` it found the game over (0:09.3 to 0:10.9), the loading screen (0:10.96 to 0:23.87), V's turn (9:51.74 to 10:00.25), Skill Progression, a clear inventory frame (10:03.6) and the hub, and its build matched the hand-made edit; it took a minute and a half for the 15-minute clip, render included. Run on all 16 exported clips with the nine-element standard, only that one passed. The nearest misses had the game over and loading blank but no spinning model or Skill Progression (`545R-MarinePlaysVeryHardAndGetTriggered`, `545R-NCPD-Assassination-Ernesto`, `545R-Takedown-001.01`). The rest had no game over, or no menus at all. Checked against contact sheets of the whole clip, none of those rejections was a miss. The Steam session `545R-Takedown-000` was cut from (`bg_1091500_20261116_033455`, read through its folder) also passed, in about 3 minutes for its hour. Every element came from the menu visit that holds the most key elements, the same one the clip used. When an element has to come from another visit, the report says so. The layer hasn't been tried in Resolve yet.
+**Tested** on November 21, 2026 (2026:325) on Windows 11 with ffmpeg 9.0.2, Python 3.14, scipy 1.17 and Pillow 13. On `545R-Takedown-000` it found the game over (0:09.3 to 0:10.9), the loading screen (0:10.96 to 0:23.87), V's turn (9:51.74 to 10:00.25), Skill Progression, a clear inventory frame (10:03.6) and the hub, and its build matched the hand-made edit; it took a minute and a half for the 15-minute clip, render included. Run on all 16 exported clips with the nine-element standard, only that one passed. The nearest misses had the game over and loading blank but no spinning model or Skill Progression (`545R-MarinePlaysVeryHardAndGetTriggered`, `545R-NCPD-Assassination-Ernesto`, `545R-Takedown-001.01`). The rest had no game over, or no menus at all. Checked against contact sheets of the whole clip, none of those rejections was a miss. The Steam session `545R-Takedown-000` was cut from (`bg_1091500_20261116_033455`, read through its folder) also passed, in about 3 minutes for its hour. Every element came from the menu visit that holds the most key elements, the same one the clip used. When an element has to come from another visit, the report says so.
+
+The full copy (every loading screen) was added afterwards and tested only on a made-up 3440x1440 clip in a Linux container, with a stand-in stats layer: it found both loading screens to the frame (5.0 to 9.0 and 15.0 to 18.5 seconds), put the stats on both, left the gameplay around them untouched, and kept the clip's length. It took 91 seconds for 20 seconds of footage there, with x264. Not yet run on real footage.
 
 ### `skate-short/menu_cut.py`: cut the menus out of a clip
 
@@ -190,16 +203,36 @@ Cuts every menu and inventory screen out of a clip and writes the result beside 
 
 - **Cut:** every stretch where both outer 240-pixel strips stay black (brightest pixel 12 or under, read at 344x144) and the frame isn't a loading screen: the hub, inventory and backpack, map, journal, skills and perks, crafting, cyberware, breach protocol and the pause menu. Stretches under 0.4 seconds are flickers, not menus; a tenth of a second goes either side of each cut.
 - **Kept:** loading screens (mean brightness under 3, counter and all; the skills and game over screens are dark too, at 8 to 15, so ffmpeg's `blackdetect` won't separate them), and every game over: FLATLINED is looked for four times a second, and its whole stretch is kept, with the loading screen after it, until gameplay comes back. That also keeps a loading screen carrying the opening's stats overlay, which isn't black.
-- **Run the opening template first:** the overlay is cut from the menus this removes.
+- **Its place in the pipeline:** after the opening template has accepted the clip and populated its loading screens, and after your own trim; the transitions come after it. The overlay is cut from the menus this removes, so the opening template always runs first.
+- **Populated loading screens:** one that follows a game over is kept with it. One that doesn't is kept as long as its stats light the outer strips (V's preview starts 50 pixels from the left edge and the inventory column reaches 3347), but that hasn't been checked on real footage. Look at `cuts.jpg`: if a loading screen with stats is marked CUT, run it again with `--keep FROM-TO` around it. `--keep` protects any stretch.
 
 ```
 python tools/skate-short/menu_cut.py "D:\Recordings\takedown.mp4" --check-only
 python tools/skate-short/menu_cut.py "D:\Recordings\takedown.mp4"
 ```
 
-`--check-only` writes the folder `<clip> menu cut` (`report.txt`, `cuts.csv`, and `cuts.jpg` with a still of each cut and each kept game over) and stops. The render joins the remaining pieces with ffmpeg's concat filter, in HEVC on an NVIDIA card (`hevc_nvenc`, else x264), keeping full-range color, with the sound re-encoded to AAC.
+`--check-only` writes the folder `<clip> menu cut` (`report.txt`, `cuts.csv`, and `cuts.jpg` with a still of each cut and each kept game over) and stops. The render joins the remaining pieces with ffmpeg's concat filter, in HEVC on an NVIDIA card (`hevc_nvenc`, tried on a few frames first, since ffmpeg lists it with no card too; else x264), keeping full-range color, with the sound re-encoded to AAC.
 
 **Tested** on November 21, 2026 on `545R-Takedown-000` (with its opening overlay): it cut the 5 minutes 34 seconds of menus (8:57.8 to 14:32.1) and kept the game over and loading screen, taking the clip from 14:53 to 9:19 (written 9:19.08 against 9:19.06 expected; sound and picture within 43 milliseconds). Reading took 2 minutes and the render 3.
+
+### `skate-short/vhs_transitions.py`: VHS glitches on the cuts you pick
+
+The last step of the pipeline (decided November 21, 2026). It puts the treatment's VHS glitch on each cut you designate: the colors split, tape static washes over the picture, and a bright tracking line rolls down the frame, from 0.12 seconds before the cut to 0.18 after (`--before`, `--after`). The sound isn't touched. The result is written beside the clip as `<clip> transitions.mp4`, with a CSV of where each transition went; the clip itself is never changed.
+
+Pick the cuts any of three ways, and mix them:
+
+- **`--at TIME`:** a time in the clip, as seconds, MM:SS or HH:MM:SS. Repeat it.
+- **`--markers FILE.edl`:** markers you put on the cuts in DaVinci Resolve, exported with Timelines > Export > Timeline Markers to EDL, from a timeline holding the clip from its start. `--timeline-start` if the timeline doesn't start at 01:00:00:00.
+- **`--cut N`:** a cut the menu cut made, by its number in that cut's report (`<clip> menu cut/report.json`, found beside the clip). Repeat it, or give a list: `--cut 2,5,7`. A menu cut at the very start or end has no join, and is skipped with a note.
+
+Two picks closer together than the glitch is long are merged. `--check-only` lists where the transitions go and stops.
+
+```
+python tools/skate-short/vhs_transitions.py "D:\Recordings\takedown no menus.mp4" --cut 2,3 --at 4:12 --check-only
+python tools/skate-short/vhs_transitions.py "D:\Recordings\takedown no menus.mp4" --cut 2,3 --at 4:12 --markers trims.edl
+```
+
+**Tested** on a made-up 12-second clip in a Linux container: menu cuts, a time and a Resolve marker all landed where expected, the glitch showed on each cut and nowhere else, and the length and sound were unchanged. Not yet run on real footage, or on a marker file exported from Resolve itself.
 
 ### `skate-short/blind_test.py`: does the pattern pick what you would?
 

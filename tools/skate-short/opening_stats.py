@@ -21,9 +21,13 @@ the report: the hub screen, its affinity card and LEVEL UP badge, where in
 the clip the game over falls, a short turn, and a pop-up over the inventory.
 
 Rejected: writes the report and a contact sheet of what it found, and exits
-with status 2. Accepted: also writes the overlay layer, a preview of the
-opening, a layer for DaVinci Resolve (lay it over the clip at the loading
-screen with Composite Mode set to Lighten), a still and a layout guide.
+with status 2. Nothing else is made, and the later steps don't run on it.
+Accepted: populates every loading screen in the clip (decided November 21,
+2026). It writes a full copy of the clip, "<clip> with stats.mp4" beside it,
+with V's stats on the black of every loading screen, the same layout on each;
+a sheet with a still from each loading screen; and a layout guide. The clip
+itself is never changed. After this come the user's own trim, then the menu
+cut (menu_cut.py), then the transitions (vhs_transitions.py).
 
 Everything the template is lives in one file, cyberpunk2077-opening-template.json:
 the key elements, the layout, the parts of the game's UI the key frames are
@@ -330,6 +334,34 @@ def opening_at(src, kf, duration, m, b0):
     return {"game_over": [min(flat), last], "loading": [onset, end]}
 
 
+def find_loadings(src, kf, duration, min_len):
+    """Every black loading screen in the clip, game over or not: [(onset, end)],
+    exact to the frame. Keyframes find the black stretches; a frame-by-frame read
+    finds where each starts and ends."""
+    times = [k[0] for k in kf]
+    found = []
+    for b0, _b1 in runs([k[1] < BLACK for k in kf], times, 3.5):
+        if found and b0 <= found[-1][1]:
+            continue                      # more of a loading screen already found
+        prev_lit = max([k[0] for k in kf if k[0] < b0 and k[1] >= BLACK], default=max(0.0, b0 - 4))
+        onset = None
+        for t, f in scan(src, prev_lit, b0 - prev_lit + 0.2, None, 430, 180):
+            if f.mean() < BLACK:
+                onset = t if onset is None else onset
+            else:
+                onset = None
+        if onset is None:
+            continue
+        after = [k for k in kf if k[0] > onset]
+        end_kf = next((k[0] for k in after if k[1] >= LIT), duration)
+        prev = max([k[0] for k in after if k[0] < end_kf and k[1] < BLACK], default=onset)
+        end = next((t for t, f in scan(src, prev, end_kf - prev + 0.2, None, 430, 180)
+                    if f.mean() >= LIT), end_kf)
+        if end - onset >= min_len:
+            found.append((onset, end))
+    return found
+
+
 def scan_menus(src, kf, m, fps=4):
     """Classify every frame of the menu stretches (black bars down both sides)."""
     times = [k[0] for k in kf]
@@ -573,55 +605,100 @@ def build_layer(skills, inv, stats, hub, out_dir, font_path):
 
 # ---------------------------------------------------------------- rendering
 
-def render(src, info, out_dir, window, vspan, stem):
-    onset, w_end = window
-    pre = max(0.0, onset - 3)
-    total = window[1] + 4 - pre
-    w0, w1 = onset - pre, w_end - pre
-    length = w1 - w0
-    vdur = vspan["end"] - vspan["start"]
+def v_timing(length, vdur):
+    """How V's turn fills a window: (speed factor, seconds of last frame held)."""
     if vdur >= length:
-        k, hold, vlen = 1.0, 0.0, length
-    else:
-        k = min(length / vdur, V_STRETCH_MAX)
-        hold, vlen = max(0.0, length - vdur * k), vdur
+        return 1.0, 0.0
+    k = min(length / vdur, V_STRETCH_MAX)
+    return k, max(0.0, length - vdur * k)
+
+
+_ENCODER = None
+
+
+def encoder():
+    """HEVC on an NVIDIA card where there is one; else x264. ffmpeg lists hevc_nvenc
+    whether or not there's a card to run it, so it's tried on a few frames first."""
+    global _ENCODER
+    if _ENCODER is None:
+        p = subprocess.run(["ffmpeg", "-v", "error", "-nostdin", "-f", "lavfi", "-i", "color=s=256x256:d=0.2",
+                            "-c:v", "hevc_nvenc", "-f", "null", "-"], capture_output=True)
+        _ENCODER = p.returncode == 0
+    if _ENCODER:
+        return ["-c:v", "hevc_nvenc", "-preset", "p5", "-tune", "hq", "-rc", "vbr", "-cq", "19", "-b:v", "0",
+                "-maxrate", "60M", "-bufsize", "120M", "-tag:v", "hvc1"], True
+    return ["-c:v", "libx264", "-preset", "medium", "-crf", "16"], False
+
+
+def render_full(src, info, out_video, windows, vspan, layer_png):
+    """A full copy of the clip with the stats laid over every loading screen in
+    windows [(start, end)]: the static layer and V's turn, faded in and out, blended
+    with Lighten so the black drops out and the counter shows through."""
+    vdur = vspan["end"] - vspan["start"]
+    longest = max(b - a for a, b in windows)
+    vlen = min(vdur, longest)
     vx, vy = V_POS
     cw, ch = V_CROP[2] - V_CROP[0], V_CROP[3] - V_CROP[1]
     bl = T["layout"]["v"]["black_level"]
     fin, fout = T["layout"]["fade_in"], T["layout"]["fade_out"]
-    vchain = (f"[1:v]crop={cw}:{ch}:{V_CROP[0]}:{V_CROP[1]},format=gbrp,"
-              f"colorlevels=rimin={bl}:gimin={bl}:bimin={bl},"
-              f"setpts=(PTS-STARTPTS)*{k:.5f}+{w0:.3f}/TB")
-    if hold > 0.01:
-        vchain += f",tpad=stop_mode=clone:stop_duration={hold:.3f}"
-    pix = ["-pix_fmt", "yuvj420p", "-color_range", "pc"] if info["full_range"] else ["-pix_fmt", "yuv420p"]
-    tags = ["-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709"]
-    fc = ";".join([
+    n = len(windows)
+    parts = [
         "[0:v]fps=60,format=gbrp[base]",
-        vchain + "[v]",
-        "[2:v]format=gbrp[st]",
-        f"[st][v]overlay={vx}:{vy}:eof_action=pass:format=gbrp,fade=t=in:st={w0:.3f}:d={fin},"
-        f"fade=t=out:st={w1 - fout:.3f}:d={fout},split[L1][L2]",
-        "[base][L1]blend=all_mode=lighten,format=" + ("yuvj420p" if info["full_range"] else "yuv420p") + "[out]",
-        f"[L2]trim=start={w0:.3f}:end={w1:.3f},setpts=PTS-STARTPTS,format=yuv422p10le[layer]",
-    ])
-    tag = lambda t: hms(t).replace(":", "-")
-    preview = out_dir / f"preview {tag(pre)} to {tag(pre + total)}.mp4"
-    layer = out_dir / f"layer for {tag(onset)} to {tag(w_end)} (Lighten).mov"
-    cmd = ["ffmpeg", "-v", "error", "-nostdin", "-y",
-           "-ss", f"{pre:.3f}", "-t", f"{total:.3f}", "-i", src,
-           "-ss", f"{vspan['start']:.3f}", "-t", f"{vlen:.3f}", "-i", src,
-           "-loop", "1", "-framerate", "60", "-t", f"{total:.3f}", "-i", str(out_dir / "layer_static.png"),
-           "-filter_complex", fc,
-           "-map", "[out]"] + (["-map", "0:a", "-c:a", "aac", "-b:a", "192k"] if info["audio"] else []) + \
-          ["-c:v", "libx264", "-crf", "16", "-preset", "medium"] + pix + tags + [str(preview),
-           "-map", "[layer]", "-c:v", "prores_ks", "-profile:v", "3"] + tags + [str(layer)]
-    run(cmd)
-    still = out_dir / f"still at {tag(onset + length / 2)}.png"
-    run(["ffmpeg", "-v", "error", "-nostdin", "-y", "-ss", f"{w0 + length / 2:.3f}", "-i", str(preview),
-         "-frames:v", "1", str(still)])
-    return {"preview": preview.name, "layer": layer.name, "still": still.name,
-            "v_speed": round(1 / k, 3), "v_hold": round(hold, 2)}
+        f"[1:v]crop={cw}:{ch}:{V_CROP[0]}:{V_CROP[1]},format=gbrp,"
+        f"colorlevels=rimin={bl}:gimin={bl}:bimin={bl},split={n}" + "".join(f"[v{i}]" for i in range(n)),
+        f"[2:v]format=gbrp,split={n}" + "".join(f"[s{i}]" for i in range(n)),
+        f"color=c=black:s={FW}x{FH}:r=60:d={info['duration'] + 1:.3f},format=gbrp[c0]",
+    ]
+    timing = []
+    for i, (a, b) in enumerate(windows):
+        length = b - a
+        k, hold = v_timing(length, min(vdur, length))
+        timing.append((round(1 / k, 3), round(hold, 2)))
+        vchain = f"[v{i}]trim=duration={min(vdur, length):.3f},setpts=(PTS-STARTPTS)*{k:.5f}"
+        if hold > 0.01:
+            vchain += f",tpad=stop_mode=clone:stop_duration={hold:.3f}"
+        parts.append(vchain + f"[vv{i}]")
+        parts.append(f"[s{i}]trim=duration={length:.3f},setpts=PTS-STARTPTS[ss{i}]")
+        parts.append(f"[ss{i}][vv{i}]overlay={vx}:{vy}:eof_action=pass:format=gbrp,"
+                     f"fade=t=in:st=0:d={fin},fade=t=out:st={max(0.0, length - fout):.3f}:d={fout},"
+                     f"setpts=PTS+{a:.3f}/TB[l{i}]")
+        parts.append(f"[c{i}][l{i}]overlay=0:0:eof_action=pass:enable='between(t,{a:.3f},{b:.3f})'[c{i + 1}]")
+    on = "+".join(f"between(t,{a:.3f},{b:.3f})" for a, b in windows)
+    full = info["full_range"]
+    enc, nvenc = encoder()
+    out_fmt = "yuv420p" if nvenc or not full else "yuvj420p"
+    parts.append(f"[base][c{n}]blend=all_mode=lighten:shortest=1:enable='{on}',format={out_fmt}[out]")
+    rng = ["-color_range", "pc"] if full else []
+    tags = ["-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709"]
+    cmd = (["ffmpeg", "-v", "error", "-stats", "-nostdin", "-y", "-i", src,
+            "-ss", f"{vspan['start']:.3f}", "-t", f"{vlen:.3f}", "-i", src,
+            "-loop", "1", "-framerate", "60", "-i", str(layer_png),
+            "-filter_complex", ";".join(parts), "-map", "[out]"] +
+           (["-map", "0:a?", "-c:a", "copy"] if info["audio"] else []) +
+           enc + rng + tags + ["-movflags", "+faststart", str(out_video)])
+    p = subprocess.run(cmd, stderr=subprocess.PIPE, text=True, errors="replace")
+    if p.returncode:
+        die("the render failed:\n" + "\n".join(p.stderr.splitlines()[-10:]))
+    return timing
+
+
+def window_sheet(video, windows, out, font_path):
+    """A still from the middle of each populated loading screen, from the new copy."""
+    tiles = []
+    try:
+        fnt = ImageFont.truetype(font_path, 22)
+    except OSError:
+        fnt = ImageFont.load_default()
+    for i, (a, b) in enumerate(windows, 1):
+        im = Image.fromarray(grab(str(video), (a + b) / 2)).resize((860, 360), Image.LANCZOS)
+        d = ImageDraw.Draw(im)
+        d.rectangle([0, 328, 860, 360], fill=(0, 0, 0))
+        d.text((8, 332), f"loading screen {i}: {hms(a)} to {hms(b)}", fill=(255, 210, 0), font=fnt)
+        tiles.append(im)
+    sheet = Image.new("RGB", (860 * 2, 360 * ((len(tiles) + 1) // 2)), "black")
+    for i, im in enumerate(tiles):
+        sheet.paste(im, ((i % 2) * 860, (i // 2) * 360))
+    sheet.save(out, quality=88)
 
 
 def contact(src, found, out_dir, font_path):
@@ -660,8 +737,11 @@ def main():
                     help="a game over starting later than this many seconds into the clip is noted in the "
                          "report; it doesn't block (default: the template's, 60)")
     ap.add_argument("--length", type=float,
-                    help="seconds of loading screen the stats cover, from when it turns black, never past its "
-                         "end (default: the template's, 8.98, as in the approved edit)")
+                    help="seconds of each loading screen the stats cover, from when it turns black, never past "
+                         "its end (default: the template's, 8.98, as in the approved edit)")
+    ap.add_argument("--min-loading", type=float, default=1.5,
+                    help="shortest loading screen to populate, in seconds (default 1.5); shorter ones are listed")
+    ap.add_argument("--video-out", help="the populated copy (default: '<clip> with stats.mp4' beside the clip)")
     ap.add_argument("--check-only", action="store_true", help="find the key frames and report; render nothing")
     args = ap.parse_args()
     need("ffmpeg"), need("ffprobe")
@@ -792,10 +872,18 @@ def main():
     if report["missing"] or args.check_only:
         return finish(report, out_dir, None, src, font_path)
 
-    onset, end = opening["loading"]
-    window = (onset, min(end, onset + args.length))
-    if end < onset + args.length:
-        report["warnings"].append(f"the loading screen ends at {hms(end)}, before {args.length:g} s were up")
+    print("finding every loading screen...")
+    loadings = find_loadings(src, kf, info["duration"], 0.3)
+    if not any(a <= opening["loading"][0] + 0.2 and b >= opening["loading"][0] for a, b in loadings):
+        loadings.append(tuple(opening["loading"]))
+        loadings.sort()
+    windows, short = [], []
+    for a, b in loadings:
+        (windows if b - a >= args.min_loading else short).append((a, min(b, a + args.length)))
+    report["loading_screens"] = [[round(a, 2), round(b, 2)] for a, b in loadings]
+    if short:
+        report["warnings"].append("loading screens shorter than " f"{args.min_loading:g} s, left as they are: "
+                                  + ", ".join(f"{hms(a)} to {hms(b)}" for a, b in short))
     hub = grab(src, chosen["hub"]) if "hub" in chosen else None
     placed, absent, rows = build_layer(grab(src, chosen["skills"]), grab(src, chosen["inventory"]),
                                        grab(src, stats_t), hub, out_dir, font_path)
@@ -803,15 +891,24 @@ def main():
         report["warnings"].append("no LEVEL UP badge on the hub (it only shows while points are unspent); "
                                   "its slot stays empty")
     report["inventory_rows"] = rows
-    report["window"] = [round(window[0], 2), round(window[1], 2)]
+    report["windows"] = [[round(a, 2), round(b, 2)] for a, b in windows]
     report["layout"] = placed
-    print("rendering...")
-    report["files"] = render(src, info, out_dir, window, vspan, stem)
-    if report["files"]["v_hold"]:
-        report["warnings"].append(f"V's turn is {vspan['end'] - vspan['start']:.1f} s; it's slowed to "
-                                  f"{report['files']['v_speed']:.0%} and its last frame held "
-                                  f"{report['files']['v_hold']:.1f} s")
-    return finish(report, out_dir, window, src, font_path)
+    if os.path.isdir(args.video) and not args.video_out:
+        video_out = out_dir / f"{stem} with stats.mp4"
+    else:
+        video_out = Path(args.video_out) if args.video_out else Path(args.video).parent / f"{stem} with stats.mp4"
+    print(f"rendering the full copy, stats on {len(windows)} loading screen(s)...")
+    timing = render_full(src, info, video_out, windows, vspan, out_dir / "layer_static.png")
+    slow = [(w, s, h) for w, (s, h) in zip(windows, timing) if h]
+    if slow:
+        report["warnings"].append(f"V's turn is {vspan['end'] - vspan['start']:.1f} s, so on the longer loading "
+                                  "screens it's slowed and its last frame held: " + "; ".join(
+                                      f"{hms(w[0])} at {s:.0%}, held {h:.1f} s" for w, s, h in slow))
+    window_sheet(video_out, windows, out_dir / "loading screens.jpg", font_path)
+    got = probe(str(video_out))["duration"]
+    report["files"] = {"video": str(video_out), "sheet": "loading screens.jpg", "guide": "layout guide.png",
+                       "length": round(got, 2)}
+    return finish(report, out_dir, windows, src, font_path)
 
 
 def finish(report, out_dir, window, src, font_path):
@@ -828,13 +925,15 @@ def finish(report, out_dir, window, src, font_path):
     if occ:
         lines.append(f"Game over into a loading blank, {len(occ)} in all: " + "; ".join(
             f"{hms(o['game_over'][0])} (blank {hms(o['loading'][0])} to {hms(o['loading'][1])})" for o in occ))
-    if "window" in report:
-        lines.append(f"Stats on screen: {hms(report['window'][0])} to {hms(report['window'][1])}")
+    if "windows" in report:
+        lines.append(f"Stats on {len(report['windows'])} loading screen(s): " + "; ".join(
+            f"{hms(a)} to {hms(b)}" for a, b in report["windows"]))
     lines += [f"Note (doesn't block): {w}" for w in report["warnings"]]
     if "files" in report:
-        lines.append("Files: " + ", ".join(report["files"][k] for k in ("preview", "layer", "still")))
-        lines.append("In Resolve: put the layer on the track above the clip at the time it's named for, "
-                     "and set Inspector > Composite Mode to Lighten.")
+        f = report["files"]
+        lines.append(f"Populated copy: {f['video']} ({hms(f['length'])}); the clip itself is unchanged.")
+        lines.append(f"Check: {f['sheet']} (a still from each loading screen) and {f['guide']}.")
+        lines.append("Next: trim the copy for content, then run the menu cut on your trimmed version.")
     text = "\n".join(lines)
     (out_dir / "report.txt").write_text(text + "\n", encoding="utf-8")
     (out_dir / "report.json").write_text(json.dumps(report, indent=1, default=str), encoding="utf-8")

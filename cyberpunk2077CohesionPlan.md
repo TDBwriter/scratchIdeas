@@ -243,7 +243,7 @@ Crew-Dialogue/               our storyline, compatible with the game
   Crew-Dialogue-REGINA.md  -SUPPORTING.md
   Crew-Dialogue-GAPS.md
 tools/                       planning-log, issue-checker, mastheads, cheap-truth-original, skate-short
-.claude/skills/skate-short/  how Claude Code makes a Short from a video's location
+.claude/skills/                opening-stats (the gate, first), menu-cut, vhs-transitions, skate-short
 (repo root)                  the playthrough: the playthrough entry, perks, the retired Jackie build, the recording pipeline, the Shorts treatment, planning log, this plan, the reference
 ```
 

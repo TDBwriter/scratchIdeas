@@ -18,8 +18,11 @@ What stays:
 The clip itself is never changed. The cut version is written beside it as
 "<clip> no menus.mp4", with a folder "<clip> menu cut" holding the report, the
 cut list and a contact sheet of every cut. --check-only stops before the
-render. Run the opening template (opening_stats.py) first: the stats overlay
-is cut from the menus this removes.
+render. It comes after the opening template (opening_stats.py), which gates
+the clip and populates its loading screens, and after your own trim for
+content; the transitions (vhs_transitions.py) come after it. A populated
+loading screen that doesn't follow a game over is kept as long as its stats
+reach the outer strips; --keep FROM-TO protects any stretch by hand.
 
 Needs ffmpeg and ffprobe on the PATH (an NVIDIA card's hevc_nvenc encoder,
 else libx264), and Python 3 with numpy, scipy and Pillow.
@@ -106,11 +109,21 @@ def spans(times, gap):
     return out
 
 
-def plan_cuts(frames, flats, duration):
+def parse_time(text):
+    parts = text.strip().split(":")
+    if not 1 <= len(parts) <= 3 or not all(re.fullmatch(r"\d+(\.\d+)?", p) for p in parts):
+        o.die(f"can't read the time '{text}'. Use seconds, MM:SS or HH:MM:SS.")
+    secs = 0.0
+    for p in parts:
+        secs = secs * 60 + float(p)
+    return secs
+
+
+def plan_cuts(frames, flats, duration, keep=()):
     menu_t = [t for t, ymax, avg in frames if ymax <= BARS and avg >= LOADING]
     menus = [s for s in spans(menu_t, BRIDGE) if s[1] - s[0] >= MIN_MENU]
     game_t = [t for t, ymax, _avg in frames if ymax > BARS]
-    kept, cuts = [], []
+    kept, cuts = list(keep), []
     for a, b in menus:
         over = [t for t in flats if a - 0.5 <= t <= b + 0.5]
         if over:
@@ -127,7 +140,7 @@ def plan_cuts(frames, flats, duration):
             if c0 < k1 and c1 > k0:
                 c1 = min(c1, k0) if c0 < k0 else c1
                 c0 = max(c0, k1) if c1 > k1 else c0
-        if c1 - c0 > 0.05:
+        if c1 - c0 > PAD + 0.05:                          # what's left of a pad alone isn't a menu
             trimmed.append((c0, c1))
     merged = []
     for c in sorted(trimmed):
@@ -174,8 +187,7 @@ def contact(src, cuts, kept, out, font_path):
 
 
 def render(src, info, segs, out):
-    enc = NVENC if "hevc_nvenc" in subprocess.run(["ffmpeg", "-hide_banner", "-encoders"], capture_output=True,
-                                                     text=True).stdout else X264
+    enc = NVENC if o.encoder()[1] else X264     # tried on a few frames: ffmpeg lists hevc_nvenc with no card too
     inputs, parts = [], []
     for i, (a, b) in enumerate(segs):
         inputs += ["-ss", f"{a:.3f}", "-t", f"{b - a:.3f}", "-i", src]
@@ -199,7 +211,15 @@ def main():
     ap.add_argument("--template", help="the opening template, for the FLATLINED reference (default: beside "
                                        "the video, else beside this script)")
     ap.add_argument("--check-only", action="store_true", help="find the menus and report; render nothing")
+    ap.add_argument("--keep", action="append", default=[], metavar="FROM-TO",
+                    help="a stretch never to cut, such as a loading screen with stats read as a menu (repeat it)")
     args = ap.parse_args()
+    keep = []
+    for item in args.keep:
+        a, sep, b = item.partition("-")
+        if not sep:
+            o.die(f"--keep needs FROM-TO, got '{item}'")
+        keep.append((parse_time(a), parse_time(b)))
     o.need("ffmpeg"), o.need("ffprobe")
     o.load_template(o.find_template(args.video, args.template))
     src = o.resolve_input(args.video)
@@ -217,7 +237,7 @@ def main():
         o.die("this isn't ultrawide footage, so menus have no black bars to find them by")
     print("reading every frame's edges, and looking for game overs...")
     frames, flats = frames_info(src, work, o.Matcher())
-    cuts, kept = plan_cuts(frames, flats, info["duration"])
+    cuts, kept = plan_cuts(frames, flats, info["duration"], keep)
     segs = keep_segments(cuts, info["duration"])
     cut_total = sum(b - a for a, b in cuts)
     with open(work / "cuts.csv", "w", newline="", encoding="utf-8") as fh:
@@ -226,14 +246,16 @@ def main():
         for a, b in cuts:
             w.writerow(["cut: menu", o.hms(a), o.hms(b), f"{b - a:.2f}"])
         for a, b in kept:
-            w.writerow(["kept: game over and loading screen", o.hms(a), o.hms(b), f"{b - a:.2f}"])
+            why = "kept: by --keep" if (a, b) in keep else "kept: game over and loading screen"
+            w.writerow([why, o.hms(a), o.hms(b), f"{b - a:.2f}"])
         for a, b in segs:
             w.writerow(["kept: piece of the cut version", o.hms(a), o.hms(b), f"{b - a:.2f}"])
     contact(src, cuts, kept, work / "cuts.jpg", font_path)
     lines = [f"{clip.name}: {len(cuts)} menus cut, {o.hms(cut_total)} in all; "
              f"{o.hms(info['duration'])} -> {o.hms(info['duration'] - cut_total)}"]
     lines += [f"  cut  {o.hms(a)} to {o.hms(b)} ({b - a:.1f} s)" for a, b in cuts]
-    lines += [f"  kept {o.hms(a)} to {o.hms(b)}: game over and loading screen" for a, b in kept]
+    lines += [f"  kept {o.hms(a)} to {o.hms(b)}: " + ("by --keep" if (a, b) in keep else "game over and loading screen")
+              for a, b in kept]
     if not args.check_only and cuts:
         print(f"rendering {len(segs)} pieces...")
         render(src, info, segs, out)
