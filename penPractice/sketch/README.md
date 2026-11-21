@@ -2,10 +2,11 @@
 
 Builds the complete **Sketch What You See** workbook (release R2) from:
 
-- `lessons.mjs`: the content, plus the extras for each sheet (repeat tips, from-life approach, guide-line notes)
+- `theory.mjs`: the theory side of every sheet, and each lesson's practice prompt
+- `lessons.mjs`: lesson structure (part, title, diagram, practice type, reference sketches) and the guide-line notes
 - the pencil-sketch generator (`../../sketchArt/sketch.mjs`): the reference pictures
 
-**Status: e-ink edition built as front/back sheets, waiting for approval.** After approval, the same builder produces the Letter and A4 loose-leaf print editions (`--page letter` / `--page a4`). Those need a review pass.
+**Status: e-ink edition rebuilt as one theory/practice sheet per lesson, waiting for approval.** After approval, the same builder produces the Letter and A4 loose-leaf print editions (`--page letter` / `--page a4`). Those need a review pass.
 
 ```sh
 cd penPractice/sketch
@@ -16,35 +17,32 @@ node build.mjs --refs          # regenerate the reference sketches
 
 Requires Playwright (Chromium) and ImageMagick.
 
-## Layout: every lesson unit is one sheet, front and back
+## Layout: one sheet per lesson — theory on the front, practice on the back
 
-- **Front** (odd page): the instructions and details. **Back** (even page): the prompt and the practice space.
-- **Loose-leaf print, double-sided** (flip on the long edge): every sheet stands on its own. You can pull it out, take it along, or reprint it for more practice.
-- **E-reader**: the practice is the next page, and the instructions are one swipe back.
-- **No navigation depends on tapping links.**
-  - Each lesson's "why" sits on its own front.
-  - Footers say "practice overleaf ▸" and "◂ instructions overleaf".
-  - Page numbers sit on the outer edge: right on fronts, left on backs.
-  - The contents, part openers and progress tracker list page numbers.
-- **The builder refuses to build if a sheet would start on an even page.**
+- **Front: theory.** The idea behind the skill, as a short deep dive:
+  - how seeing works (the constancies, symbol-drawing)
+  - why the technique works (the pivots of the arm, motor rehearsal, the cues the eye reads as depth)
+  - how artists have solved the problem (Alberti, Brunelleschi, Leonardo, Ruskin, Nicolaides, Dow…)
 
-## Sheets per lesson
+  One key sentence, three or four short sections, one figure. The theory pages don't repeat the practice instructions (`theory.mjs`).
+- **Back: practice.** A one- or two-sentence prompt, one or two examples, then room to draw.
+  - Drill lessons show the technique diagram as a worked example, then a large open frame.
+  - Lessons built on a reference sketch (grid copy, three values, four passes, envelope, measuring, alignments, field page, capstone) show the sketch or a guided strip, then room.
+- **No repeat pages.** On a tablet you erase and practise again; on paper you print the sheet again. The progress tracker counts sessions.
+- **Where the sketches go:**
+  - Where a drill lesson has a reference sketch, it sits beside the theory text with its guide lines explained.
+  - Otherwise the theory page has its own small figure, or the technique diagram.
+- **Loose-leaf print, double-sided**, flipped on the long edge. Every sheet stands on its own.
+- **No navigation depends on tapping links.** Footers say "practice overleaf ▸" / "◂ instructions overleaf", and page numbers sit on the outer edge.
 
-| Sheet | Front (instructions) | Back (practice) |
-|---|---|---|
-| **How to / Practice** | The idea, diagram, steps, check yourself, common slip, why it works | The task line, then the drill with help that fades (trace → dots → free) |
-| **Step 2** (S3.4 only) | What changes with half the grid, steps, check | The half-grid transfer |
-| **Again / Repeat** (13 drill lessons) | "This time…" tip, the diagram, the steps again, check, slip | The same drill with fresh targets |
-| **From life** (24 lessons) | The subject, the Look/Measure/Mark/Check row, how to approach it, the skill step by step, real-things-first, what the guide lines on the sketch show, check, slip | The prompt, the reference sketch with guide lines, the drawing frame |
-
-## The whole e-ink edition (150 pages = 75 sheets)
+## The whole e-ink edition (74 pages = 37 sheets)
 
 | Sheet | Front | Back |
 |---|---|---|
 | 1 | Cover | How this book works |
 | 2 | Contents | Progress tracker |
 | 7 part dividers | Part intro and lesson list | Sketchbook illustration |
-| 65 lesson sheets | Instructions | Practice |
+| 27 lesson sheets | Theory | Practice |
 | Last | About this book | Back cover |
 
 Page size: 157.5 × 210 mm, true size on Kindle Scribe 2022/2024 and reMarkable 2.

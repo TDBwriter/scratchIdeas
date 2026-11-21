@@ -100,11 +100,12 @@ Titles are working names. Plus **R0: the free sampler** (already built), used fo
 
 **Promise:** learn to draw what's in front of you, not what you think it looks like.
 
-**Status:** the e-ink edition is built as **front/back sheets** (150 pages = 75 sheets, `penPractice/out/sketch/sketch-what-you-see-eink.pdf`, builder in `penPractice/sketch/`) and is waiting for final approval. Print editions come next.
+**Status:** the e-ink edition is rebuilt as **one sheet per lesson — theory on the front, practice on the back** (74 pages = 37 sheets, `penPractice/out/sketch/sketch-what-you-see-eink.pdf`, builder in `penPractice/sketch/`) and is waiting for final approval. The handwriting books follow once it is approved. Print editions come next.
 
 **Format rule for every edition:**
 - Print is **loose leaf, double-sided**, not bound.
-- Every lesson unit is one sheet: instructions on the front, prompt and practice space on the back. Each sheet stands on its own and can be reprinted for more practice. On an e-reader, front and back are one swipe apart.
+- Every lesson is **one sheet**: **theory** on the front (a real explanation of the idea, not a repeat of the steps), and on the back a one-line **prompt, one or two examples and room to practise**.
+- **No repeat pages**: on a tablet you erase and practise again; on paper you reprint the sheet. Each sheet stands on its own. On an e-reader, front and back are one swipe apart.
 - No navigation that depends on tapping links.
 - Page numbers sit on the outer edge.
 

@@ -4,7 +4,8 @@
 //
 // --page eink (default): 157.5 × 210 mm, true size on Kindle Scribe 2022/2024 and reMarkable 2.
 // Reference sketches come from ../../sketchArt/sketch.mjs (generated once into DIR/refs; --refs regenerates).
-// Each lesson: Learn page → Practice page (+ a repeat page with fresh targets) → From-life page.
+// Each lesson is one sheet: theory on the front (the idea behind the skill), practice on the back
+// (a one-line prompt, one or two examples, room to draw). Practise as often as you like — no repeat pages.
 // Writes DIR/sketch-what-you-see-<page>.pdf, a contact sheet of every page, and full-size previews of a few.
 // Requires: playwright (Chromium), ImageMagick (convert, montage).
 
@@ -14,6 +15,7 @@ import { execFileSync } from 'node:child_process';
 import { resolve, join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { book, parts, lessons, extras, overlayNotes } from './lessons.mjs';
+import { theory } from './theory.mjs';
 
 const { chromium } = createRequire(import.meta.url)('playwright');
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -565,12 +567,12 @@ const D = {
     return s;
   },
   measure(w, h) {
-    const base = h * 0.92, unit = h * 0.2, x = w * 0.18;
+    const base = h * 0.84, unit = h * 0.18, x = w * 0.18;
     let s = poly([[x, base - unit * 1.9], [x + w * 0.1, base - unit * 1.9], [x + w * 0.1, base - unit * 2.9], [x, base - unit * 2.9]], { w: 0.6 }) + txt(x + w * 0.11, base - unit * 2.4, '1 unit', { size: 2.4, c: INK });
     s += poly([[w * 0.42, base], [w * 0.55, base], [w * 0.55, base - unit * 2], [w * 0.42, base - unit * 2]], { w: 0.6 }) + txt(w * 0.485, base + 4, 'door = 2 units', { size: 2.4, anchor: 'middle', c: INK });
     for (let k = 0; k <= 4; k++) s += ln(w * 0.66, base - unit * k, w * 0.69, base - unit * k, { w: 0.5 });
     s += ln(w * 0.675, base, w * 0.675, base - unit * 4, { w: 0.5 }) + txt(w * 0.71, base - unit * 2, 'ticks first,', { size: 2.4 }) + txt(w * 0.71, base - unit * 2 + 3.6, 'then draw', { size: 2.4 });
-    s += ln(w * 0.03, base - unit * 2.9, w * 0.03, base - unit * 1.9, { w: 1.2 }) + ln(w * 0.015, base - unit * 1.9, w * 0.045, base - unit * 1.9, { w: 0.8 }) + txt(w * 0.03, base - unit * 3.1, 'pen + thumb', { size: 2.2, anchor: 'middle' });
+    s += ln(w * 0.03, base - unit * 2.9, w * 0.03, base - unit * 1.9, { w: 1.2 }) + ln(w * 0.015, base - unit * 1.9, w * 0.045, base - unit * 1.9, { w: 0.8 }) + txt(w * 0.012, base - unit * 3.25, 'pen + thumb', { size: 2.2 });
     return s;
   },
   plumb(w, h) {
@@ -700,6 +702,35 @@ const D = {
   },
 };
 
+// ---------- small theory figures (w × h mm) for lessons whose technique diagram is on the practice side
+const TF = {
+  'S1.1'(w, h) {                                          // pivots make arcs
+    const arc = (cx, cy, r, x0, x1) => pline(Array.from({ length: 41 }, (_, i) => { const x = lerp(x0, x1, i / 40); return [x, cy - Math.sqrt(Math.max(0, r * r - (x - cx) ** 2))]; }), { w: 0.6 });
+    const cx = w / 2 - 6;
+    return arc(cx, 9 + 260, 260, 4, w - 18) + txt(w - 2, 10.5, 'shoulder', { anchor: 'end', size: 2.3, c: INK, weight: 700 })
+      + arc(cx, 21 + 46, 46, 6, w - 20) + txt(w - 2, 23, 'elbow', { anchor: 'end', size: 2.3, c: INK, weight: 700 })
+      + arc(cx, 31 + 12, 12, cx - 11.5, cx + 11.5) + txt(w - 2, 34, 'wrist', { anchor: 'end', size: 2.3, c: INK, weight: 700 })
+      + txt(2, h - 2, 'the same stroke from each joint', { size: 2.1 });
+  },
+  'S1.2'(w, h) {                                          // arc, S-curve, tension and weight
+    const a = [4, 18], m = [16, 6], b = [28, 18], q = [[34, 14], [41, 6], [49, 20], [56, 12]];
+    let s = path(quadThrough(a, m, b), { w: 0.6 }) + dot(...a) + odot(...m, 0.75) + odot(...b) + txt(16, 24, 'arc: 3 points', { anchor: 'middle', size: 2.1 });
+    s += path(smoothD(q), { w: 0.6 }) + dot(...q[0]) + odot(...q[1], 0.7) + odot(...q[2], 0.7) + odot(...q[3]) + txt(45, 24, 'S: 4 points', { anchor: 'middle', size: 2.1 });
+    const post = x => ln(x, 30, x, h - 4, { w: 0.6 });
+    s += post(4) + post(26) + path(quadThrough([4, 31], [15, 33], [26, 31]), { w: 0.5 }) + txt(15, h - 1, 'tension', { anchor: 'middle', size: 2.1 });
+    s += post(34) + post(56) + path(quadThrough([34, 31], [45, 41], [56, 31]), { w: 0.5 }) + txt(45, h - 1, 'weight', { anchor: 'middle', size: 2.1 });
+    return s;
+  },
+  'S1.4'(w, h) {                                          // outline vs contour
+    const bag = x => smoothD([[x + 4, 8], [x + 2, 20], [x + 3, 34], [x + 14, 38], [x + 25, 34], [x + 26, 20], [x + 24, 8]]);
+    let s = path(bag(2), { w: 0.6 }) + ln(6, 8, 26, 8, { w: 0.6 }) + txt(16, h - 2, 'outline', { anchor: 'middle', size: 2.2 });
+    s += path(bag(32), { w: 0.6 }) + ln(36, 8, 56, 8, { w: 0.6 }) + halfEll(46, 8, 10, 2.2, true, { w: 0.45 })
+      + path(quadThrough([34.5, 20], [46, 23.5], [58, 20]), { w: 0.35 }) + path(quadThrough([35, 30], [46, 33.5], [57.5, 30]), { w: 0.35 })
+      + path(quadThrough([42, 9], [40, 22], [43, 37]), { w: 0.35 }) + txt(46, h - 2, 'contours', { anchor: 'middle', size: 2.2 });
+    return s;
+  },
+};
+
 // ---------- pages: everything comes in sheets — instructions on the front, practice on the back.
 // Printed double-sided as loose leaf, every sheet stands on its own (pull it out, take it along, reprint it).
 // On an e-reader the practice is the next page and the instructions one swipe back. No jumping around.
@@ -733,20 +764,19 @@ function buildPages(refs) {
     ${refs.img({ scene: 'farmhouse', seed: 31, notes: true }, { width: AW, overlay: null })}
     <div class="cv-meta">27 lessons · lines → shapes → proportion → space → light → scenes</div><div class="cv-dev">For Kindle Scribe, reMarkable, pen tablets and loose-leaf print — write directly on the pages</div>`;
   const howBody = `<div class="h-title">How this book works</div>
-    <div class="h-lead">Every lesson comes as a sheet: read the front, draw on the back.</div>
-    <div class="spread-demo"><div><b>Front</b><span>the idea, a diagram, the steps, what to check, the common slip and why it works</span></div><div><b>Back</b><span>the prompt and the practice space</span></div></div>
-    <div class="h-note">Printed double-sided, every sheet stands on its own — pull it out, take it with you, or print it again for more practice. On an e-reader, the practice is the next page and the instructions are one swipe back.</div>
+    <div class="h-lead">Every lesson is one sheet:</div>
+    <div class="spread-demo"><div><b>Theory</b><span>the idea behind the skill — how seeing works, why the technique works, and how artists have solved the problem</span></div><div><b>Practice</b><span>a one-line prompt, one or two examples, and room to draw</span></div></div>
+    <div class="h-note">Practise as often as you like: on a tablet, erase and go again; on paper, print the sheet again. Printed double-sided, every sheet stands on its own.</div>
     <div class="h-lead">One habit runs through every lesson:</div>
     <div class="habit">${book.habit.map((s, i) => `<div><b>${i + 1}</b><span>${s}</span><em>${['longer than feels necessary — at the real thing, not your page', 'by comparing one part with another: taller, wider, steeper', 'lightly — first lines are guesses', 'against the real thing, then go darker'][i]}</em></div>`).join('')}</div>
-    <div class="h-lead">Each lesson has up to three sheets:</div>
-    <table class="kinds"><tr><td><b>Practice</b></td><td>repetition with help that fades</td></tr><tr><td><b>Repeat</b></td><td>the same drill with fresh targets, for another day</td></tr><tr><td><b>From life</b></td><td>a real subject, with a reference sketch for when nothing is handy</td></tr></table>
-    <div class="h-lead">Help fades on every practice page:</div>${legend()}
-    <ul class="tips"><li>Use the pen, thin and black, and write straight onto the page — or print double-sided, flipping on the long edge.</li><li>10–20 minutes a day beats an hour once a week. Circle your best attempt on each page.</li><li>For kids: bigger, looser, half the boxes — and praise the looking, not just the drawing.</li></ul>`;
+    <div class="h-lead">The book builds one skill on the last:</div>
+    <table class="kinds">${parts.map(p => `<tr><td><b>${esc(p.name)}</b></td><td>${esc(p.intro)}</td></tr>`).join('')}</table>
+    <ul class="tips"><li>Draw from real things whenever you can. The pencil sketches are for when nothing is handy.</li><li>Ten to twenty minutes a day beats an hour once a week. For kids: shorter, bigger, looser.</li></ul>`;
   sheet(['cover', coverBody, {}, 'cover'], ['how', howBody, { id: 'how', label: 'how this book works', hints: false }]);
 
   const tocCol = ps => ps.map(p => `<div class="toc-part"><span>Part ${p.n} · ${esc(p.name)}</span><em>{{p:part-${p.n}}}</em></div>${lessons.filter(l => l.part === p.n).map(l => `<div class="toc-l"><span>${l.id}</span>${esc(l.title)}<em>{{p:${l.id}}}</em></div>`).join('')}`).join('');
   const tocBody = `<div class="h-title">Contents</div><div class="toc-cols"><div>${tocCol(parts.slice(0, 4))}</div><div>${tocCol(parts.slice(4))}<div class="toc-part"><span>Progress tracker</span><em>{{p:progress}}</em></div><div class="toc-part"><span>About this book</span><em>{{p:about}}</em></div></div></div>`;
-  const progressBody = `<div class="h-title">Progress tracker</div><table class="prog"><tr><th>lesson</th><th>page</th><th>practice</th><th>repeat</th><th>from life</th></tr>${lessons.map(l => `<tr><td><b>${l.id}</b> ${esc(l.title)}</td><td>{{p:${l.id}}}</td><td>☐ ____</td><td>${l.practice.repeat ? '☐ ____' : '—'}</td><td>${l.life ? '☐ ____' : '—'}</td></tr>`).join('')}</table>`;
+  const progressBody = `<div class="h-title">Progress tracker</div><table class="prog"><tr><th>lesson</th><th>page</th><th>sessions — tick one each time you practise</th></tr>${lessons.map(l => `<tr><td><b>${l.id}</b> ${esc(l.title)}</td><td>{{p:${l.id}}}</td><td>☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐</td></tr>`).join('')}</table>`;
   sheet(['toc', tocBody, { id: 'contents', label: 'contents', hints: false }], ['progress', progressBody, { id: 'progress', label: 'progress tracker', hints: false }]);
 
   for (const p of parts) {
@@ -754,92 +784,46 @@ function buildPages(refs) {
     sheet(['opener', `<div class="op-n">Part ${p.n}</div><div class="op-name">${esc(p.name)}</div><div class="op-intro">${esc(p.intro)}</div>
         <div class="op-list">${ls.map(l => `<div><span>${l.id}</span>${esc(l.title)}<em>{{p:${l.id}}}</em></div>`).join('')}</div>`, { id: `part-${p.n}`, label: `part ${p.n} · ${p.name.toLowerCase()}`, hints: false }],
       ['plate', `<div class="plate-in">${refs.img({ ...p.cover, notes: true }, { width: AW, overlay: null })}<div class="plate-cap">from the sketchbook</div></div>`, { label: `part ${p.n} · ${p.name.toLowerCase()}`, hints: false }]);
-    for (const l of ls) lessonSpreads(l, refs);
+    for (const l of ls) lessonSheet(l, refs);
   }
 
-  sheet(['about', `<div class="h-title">About this book</div><p>Every illustration in this book is an original pencil sketch generated for it; nothing is copied from other books or courses. Typefaces: Inter and JetBrains Mono (SIL Open Font License); handwritten notes in Caveat (SIL Open Font License).</p><p>Pages are sized to the Kindle Scribe screen (157.5 × 210 mm) and the reMarkable 2. Every lesson is one sheet — instructions on the front, practice on the back — so it works as loose leaf printed double-sided, or page by page on an e-reader. Print editions on Letter and A4 keep the same real sizes.</p><p class="small">${esc(book.series)} · ${esc(book.title)} · e-ink edition</p>`, { id: 'about', label: 'about', hints: false }],
+  sheet(['about', `<div class="h-title">About this book</div><p>Every illustration in this book is an original pencil sketch generated for it; nothing is copied from other books or courses. Typefaces: Inter and JetBrains Mono (SIL Open Font License); handwritten notes in Caveat (SIL Open Font License).</p><p>Pages are sized to the Kindle Scribe screen (157.5 × 210 mm) and the reMarkable 2. Every lesson is one sheet — theory on the front, practice on the back — so it works as loose leaf printed double-sided, or page by page on an e-reader, where you can erase and practise as often as you like. Print editions on Letter and A4 keep the same real sizes.</p><p class="small">${esc(book.series)} · ${esc(book.title)} · e-ink edition</p>`, { id: 'about', label: 'about', hints: false }],
     ['backcover', `<div class="bc-in"><div class="cv-series">${esc(book.series)}</div><div class="bc-title">${esc(book.title)}</div>${refs.img({ scene: 'nature', seed: 31, notes: true }, { width: AW, overlay: null })}<div class="bc-note">Want more practice? Print any sheet again — every sheet stands on its own.</div></div>`, { label: '', hints: false }, 'backcover']);
 }
 
-function lessonSpreads(l, refs) {
-  const R = rng(l.id.split('').reduce((a, c) => a * 31 + c.charCodeAt(0), 7));
-  const lbl = s => `${l.id} · ${s}`;
+const DRILLS = ['lineDrill', 'curveDrill', 'angleDrill', 'contourDrill', 'shapeDrill', 'ellipseDrill', 'gapDrill', 'depthDrill', 'perspDrill', 'cylDrill', 'formDrill'];
+const PD = AH - 18;                                       // practice area height under a one- or two-line prompt
 
-  // 1 · How to (left) + Practice (right)
-  const learn = `${head(l, 'HOW TO')}<div class="body">
-    <div class="lead"><b>You’ll learn</b> ${esc(l.learn)}</div>
-    <div class="idea">${esc(l.idea)}</div>
-    <div class="diagram">${svg(AW, 50, D[l.diagram](AW, 50))}</div>
-    <div class="steps-h">Do this</div><ol class="steps">${l.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
-    <div class="vfill"></div>${checkBox(l)}${slipBox(l)}${whyBox(l)}</div>`;
-  sheet(['learn', learn, { id: l.id, label: lbl('how to') }], ['practice', practiceRecto(l, l.practice, 'PRACTICE', R, refs), { label: lbl('practice') }]);
-
-  // 2 · Step 2 (left) + second practice (right)
-  if (l.practice2) {
-    const s2 = ex(l).step2;
-    const v = `${head(l, 'STEP 2')}<div class="body"><div class="lead"><b>${esc(s2.lead)}</b></div><div class="idea">${esc(s2.text)}</div>
-      <div class="diagram">${svg(AW, 50, D[l.diagram](AW, 50))}</div><div class="steps-h">Do this</div><ol class="steps">${s2.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
-      <div class="vfill"></div>${checkBox(l)}${slipBox(l)}</div>`;
-    sheet(['learn', v, { label: lbl('step 2') }], ['practice', practiceRecto(l, l.practice2, 'PRACTICE · STEP 2', rng(99), refs), { label: lbl('practice, step 2') }]);
-  }
-
-  // 3 · Again (left) + Repeat (right)
-  if (l.practice.repeat) {
-    const v = `${head(l, 'AGAIN')}<div class="body"><div class="lead"><b>Same skill, fresh targets.</b> Do this page on a different day from the first one.</div>
-      <div class="thistime"><b>This time</b> ${esc(ex(l).again)}</div>
-      <div class="diagram">${svg(AW, 46, D[l.diagram](AW, 46))}</div>
-      <div class="steps-h">The steps again</div><ol class="steps">${l.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
-      <div class="vfill"></div>${checkBox(l)}${slipBox(l)}</div>`;
-    sheet(['learn', v, { label: lbl('again') }], ['practice', practiceRecto(l, l.practice, 'REPEAT', rng(R() * 1e9), refs), { label: lbl('repeat') }]);
-  }
-
-  // 4 · From life: how to (left) + From life (right)
-  if (l.life) {
-    const r = l.life.ref;
-    const v = `${head(l, 'FROM LIFE · HOW TO')}<div class="body">
-      <div class="lead"><b>Your subject</b> ${esc(l.life.prompt)}</div>
-      <div class="habit mini">${book.habit.map((s, i) => `<div><b>${i + 1}</b><span>${s}</span></div>`).join('')}</div>
-      <div class="steps-h">How to approach it</div>${list(ex(l).lifeHow || [], 'how')}
-      <div class="steps-h">The skill, step by step</div><ol class="steps">${l.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
-      <div class="vbox"><b>Real things first</b> ${r ? 'Draw from the real subject whenever you can. The reference sketch overleaf is for when nothing is handy — or for practice before you go out.' : 'Draw from the real thing in front of you; there is no reference sketch for this one.'}${r ? `<br><br><b>On the sketch</b> ${overlayNote(r)}` : ''}</div>
-      <div class="vfill"></div>${checkBox(l)}${slipBox(l)}</div>`;
-    sheet(['learn', v, { label: lbl('from life, how to') }], ['life', lifeRecto(l, refs), { label: lbl('from life') }]);
-  }
+function lessonSheet(l, refs) {
+  const t = theory[l.id];
+  if (!t) throw new Error(`no theory for ${l.id}`);
+  const drill = DRILLS.includes(l.practice.type);
+  // the technique diagram appears once per lesson: as the worked example on drill pages, otherwise as the theory figure
+  const ref = l.life && l.life.ref, FW = 68;
+  const float = !drill ? '' : ref ? `<div class="th-float" style="width:${FW}mm">${refs.img(ref, { width: FW })}<div class="ex-cap">${overlayNote(ref)}</div></div>`
+    : TF[l.id] ? `<div class="th-float" style="width:${FW}mm"><div class="ex-one">${svg(FW, 46, TF[l.id](FW, 46))}</div></div>` : '';
+  const fig = drill ? '' : `<figure class="th-fig">${svg(AW, 42, D[l.diagram](AW, 42))}</figure>`;
+  const front = `${head(l, 'THEORY')}<div class="body theory"><div class="th-key">${esc(t.key)}</div>
+    <div class="th-text">${float}${t.sections.map(([h, p]) => `<div class="th-sec"><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join('')}</div>
+    <div class="vfill"></div>${fig}${t.note ? `<div class="th-note">${esc(t.note)}</div>` : ''}</div>`;
+  sheet(['learn', front, { id: l.id, label: `${l.id} · theory` }], ['practice', practicePage(l, refs, t, drill), { label: `${l.id} · practice` }]);
 }
 
-const NO_LEGEND = ['refPractice', 'gridTransfer', 'horizonFind', 'threeValue', 'fourPassStrip', 'fieldPage', 'capstone', 'thumbRow', 'timedBoxes', 'setup', 'valueDrill', 'textureDrill'];
-const TASKS = {
-  setup: 'Fill the loop boxes, then draw the day-one cups. Date them.', timedBoxes: 'Two minutes each. Eyes on the subject — never on the page.',
-  lineDrill: 'Ghost, then one stroke per line, filled dot to open dot.', curveDrill: 'Ghost through every dot, then one smooth stroke.',
-  angleDrill: 'Copy each angle on the right, starting at the dot.', contourDrill: 'Trace, then follow the dots, then draw from the sample.',
-  shapeDrill: 'Each row: trace → corner dots → free.', ellipseDrill: 'Axes first, ghost the loop, then one smooth stroke.',
-  gapDrill: 'Draw the gaps — the shaded shapes — not the object.', depthDrill: 'Near: big, low, dark. Far: small, high, light.',
-  perspDrill: 'Aim every line that goes away from you at a vanishing point.', cylDrill: 'Build each cylinder along its centre line.',
-  valueDrill: 'Match each sample bar: five even steps, white to near-black.', formDrill: 'Follow the arrow: light side, shadow side, cast shadow.',
-  textureDrill: 'Copy each mark, then invent your own. Suggest — don’t list.', gridTransfer: 'Copy square by square — only what is inside each square.',
-  horizonFind: 'Draw a level line through eye level in each picture.', threeValue: 'Squint: darks first, then middles. Leave the lights.',
-  fourPassStrip: 'One pass per box — light and simple until pass 4.', fieldPage: 'Set a timer. Whole scene first, every time.',
-  capstone: 'Thumbnails, four passes, a field note — then the cup again.', thumbRow: 'Six thumbnails, each one different. Circle the best.',
-};
-
-function practiceRecto(l, spec, kind, seedR, refs) {
+function practicePage(l, refs, t, drill) {
+  const sp = l.practice, R = rng(l.id.split('').reduce((a, c) => a * 31 + c.charCodeAt(0), 7));
   let inner;
-  if (spec.type === 'refPractice') inner = refAndDraw(refs, spec.ref, overlayNote(spec.ref));
-  else if (spec.type === 'gridTransfer') inner = gridTransfer(refs, spec, PH);
-  else if (spec.type === 'horizonFind') inner = horizonFind(refs, PH);
-  else if (spec.type === 'threeValue') inner = threeValue(refs, spec, PH);
-  else if (spec.type === 'fourPassStrip') inner = fourPassStrip(refs, spec, PH);
-  else if (spec.type === 'fieldPage') inner = fieldPage(PH);
-  else if (spec.type === 'capstone') inner = capstonePage(PH);
-  else if (spec.type === 'thumbRow') inner = drills.thumbRow(seedR, AW, PH, spec, refs).html;
-  else inner = svg(AW, PH, drills[spec.type](seedR, AW, PH, spec));
-  const task = spec.task || TASKS[spec.type] || 'Follow the steps overleaf.';
-  return `${head(l, kind, NO_LEGEND.includes(spec.type) ? '' : legend())}<div class="body"><div class="task">${esc(task)}</div><div class="drill" style="height:${f(PH)}mm">${inner}</div><div class="repline">date ________ · circle your best attempt<span>reps ☐ ☐ ☐</span></div></div>`;
-}
-
-function lifeRecto(l, refs) {
-  const r = l.life.ref;
-  return `${head(l, 'FROM LIFE')}<div class="body"><div class="task">${esc(l.life.prompt)}</div>${r ? refAndDraw(refs, r, overlayNote(r)) : '<div class="frame grow"></div>'}<div class="repline">date ________ · subject ______________________<span>reps ☐ ☐ ☐</span></div></div>`;
+  if (drill) {
+    inner = `<div class="ex-h">Example</div><div class="ex-one">${svg(AW, 46, D[l.diagram](AW, 46))}</div><div class="ex-h">Your turn</div><div class="frame grow"></div>`;
+  } else if (sp.type === 'refPractice') inner = refAndDraw(refs, sp.ref, overlayNote(sp.ref));
+  else if (sp.type === 'gridTransfer') inner = gridTransfer(refs, sp, PD);
+  else if (sp.type === 'horizonFind') inner = horizonFind(refs, PD);
+  else if (sp.type === 'threeValue') inner = threeValue(refs, sp, PD);
+  else if (sp.type === 'fourPassStrip') inner = fourPassStrip(refs, sp, PD);
+  else if (sp.type === 'fieldPage') inner = fieldPage(PD);
+  else if (sp.type === 'capstone') inner = capstonePage(PD);
+  else if (sp.type === 'thumbRow') inner = drills.thumbRow(R, AW, PD, sp, refs).html;
+  else inner = svg(AW, PD, drills[sp.type](R, AW, PD, sp));
+  return `${head(l, 'PRACTICE')}<div class="body"><div class="task">${esc(t.prompt)}</div><div class="drill" style="height:${f(PD)}mm">${inner}</div><div class="repline">date ________<span></span></div></div>`;
 }
 
 function refAndDraw(refs, ref, sideText) {
@@ -1031,6 +1015,22 @@ ul.how li { margin-bottom: 0.8mm; }
 .prog td { border-bottom: 0.25mm solid #ccc; padding: 1.05mm 0.8mm; white-space: nowrap; }
 .prog td:first-child { white-space: normal; }
 .about p { font: 3.2mm/1.5 Inter, sans-serif; margin-bottom: 3mm; }
+.th-key { font: 800 4.5mm/1.25 Inter, sans-serif; border-left: 1.2mm solid #000; padding: 0.4mm 0 0.4mm 3mm; margin: 0.5mm 0 1.5mm; }
+.how .kinds { font-size: 2.75mm; }
+.how .kinds td { padding: 0.75mm 1mm; }
+.th-float { float: right; margin: 1.5mm 0 1.5mm 4mm; }
+.th-float .ex-one { margin-bottom: 0; }
+.th-sec h3 { font: 700 2.7mm "JetBrains Mono", monospace; letter-spacing: 0.35mm; text-transform: uppercase; margin: 3mm 0 0.8mm; }
+.th-sec p { font: 3.3mm/1.5 Inter, sans-serif; color: #111; }
+.th-fig { margin: 2mm 0 0; border: 0.3mm solid #bbb; }
+.th-note { font: italic 2.7mm/1.4 Inter, sans-serif; color: #444; margin-top: 2mm; border-top: 0.3mm solid #ccc; padding-top: 1.4mm; }
+.ex-h { font: 700 2.55mm "JetBrains Mono", monospace; letter-spacing: 0.35mm; text-transform: uppercase; margin: 0.5mm 0 1mm; }
+.ex-h + .frame { margin-top: 0; }
+.ex-row { display: flex; gap: 4mm; margin-bottom: 2.5mm; }
+.ex-row > div { flex: 1; }
+.ex-one { border: 0.3mm solid #bbb; margin-bottom: 2.5mm; }
+.ex-cap { font: 2.3mm/1.35 Inter, sans-serif; color: #555; margin-top: 0.8mm; }
+.prog td:last-child { letter-spacing: 0.6mm; }
 `;
 
 // ---------- render
