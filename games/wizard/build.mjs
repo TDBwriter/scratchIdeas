@@ -2,8 +2,8 @@
 //
 //   node build.mjs            → out/wizard-score-sheets-{eink,letter,a4}.pdf + out/preview-eink.png
 //
-// Pages: one sheet each for 3, 4, 5 and 6 players (rounds = 60 cards ÷ players: 20, 15, 12, 10), a universal
-// "any player count" staircase sheet, and a rules-and-scoring card. Each round row has, per player, Bid · Won ·
+// Pages: how to play, how to use the sheets (with a worked example), then one sheet each for 3, 4, 5 and 6 players (rounds = 60 cards ÷ players: 20, 15, 12, 10), a universal
+// "any player count" staircase sheet. Each round row has, per player, Bid · Won ·
 // Score (running total). Dealer is pre-marked on the per-count sheets (names in seating order, first dealer first);
 // the trump column has the four suits printed to circle. Σ bids lets the table see at a glance if the round is
 // over- or under-bid. Requires Playwright (Chromium) and poppler (pdftoppm) for the preview.
@@ -101,7 +101,7 @@ function sheet(F, n) {
 function rulesPage(F) {
   const { w: W, m } = F, k = W > 180 ? 1.25 : 1;
   let s = '', y = m + 8 * k;
-  s += text(m, y, 'WIZARD', { size: 8 * k, weight: 800 }) + text(m + 34 * k, y, 'quick reference', { size: 3.1 * k, c: MID, weight: 600 });
+  s += text(m, y, 'WIZARD', { size: 8 * k, weight: 800 }) + text(m + 34 * k, y, 'how to play', { size: 3.1 * k, c: MID, weight: 600 });
   const H2 = t => { y += 7.6 * k; s += text(m, y, t.toUpperCase(), { size: 2.7 * k, weight: 700, font: 'JetBrains Mono' }) + line(m, y + 1.2, W - m, y + 1.2, 0.35); y += 1.5 * k; };
   const size = 2.75 * k, maxCh = Math.floor((W - 2 * m) / (size * 0.53));
   const P = t => { const words = t.split(' '); let cur = ''; const lines = [];
@@ -138,10 +138,86 @@ function rulesPage(F) {
   P('Jesters always lose, unless every card in the trick is a Jester — then the first one played wins.');
   P('If a Wizard is led, anything may follow. If a Jester is led, the next normal card played sets the suit.');
   P('The winner of a trick leads the next one.');
-  H2('Using these sheets');
-  P('Per-count sheets: write the players in seating order, starting with the first dealer — the dealer is pre-marked ◤.');
-  P('Score column: keep a running total. Σ bids: add the round’s bids and compare with the round number.');
-  P('On a Kindle Scribe or reMarkable, duplicate a page before writing on it to keep a blank copy.');
+  return s;
+}
+
+// ---------- how to fill in a sheet, with a worked example
+function howToUsePage(F) {
+  const { w: W, m } = F, k = W > 180 ? 1.25 : 1, CW = W - 2 * m;
+  let s = '', y = m + 8 * k;
+  s += text(m, y, 'WIZARD', { size: 8 * k, weight: 800 }) + text(m + 34 * k, y, 'how to use these sheets', { size: 3.1 * k, c: MID, weight: 600 });
+  const H2 = t => { y += 7.6 * k; s += text(m, y, t.toUpperCase(), { size: 2.7 * k, weight: 700, font: 'JetBrains Mono' }) + line(m, y + 1.2, W - m, y + 1.2, 0.35); y += 1.5 * k; };
+  const size = 2.75 * k, maxCh = Math.floor((CW - 6 * k) / (size * 0.53));
+  const step = (n, t) => { const words = t.split(' '); let cur = ''; const lines = [];
+    for (const w of words) { if ((cur + ' ' + w).trim().length > maxCh) { lines.push(cur); cur = w; } else cur = (cur + ' ' + w).trim(); }
+    if (cur) lines.push(cur);
+    lines.forEach((l, i) => { y += i ? 3.8 * k : 4.8 * k; if (!i) s += text(m, y, String(n), { size: 3 * k, weight: 800 }); s += text(m + 6 * k, y, l, { size }); }); };
+  H2('Before you start');
+  step(1, 'Pick the sheet for your number of players: 3, 4, 5 or 6. The any-number sheet works for every count; tick ○ for the dealer there.');
+  step(2, 'Write the players across the top in seating order, starting with whoever deals first. The ◤ in a bid box then shows who deals each round.');
+  step(3, 'On a Kindle Scribe or reMarkable, duplicate the page first so you keep a blank copy.');
+  H2('Every round');
+  step(1, 'Deal, turn up the next card and circle its suit in the trump column. If it is a Wizard, the dealer picks a suit: circle it and write W. A Jester means no trump: circle –.');
+  step(2, 'Everyone bids. Write each bid, then add them up in Σ bids.');
+  step(3, 'Play the tricks, then write how many each player won.');
+  step(4, 'Score it: made the bid exactly → 20 + 10 per trick; missed it → −10 per trick over or under. Add it to the score above and write the new total.');
+
+  // worked example: three players, rounds 1–3
+  H2('Example: Ana, Ben and Cy, rounds 1 to 3');
+  const top = y + 13 * k, rc = 8 * k, tc = 15 * k, sc = 10 * k, pw = (CW - rc - tc - sc) / 3, bw = 7 * k, sw = pw - 2 * bw;
+  const nameH = 8 * k, subH = 4.6 * k, rowH = 9 * k, y0 = top + nameH + subH;
+  const xP = i => m + rc + tc + i * pw, xS = m + rc + tc + 3 * pw, tstep = (tc - 2) / 5, sx = j => m + rc + 1 + tstep * (j + 0.5);
+  const hand = (x, yy, t, a = 'middle') => `<text x="${f(x)}" y="${f(yy)}" font-family="Caveat, cursive" font-size="${f(6 * k)}" fill="#1a1a1a" text-anchor="${a}">${esc(t)}</text>`;
+  const names = ['Ana', 'Ben', 'Cy'], trump = [1, 0, 2], bids = [[0, 1, 0], [1, 0, 0], [2, 1, 1]], won = [[0, 1, 0], [1, 1, 0], [1, 1, 1]], score = [[20, 30, 20], [50, 20, 40], [40, 50, 70]];
+  s += rect(m, top, rc + tc, nameH + subH, { sw: 0.4 }) + text(m + (rc + tc) / 2, top + nameH * 0.62, 'players →', { size: 2.3 * k, c: MID, anchor: 'middle' });
+  for (let i = 0; i < 3; i++) {
+    s += rect(xP(i), top, pw, nameH, { sw: 0.5 }) + hand(xP(i) + pw / 2, top + nameH - 1.6 * k, names[i]) + rect(xP(i), top + nameH, pw, subH, { sw: 0.4 });
+    [['bid', bw / 2], ['won', bw * 1.5], ['score', 2 * bw + sw / 2]].forEach(([t, dx]) => { s += text(xP(i) + dx, top + nameH + subH * 0.7, t, { size: 2.1 * k, c: MID, anchor: 'middle', weight: 600 }); });
+  }
+  s += rect(xS, top, sc, nameH + subH, { sw: 0.4 }) + text(xS + sc / 2, top + nameH * 0.62, 'Σ', { size: 3.4 * k, anchor: 'middle', weight: 700 }) + text(xS + sc / 2, top + nameH + subH * 0.7, 'bids', { size: 2.1 * k, c: MID, anchor: 'middle', weight: 600 });
+  for (let r = 0; r < 3; r++) {
+    const yy = y0 + r * rowH, mid = yy + rowH / 2;
+    s += rect(m, yy, rc, rowH, { sw: 0.4 }) + text(m + rc / 2, mid + 1.3 * k, String(r + 1), { size: 3.6 * k, anchor: 'middle', weight: 800 }) + rect(m + rc, yy, tc, rowH, { sw: 0.3 });
+    SUITS.forEach(([g], j) => { s += text(sx(j), mid + 1.1 * k, g, { size: 2.9 * k, c: MID, anchor: 'middle', font: 'DejaVu Sans' }); });
+    s += text(sx(4), mid + 0.9 * k, '–', { size: 2.9 * k, c: MID, anchor: 'middle' });
+    s += `<ellipse cx="${f(sx(trump[r]))}" cy="${f(mid)}" rx="${f(1.9 * k)}" ry="${f(2.3 * k)}" fill="none" stroke="#1a1a1a" stroke-width="0.35"/>`;
+    if (r === 2) s += hand(sx(trump[r]) + 2.6 * k, yy + 3.4 * k, 'W', 'start').replace(`font-size="${f(6 * k)}"`, `font-size="${f(3.8 * k)}"`);
+    for (let i = 0; i < 3; i++) {
+      const x = xP(i);
+      s += rect(x, yy, bw, rowH, { sw: 0.25, c: MID }) + rect(x + bw, yy, bw, rowH, { sw: 0.25, c: MID }) + rect(x + 2 * bw, yy, sw, rowH, { sw: 0.25, c: MID });
+      if (r === i) s += `<path d="M${f(x)} ${f(yy)} L${f(x + 2.6 * k)} ${f(yy)} L${f(x)} ${f(yy + 2.6 * k)} Z" fill="${INK}"/>`;
+      s += hand(x + bw / 2, mid + 2 * k, String(bids[r][i])) + hand(x + bw * 1.5, mid + 2 * k, String(won[r][i])) + hand(x + 2 * bw + sw / 2, mid + 2 * k, String(score[r][i]));
+    }
+    s += rect(xS, yy, sc, rowH, { sw: 0.3 }) + text(xS + sc - 0.8, yy + rowH - 0.9, `/ ${r + 1}`, { size: 1.9 * k, c: LIGHT, anchor: 'end' }) + hand(xS + sc * 0.38, mid + 2 * k, String(bids[r].reduce((a, b) => a + b, 0)));
+  }
+  for (let i = 0; i < 3; i++) s += rect(xP(i), y0, pw, 3 * rowH, { sw: 0.55 });
+  s += rect(m, y0, rc + tc, 3 * rowH, { sw: 0.55 }) + rect(xS, y0, sc, 3 * rowH, { sw: 0.55 });
+  // callouts above the table
+  const call = (x1, y1, x2, y2, t, a = 'middle') => line(x1, y1, x2, y2, 0.3, MID) + `<circle cx="${f(x2)}" cy="${f(y2)}" r="0.55" fill="${INK}"/>` + text(x1, y1 - 1.2, t, { size: 2.2 * k, anchor: a, weight: 600 });
+  const ya = top - 2.5 * k;
+  s += call(m + rc + tc / 2, ya - 5 * k, m + rc + tc / 2, top + 1, 'circle trump') + call(xP(0) + bw / 2, ya, xP(0) + bw / 2, top + nameH + 1, 'bid') + call(xP(0) + bw * 1.5 + 3 * k, ya - 5 * k, xP(0) + bw * 1.5, top + nameH + 1, 'tricks won', 'start');
+  s += call(xP(1) + 2 * bw + sw / 2, ya, xP(1) + 2 * bw + sw / 2, top + nameH + 1, 'running total') + call(xS + sc / 2, ya - 5 * k, xS + sc / 2, top + 1, 'add the bids', 'end');
+  // notes below the table
+  const yb = y0 + 3 * rowH;
+  const notes = [
+    [m - 3.4 * k, y0 + rowH / 2 + 3 * k, 'Round 1: Ana deals — her bid box has the ◤. One card each, so one trick: Ben bids 1 and wins it (+30); Ana and Cy bid 0 and win 0 (+20 each).'],
+    [m - 3.4 * k, y0 + 2 * rowH + rowH / 2 + 3 * k, 'Round 3: a Wizard was turned up, so Cy (the dealer) chose ♦ — circled, with W.'],
+    [xP(0) + 2 * bw + sw / 2 - 1.9 * k, yb + 5 * k, 'Ana bid 2 but won 1: −10, so her total drops from 50 to 40.'],
+    [W - m + 1.5 * k, y0 + 2 * rowH + rowH / 2 + 3 * k, 'Σ 4 / 3: four tricks bid, only three to win — overbid, so someone had to miss. In round 2, 1 / 2 was underbid.'],
+  ];
+  y = yb + 5 * k;
+  const nmax = Math.floor((CW - 8 * k) / (2.55 * k * 0.53));
+  notes.forEach(([px, py, t], i) => {
+    const words = t.split(' '); let cur = ''; const lines = [];
+    for (const w of words) { if ((cur + ' ' + w).trim().length > nmax) { lines.push(cur); cur = w; } else cur = (cur + ' ' + w).trim(); }
+    if (cur) lines.push(cur);
+    y += 4.4 * k;
+    s += `<circle cx="${f(m + 2 * k)}" cy="${f(y - 1 * k)}" r="${f(1.9 * k)}" fill="${INK}"/>` + text(m + 2 * k, y - 0.2 * k, String.fromCharCode(65 + i), { size: 2.4 * k, anchor: 'middle', weight: 800, c: '#fff' });
+    s += `<circle cx="${f(px + 1.9 * k)}" cy="${f(py - 3 * k)}" r="${f(1.6 * k)}" fill="${INK}"/>` + text(px + 1.9 * k, py - 2.25 * k, String.fromCharCode(65 + i), { size: 2.1 * k, anchor: 'middle', weight: 800, c: '#fff' });
+    lines.forEach((l, j) => { if (j) y += 3.6 * k; s += text(m + 6 * k, y, l, { size: 2.55 * k }); });
+  });
+  H2('At the end');
+  step('✓', 'The score in each player’s last row is their final total. Write places in the bottom row — highest total wins.');
   return s;
 }
 
@@ -151,8 +227,8 @@ const browser = await chromium.launch();
 try {
   const page = await browser.newPage();
   for (const [name, F] of Object.entries(FORMATS)) {
-    const pages = [3, 4, 5, 6, 0].map(n => sheet(F, n)).concat(rulesPage(F));
-    const html = `<!doctype html><html><head><meta charset="utf-8"><title>Wizard score sheets</title><style>@page { size: ${F.w}mm ${F.h}mm; margin: 0; } * { margin: 0; padding: 0; } body { background: #fff; } svg { display: block; break-after: page; }</style></head><body>${pages.map(p => `<svg xmlns="http://www.w3.org/2000/svg" width="${F.w}mm" height="${F.h}mm" viewBox="0 0 ${F.w} ${F.h}">${p}</svg>`).join('')}</body></html>`;
+    const pages = [rulesPage(F), howToUsePage(F), ...[3, 4, 5, 6, 0].map(n => sheet(F, n))];
+    const html = `<!doctype html><html><head><meta charset="utf-8"><title>Wizard score sheets</title><style>@font-face { font-family: 'Caveat'; src: url('${pathToFileURL(resolve(HERE, '../../sketchArt/fonts/caveat-latin-400-normal.woff2')).href}') format('woff2'); } @page { size: ${F.w}mm ${F.h}mm; margin: 0; } * { margin: 0; padding: 0; } body { background: #fff; } svg { display: block; break-after: page; }</style></head><body>${pages.map(p => `<svg xmlns="http://www.w3.org/2000/svg" width="${F.w}mm" height="${F.h}mm" viewBox="0 0 ${F.w} ${F.h}">${p}</svg>`).join('')}</body></html>`;
     const htmlPath = join(OUT, `wizard-${name}.html`), pdf = join(OUT, `wizard-score-sheets-${name}.pdf`);
     writeFileSync(htmlPath, html);
     await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'load' });
@@ -164,7 +240,7 @@ try {
   const tmp = join(OUT, 'tmp'); rmSync(tmp, { recursive: true, force: true }); mkdirSync(tmp);
   execFileSync('pdftoppm', ['-r', '70', '-png', join(OUT, 'wizard-score-sheets-eink.pdf'), join(tmp, 'p')]);
   const files = readdirSync(tmp).sort().map(x => join(tmp, x));
-  execFileSync('montage', [...files, '-tile', '3x', '-geometry', '+6+6', '-background', '#ccc', join(OUT, 'preview-eink.png')]);
+  execFileSync('montage', [...files, '-tile', '4x', '-geometry', '+6+6', '-background', '#ccc', join(OUT, 'preview-eink.png')]);
   rmSync(tmp, { recursive: true, force: true });
   console.log('wrote out/preview-eink.png');
 } finally {

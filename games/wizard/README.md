@@ -8,9 +8,10 @@ node build.mjs   # → out/wizard-score-sheets-{eink,letter,a4}.pdf, out/preview
 
 | Page | What it is |
 |---|---|
-| 1–4 | One sheet each for 3, 4, 5 and 6 players (20, 15, 12 and 10 rounds: the 60 cards divided among the players) |
-| 5 | An "any number of players" sheet. Columns 4–6 stop at 15, 12 and 10 rounds; tick ○ for the dealer |
-| 6 | Quick reference: rounds, trump, bidding, scoring, how a trick is won |
+| 1 | How to play: rounds by player count, trump, bidding, scoring, how a trick is won |
+| 2 | How to use these sheets: before you start, every round, a filled-in example of three rounds with notes, and the end of the game |
+| 3–6 | One sheet each for 3, 4, 5 and 6 players (20, 15, 12 and 10 rounds: the 60 cards divided among the players) |
+| 7 | An "any number of players" sheet. Columns 4–6 stop at 15, 12 and 10 rounds; tick ○ for the dealer |
 
 **Each round row has:**
 - the round number, which is also the number of cards dealt
