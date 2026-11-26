@@ -43,7 +43,7 @@ function sheet(F, n) {
   const top = hy + 8.5 * k, rc = 7.5 * k, tc = 14.5 * k, sc = 9.5 * k;
   const pw = (W - 2 * m - rc - tc - sc) / cols, bw = Math.min(7 * k, pw * 0.26), sw = pw - 2 * bw;
   const xP = i => m + rc + tc + i * pw, xS = m + rc + tc + cols * pw;
-  const nameH = 9 * k, subH = 4.6 * k, finalH = 8 * k, footH = (n ? 12.5 : 15.5) * k;
+  const nameH = 9 * k, subH = 4.6 * k, finalH = 8 * k, footH = (n ? 12.5 : 2) * k;
   const rowH = Math.min((n ? 16 : 9) * k, (H - m - footH - finalH - top - nameH - subH) / 20 * (20 / rounds));
   const y0 = top + nameH + subH, yEnd = y0 + rounds * rowH;
   // name row
@@ -79,7 +79,6 @@ function sheet(F, n) {
     }
     s += rect(xS, y, sc, rowH, { sw: 0.3 }) + text(xS + sc - 0.8, y + rowH - 0.9, `/ ${r}`, { size: 1.9 * k, c: LIGHT, anchor: 'end' });
     // staircase: mark the last round for player counts whose column ends here
-    if (!n) ends.forEach((e, i) => { if (e === r && i >= 3) s += text(xP(i) + pw / 2, y + rowH + 2.6 * k, `${i + 1} players: last round`, { size: 1.9 * k, c: MID, anchor: 'middle', italic: true }); });
   }
   // player column outlines (thick) to keep each player's cells together
   for (let i = 0; i < cols; i++) s += rect(xP(i), y0, pw, ends[i] * rowH, { sw: 0.55 });
@@ -87,13 +86,62 @@ function sheet(F, n) {
   // final place row
   const fy = n ? yEnd + 1.5 : y0 + 20 * rowH + 1.5;
   s += rect(m, fy, rc + tc, finalH, { sw: 0.5 }) + text(m + (rc + tc) / 2, fy + finalH / 2 + 1, 'place', { size: 2.8 * k, anchor: 'middle', weight: 700 });
-  for (let i = 0; i < cols; i++) s += rect(xP(i), fy, pw, finalH, { sw: 0.5 }) + text(xP(i) + 1, fy + 2.4 * k, 'final total / place', { size: 1.7 * k, c: LIGHT });
+  // place boxes: on the any-number sheet each column's box sits right under its own last round
+  const placeY = i => (n ? fy : y0 + ends[i] * rowH + 1.5);
+  for (let i = 0; i < cols; i++) s += rect(xP(i), placeY(i), pw, finalH, { sw: 0.5 }) + text(xP(i) + 1, placeY(i) + 2.4 * k, !n && i >= 3 ? `${i + 1} players: final` : 'final total / place', { size: 1.7 * k, c: !n && i >= 3 ? MID : LIGHT, weight: !n && i >= 3 ? 700 : 500 });
+  if (!n) return s + rulesInStaircase(F, k, { xP, xS, y0, rowH, finalH, ends, placeY, pw });
   // footer legend
   const ly = fy + finalH + 4.2 * k, L = (y, t) => text(m, y, t, { size: 2.3 * k, c: MID });
   s += L(ly, 'Score: made your bid exactly → 20 + 10 per trick won.  Missed it → −10 per trick over or under.  Write the running total.');
   s += L(ly + 3.4 * k, 'Trump: circle the suit turned up. Wizard turned up → dealer picks (circle it, add W). Jester or no cards left → circle –.');
   s += L(ly + 6.8 * k, `Σ bids: add the bids. Bigger than ${n ? 'the round number' : 'the round number'} → overbid; smaller → underbid. Either way, someone misses.`);
   if (!n) s += L(ly + 10.2 * k, 'Rounds: 3 players 20 · 4 players 15 · 5 players 12 · 6 players 10 — the game ends where the last column ends.');
+  return s;
+}
+
+// ---------- the whole game's rules, flowed into the empty staircase under columns 4–6 of the any-number sheet
+const STAIR_RULES = [
+  [['HOW TO PLAY', 'h']],
+  [['Deal', 'b'], ['1 card each in round 1, 2 in round 2, and so on. Rounds: 3 players 20, 4 players 15, 5 players 12, 6 players 10.']],
+  [['Trump', 'b'], ['Turn up the next card: its suit is trump. A Wizard → the dealer picks a suit. A Jester, or no cards left → no trump.']],
+  [['Bid', 'b'], ['From the dealer’s left, each player bids exactly how many tricks they will win.']],
+  [['Play', 'b'], ['The player left of the dealer leads. Follow suit if you can; Wizards and Jesters may be played at any time. The first Wizard wins the trick; otherwise the highest trump; otherwise the highest card of the suit led. Jesters lose, unless every card is a Jester — then the first one wins. If a Wizard is led, anything may follow; if a Jester is led, the next ordinary card sets the suit. The winner leads the next trick.']],
+  [['Score', 'b'], ['Bid made exactly → 20 + 10 per trick won. Missed → −10 per trick over or under. Highest total at the end wins.']],
+  [['This sheet', 'b'], ['One column per player. Circle the trump (add W if the dealer chose it), tick ○ for the dealer, keep a running score, and add the bids in Σ to compare with the round number. Columns 4–6 end at rounds 15, 12 and 10.']],
+];
+function rulesInStaircase(F, k, g) {
+  const { w: W, h: H, m } = F, { xP, xS, y0, rowH, finalH, ends, placeY } = g;
+  const yTop = y0 + 10 * rowH + 2, yBot = H - m, xRight = y => (y > y0 + 20 * rowH + 1 ? W - m : xS - 1.6);
+  const blockedTo = j => placeY(j) + finalH + 1.6;          // bottom of column j's last round and place box
+  const xLeft = y => { for (let j = 3; j <= 5; j++) if (y > blockedTo(j)) return xP(j) + 1.6; return null; };
+  const words = STAIR_RULES.flatMap((para, pi) => [...para.flatMap(([t, st = '']) => t.split(' ').map(w => ({ w, st }))), ...(pi < STAIR_RULES.length - 1 ? [{ br: true }] : [])]);
+  const layout = size => {
+    const lh = size * 1.3, out = []; let y = yTop + size, i = 0;
+    while (i < words.length) {
+      if (y > yBot) return null;
+      const x0 = xLeft(y - size), x1 = xRight(y - size);
+      if (x0 === null || x1 - x0 < 8) { y += lh; continue; }
+      const line = []; let wsum = 0;
+      while (i < words.length && !words[i].br) {
+        const wd = words[i], cw = wd.st === 'h' ? 0.68 : wd.st === 'b' ? 0.6 : 0.54, ww = (wd.w.length + 1) * size * cw;
+        if (line.length && wsum + ww > x1 - x0) break;
+        line.push(wd); wsum += ww; i++;
+      }
+      if (i < words.length && words[i].br) i++;
+      out.push({ x: x0, y, line }); y += lh;
+    }
+    return out;
+  };
+  let size = 2.6 * k, lines = null;
+  while (!(lines = layout(size)) && size > 1.4) size -= 0.05;
+  let s = '';
+  for (const { x, y, line } of lines) {
+    let spans = '', cur = null, buf = [];
+    const flush = () => { if (!buf.length) return; const st = cur; spans += `<tspan${st === 'h' ? ` font-family="JetBrains Mono" font-weight="800"` : st === 'b' ? ' font-weight="800"' : ''}>${esc(buf.join(' '))} </tspan>`; buf = []; };
+    line.forEach(wd => { if (wd.st !== cur) { flush(); cur = wd.st; } buf.push(wd.w); });
+    flush();
+    s += `<text x="${f(x)}" y="${f(y)}" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="${f(size)}" fill="${INK}">${spans}</text>`;
+  }
   return s;
 }
 
