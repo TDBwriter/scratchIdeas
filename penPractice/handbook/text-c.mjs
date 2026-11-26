@@ -19,7 +19,7 @@ export const units = {
     '> No false information, nothing but what has been seen should be represented, and the tendency to sacrifice truth to effect must be guarded against. — Manual of Field Sketching and Reconnaissance, 1903',
     'A road that disappears behind a hill stops on the paper. A guess is marked with a question mark. Modern army map-reading manuals still define a sketch in the same spirit, as a free-hand drawing of a map or a picture of an area or route of travel, always with a north arrow, a scale and a legend.',
     '## A working tradition',
-    'Sketching was a professional skill of soldiers and surveyors long before photography. The artist Paul Sandby worked as a draughtsman on the Military Survey of Scotland in the 1740s and 1750s, and from 1768 to 1796 was chief drawing master at the Royal Military Academy in Woolwich, where officers were taught to draw landscape because a good sketch was operational information. At West Point the painter Robert W. Weir taught drawing to American cadets from 1834 to 1876. The British manual of 1903 and Fulmer’s American book of 1917 are late, refined statements of that tradition.',
+    'Sketching was a professional skill of soldiers and surveyors long before photography. The artist Paul Sandby worked as a draughtsman on the Military Survey of Scotland in the 1740s and 1750s, and from 1768 until the late 1790s was chief drawing master at the Royal Military Academy in Woolwich, where officers were taught to draw landscape because a good sketch was operational information. At West Point the painter Robert W. Weir taught drawing to American cadets from 1834 to 1876. The British manual of 1903 and Fulmer’s American book of 1917 are late, refined statements of that tradition.',
   ],
 
   'S6.2': [
@@ -29,9 +29,9 @@ export const units = {
     '## Look with a plan',
     'Memory holds structure better than lists. Take in the layout first — walls, openings, the long lines of counters and roads — then the large objects and people, then the details. A rough plan of a space is easier to remember than an inventory, because every item has a place to hang on.',
     '## Kim’s Game',
-    'In Rudyard Kipling’s novel Kim (1901) the boy hero is trained as an observer by the shopkeeper Lurgan Sahib, who shows him a tray of jewels, covers it, and asks him to list what he saw; then trains him until he can describe every stone. Robert Baden-Powell put the game into Scouting for Boys (1908) as “Kim’s Game”, and it became a staple of scouting and of observation training generally: look, cover, recall, check.',
+    'In Rudyard Kipling’s novel Kim (1901) the boy hero is trained as an observer by the shopkeeper Lurgan Sahib through the Jewel Game: a handful of stones is laid out on a tray, looked at, covered, and then described from memory. A younger boy beats Kim easily at first, and Kim plays the game for days until he can match him. Robert Baden-Powell put the game into Scouting for Boys (1908) as “Kim’s Game”, and it became a staple of scouting and of observation training generally: look, cover, recall, check.',
     '## Memory and drawing',
-    'In nineteenth-century Paris the teacher Horace Lecoq de Boisbaudran trained his students to draw from memory, first simple objects and eventually figures in motion, and described his method in The Training of the Memory in Art (1847, expanded 1862). Among those who studied with him were Henri Fantin-Latour and Alphonse Legros. His argument was that memory drawing forces the student to understand a subject, not merely to copy it.',
+    'In nineteenth-century Paris the teacher Horace Lecoq de Boisbaudran trained his students to draw from memory, first simple objects and eventually figures in motion, and described his method in L’Éducation de la mémoire pittoresque (1848; expanded 1862; translated into English as The Training of the Memory in Art, 1911). Among those who studied with him were Henri Fantin-Latour, Alphonse Legros and Auguste Rodin. His argument was that memory drawing forces the student to understand a subject, not merely to copy it.',
     'Fulmer saw the same benefit in landscape:',
     '> As a means for training the eye, to judge ground rapidly, to determine the essential military features, and to develop ability to retain correct mental impressions of the terrain, there is no surer way than by panoramic sketching. — J. J. Fulmer, Military Panoramic Sketching, 1917',
     '## The check is the lesson',
@@ -51,9 +51,9 @@ export const units = {
     '## The watch method',
     'In the northern hemisphere, hold an analogue watch flat and point the hour hand at the sun. South lies roughly halfway between the hour hand and twelve o’clock (or one o’clock during summer time). In the southern hemisphere, point twelve o’clock at the sun instead; north lies halfway between twelve and the hour hand. The method assumes the watch shows local solar time, which it rarely does exactly, and it becomes unreliable near the tropics where the sun climbs high. The 1903 manual called it “a very rough approximation”. Checking it against a shadow stick and resetting the watch to the shadow’s time improves it.',
     '## The stars',
-    'In the northern hemisphere the Pole Star, Polaris, lies less than a degree from true north and barely moves through the night. It is found from the Plough (the Big Dipper): the two stars at the end of the bowl, the Pointers, lead to it, about five times the distance between them. The higher the latitude, the higher Polaris stands; near the pole it is too high to steer by. In the southern hemisphere there is no bright pole star. Instead, the long axis of the Southern Cross points towards the south celestial pole, which lies roughly four and a half times the length of the Cross along that line; the point below it on the horizon is close to due south.',
+    'In the northern hemisphere the Pole Star, Polaris, lies less than a degree from true north and barely moves through the night. It is found from the Plough (the Big Dipper): the two stars at the end of the bowl, the Pointers, lead to it, about five times the distance between them. The higher the latitude, the higher Polaris stands; near the pole it is too high to steer by. In the southern hemisphere there is no bright pole star. Instead, the long axis of the Southern Cross points towards the south celestial pole, which lies about four times the length of the Cross along that line (some guides say four and a half); the point below it on the horizon is close to due south.',
     '## The compass',
-    'The magnetic compass has a long history. The Chinese scholar Shen Kuo described a magnetised needle used to find direction, and noted that it did not point exactly south, around 1088 — the first known description of declination. By the thirteenth century compasses were in use at sea in Europe. The prismatic compass described in the 1903 manual let a surveyor read a bearing while sighting the object; modern lensatic and baseplate compasses do the same.',
+    'The magnetic compass has a long history. The Chinese scholar Shen Kuo described a magnetised needle used to find direction, and noted that it did not point exactly south, in his Dream Pool Essays of 1088 — the earliest clear description of declination. In Europe the compass was first described in the 1180s, by the English scholar Alexander Neckam. The prismatic compass described in the 1903 manual let a surveyor read a bearing while sighting the object; modern lensatic and baseplate compasses do the same.',
   ],
 
   'S6.4': [
@@ -94,7 +94,7 @@ export const units = {
     '> It is far better to write descriptions on the face of a sketch, in language that cannot be mistaken, than to crowd it with symbols of which the meaning is liable to be misunderstood. — Manual of Field Sketching and Reconnaissance, 1903',
     'fig:plate:symbols-1902.png|Symbols used in field sketching, from the 1903 manual (Plate IV, dated 1902): roads, railways, woods, marsh, churches, villages — and the note that the words “Ford” and “Ferry” are to be written.',
     '## History',
-    'The principle of triangulation — fixing points by angles from the ends of a measured base — was described by the Flemish mathematician Gemma Frisius in 1533. In 1615 the Dutch scientist Willebrord Snellius used a chain of triangles to measure the length of a degree of latitude, and from the eighteenth century national surveys such as the Ordnance Survey in Britain were built on networks of triangles. The plane table, a drawing board on a tripod with a sighting rule, let surveyors draw rays directly in the field from the sixteenth century onwards; eye-sketching with a hand-held board is its pocket version.',
+    'The principle of triangulation — fixing points by angles from the ends of a measured base — was described by the Flemish mathematician Gemma Frisius in 1533. In 1615 the Dutch scientist Willebrord Snellius used a chain of triangles to measure the length of a degree of latitude (published in 1617), and from the eighteenth century national surveys such as the Ordnance Survey in Britain were built on networks of triangles. The plane table, a drawing board on a tripod with a sighting rule, let surveyors draw rays directly in the field from the sixteenth century onwards; eye-sketching with a hand-held board is its pocket version.',
     'fig:plate:m1903-plate16.png|A portion of a plane-table sketch of the Tugela country, Natal, made in early December 1899 with plane-table and range-finder (1903 manual, Plate XVI). The stations A, B and C are marked along the line traversed.',
   ],
 
@@ -136,7 +136,7 @@ export const units = {
     '## No artistic ability needed',
     'Both manuals insist that this kind of sketch is within anyone’s reach. Fulmer reported that “a number of men made very fair sketches of actual terrain after about three hours’ application”, and the 1903 manual put it more bluntly: “Even indifferent draughtsmen can produce landscape sketches which will serve to convey useful information to a General.”',
     '## History',
-    'The word panorama was coined by the Irish painter Robert Barker, who patented in 1787 a method of painting a 360-degree view on the inside of a cylindrical building; his panoramas of Edinburgh and London drew crowds in the 1790s. Military observers adopted the long strip view for practical reasons. The 1903 manual cites landscape sketches from the Afghan War of 1880, the Chitral campaign of 1895 and the South African War of 1899–1902, and reproduces two.',
+    'The word panorama was coined by the Irish painter Robert Barker, who patented in 1787 a method of painting a 360-degree view on the inside of a cylindrical building. His first, a view of Edinburgh, was shown there in 1788; a view of London drew crowds, and in 1793 he opened the first purpose-built panorama rotunda, in Leicester Square. Military observers adopted the long strip view for practical reasons. The 1903 manual cites landscape sketches from the Afghan War of 1880, the Chitral campaign of 1895 and the South African War of 1899–1902, and reproduces two.',
     'fig:plate:tugela-1899.png|Part of a landscape sketch of the Tugela at Colenso, made on 3 December 1899 from a kopje about two miles away, facing north (1903 manual, Plate XVIII): outline only, every feature named on a leader line, many with ranges.',
     'fig:plate:m1903-plate17.png|Landscape sketch made during the Afghan War, 1880 (1903 manual, Plate XVII).',
     'Geography students still draw annotated field sketches of landscapes, and the principles are the same: outline, label, leave out what does not matter.',
@@ -188,12 +188,13 @@ export const glossary = [
 ];
 
 export const sources = [
-  'Alberti, Leon Battista. On Painting (De pictura), 1435.',
   'Albers, Josef. Interaction of Color. Yale University Press, 1963.',
+  'Alberti, Leon Battista. On Painting (De pictura), 1435.',
   'Baden-Powell, Robert. Scouting for Boys. London, 1908.',
-  'Bargue, Charles, with Jean-Léon Gérôme. Cours de dessin. Paris, 1866–71.',
+  'Bargue, Charles, with Jean-Léon Gérôme. Cours de dessin. Paris: Goupil, published in parts from the late 1860s.',
   'Baudelaire, Charles. “The Painter of Modern Life”, 1863.',
   'Chevreul, Michel-Eugène. De la loi du contraste simultané des couleurs. Paris, 1839.',
+  'Cohen, Dale J. “Look little, look often: The influence of gaze frequency on drawing accuracy.” Perception & Psychophysics 67, no. 6 (2005): 997–1009.',
   'Dow, Arthur Wesley. Composition. Boston, 1899.',
   'Edwards, Betty. Drawing on the Right Side of the Brain. Los Angeles, 1979.',
   'Fulmer, J. J. Military Panoramic Sketching. Kansas City: Franklin Hudson Publishing Co., 1917. Introduction by Lt.-Col. M. L. Walker; drawings by Sgt. Oscar Leach; artillery data by Capt. John A. Crane.',
@@ -202,7 +203,7 @@ export const sources = [
   'Great Britain, War Office. Manual of Field Sketching and Reconnaissance. London: HMSO, 1903.',
   'Hogarth, William. The Analysis of Beauty. London, 1753.',
   'Kipling, Rudyard. Kim. London, 1901.',
-  'Lecoq de Boisbaudran, Horace. The Training of the Memory in Art. 1847; expanded 1862.',
+  'Lecoq de Boisbaudran, Horace. L’Éducation de la mémoire pittoresque. Paris, 1848; expanded 1862. English translation: The Training of the Memory in Art. London, 1911.',
   'Munsell, Albert H. A Color Notation. Boston, 1905.',
   'Nicolaides, Kimon. The Natural Way to Draw. Boston, 1941.',
   'Payne, Edgar. Composition of Outdoor Painting. 1941.',

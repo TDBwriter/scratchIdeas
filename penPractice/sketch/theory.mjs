@@ -333,7 +333,7 @@ export const theory = {
   'S6.8': {
     key: 'Estimate, write it down, then check — the eye only learns with feedback.',
     sections: [
-      ['How distance fools you', 'Distance judgment rests on cues — size, detail, haze, overlap — and they mislead in predictable ways. Things look closer in clear air, across water or a valley, and when they are large or brightly lit; further away in haze or poor light, and when partly hidden.'],
+      ['How distance fools you', 'Distance judgment rests on cues — size, detail, haze, overlap — and they mislead in predictable ways. Things look closer in clear air, across water or a dip you cannot see into, and when they are large or brightly lit; further away in haze or poor light, and when partly hidden.'],
       ['A unit you know', 'Picture a familiar length — a football pitch, about 100 metres — and count how many fit between you and the object. Beyond a few hundred metres, count to the halfway point and double it.'],
       ['Known sizes', 'Use things whose size you know: a door is about 2 m tall, a storey about 3 m, a car about 4.5 m long. Measured against your pen (S3.2), they give both size and distance.'],
       ['Bracket, then check', 'Decide the nearest and furthest it could reasonably be and take the middle. Then check against a map or your own pace count over a measured 100 m. Writing estimates down and checking them is the only way the eye improves.'],
