@@ -10,7 +10,7 @@
 // Requires: playwright (Chromium), ImageMagick (convert, montage).
 
 import { createRequire } from 'node:module';
-import { existsSync, mkdirSync, writeFileSync, readFileSync, rmSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync, readFileSync, rmSync, cpSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { resolve, join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -476,7 +476,7 @@ function overlaySvg(m, kind, gridMode) {
   const refPts = (row0, names) => (m.envelopes || []).map(([x0, y0, x1], i) => { const cx = (x0 + x1) / 2, row = row0 - (i % 2) * 78; return `<line x1="${f(cx)}" y1="${f(row + 28)}" x2="${f(cx)}" y2="${f(y0 - 10)}" stroke="#000" stroke-width="4"/>` + ring(cx, row, i + 1) + label(cx + 38, row + 12, names[i] || ''); }).join('');
   if (kind === 'field' && m.envelopes) {
     const nx = W - 110, ny = 120;
-    s += label(36, 64, 'FARM TRACK · 07:15 · FACING NE');
+    s += label(36, 64, 'SKETCH OF FARM FROM TRACK FACING NE · 07:15');
     s += `<circle cx="${nx}" cy="${ny}" r="58" fill="#fff" stroke="#000" stroke-width="6"/><path d="M${nx} ${ny + 40} L${nx} ${ny - 40} M${nx - 16} ${ny - 18} L${nx} ${ny - 40} L${nx + 16} ${ny - 18}" stroke="#000" stroke-width="7" fill="none"/>` + label(nx, ny - 68, 'N', 'middle');
     for (const [x, t, a] of [[40, 'L', 'start'], [W - 40, 'R', 'end']]) s += `<line x1="${x}" y1="${f(m.horizon - 320)}" x2="${x}" y2="${H - 30}" stroke="#000" stroke-width="5" stroke-dasharray="22 14"/>` + label(a === 'start' ? 58 : W - 58, H - 44, t, a);
     s += refPts(Math.min(...m.envelopes.map(e => e[1])) - 80, ['HOUSE 350 m', 'BARN 450 m', 'SILO 500 m']);
@@ -712,7 +712,7 @@ const D = {
   },
   fieldAnatomy(w, h) {
     const hz = h * 0.58, hb = hz + 1, hx = w * 0.24, bx = w * 0.47, sx = w * 0.6, nx = w - 8, ny = 10;
-    let s = poly([[1, 1], [w - 1, 1], [w - 1, h - 1], [1, h - 1]], { w: 0.4 }) + txt(4, 5.6, 'FARM TRACK · 12 MAY · 07:15 · FACING NE', { size: 2.2, c: INK, weight: 700 });
+    let s = poly([[1, 1], [w - 1, 1], [w - 1, h - 1], [1, h - 1]], { w: 0.4 }) + txt(4, 5.6, 'SKETCH OF FARM FROM TRACK FACING NE · 12 MAY 07:15', { size: 2.2, c: INK, weight: 700 });
     s += circ(nx, ny, 3.6, { w: 0.35 }) + arrow(nx, ny + 2.6, nx, ny - 2.6, { w: 0.4 }) + txt(nx - 5.2, ny + 0.9, 'N', { size: 2.2, c: INK, anchor: 'middle', weight: 700 });
     s += path(smoothD([[3, hz], [w * 0.2, hz - 4], [w * 0.4, hz - 2], [w * 0.62, hz - 7], [w * 0.85, hz - 3], [w - 3, hz - 5]]), { w: 0.45 });
     s += poly([[hx, hb], [hx + 12, hb], [hx + 12, hb - 7], [hx, hb - 7]], { w: 0.45 }) + pline([[hx - 1, hb - 7], [hx + 6, hb - 12], [hx + 13, hb - 7]], { w: 0.45 });
@@ -803,6 +803,45 @@ const D = {
     s += txt(cw * 2.5, h - 2, 'bracket, take the middle', { size: 2.1, c: INK, anchor: 'middle', weight: 700 });
     return s;
   },
+  north(w, h) {
+    const cw = w / 3, gy = h - 7;
+    let s = '';
+    const cx = cw / 2, st = [cx, gy - 6], m1 = [cx - 11, gy - 21], m2 = [cx + 7, gy - 22];      // 1 · shadow stick, seen from above
+    s += ln(...st, ...m1, { w: 0.5, c: GUIDE }) + ln(...st, ...m2, { w: 0.5, c: GUIDE }) + dot(...st, 1.1) + txt(st[0] + 2, st[1] + 3, 'stick', { size: 1.9 });
+    s += odot(...m1, 1) + txt(m1[0] - 1.5, m1[1] - 2, '1', { size: 2.2, c: INK, weight: 700, anchor: 'middle' }) + odot(...m2, 1) + txt(m2[0] + 1.5, m2[1] - 2, '2', { size: 2.2, c: INK, weight: 700, anchor: 'middle' });
+    s += arrow(m1[0] + 1.3, m1[1] - 0.1, m2[0] - 1.3, m2[1] + 0.1, { w: 0.4 }) + txt((m1[0] + m2[0]) / 2, m1[1] + 4, 'W → E', { size: 2, c: INK, anchor: 'middle' });
+    s += arrow(cw - 5, gy - 8, cw - 5, gy - 22, { w: 0.4 }) + txt(cw - 5, gy - 24, 'N', { size: 2.3, c: INK, weight: 700, anchor: 'middle' });
+    s += txt(cx, h - 2, 'shadow stick, 20 min', { size: 2.1, c: INK, anchor: 'middle', weight: 700 });
+    const wc = [cw * 1.5 - 4, gy - 15], r = 11, ang = t => -Math.PI / 2 + t * Math.PI / 6;     // 2 · watch (hour hand at 4)
+    s += circ(...wc, r, { w: 0.5 });
+    for (let k = 0; k < 12; k++) { const a = ang(k); s += ln(wc[0] + Math.cos(a) * r * 0.82, wc[1] + Math.sin(a) * r * 0.82, wc[0] + Math.cos(a) * r, wc[1] + Math.sin(a) * r, { w: k % 3 ? 0.25 : 0.45 }); }
+    s += txt(wc[0], wc[1] - r + 4, '12', { size: 1.9, anchor: 'middle' });
+    const hh = ang(4); s += ln(...wc, wc[0] + Math.cos(hh) * r * 0.62, wc[1] + Math.sin(hh) * r * 0.62, { w: 0.8 });
+    const sun = [wc[0] + Math.cos(hh) * (r + 6), wc[1] + Math.sin(hh) * (r + 6)];
+    s += circ(...sun, 1.8, { w: 0.4 }); for (let k = 0; k < 8; k++) { const a = k * Math.PI / 4; s += ln(sun[0] + Math.cos(a) * 2.5, sun[1] + Math.sin(a) * 2.5, sun[0] + Math.cos(a) * 3.6, sun[1] + Math.sin(a) * 3.6, { w: 0.3 }); }
+    const bi = ang(2); s += ln(...wc, wc[0] + Math.cos(bi) * (r + 5), wc[1] + Math.sin(bi) * (r + 5), { w: 0.4, dash: '1.2 0.8' }) + txt(wc[0] + Math.cos(bi) * (r + 7.5), wc[1] + Math.sin(bi) * (r + 7.5) + 1, 'S', { size: 2.3, c: INK, weight: 700, anchor: 'middle' });
+    s += txt(cw * 1.5, h - 2, 'watch — very rough', { size: 2.1, c: INK, anchor: 'middle', weight: 700 });
+    const o = [cw * 2 + 10, gy - 4], k = 1.15;                                                    // 3 · the Plough and the Pole Star
+    const stars = [[10, 0], [9, -6], [3, -5], [4, 1], [-2, -7], [-6, -6], [-10, -9]].map(([x, y]) => [o[0] + x * k, o[1] + y * k]);
+    stars.forEach(([x, y]) => { s += dot(x, y, 0.75); });
+    s += pline([stars[0], stars[1], stars[2], stars[3], stars[0]], { w: 0.2, c: GUIDE }) + pline([stars[2], stars[4], stars[5], stars[6]], { w: 0.2, c: GUIDE });
+    const ps = [stars[1][0] + (stars[1][0] - stars[0][0]) * 2.4, stars[1][1] + (stars[1][1] - stars[0][1]) * 2];
+    s += ln(...stars[0], ...ps, { w: 0.3, dash: '1 0.8' }) + `<circle cx="${f(ps[0])}" cy="${f(ps[1])}" r="1.3" fill="${INK}"/>` + txt(ps[0] + 2.5, ps[1] + 0.8, 'Pole Star → N', { size: 2, c: INK });
+    s += txt(cw * 2.5, h - 2, 'Pole Star, from the Plough', { size: 2.1, c: INK, anchor: 'middle', weight: 700 });
+    return s;
+  },
+  intersection(w, h) {
+    const A = [w * 0.22, h - 7], B = [w * 0.6, h - 7], L = [[w * 0.12, 9, '1 tree'], [w * 0.43, 13, '2 kiosk'], [w * 0.76, 8, '3 gate']];
+    let s = ln(...A, ...B, { w: 0.9 }) + dot(...A, 1.1) + dot(...B, 1.1) + txt(A[0] - 2, A[1] + 1, 'A', { size: 2.5, c: INK, weight: 700, anchor: 'end' }) + txt(B[0] + 2, B[1] + 1, 'B', { size: 2.5, c: INK, weight: 700 });
+    s += txt((A[0] + B[0]) / 2, h - 2.5, 'base: 60 paces, about 45 m', { size: 2, anchor: 'middle' });
+    for (const [x, y, t] of L) {
+      s += ln(...A, x, y, { w: 0.3, dash: '1.2 0.9' }) + ln(...B, x, y, { w: 0.3, dash: '1.2 0.9' });
+      s += `<circle cx="${f(x)}" cy="${f(y)}" r="1.4" fill="#fff" stroke="${INK}" stroke-width="0.45"/>` + txt(x + 2.4, y - 1.4, t, { size: 2.1, c: INK });
+    }
+    s += circ(w - 8, 9, 3.6, { w: 0.35 }) + arrow(w - 8, 11.6, w - 8, 6.4, { w: 0.4 }) + txt(w - 13.2, 9.9, 'N', { size: 2.2, c: INK, anchor: 'middle', weight: 700 });
+    s += txt(w - 3, h - 9, 'rays from A and from B', { size: 2, anchor: 'end' }) + txt(w - 3, h - 5.6, 'cross at each landmark', { size: 2, anchor: 'end' });
+    return s;
+  },
   capstone(w, h) {
     const items = ['3 thumbnails', '4 passes', 'field note', 'redraw the cup'];
     let s = '';
@@ -871,7 +910,7 @@ function sheet(front, back) {                              // front always lands
 function buildPages(refs) {
   const coverBody = `<div class="cv-series">${esc(book.series)}</div><div class="cv-title">${esc(book.title)}</div><div class="cv-sub">${esc(book.subtitle)}</div>
     ${refs.img({ scene: 'farmhouse', seed: 31, notes: true }, { width: AW, overlay: null })}
-    <div class="cv-meta">33 lessons · lines → shapes → proportion → space → light → in the field → scenes</div><div class="cv-dev">For Kindle Scribe, reMarkable, pen tablets and loose-leaf print — write directly on the pages</div>`;
+    <div class="cv-meta">35 lessons · lines → shapes → proportion → space → light → in the field → scenes</div><div class="cv-dev">For Kindle Scribe, reMarkable, pen tablets and loose-leaf print — write directly on the pages</div>`;
   const howBody = `<div class="h-title">How this book works</div>
     <div class="h-lead">Every lesson is one sheet:</div>
     <div class="spread-demo"><div><b>Theory</b><span>the idea behind the skill — how seeing works, why the technique works, and how artists have solved the problem</span></div><div><b>Practice</b><span>a one-line prompt, one or two examples, and room to draw</span></div></div>
@@ -891,12 +930,12 @@ function buildPages(refs) {
   for (const p of parts) {
     const ls = lessons.filter(l => l.part === p.n);
     sheet(['opener', `<div class="op-n">Part ${p.n}</div><div class="op-name">${esc(p.name)}</div><div class="op-intro">${esc(p.intro)}</div>
-        <div class="op-list">${ls.map(l => `<div><span>${l.id}</span>${esc(l.title)}<em>{{p:${l.id}}}</em></div>`).join('')}</div>`, { id: `part-${p.n}`, label: `part ${p.n} · ${p.name.toLowerCase()}`, hints: false }],
+        <div class="op-list">${ls.map(l => `<div><span>${l.id}</span>${esc(l.title)}<em>{{p:${l.id}}}</em></div>`).join('')}</div>${p.fig ? `<div class="op-fig"><img src="plates/${p.fig.file}"/><div class="ex-cap">${esc(p.fig.cap)}</div></div>` : ''}`, { id: `part-${p.n}`, label: `part ${p.n} · ${p.name.toLowerCase()}`, hints: false }],
       ['plate', `<div class="plate-in">${refs.img({ ...p.cover, notes: true }, { width: AW, overlay: null })}<div class="plate-cap">from the sketchbook</div></div>`, { label: `part ${p.n} · ${p.name.toLowerCase()}`, hints: false }]);
     for (const l of ls) lessonSheet(l, refs);
   }
 
-  sheet(['about', `<div class="h-title">About this book</div><p>Every illustration in this book is an original pencil sketch generated for it; nothing is copied from other books or courses. Typefaces: Inter and JetBrains Mono (SIL Open Font License); handwritten notes in Caveat (SIL Open Font License).</p><p>Pages are sized to the Kindle Scribe screen (157.5 × 210 mm) and the reMarkable 2. Every lesson is one sheet — theory on the front, practice on the back — so it works as loose leaf printed double-sided, or page by page on an e-reader, where you can erase and practise as often as you like. Print editions on Letter and A4 keep the same real sizes.</p><p class="small">${esc(book.series)} · ${esc(book.title)} · e-ink edition</p>`, { id: 'about', label: 'about', hints: false }],
+  sheet(['about', `<div class="h-title">About this book</div><p>Every pencil sketch in this book was generated for it; nothing is copied from other books or courses. The four historical plates in Part 6 come from the Manual of Field Sketching and Reconnaissance (War Office, London, 1903), a public-domain work, scanned from the University of Toronto Library copy (Internet Archive: manualoffieldske00grea). Typefaces: Inter and JetBrains Mono (SIL Open Font License); handwritten notes in Caveat (SIL Open Font License).</p><p>Pages are sized to the Kindle Scribe screen (157.5 × 210 mm) and the reMarkable 2. Every lesson is one sheet — theory on the front, practice on the back — so it works as loose leaf printed double-sided, or page by page on an e-reader, where you can erase and practise as often as you like. Print editions on Letter and A4 keep the same real sizes.</p><p class="small">${esc(book.series)} · ${esc(book.title)} · e-ink edition</p>`, { id: 'about', label: 'about', hints: false }],
     ['backcover', `<div class="bc-in"><div class="cv-series">${esc(book.series)}</div><div class="bc-title">${esc(book.title)}</div>${refs.img({ scene: 'nature', seed: 31, notes: true }, { width: AW, overlay: null })}<div class="bc-note">Want more practice? Print any sheet again — every sheet stands on its own.</div></div>`, { label: '', hints: false }, 'backcover']);
 }
 
@@ -909,7 +948,8 @@ function lessonSheet(l, refs) {
   const drill = DRILLS.includes(l.practice.type);
   // the technique diagram appears once per lesson: as the worked example on drill pages, otherwise as the theory figure
   const ref = l.theoryRef || (drill && l.life && l.life.ref), FW = 68;
-  const float = l.theoryRef ? `<div class="th-float" style="width:${FW}mm">${refs.img(ref, { width: FW })}<div class="ex-cap">${esc(l.theoryRef.cap)}</div></div>` : !drill ? '' : ref ? `<div class="th-float" style="width:${FW}mm">${refs.img(ref, { width: FW })}<div class="ex-cap">${overlayNote(ref)}</div></div>`
+  const TP = l.theoryPlate;
+  const float = TP ? `<div class="th-float" style="width:${TP.w || FW}mm"><div class="ref"><img src="plates/${TP.file}"/></div><div class="ex-cap">${esc(TP.cap)}</div></div>` : l.theoryRef ? `<div class="th-float" style="width:${FW}mm">${refs.img(ref, { width: FW })}<div class="ex-cap">${esc(l.theoryRef.cap)}</div></div>` : !drill ? '' : ref ? `<div class="th-float" style="width:${FW}mm">${refs.img(ref, { width: FW })}<div class="ex-cap">${overlayNote(ref)}</div></div>`
     : TF[l.id] ? `<div class="th-float" style="width:${FW}mm"><div class="ex-one">${svg(FW, 46, TF[l.id](FW, 46))}</div></div>` : '';
   const fig = drill || !l.diagram ? '' : `<figure class="th-fig">${svg(AW, l.dh || 42, D[l.diagram](AW, l.dh || 42))}</figure>`;
   const front = `${head(l, 'THEORY')}<div class="body theory"><div class="th-key">${esc(t.key)}</div>
@@ -924,7 +964,26 @@ function practicePage(l, refs, t, drill) {
   if (drill) {
     inner = `<div class="ex-h">Example</div><div class="ex-one">${svg(AW, 46, D[l.diagram](AW, 46))}</div><div class="ex-h">Your turn</div><div class="frame grow"></div>`;
   } else if (sp.type === 'refPractice') inner = refAndDraw(refs, sp.ref, overlayNote(sp.ref));
-  else if (sp.type === 'fieldSketch') inner = `<div class="ex-h">Example</div><div class="rad-top">${refs.img(sp.ref, { width: AW * 0.62 })}<div class="rad-text small">${overlayNote(sp.ref)}<br><br>Orientation first. Big lines next. Then number the landmarks and label them in capitals with a rough range. No shading.</div></div><div class="ex-h">Your turn</div><div class="frame grow fs-frame"><div class="fs-head">PLACE ____________ · DATE ______ · TIME ______ · FACING ______</div><div class="fs-north">N ↑</div></div>`;
+  else if (sp.type === 'fieldSketch') inner = `<div class="ex-h">Example</div><div class="rad-top">${refs.img(sp.ref, { width: AW * 0.62 })}<div class="rad-text small">${overlayNote(sp.ref)}<br><br>Orientation first. Big lines next. Then number the landmarks and label them in capitals with a rough range. No shading.</div></div><div class="ex-h">Your turn</div><div class="frame grow fs-frame"><div class="fs-head">SKETCH OF ________ FROM ________ FACING _____ · DATE _____ · SIGNED _____</div><div class="fs-north">N ↑</div></div>`;
+  else if (sp.type === 'northLog') {
+    const fh = 46, c = [AW / 2, fh * 0.72];
+    const g = dot(...c, 1.2) + txt(c[0] + 2.5, c[1] + 1, 'stick', { size: 2.2 }) + circ(...c, 14, { w: 0.25, c: FAINT, dash: '1 1' }) + circ(...c, 26, { w: 0.25, c: FAINT, dash: '1 1' }) + txt(3, fh - 3, 'mark 1 · time ______      mark 2 · time ______', { size: 2.2 });
+    inner = `<div class="ex-h">Shadow stick — mark the shadow tip, wait 20 minutes, mark it again</div><div class="frame" style="margin-top:0">${svg(AW - 0.8, fh, g)}</div>
+      <div class="ex-h" style="margin-top:2.5mm">Log</div><table class="rlog"><tr><th>method</th><th>date · time</th><th>north is towards…</th><th>phone says</th><th>difference</th></tr>${['shadow stick', 'watch', 'sun at noon', 'Pole Star / Cross', 'compass'].map(t => `<tr><td style="width:30mm;font-weight:600">${t}</td><td></td><td></td><td></td><td></td></tr>`).join('')}</table>
+      <div class="ex-h" style="margin-top:2.5mm">Your last field sketch — add north, and how you found it</div><div class="frame grow" style="margin-top:0"></div>`;
+  }
+  else if (sp.type === 'routeLog') {
+    const fw = 68, fh = PD - 9, rows = Math.floor((fh - 16) / 8);
+    let g = ln(24, 6, 24, fh - 8, { w: 0.5 }) + ln(52, 6, 52, fh - 8, { w: 0.5 }) + ln(33, 6, 33, fh - 8, { w: 0.2, c: FAINT }) + ln(43, 6, 43, fh - 8, { w: 0.2, c: FAINT });
+    for (let r = 1; r <= rows; r++) g += ln(0, fh - 8 - r * 8, fw, fh - 8 - r * 8, { w: 0.2, c: FAINT });
+    g += txt(0, 3.5, 'TO ______________', { size: 2.2, c: INK }) + txt(0, fh - 1.5, 'FROM ________', { size: 2.2, c: INK }) + txt(28.5, fh - 4.5, 'time', { size: 1.9, anchor: 'middle' }) + txt(38, fh - 4.5, 'dir.', { size: 1.9, anchor: 'middle' }) + txt(47.5, fh - 4.5, 'dist.', { size: 1.9, anchor: 'middle' });
+    g += txt(38, fh - 11, '⊙ start', { size: 2, anchor: 'middle', c: INK }) + arrow(fw - 3, fh - 14, fw - 3, fh - 30, { w: 0.35 }) + txt(fw - 4.5, fh - 31.5, 'up', { size: 1.9, anchor: 'end' });
+    inner = `<div class="ex-h">Field book — start at the bottom · plot on the right</div><div class="rl"><div style="width:${fw}mm">${svg(fw, fh, g)}</div><div class="frame grow plot"><div class="fs-north">N ↑</div><div class="plot-sc">scale: 1 cm = ______ m · pace: ____ per 100 m</div></div></div>`;
+  }
+  else if (sp.type === 'baseLine') {
+    const bw = AW - 30;
+    inner = `<div class="ex-h">Example</div><div class="ex-one">${svg(AW, 40, D.intersection(AW, 40))}</div><div class="ex-h">Your plan — north up</div><div class="frame grow gridpaper"><div class="fs-north">N ↑</div><div class="bl">${svg(bw, 9, ln(4, 3, bw - 4, 3, { w: 0.9 }) + dot(4, 3, 1.1) + dot(bw - 4, 3, 1.1) + txt(1.5, 4, 'A', { size: 2.6, c: INK, weight: 700, anchor: 'end' }) + txt(bw - 1.5, 4, 'B', { size: 2.6, c: INK, weight: 700 }) + txt(bw / 2, 8.5, 'base: ______ paces = ______ m', { size: 2.2, anchor: 'middle' }))}</div></div>`;
+  }
   else if (sp.type === 'memoryDrill') inner = `<div class="ex-h">From memory</div><div class="frame grow"></div><div class="ex-h" style="margin-top:2.5mm">Then turn back and check — add what you missed in dashed lines</div><div class="mchk">${['ways in and out', 'layout: counter, tables, windows', 'how many people, and where', 'signs and writing', 'where the light comes from', 'anything you could not place'].map(t => `<span>☐ ${t}</span>`).join('')}</div><div class="repline" style="margin-top:2mm">missed this time: ______ · last time: ______<span></span></div>`;
   else if (sp.type === 'planGrid') inner = `<div class="ex-h">Your map — north up</div><div class="frame grow gridpaper"><div class="fs-north">N ↑</div><div class="keybox">KEY &nbsp;■ building &nbsp;— path &nbsp;- - route &nbsp;① landmark &nbsp;▶ exit &nbsp;|—| about ___ m</div></div>`;
   else if (sp.type === 'sectorTemplate') {
@@ -937,7 +996,7 @@ function practicePage(l, refs, t, drill) {
   }
   else if (sp.type === 'panoramaStrips') {
     const m = refs.meta(sp.ref), W = 1860, top = Math.max(0, Math.min(...m.envelopes.map(e => e[1])) - 250), bot = Math.min(1395, m.horizon + 190), sc = AW / W;
-    const strip = () => svg(AW, 33, ln(0, 3, AW, 3, { w: 0.35 }) + Array.from({ length: 13 }, (_, k) => ln(AW * k / 12, 1.5, AW * k / 12, 4.5, { w: 0.3 })).join('') + txt(0.5, 8.5, 'L ____°', { size: 2.2 }) + txt(AW - 0.5, 8.5, '____° R', { size: 2.2, anchor: 'end' }) + poly([[0, 10], [AW, 10], [AW, 32.5], [0, 32.5]], { w: 0.35 }));
+    const strip = () => svg(AW, 35, txt(0, 2.8, 'Sketch of ______________ from ______________ facing ______', { size: 2.2, c: INK }) + ln(0, 6.5, AW, 6.5, { w: 0.35 }) + Array.from({ length: 13 }, (_, k) => ln(AW * k / 12, 5, AW * k / 12, 8, { w: 0.3 })).join('') + txt(0.5, 11.5, 'L ____°', { size: 2.2 }) + txt(AW - 0.5, 11.5, '____° R', { size: 2.2, anchor: 'end' }) + poly([[0, 13], [AW, 13], [AW, 34.5], [0, 34.5]], { w: 0.35 }));
     inner = `<div class="ex-h">Example</div><div class="crop" style="height:${f((bot - top) * sc)}mm"><div style="margin-top:${f(-top * sc)}mm">${refs.img(sp.ref, { width: AW })}</div></div><div class="ex-cap">${overlayNote(sp.ref)}</div><div class="ex-h" style="margin-top:2mm">Your panoramas</div>${strip()}${strip()}`;
   }
   else if (sp.type === 'rangeLog') inner = `<div class="ex-h">Sketch and number six landmarks</div><div class="frame grow"></div><table class="rlog"><tr><th>no.</th><th>landmark</th><th>estimate</th><th>method</th><th>checked</th><th>error</th></tr>${[1, 2, 3, 4, 5, 6].map(n => `<tr><td>${n}</td><td></td><td></td><td></td><td></td><td></td></tr>`).join('')}</table>`;
@@ -1138,7 +1197,7 @@ ul.how li { margin-bottom: 0.8mm; }
 .plate-cap { font: 2.4mm "JetBrains Mono", monospace; color: #555; margin-top: 1.5mm; text-align: right; }
 .prog { border-collapse: collapse; width: 100%; font: 2.55mm/1.25 Inter, sans-serif; }
 .prog th { font: 700 2.2mm "JetBrains Mono", monospace; text-align: left; border-bottom: 0.4mm solid #000; padding: 0.8mm; }
-.prog td { border-bottom: 0.25mm solid #ccc; padding: 0.55mm 0.8mm; white-space: nowrap; }
+.prog td { border-bottom: 0.25mm solid #ccc; padding: 0.32mm 0.8mm; white-space: nowrap; font-size: 2.45mm; }
 .prog td:first-child { white-space: normal; }
 .about p { font: 3.2mm/1.5 Inter, sans-serif; margin-bottom: 3mm; }
 .th-key { font: 800 4.5mm/1.25 Inter, sans-serif; border-left: 1.2mm solid #000; padding: 0.4mm 0 0.4mm 3mm; margin: 0.5mm 0 1.5mm; }
@@ -1150,6 +1209,12 @@ ul.how li { margin-bottom: 0.8mm; }
 .crop { overflow: hidden; border: 0.3mm solid #999; flex: none; }
 .crop .ref img { border: 0; }
 .fs-frame { margin-top: 0; }
+.op-fig { margin-top: 6mm; }
+.op-fig img { width: 80%; display: block; margin: 0 auto; }
+.rl { display: flex; gap: 3mm; flex: 1; min-height: 0; }
+.rl .plot { flex: 1; margin-top: 0; }
+.plot-sc { position: absolute; left: 2mm; bottom: 1.5mm; font: 2.2mm "JetBrains Mono", monospace; color: #444; }
+.bl { position: absolute; left: 15mm; bottom: 4mm; background: #fff; }
 .fs-head { font: 2.4mm "JetBrains Mono", monospace; padding: 1.3mm 2mm; border-bottom: 0.25mm solid #999; color: #333; }
 .fs-north { position: absolute; right: 2.5mm; top: 7.5mm; width: 9mm; height: 9mm; border: 0.35mm solid #000; border-radius: 50%; background: #fff; font: 700 2.4mm/9mm "JetBrains Mono", monospace; text-align: center; }
 .gridpaper { background-image: radial-gradient(circle, #8a8a8a 0.22mm, transparent 0.3mm); background-size: 5mm 5mm; margin-top: 0; }
@@ -1179,6 +1244,7 @@ ul.how li { margin-bottom: 0.8mm; }
 // ---------- render
 mkdirSync(opt.out, { recursive: true });
 const refs = makeRefs();
+cpSync(join(HERE, 'plates'), join(opt.out, 'plates'), { recursive: true });   // public-domain plates from the 1903 manual
 buildPages(refs);
 const pagesHtml = pageList.join('\n').replace(/\{\{p:([^}]+)\}\}/g, (_, id) => { if (!pageOf[id]) throw new Error(`no page for ${id}`); return String(pageOf[id]); });
 const html = `<!doctype html><html><head><meta charset="utf-8"><title>${esc(book.title)}</title><style>

@@ -134,7 +134,7 @@ export const theory = {
       ['Keep the arm still', 'The arm must stay at the same distance for every measurement, or the unit quietly changes. Closing one eye removes the double image two eyes give a nearby pen.'],
     ],
     note: 'Measuring by comparison is old workshop practice, and the basis of the sight-size method still taught in classical ateliers.',
-    field: 'The same unit trick estimates size and distance: a door is about 2 m, a storey about 3 m — count them (S6.6).',
+    field: 'The same unit trick estimates size and distance: a door is about 2 m, a storey about 3 m — count them (S6.8).',
     prompt: 'One window is the unit. Tick how many windows tall each building is, then draw the three facades to those heights.',
   },
 
@@ -145,7 +145,7 @@ export const theory = {
       ['Relationships, not things', 'Each alignment fixes one part relative to another, so errors can’t quietly pile up. A drawing built on a few alignments holds together; one built part by part drifts.'],
       ['A scaffold of guides', 'Three or four alignments, drawn as faint guides, make a scaffold. Everything else can be hung on it.'],
     ],
-    field: 'Navigators fix a position the same way: when two landmarks line up, you are somewhere on the line through them.',
+    field: 'Surveyors call it resection: when two landmarks line up, you stand somewhere on the line through them — find two such lines and they cross where you are.',
     prompt: 'Draw the guide lines faintly, then place the windows, signs and doors along them. Then a kitchen counter or a car by a lamp post from life.',
   },
 
@@ -166,7 +166,7 @@ export const theory = {
       ['It moves with you', 'Sit down and the horizon drops; climb a ladder and it rises. That is why a room looks so different from a chair and from a step-ladder, and why table tops show more when you stand.'],
       ['Finding it', 'Lines that run away from you, parallel to the ground, slope towards the horizon and meet on it. Follow a few — the top of a counter, a row of windows — and where they converge is eye level.'],
     ],
-    field: 'Every panoramic sketch starts with this line (S6.5): everything you note is placed against it.',
+    field: 'Every panoramic sketch starts with this line (S6.7): everything you note is placed against it.',
     prompt: 'Draw a level line through eye level in each picture. Then a hallway — standing, then sitting on the floor.',
   },
 
@@ -178,7 +178,7 @@ export const theory = {
       ['Use several at once', 'Each cue alone is weak; together they are convincing. A near tree overlapping a smaller, paler, higher tree reads as depth instantly, with no vanishing points at all.'],
       ['Three bands', 'Landscape painters often think in three bands — foreground, middle ground, background — each with its own size, detail and darkness. The lake scene in the sketch is built that way.'],
     ],
-    field: 'These cues are how you judge range — and how they fool you: clear air and water make things look closer (S6.6).',
+    field: 'These cues are how you judge range — and how they fool you: clear air and water make things look closer (S6.8).',
     prompt: 'The same object near, middle and far — using size, overlap, height and lightness. Then the lake scene overleaf in three bands.',
   },
 
@@ -261,10 +261,10 @@ export const theory = {
   'S6.1': {
     key: 'A field sketch is a drawing made to be used: oriented, simple, labelled.',
     sections: [
-      ['Why sketch instead of photograph', 'A photograph records everything equally. A sketch records what you decided mattered — the road, the ridge, the bridge, the gap in the trees — and making that decision is the observation. Surveyors, soldiers and geographers have field-sketched for centuries, and it still works without batteries, signal or a camera.'],
+      ['Why sketch instead of photograph', 'A photograph records everything equally. A sketch records what you decided mattered — the road, the ridge, the bridge, the gap in the trees — and making that decision is the observation. It also works without batteries, signal or a camera.'],
       ['Orientation first', 'Without orientation a sketch is a picture; with it, a tool. Note where you are, the date and time, which way you face (or a north arrow), and the left and right limits of the view. Anyone — including you, next month — can then stand in the same place and match it to the ground.'],
-      ['Big lines, then labels', 'Block in what structures the view — horizon, ridges, roads, tree lines, building edges — then only the details that help someone find their way. Number them and label them in capitals instead of shading. Clean lines and clear words beat art.'],
-      ['Only what you see', 'If a road disappears behind a hill, it stops on the page; if you are guessing, write a question mark. Filling gaps with assumptions is how sketches mislead.'],
+      ['Big lines, then labels', 'Block in what structures the view — horizon, ridges, roads, tree lines, building edges — then only the details that help someone find their way. Number them and label them in capitals instead of shading.'],
+      ['Only what you see', '“Nothing but what has been seen should be represented,” says the 1903 manual, “and the tendency to sacrifice truth to effect must be guarded against.” A road that disappears behind a hill stops on the page; a guess gets a question mark.'],
     ],
     note: 'The US Army map-reading manual (FM 3-25.26): a sketch is “a free-hand drawing of a map or picture of an area or route of travel”.',
     prompt: 'Field-sketch the scene: place, time and facing first; then left and right limits, the big lines, and numbered, labelled landmarks — no shading. Then a real view.',
@@ -282,18 +282,40 @@ export const theory = {
   },
 
   'S6.3': {
-    key: 'A map you draw from walking: from above, north up, routes and landmarks.',
+    key: 'North is in the sky before it is on your phone: the sun, a shadow, the stars.',
     sections: [
-      ['From the ground to from above', 'A route or area sketch is a plan — the view from above — built from what you saw on the ground. The corner you turned becomes a junction, the hill becomes a note, the café a numbered landmark.'],
-      ['What goes on it', 'A north arrow, a rough scale (a bar marked “about 100 m”), the routes, the junctions where you chose a way, the landmarks you would use again, and the ways in and out — for a building, the exits and stairs. A key keeps it readable: a square for a building, a line for a path, a number for each landmark.'],
-      ['Proportion, not precision', 'Distances need not be exact, but they must be in proportion: if one block took twice as long to walk as another, draw it twice as long. Counting paces or noting minutes keeps the proportions honest.'],
-      ['Knowing the way out', 'Sketching the exits and stairs of a building you use is a simple awareness habit — drawing fixes a layout in memory far better than a glance at a floor plan.'],
+      ['Why north matters', 'A sketch is only as useful as its orientation, and phones run out. The old methods are rougher, but they never fail — and they make you notice where the sun is.'],
+      ['The sun and a shadow', 'The sun is due south at solar noon in the northern hemisphere (due north in the southern), and shadows are shortest then. Solar noon is rarely 12:00 on the clock — time zones and summer time move it. A stick does better: mark the tip of its shadow, wait twenty minutes, mark it again. The line from the first mark to the second runs roughly west to east.'],
+      ['The watch method — roughly', 'Hold an analogue watch flat and point the hour hand at the sun: halfway between the hour hand and 12 lies south (in the northern hemisphere; on summer time use 1 instead of 12). The 1903 manual calls it “very rough” — but it beats guessing.'],
+      ['At night, and with a compass', 'The Pole Star sits within a degree of true north; south of the equator, the long axis of the Southern Cross points towards the south pole of the sky. A compass points to magnetic north, a few degrees off true north — note which north you used.'],
     ],
-    note: 'A 1903 Manual of Field Sketching and Reconnaissance measured routes by pacing — or on horseback by time, since a walk, a trot and a canter each cover a known distance in an hour.',
-    prompt: 'Walk a block, a park or your building, then map it from memory: north arrow, rough scale, routes, landmarks, exits. Check it next time you pass.',
+    note: '“The estimated position of the north should be laid down on the sketch, and the means by which it was fixed, noted against it.” — the 1903 manual',
+    prompt: 'Find north three ways — shadow stick, watch and phone — and log how far apart they are. Then add north to your last field sketch, with how you found it.',
   },
 
   'S6.4': {
+    key: 'Walk, note, plot: a route recorded as legs, directions and landmarks.',
+    sections: [
+      ['A notebook map', 'Before cheap maps and satellites, routes were surveyed as traverses: a chain of straight legs, each with a direction and a length. The sketcher did not draw while walking; the figures went into a field book and were plotted later. It still works — and it trains you to notice every turn.'],
+      ['The field book', 'Rule a column down the middle of the page. In it, book each leg: the time, the direction (a bearing, or just “left at the church”) and the distance in paces or minutes. Either side, note what you pass — a stream, a gate, a junction — with a tiny sketch. Start at the bottom of the page and work up, so the page runs the way you walk.'],
+      ['Distance by time', 'Counting paces is tiring and distracting, so the 1903 manual preferred time: at a steady pace, minutes convert to distance — an easy walk covers about 80 metres a minute. Small errors partly cancel over a long route: “it is wonderful how the number of small errors in bearings neutralise one another.”'],
+      ['Plot it', 'Afterwards, draw the route leg by leg at a chosen scale: north up, each leg at its direction and length, landmarks either side. Where the plot closes on a known point, the gap shows how good the log was.'],
+    ],
+    prompt: 'Log a short walk in the field-book column — start at the bottom, one line per leg, landmarks either side. Then plot it in the frame, north up.',
+  },
+
+  'S6.5': {
+    key: 'Two ends of a line, rays to every landmark — where the rays cross, the landmark is.',
+    sections: [
+      ['From the ground to from above', 'An area sketch is a plan — the view from above — of a place you can see and walk around: a park, a square, the streets by a station. The 1903 manual taught it with nothing but paper, pencil, a board and a straight edge: “sketching without instruments, sometimes called eye-sketching”.'],
+      ['Base line and rays', 'Choose two points you can walk between — two benches, the ends of a path — as a base line; pace it and draw it to scale. At one end, lay the straight edge from that point towards each landmark and draw a faint ray. Walk to the other end and do the same. Where the two rays to a landmark cross, that is where it goes. This is intersection, the idea behind triangulation and every map.'],
+      ['Long base, distant points', '“Try to establish at the outset as long a base as possible”: rays from the ends of a short base cross at shallow angles and smear the position. Fill in between the fixed points by eye and by pacing — and, the manual adds, never go over the same ground twice.'],
+      ['Words beat symbols', 'North arrow, scale bar, key, routes, landmarks, and the ways in and out. Where a symbol might be misread, write the word: “It is far better to write descriptions on the face of a sketch, in language that cannot be mistaken.”'],
+    ],
+    prompt: 'Pace a base line, draw it to scale, then draw rays to five landmarks from each end. Mark where they cross, then fill in the plan by eye.',
+  },
+
+  'S6.6': {
     key: 'From any spot, some things are in view and some are hidden — sketch both.',
     sections: [
       ['A sketch from one spot', 'A field-of-view sketch is drawn from a single vantage point — a bench, a window, a street corner — and shows what that spot commands. Mark your position, your left and right limits, and a few numbered reference points that anyone could find: a lamp post, a bus shelter, the corner shop.'],
@@ -304,18 +326,18 @@ export const theory = {
     prompt: 'Pick a spot — a bench, a window, a corner. Mark your limits, number three to five reference points with rough ranges, then shade what you can’t see.',
   },
 
-  'S6.5': {
+  'S6.7': {
     key: 'A panorama is the skyline as a strip, with every landmark numbered and placed.',
     sections: [
       ['The view as a strip', 'A panoramic sketch shows the view from one place as a long, low strip: the horizon, the ridgelines and rooftops, and the features that stand out against them. It is the classic observer’s sketch — for describing a view to someone else, planning a route across it, and recognising the place again.'],
-      ['Horizon, then skylines', 'Start with eye level (S4.1), then the skylines from far to near: distant hills, nearer ridges, rooftops, tree lines. Overlap (S4.2) shows which is in front. Leave out anything that does not help someone find their way.'],
-      ['Reference points', 'Number each landmark and write its label above the sketch with a rough range — “3 · silo · 500 m”. A scale of bearings along the top, or simply the left and right limits, lets anyone match the sketch to the real view.'],
-      ['A working tradition', 'Panoramic sketching was a standard observer’s skill in early-twentieth-century army manuals, before cameras were practical in the field. Geography students still draw annotated field sketches of landscapes today.'],
+      ['Outline, unshaded', '“The sketch should be in outline, unshaded, except in the foreground.” Start with eye level (S4.1), then the skylines far to near — hills, ridges, rooftops, tree lines — with overlap (S4.2) showing which is in front. “It is permissible to exaggerate the heights of features which are important but do not show up well.”'],
+      ['Heading and names', 'The heading says what, from where and which way: “Sketch of Linton Hill from Marden Railway Bridge facing north.” Names go opposite the features, on leader lines above the skyline, with rough ranges — as in the 1899 sketch beside this text.'],
+      ['A working tradition', 'Landscape sketching was a standard observer’s skill a century ago, before cameras were practical in the field. Geography students still draw annotated field sketches today.'],
     ],
     prompt: 'Read the example, then sketch a real view as a panorama: horizon, skylines far to near, numbered landmarks with rough ranges and bearings.',
   },
 
-  'S6.6': {
+  'S6.8': {
     key: 'Estimate, write it down, then check — the eye only learns with feedback.',
     sections: [
       ['How distance fools you', 'Distance judgment rests on cues — size, detail, haze, overlap — and they mislead in predictable ways. Things look closer in clear air, across water or a valley, and when they are large or brightly lit; further away in haze or poor light, and when partly hidden.'],

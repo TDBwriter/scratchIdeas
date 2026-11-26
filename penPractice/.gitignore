@@ -3,6 +3,7 @@ out/*/
 !out/sketch/
 out/sketch/refs/
 out/sketch/thumbs/
+out/sketch/plates/
 out/sketch/*.html
 !out/print/
 out/print/refs/
