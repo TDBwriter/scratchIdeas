@@ -44,6 +44,7 @@ export const theory = {
       ['A few angles fix the drawing', 'In buildings and furniture a handful of angles decide everything else: get the roof pitch and the two edges running away from a corner right and the rest falls into place. When a drawing looks “off” but you can’t say why, the cause is usually an angle, not a length.'],
       ['Angles and eye level', 'Edges running away from you change slant depending on whether they are above or below your eyes: above, they slope down towards the horizon; below, they slope up. This is the seed of perspective in Part 4. For now, copy each slant exactly as it is.'],
     ],
+    field: 'Angles become bearings and slopes: the direction from you to a landmark, the pitch of a track you might climb.',
     prompt: 'Copy the slants in the sketch overleaf — roof lines, fence, barn — each from a level line, named as a clock time. Then slants around you: a stair rail, a laptop lid.',
   },
 
@@ -67,6 +68,7 @@ export const theory = {
       ['What it trains', 'Experienced artists look up at their subject constantly; beginners spend most of their time looking at the page. A few minutes of blind drawing shifts that balance, and the habit carries into every drawing after it.'],
     ],
     note: 'Blind contour was popularised by Kimon Nicolaides, and for beginners by Betty Edwards’ Drawing on the Right Side of the Brain (1979).',
+    field: 'Observers train the same way: look hard, then record without looking — see Drawing from memory (S6.2).',
     prompt: 'Four two-minute blind contours. Set a timer, don’t look down, keep the pen moving.',
   },
 
@@ -110,6 +112,7 @@ export const theory = {
       ['Busy things become simple', 'Trees, bicycles and railings are tangles of parts, but the sky between branches or the gaps between spokes are a few clear shapes. Drawing them is often faster and more accurate than drawing the parts.'],
       ['Empty space is a shape', 'In a finished picture the empty areas around a subject give it room and weight. Designers call it white space and treat it as a shape like any other — a habit that will pay off in Part 6.'],
     ],
+    field: 'Gaps are routes: the space between two buildings, a break in a hedge, a clear line through the trees.',
     prompt: 'Shade only the gaps in a chair or a stool, then the sky between the branches in the sketch overleaf. Then a bicycle or a plant, by its gaps.',
   },
 
@@ -131,6 +134,7 @@ export const theory = {
       ['Keep the arm still', 'The arm must stay at the same distance for every measurement, or the unit quietly changes. Closing one eye removes the double image two eyes give a nearby pen.'],
     ],
     note: 'Measuring by comparison is old workshop practice, and the basis of the sight-size method still taught in classical ateliers.',
+    field: 'The same unit trick estimates size and distance: a door is about 2 m, a storey about 3 m — count them (S6.6).',
     prompt: 'One window is the unit. Tick how many windows tall each building is, then draw the three facades to those heights.',
   },
 
@@ -141,6 +145,7 @@ export const theory = {
       ['Relationships, not things', 'Each alignment fixes one part relative to another, so errors can’t quietly pile up. A drawing built on a few alignments holds together; one built part by part drifts.'],
       ['A scaffold of guides', 'Three or four alignments, drawn as faint guides, make a scaffold. Everything else can be hung on it.'],
     ],
+    field: 'Navigators fix a position the same way: when two landmarks line up, you are somewhere on the line through them.',
     prompt: 'Draw the guide lines faintly, then place the windows, signs and doors along them. Then a kitchen counter or a car by a lamp post from life.',
   },
 
@@ -161,6 +166,7 @@ export const theory = {
       ['It moves with you', 'Sit down and the horizon drops; climb a ladder and it rises. That is why a room looks so different from a chair and from a step-ladder, and why table tops show more when you stand.'],
       ['Finding it', 'Lines that run away from you, parallel to the ground, slope towards the horizon and meet on it. Follow a few — the top of a counter, a row of windows — and where they converge is eye level.'],
     ],
+    field: 'Every panoramic sketch starts with this line (S6.5): everything you note is placed against it.',
     prompt: 'Draw a level line through eye level in each picture. Then a hallway — standing, then sitting on the floor.',
   },
 
@@ -172,6 +178,7 @@ export const theory = {
       ['Use several at once', 'Each cue alone is weak; together they are convincing. A near tree overlapping a smaller, paler, higher tree reads as depth instantly, with no vanishing points at all.'],
       ['Three bands', 'Landscape painters often think in three bands — foreground, middle ground, background — each with its own size, detail and darkness. The lake scene in the sketch is built that way.'],
     ],
+    field: 'These cues are how you judge range — and how they fool you: clear air and water make things look closer (S6.6).',
     prompt: 'The same object near, middle and far — using size, overlap, height and lightness. Then the lake scene overleaf in three bands.',
   },
 
@@ -237,6 +244,7 @@ export const theory = {
       ['Shadow shapes', 'Shadows are shapes like any other. Outlining a shadow and filling it with one even tone is faster and more convincing than shading every object separately.'],
       ['Notan', 'The Japanese idea of notan — the balance of light and dark — entered Western art teaching through Arthur Wesley Dow’s book Composition (1899). A good value pattern still reads as a tiny thumbnail.'],
     ],
+    field: 'Squinting turns a landscape into the masses a field sketch needs: ridges, tree lines, buildings, open ground.',
     prompt: 'Copy the scene in three values: darks first, then middles; leave the lights. Then a view from your window and a room lit by one lamp.',
   },
 
@@ -251,6 +259,74 @@ export const theory = {
   },
 
   'S6.1': {
+    key: 'A field sketch is a drawing made to be used: oriented, simple, labelled.',
+    sections: [
+      ['Why sketch instead of photograph', 'A photograph records everything equally. A sketch records what you decided mattered — the road, the ridge, the bridge, the gap in the trees — and making that decision is the observation. Surveyors, soldiers and geographers have field-sketched for centuries, and it still works without batteries, signal or a camera.'],
+      ['Orientation first', 'Without orientation a sketch is a picture; with it, a tool. Note where you are, the date and time, which way you face (or a north arrow), and the left and right limits of the view. Anyone — including you, next month — can then stand in the same place and match it to the ground.'],
+      ['Big lines, then labels', 'Block in what structures the view — horizon, ridges, roads, tree lines, building edges — then only the details that help someone find their way. Number them and label them in capitals instead of shading. Clean lines and clear words beat art.'],
+      ['Only what you see', 'If a road disappears behind a hill, it stops on the page; if you are guessing, write a question mark. Filling gaps with assumptions is how sketches mislead.'],
+    ],
+    note: 'The US Army map-reading manual (FM 3-25.26): a sketch is “a free-hand drawing of a map or picture of an area or route of travel”.',
+    prompt: 'Field-sketch the scene: place, time and facing first; then left and right limits, the big lines, and numbered, labelled landmarks — no shading. Then a real view.',
+  },
+
+  'S6.2': {
+    key: 'Look hard for a minute, then draw from memory — and check what you missed.',
+    sections: [
+      ['Seeing is not noticing', 'We see far more than we notice. Ask someone to sketch the room they just left and they will miss doors, windows and most of what was on the walls. Drawing from memory trains noticing: you study a scene knowing you must draw it, and the effort of recall shows exactly what you skipped.'],
+      ['Kim’s Game', 'In Rudyard Kipling’s novel Kim (1901) a boy is trained as an observer by memorising trays of objects, then listing them. Kim’s Game became a staple of scouting and of observation training: look, cover, recall, check.'],
+      ['Look with a plan', 'Memory works best with a structure. Take in the layout first — walls, doors, the counter — then the people and big objects, then the details. A rough plan of a space is easier to remember than a list, because every thing has a place.'],
+      ['The check is the lesson', 'Comparing the memory drawing with the real scene, and marking what you missed in a different line, is where the improvement happens. Over a few weeks the list of misses gets shorter — and you start noticing exits and layouts without trying.'],
+    ],
+    prompt: 'Study the sketch overleaf for 60 seconds, turn the page and draw it from memory. Turn back, check, and add what you missed in dashed lines.',
+  },
+
+  'S6.3': {
+    key: 'A map you draw from walking: from above, north up, routes and landmarks.',
+    sections: [
+      ['From the ground to from above', 'A route or area sketch is a plan — the view from above — built from what you saw on the ground. The corner you turned becomes a junction, the hill becomes a note, the café a numbered landmark.'],
+      ['What goes on it', 'A north arrow, a rough scale (a bar marked “about 100 m”), the routes, the junctions where you chose a way, the landmarks you would use again, and the ways in and out — for a building, the exits and stairs. A key keeps it readable: a square for a building, a line for a path, a number for each landmark.'],
+      ['Proportion, not precision', 'Distances need not be exact, but they must be in proportion: if one block took twice as long to walk as another, draw it twice as long. Counting paces or noting minutes keeps the proportions honest.'],
+      ['Knowing the way out', 'Sketching the exits and stairs of a building you use is a simple awareness habit — drawing fixes a layout in memory far better than a glance at a floor plan.'],
+    ],
+    note: 'A 1903 Manual of Field Sketching and Reconnaissance measured routes by pacing — or on horseback by time, since a walk, a trot and a canter each cover a known distance in an hour.',
+    prompt: 'Walk a block, a park or your building, then map it from memory: north arrow, rough scale, routes, landmarks, exits. Check it next time you pass.',
+  },
+
+  'S6.4': {
+    key: 'From any spot, some things are in view and some are hidden — sketch both.',
+    sections: [
+      ['A sketch from one spot', 'A field-of-view sketch is drawn from a single vantage point — a bench, a window, a street corner — and shows what that spot commands. Mark your position, your left and right limits, and a few numbered reference points that anyone could find: a lamp post, a bus shelter, the corner shop.'],
+      ['Dead ground', 'Behind every building, wall, hedge or rise there is ground you cannot see from where you stand. Surveyors and soldiers call it dead ground. Shading it makes the blind spots as clear as the view, and it is often the most useful part of the sketch.'],
+      ['Ranges', 'Arcs at rough distances — 50, 100, 200 metres — turn the sketch into a measured view, so a point can be described as “3, the bus shelter, about 150 metres”. Judging those distances is the last lesson of this part.'],
+      ['What it trains', 'Asking “what can’t I see from here?” makes you look at edges, gaps and overlaps — the negative space of S2.4, used for awareness instead of drawing.'],
+    ],
+    prompt: 'Pick a spot — a bench, a window, a corner. Mark your limits, number three to five reference points with rough ranges, then shade what you can’t see.',
+  },
+
+  'S6.5': {
+    key: 'A panorama is the skyline as a strip, with every landmark numbered and placed.',
+    sections: [
+      ['The view as a strip', 'A panoramic sketch shows the view from one place as a long, low strip: the horizon, the ridgelines and rooftops, and the features that stand out against them. It is the classic observer’s sketch — for describing a view to someone else, planning a route across it, and recognising the place again.'],
+      ['Horizon, then skylines', 'Start with eye level (S4.1), then the skylines from far to near: distant hills, nearer ridges, rooftops, tree lines. Overlap (S4.2) shows which is in front. Leave out anything that does not help someone find their way.'],
+      ['Reference points', 'Number each landmark and write its label above the sketch with a rough range — “3 · silo · 500 m”. A scale of bearings along the top, or simply the left and right limits, lets anyone match the sketch to the real view.'],
+      ['A working tradition', 'Panoramic sketching was a standard observer’s skill in early-twentieth-century army manuals, before cameras were practical in the field. Geography students still draw annotated field sketches of landscapes today.'],
+    ],
+    prompt: 'Read the example, then sketch a real view as a panorama: horizon, skylines far to near, numbered landmarks with rough ranges and bearings.',
+  },
+
+  'S6.6': {
+    key: 'Estimate, write it down, then check — the eye only learns with feedback.',
+    sections: [
+      ['How distance fools you', 'Distance judgment rests on cues — size, detail, haze, overlap — and they mislead in predictable ways. Things look closer in clear air, across water or a valley, and when they are large or brightly lit; further away in haze or poor light, and when partly hidden.'],
+      ['A unit you know', 'Picture a familiar length — a football pitch, about 100 metres — and count how many fit between you and the object. Beyond a few hundred metres, count to the halfway point and double it.'],
+      ['Known sizes', 'Use things whose size you know: a door is about 2 m tall, a storey about 3 m, a car about 4.5 m long. Measured against your pen (S3.2), they give both size and distance.'],
+      ['Bracket, then check', 'Decide the nearest and furthest it could reasonably be and take the middle. Then check against a map or your own pace count over a measured 100 m. Writing estimates down and checking them is the only way the eye improves.'],
+    ],
+    prompt: 'Number six landmarks at different distances and estimate each one. Note the method, then check with a map or your paces and log the error.',
+  },
+
+  'S7.1': {
     key: 'Decide what the picture is about before you draw it big.',
     sections: [
       ['Small and quick', 'A thumbnail is a stamp-sized sketch made in a minute or two. At that size you can only show the big shapes and values — which is exactly what composition is made of.'],
@@ -260,7 +336,7 @@ export const theory = {
     prompt: 'Six thumbnails of the scene, each different: move the horizon, crop tighter, change the frame. Circle the best.',
   },
 
-  'S6.2': {
+  'S7.2': {
     key: 'Big to small, light to dark — in four passes.',
     sections: [
       ['Why passes', 'A drawing involves decisions at different scales: the overall size, the big shapes, the structure, the detail. Making them in that order — and darkening only at the end — keeps early mistakes cheap to fix.'],
@@ -270,17 +346,17 @@ export const theory = {
     prompt: 'Follow the example strip, then draw a mug, a shoe or a lamp — and anything you choose — in four passes.',
   },
 
-  'S6.3': {
+  'S7.3': {
     key: 'Get the whole scene down in seconds, then build it while it lasts.',
     sections: [
-      ['Things move', 'People shift, light changes, the bus leaves. Field sketching means getting the essential shapes down in the first minute and adding detail only for as long as the scene allows.'],
+      ['Things move', 'People shift, light changes, the bus leaves. Sketching on location means getting the essential shapes down in the first minute and adding detail only for as long as the scene allows.'],
       ['People in seconds', 'A standing figure is a curve for the spine, an oval head and a box for the torso, with lines for the limbs; an adult is roughly seven to eight heads tall. Catch the gesture — the lean, the weight on one foot — before anything else.'],
       ['Notes', 'The time, the place and one thing you noticed turn a sketch into a record. Naturalists and reportage artists have always written in their sketchbooks.'],
     ],
     prompt: 'One scene at 2, 5 and 10 minutes; eight people at 30 seconds each; a field note in block capitals.',
   },
 
-  'S6.4': {
+  'S7.4': {
     key: 'Everything in one drawing: plan, measure, build, light.',
     sections: [
       ['Putting it together', 'A finished observational drawing uses every skill in this book: thumbnails to plan, envelope and measuring for proportion, perspective for space, value for light. The capstone uses them in order on a subject you choose.'],

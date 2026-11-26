@@ -35,14 +35,39 @@ Requires Playwright (Chromium) and ImageMagick.
 - **Loose-leaf print, double-sided**, flipped on the long edge. Every sheet stands on its own.
 - **No navigation depends on tapping links.** Footers say "practice overleaf ▸" / "◂ instructions overleaf", and page numbers sit on the outer edge.
 
-## The whole e-ink edition (74 pages = 37 sheets)
+## Part 6: In the field — sketching as observation
+
+Field sketching as a practical skill: you observe terrain, angles, distances and ways in and out deliberately instead of glancing past them. A sketch keeps what matters and strips the noise. The sketches are made from public places, for navigation, orientation and everyday awareness.
+
+| Lesson | Theory | Practice |
+|---|---|---|
+| S6.1 The field sketch | Sketch vs photo; orientation first (place, time, facing/north, left and right limits); big lines, then numbered labels; only what you see (FM 3-25.26 definition) | A farm scene with orientation, limits and numbered landmarks, then a frame with a PLACE / DATE / TIME / FACING header and a north arrow |
+| S6.2 Drawing from memory | Seeing vs noticing; Kim’s Game (Kipling, 1901); look with a plan; the check is the lesson | Study the diner sketch on the theory page for 60 s, turn over, draw from memory, then check against a list of what is often missed |
+| S6.3 Route and area sketches | Plan view from walking; north arrow, rough scale, routes, landmarks, exits; proportion not precision; the 1903 *Manual of Field Sketching and Reconnaissance* (pacing, timing) | Dot-grid map paper with a north arrow and key |
+| S6.4 What you can and can’t see | Vantage-point sketches, left and right limits, reference points, dead ground, range arcs | A field-of-view fan template, plus five reference-point lines with ranges |
+| S6.5 Panoramic sketches | The view as a strip; horizon, then skylines far to near; numbered reference points with ranges and bearings; the observer’s tradition | Example panorama with a bearing scale and numbered landmarks, then two panorama strips with bearing rulers |
+| S6.6 Judging distance | How distance fools you; a unit you know; known sizes (door 2 m, storey 3 m, car 4.5 m); bracket, then check | Sketch and number six landmarks, plus an estimate / method / checked / error log |
+
+**In the field asides:** eight earlier theory pages tie their skill to observation:
+- angles → bearings
+- blind contour → memory drills
+- negative space → routes
+- measuring → distance
+- alignments → position lines
+- eye level → panoramas
+- depth cues → range
+- squinting → terrain masses
+
+The old “Field sketching” lesson is now **S7.3 Sketching on location**, in Part 7.
+
+## The whole e-ink edition (88 pages = 44 sheets)
 
 | Sheet | Front | Back |
 |---|---|---|
 | 1 | Cover | How this book works |
 | 2 | Contents | Progress tracker |
-| 7 part dividers | Part intro and lesson list | Sketchbook illustration |
-| 27 lesson sheets | Theory | Practice |
+| 8 part dividers | Part intro and lesson list | Sketchbook illustration |
+| 33 lesson sheets | Theory | Practice |
 | Last | About this book | Back cover |
 
 Page size: 157.5 × 210 mm, true size on Kindle Scribe 2022/2024 and reMarkable 2.

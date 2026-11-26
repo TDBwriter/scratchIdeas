@@ -16,7 +16,8 @@ export const parts = [
   { n: 3, name: 'Proportion', intro: 'Get sizes and positions right: box it in, measure by comparison, and check what lines up with what.', cover: { scene: 'buildingFront', seed: 31 } },
   { n: 4, name: 'Space', intro: 'Make it look deep. Eye level, overlap, and perspective with one and two vanishing points.', cover: { scene: 'cityStreet', seed: 31 } },
   { n: 5, name: 'Light', intro: 'Make it look solid. Build a value scale, light simple forms, group shadows into shapes, and suggest texture.', cover: { scene: 'farmhouse', seed: 32 } },
-  { n: 6, name: 'Putting it together', intro: 'Plan with thumbnails, draw in four passes, sketch real places quickly — then draw a scene from life.', cover: { scene: 'diner', seed: 32 } },
+  { n: 6, name: 'In the field', intro: 'Sketching as observation: field sketches you can use, drawing from memory, maps from walking, what you can and can’t see from one spot, panoramas, and judging distance.', cover: { scene: 'nature', seed: 32 } },
+  { n: 7, name: 'Putting it together', intro: 'Plan with thumbnails, draw in four passes, sketch real places quickly — then draw a scene from life.', cover: { scene: 'diner', seed: 32 } },
 ];
 
 export const lessons = [
@@ -255,8 +256,17 @@ export const lessons = [
     slip: 'Filling the whole area with texture. Let the viewer’s eye do the rest.',
     why: 'The eye fills in patterns. Letting it do the work keeps drawings fresh — and quick enough to finish.' },
 
-  // ---------------- Part 6: Putting it together
-  { id: 'S6.1', part: 6, title: 'Thumbnails and framing', diagram: 'thumbs',
+  // ---------------- Part 6: In the field (theory and prompts in theory.mjs)
+  { id: 'S6.1', part: 6, title: 'The field sketch', diagram: 'fieldAnatomy', dh: 38, practice: { type: 'fieldSketch', ref: { scene: 'farmhouse', seed: 28, overlay: 'field' } } },
+  { id: 'S6.2', part: 6, title: 'Drawing from memory', diagram: null, practice: { type: 'memoryDrill' },
+    theoryRef: { scene: 'diner', seed: 28, overlay: null, cap: 'Study this scene for 60 seconds — the layout, the ways in and out, the people, the signs — then turn over and draw it from memory.' } },
+  { id: 'S6.3', part: 6, title: 'Route and area sketches', diagram: 'areaSketch', dh: 40, practice: { type: 'planGrid' } },
+  { id: 'S6.4', part: 6, title: 'What you can and can’t see', diagram: 'sector', dh: 50, practice: { type: 'sectorTemplate' } },
+  { id: 'S6.5', part: 6, title: 'Panoramic sketches', diagram: 'panoramaSteps', practice: { type: 'panoramaStrips', ref: { scene: 'farmhouse', seed: 29, overlay: 'panorama' } } },
+  { id: 'S6.6', part: 6, title: 'Judging distance', diagram: 'range', practice: { type: 'rangeLog' } },
+
+  // ---------------- Part 7: Putting it together
+  { id: 'S7.1', part: 7, title: 'Thumbnails and framing', diagram: 'thumbs',
     learn: 'To plan a drawing in tiny boxes before you start.',
     idea: 'A thumbnail is a stamp-sized sketch that tries out what to include, where the horizon goes and what the subject is. It takes a minute and saves the big drawing.',
     steps: ['Draw three small frames.', 'Try a different view in each: horizon high or low, subject left or centred, near or far.', 'Use only envelopes and two or three values.', 'Pick the most interesting. Keep the subject off-centre.'],
@@ -266,7 +276,7 @@ export const lessons = [
     slip: 'A horizon cutting the page exactly in half. Move it up or down.',
     why: 'Decisions are cheap when the drawing is small. Composition problems are hard to fix after an hour of detail.' },
 
-  { id: 'S6.2', part: 6, title: 'The four-pass drawing', diagram: 'fourPass',
+  { id: 'S7.2', part: 7, title: 'The four-pass drawing', diagram: 'fourPass',
     learn: 'A reliable order for any drawing from life.',
     idea: 'Work from big to small and light to dark: 1 envelope, 2 shapes, 3 structure (perspective, ellipses, edges), 4 light and line. Every mistake is caught while it is still faint.',
     steps: ['Pass 1 — Envelope: size and place the subject with a few light lines.', 'Pass 2 — Shapes: block in; check proportions and alignments.', 'Pass 3 — Structure: perspective, ellipses, true edges.', 'Pass 4 — Light and line: values, texture, darker lines in front.'],
@@ -276,7 +286,7 @@ export const lessons = [
     slip: 'Jumping to details in pass 1. Light and simple first.',
     why: 'Big-to-small and light-to-dark means every error is still easy to fix when you spot it.' },
 
-  { id: 'S6.3', part: 6, title: 'Field sketching', diagram: 'figures',
+  { id: 'S7.3', part: 7, title: 'Sketching on location', diagram: 'figures',
     learn: 'To sketch real places quickly — including people who won’t hold still.',
     idea: 'In a café, mall or park, nothing waits for you. Time limits force big shapes first. People are a gesture line plus an oval and a soft box. A short note — time, place, one thing you noticed — turns a page into a memory.',
     steps: ['Set a timer: 2, then 5, then 10 minutes — same scene.', 'People: spine curve → oval head → box body → lines for limbs.', 'If they move, start another; half-figures are great practice.', 'Add a field note in your best block print.'],
@@ -286,7 +296,7 @@ export const lessons = [
     slip: 'Spending the 2 minutes on one face. Whole scene first, every time.',
     why: 'Short, frequent sketches build seeing speed. The habit of looking is worth more than any single finished drawing.' },
 
-  { id: 'S6.4', part: 6, title: 'Capstone: a scene from life', diagram: 'capstone',
+  { id: 'S7.4', part: 7, title: 'Capstone: a scene from life', diagram: 'capstone',
     learn: 'To bring everything together in one finished drawing of a real place.',
     idea: 'Choose a real place — a diner counter, a street corner, a farmhouse, a lake shore or your own kitchen — and draw it with everything in this book.',
     steps: ['Three thumbnails; choose one.', 'Four passes: envelope, shapes, structure, light and line.', 'Perspective for buildings and furniture; shapes and gaps for objects; simple-shape people.', 'Finish with a field note. Then redraw your day-one cup.'],
@@ -352,4 +362,6 @@ export const overlayNotes = {
   bands: 'Dashed line: eye level. Brackets: the near, middle and far bands.',
   vp: 'Dashed lines: eye level, and edges running to the vanishing point.',
   notes: 'The handwriting is the sketcher’s field note: time, place, one thing noticed.',
+  field: 'A field sketch: where and when, which way it faces, left and right limits, numbered landmarks — no shading.',
+  panorama: 'A panoramic sketch: eye level, a scale of bearings along the top, numbered landmarks with rough ranges.',
 };

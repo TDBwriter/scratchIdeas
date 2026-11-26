@@ -100,7 +100,7 @@ Titles are working names. Plus **R0: the free sampler** (already built), used fo
 
 **Promise:** learn to draw what's in front of you, not what you think it looks like.
 
-**Status:** the e-ink edition is rebuilt as **one sheet per lesson — theory on the front, practice on the back** (74 pages = 37 sheets, `penPractice/out/sketch/sketch-what-you-see-eink.pdf`, builder in `penPractice/sketch/`) and is waiting for final approval. The handwriting books follow once it is approved. Print editions come next.
+**Status:** the e-ink edition is rebuilt as **one sheet per lesson — theory on the front, practice on the back** (88 pages = 44 sheets, 33 lessons in 8 parts — including **Part 6, In the field**: field sketches, drawing from memory, route and area sketches, what you can and can’t see, panoramas, judging distance; `penPractice/out/sketch/sketch-what-you-see-eink.pdf`, builder in `penPractice/sketch/`) and is waiting for final approval. The handwriting books follow once it is approved. Print editions come next.
 
 **Format rule for every edition:**
 - Print is **loose leaf, double-sided**, not bound.

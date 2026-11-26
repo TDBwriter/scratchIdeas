@@ -431,7 +431,7 @@ const drills = {
 function makeRefs() {
   const plain = join(opt.out, 'refs', 'plain'), noted = join(opt.out, 'refs', 'noted');
   const need = (dir, seed) => opt.refs || !existsSync(join(dir, `diner-${seed}.png`));
-  for (const seed of [21, 22, 23, 24, 25, 26, 27]) if (need(plain, seed)) execFileSync('node', [SKETCH, '--seed', String(seed), '--no-notes', '--out', plain], { stdio: 'inherit' });
+  for (const seed of [21, 22, 23, 24, 25, 26, 27, 28, 29]) if (need(plain, seed)) execFileSync('node', [SKETCH, '--seed', String(seed), '--no-notes', '--out', plain], { stdio: 'inherit' });
   for (const seed of [31, 32]) if (need(noted, seed)) execFileSync('node', [SKETCH, '--seed', String(seed), '--out', noted], { stdio: 'inherit' });
   // three-value versions for S5.3 (blur away the lines, keep the big masses)
   for (const name of ['cityStreet-25', 'buildingFront-24']) {
@@ -472,6 +472,22 @@ function overlaySvg(m, kind, gridMode) {
     for (let k = 0; k <= count; k++) s += `<line x1="${f(xx - 18)}" y1="${f(y0 - px * k)}" x2="${f(xx + 18)}" y2="${f(y0 - px * k)}" stroke="#000" stroke-width="5"/>` + (k ? label(xx - 26, y0 - px * k + 12, String(k), 'end') : '');
   }
   if (kind === 'bands' && m.bands) m.bands.forEach(([name, y0, y1]) => { const ym = (y0 + y1) / 2; s += `<path d="M${W - 70} ${f(y0 + 10)} L${W - 50} ${f(y0 + 10)} L${W - 50} ${f(y1 - 10)} L${W - 70} ${f(y1 - 10)}" ${st} stroke-width="5"/>` + label(W - 80, ym + 12, name.toUpperCase(), 'end'); });
+  const ring = (x, y, n) => `<circle cx="${f(x)}" cy="${f(y)}" r="28" fill="#fff" stroke="#000" stroke-width="6"/><text x="${f(x)}" y="${f(y + 12)}" font-family="JetBrains Mono" font-size="34" font-weight="700" text-anchor="middle">${n}</text>`;
+  const refPts = (row0, names) => (m.envelopes || []).map(([x0, y0, x1], i) => { const cx = (x0 + x1) / 2, row = row0 - (i % 2) * 78; return `<line x1="${f(cx)}" y1="${f(row + 28)}" x2="${f(cx)}" y2="${f(y0 - 10)}" stroke="#000" stroke-width="4"/>` + ring(cx, row, i + 1) + label(cx + 38, row + 12, names[i] || ''); }).join('');
+  if (kind === 'field' && m.envelopes) {
+    const nx = W - 110, ny = 120;
+    s += label(36, 64, 'FARM TRACK · 07:15 · FACING NE');
+    s += `<circle cx="${nx}" cy="${ny}" r="58" fill="#fff" stroke="#000" stroke-width="6"/><path d="M${nx} ${ny + 40} L${nx} ${ny - 40} M${nx - 16} ${ny - 18} L${nx} ${ny - 40} L${nx + 16} ${ny - 18}" stroke="#000" stroke-width="7" fill="none"/>` + label(nx, ny - 68, 'N', 'middle');
+    for (const [x, t, a] of [[40, 'L', 'start'], [W - 40, 'R', 'end']]) s += `<line x1="${x}" y1="${f(m.horizon - 320)}" x2="${x}" y2="${H - 30}" stroke="#000" stroke-width="5" stroke-dasharray="22 14"/>` + label(a === 'start' ? 58 : W - 58, H - 44, t, a);
+    s += refPts(Math.min(...m.envelopes.map(e => e[1])) - 80, ['HOUSE 350 m', 'BARN 450 m', 'SILO 500 m']);
+  }
+  if (kind === 'panorama' && m.envelopes) {
+    const top = Math.min(...m.envelopes.map(e => e[1])), ys = Math.max(50, top - 200);
+    s += `<line x1="110" y1="${f(ys)}" x2="${W - 110}" y2="${f(ys)}" stroke="#000" stroke-width="4"/>`;
+    for (let k = 0; k <= 12; k++) { const x = 110 + (W - 220) * k / 12; s += `<line x1="${f(x)}" y1="${f(ys - 14)}" x2="${f(x)}" y2="${f(ys + 14)}" stroke="#000" stroke-width="4"/>`; if (k % 2 === 0) s += label(x, ys - 24, `${String((330 + k * 5) % 360).padStart(3, '0')}°`, 'middle'); }
+    s += `<line x1="0" y1="${f(m.horizon)}" x2="${W}" y2="${f(m.horizon)}" stroke="#000" stroke-width="4" stroke-dasharray="26 16"/>` + label(50, m.horizon - 14, 'EYE LEVEL');
+    s += refPts(top - 70, ['HOUSE 350 m', 'BARN 450 m', 'SILO 500 m']);
+  }
   if (gridMode) { const cols = gridMode === 'half' ? 3 : 6, rows = gridMode === 'half' ? 2 : 4; for (let c = 1; c < cols; c++) s += `<line x1="${f(W * c / cols)}" y1="0" x2="${f(W * c / cols)}" y2="${H}" stroke="#000" stroke-width="4"/>`; for (let r = 1; r < rows; r++) s += `<line x1="0" y1="${f(H * r / rows)}" x2="${W}" y2="${f(H * r / rows)}" stroke="#000" stroke-width="4"/>`; }
   return s ? `<svg class="ov" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${s}</svg>` : '';
 }
@@ -694,6 +710,99 @@ const D = {
     s += txt(w * 0.62, h * 0.3, 'Field note, in block print:', { size: 2.5, c: INK }) + `<text x="${f(w * 0.62)}" y="${f(h * 0.45)}" font-family="Caveat" font-size="4.2" fill="#333">counter — 6:55 am</text>` + `<text x="${f(w * 0.62)}" y="${f(h * 0.58)}" font-family="Caveat" font-size="4.2" fill="#333">cap, coffee, watches the door</text>`;
     return s;
   },
+  fieldAnatomy(w, h) {
+    const hz = h * 0.58, hb = hz + 1, hx = w * 0.24, bx = w * 0.47, sx = w * 0.6, nx = w - 8, ny = 10;
+    let s = poly([[1, 1], [w - 1, 1], [w - 1, h - 1], [1, h - 1]], { w: 0.4 }) + txt(4, 5.6, 'FARM TRACK · 12 MAY · 07:15 · FACING NE', { size: 2.2, c: INK, weight: 700 });
+    s += circ(nx, ny, 3.6, { w: 0.35 }) + arrow(nx, ny + 2.6, nx, ny - 2.6, { w: 0.4 }) + txt(nx - 5.2, ny + 0.9, 'N', { size: 2.2, c: INK, anchor: 'middle', weight: 700 });
+    s += path(smoothD([[3, hz], [w * 0.2, hz - 4], [w * 0.4, hz - 2], [w * 0.62, hz - 7], [w * 0.85, hz - 3], [w - 3, hz - 5]]), { w: 0.45 });
+    s += poly([[hx, hb], [hx + 12, hb], [hx + 12, hb - 7], [hx, hb - 7]], { w: 0.45 }) + pline([[hx - 1, hb - 7], [hx + 6, hb - 12], [hx + 13, hb - 7]], { w: 0.45 });
+    s += poly([[bx, hb], [bx + 10, hb], [bx + 10, hb - 6], [bx + 5, hb - 9], [bx, hb - 6]], { w: 0.45 });
+    s += poly([[sx, hb], [sx + 3.5, hb], [sx + 3.5, hb - 13], [sx, hb - 13]], { w: 0.45 }) + halfEll(sx + 1.75, hb - 13, 1.75, 1.6, false, { w: 0.45 });
+    s += path(smoothD([[w * 0.72, hb], [w * 0.74, hb - 6], [w * 0.78, hb - 8], [w * 0.82, hb - 6], [w * 0.86, hb - 9], [w * 0.9, hb - 5], [w * 0.93, hb]]), { w: 0.4 });
+    s += path(quadThrough([w * 0.42, h - 6], [w * 0.34, hz + 8], [hx + 12.5, hb]), { w: 0.4 }) + path(quadThrough([w * 0.52, h - 6], [w * 0.42, hz + 8], [hx + 13.5, hb + 0.3]), { w: 0.4 });
+    for (const [x, t, a] of [[4, 'L', 'start'], [w - 4, 'R', 'end']]) s += ln(x, hz - 13, x, h - 7, { w: 0.4, dash: '1.2 0.9' }) + txt(a === 'start' ? x + 1.5 : x - 1.5, h - 7.5, t, { size: 2.5, c: INK, weight: 700, anchor: a });
+    const num = (x, y, n) => `<circle cx="${f(x)}" cy="${f(y)}" r="2" fill="#fff" stroke="${INK}" stroke-width="0.35"/>` + txt(x, y + 0.85, n, { size: 2.2, c: INK, anchor: 'middle', weight: 700 });
+    s += num(hx + 6, hb - 15, '1') + num(bx + 5, hb - 12, '2') + num(sx + 1.75, hb - 18, '3') + num(w * 0.33, hz + 7, '4');
+    s += txt(4, h - 2.5, '1 HOUSE 350 m · 2 BARN 450 m · 3 SILO 500 m · 4 TRACK BEND ?', { size: 2.1, c: INK });
+    return s;
+  },
+  areaSketch(w, h) {
+    let s = poly([[1, 1], [w - 1, 1], [w - 1, h - 1], [1, h - 1]], { w: 0.4 });
+    const ry = h * 0.36, rx = w * 0.42, ry2 = h * 0.74, g = 3;
+    s += ln(2, ry, w - 2, ry, { w: 0.4 }) + ln(2, ry + g, w - 2, ry + g, { w: 0.4 });
+    s += ln(rx, 2, rx, h - 2, { w: 0.4 }) + ln(rx + g, 2, rx + g, h - 2, { w: 0.4 });
+    s += ln(rx + g, ry2, w - 2, ry2, { w: 0.4 }) + ln(rx + g, ry2 + g, w - 2, ry2 + g, { w: 0.4 });
+    const blk = (x, y, bw, bh) => poly([[x, y], [x + bw, y], [x + bw, y + bh], [x, y + bh]], { w: 0.4 }) + hatch([[x, y], [x + bw, y], [x + bw, y + bh], [x, y + bh]], { gap: 1.3, op: 0.5 });
+    s += blk(5, 5, 12, ry - 9) + blk(20, 5, rx - 24, ry - 9) + blk(rx + g + 4, 5, 18, ry - 9) + blk(5, ry + g + 4, rx - 9, 10) + blk(rx + g + 4, ry + g + 4, 16, ry2 - ry - g - 8);
+    for (const [tx, ty] of [[rx + 30, ry + 10], [rx + 38, ry + 15], [rx + 47, ry + 9], [rx + 54, ry + 16]]) if (tx < w - 6) s += circ(tx, ty, 1.8, { w: 0.35 });
+    s += pline([[8, h - 3], [8, ry2 + 1], [rx + 1.5, ry2 + 1], [rx + 1.5, ry + 1.5], [w - 12, ry + 1.5]], { w: 0.5, dash: '1.4 1' }) + arrowHead(w - 12, ry + 1.5, 0, 1.6) + txt(9.5, h - 3.5, 'START', { size: 2, c: INK, weight: 700 });
+    const num = (x, y, n) => `<circle cx="${f(x)}" cy="${f(y)}" r="2" fill="#fff" stroke="${INK}" stroke-width="0.35"/>` + txt(x, y + 0.85, n, { size: 2.2, c: INK, anchor: 'middle', weight: 700 });
+    s += num(rx - 3, ry2 - 3, '1') + num(rx + 7, ry - 3.5, '2') + num(w - 9, ry + 6, '3');
+    s += circ(w - 8, 9, 3.6, { w: 0.35 }) + arrow(w - 8, 11.6, w - 8, 6.4, { w: 0.4 }) + txt(w - 13.2, 9.9, 'N', { size: 2.2, c: INK, anchor: 'middle', weight: 700 });
+    s += ln(20, h - 4, 36, h - 4, { w: 0.5 }) + ln(20, h - 5.2, 20, h - 2.8, { w: 0.4 }) + ln(36, h - 5.2, 36, h - 2.8, { w: 0.4 }) + txt(38, h - 3.2, 'about 100 m', { size: 2 });
+    s += txt(rx + g + 4, h - 3, '1 CAFÉ · 2 BUS STOP · 3 PARK GATE', { size: 2, c: INK });
+    return s;
+  },
+  sector(w, h) {
+    const O = [w * 0.36, h - 4], R = h - 8, a0 = -Math.PI / 2 - 1, a1 = -Math.PI / 2 + 1;   // angles (radians, 0 = right, y down)
+    const at = (a, r) => [O[0] + Math.cos(a) * r, O[1] + Math.sin(a) * r];
+    const arcPts = r => Array.from({ length: 31 }, (_, i) => at(lerp(a0, a1, i / 30), r));
+    let s = '';
+    const bA = at(-1.85, R * 0.42), bw = 10, bh = 6, b = [[bA[0] - bw / 2, bA[1] - bh / 2], [bA[0] + bw / 2, bA[1] - bh / 2], [bA[0] + bw / 2, bA[1] + bh / 2], [bA[0] - bw / 2, bA[1] + bh / 2]];
+    const proj = P => { const d = Math.hypot(P[0] - O[0], P[1] - O[1]); return [O[0] + (P[0] - O[0]) / d * R, O[1] + (P[1] - O[1]) / d * R]; };
+    const shadow = [b[0], b[1], proj(b[1]), proj(b[0])];
+    s += hatch(shadow, { gap: 1.1, op: 0.6 }) + poly(b, { w: 0.5, fill: '#fff' });
+    s += ln(...O, ...at(a0, R), { w: 0.5 }) + ln(...O, ...at(a1, R), { w: 0.5 });
+    [[0.33, '50 m'], [0.66, '100 m'], [1, '200 m']].forEach(([k, t]) => { s += pline(arcPts(R * k), { w: 0.3, dash: '1.2 0.9' }); const e = at(a1, R * k); s += txt(e[0] - 1.5, e[1] - 1.2, t, { size: 2, anchor: 'end' }); });
+    s += dot(...O, 1.1) + txt(O[0] + 2, O[1] + 1, 'YOU', { size: 2.1, c: INK, weight: 700 });
+    const l = at(a0, R), r = at(a1, R);
+    s += txt(l[0] - 1, l[1] + 3, 'L', { size: 2.5, c: INK, weight: 700, anchor: 'end' }) + txt(r[0] + 1, r[1] + 3, 'R', { size: 2.5, c: INK, weight: 700 });
+    const num = (P, n, t) => `<circle cx="${f(P[0])}" cy="${f(P[1])}" r="2" fill="#fff" stroke="${INK}" stroke-width="0.35"/>` + txt(P[0], P[1] + 0.85, n, { size: 2.2, c: INK, anchor: 'middle', weight: 700 }) + txt(P[0] + 2.8, P[1] + 0.8, t, { size: 1.9 });
+    s += num(at(-1.3, R * 0.3), '1', '') + num(at(-1.05, R * 0.8), '2', '') + num(at(-2.25, R * 0.82), '3', '');
+    const kx = w * 0.7;
+    ['1 lamp post', '2 bus shelter', '3 corner shop', 'L R  your limits'].forEach((t, i) => { s += txt(kx, 9 + i * 5.2, t, { size: 2.3, c: INK }); });
+    s += hatch([[kx, 28], [kx + 5, 28], [kx + 5, 32], [kx, 32]], { gap: 1, op: 0.6 }) + poly([[kx, 28], [kx + 5, 28], [kx + 5, 32], [kx, 32]], { w: 0.3 }) + txt(kx + 7, 31.2, 'dead ground', { size: 2.3, c: INK });
+    return s;
+  },
+  panoramaSteps(w, h) {
+    const sh = (h - 3) / 3, lx = 27;
+    let s = '';
+    for (let k = 0; k < 3; k++) {
+      const y0 = 1.5 + k * sh, yh = y0 + sh * 0.68, x0 = lx, x1 = w - 1.5;
+      s += poly([[x0, y0], [x1, y0], [x1, y0 + sh - 1], [x0, y0 + sh - 1]], { w: 0.3, c: '#999' }) + txt(1.5, y0 + sh / 2 + 0.8, ['1 eye level', '2 skylines', '3 numbered points'][k], { size: 2.1, c: INK, weight: 700 });
+      s += ln(x0, yh, x1, yh, { w: 0.35, dash: k ? '' : '1.4 1' });
+      if (k >= 1) {
+        s += path(smoothD([[x0, yh - 2], [lerp(x0, x1, 0.2), yh - 5], [lerp(x0, x1, 0.45), yh - 3], [lerp(x0, x1, 0.7), yh - 6], [x1, yh - 3]]), { c: GUIDE, w: 0.3 });
+        s += poly([[lerp(x0, x1, 0.3), yh], [lerp(x0, x1, 0.3) + 7, yh], [lerp(x0, x1, 0.3) + 7, yh - 4], [lerp(x0, x1, 0.3) + 3.5, yh - 6.5], [lerp(x0, x1, 0.3), yh - 4]], { w: 0.4 });
+        s += path(smoothD([[lerp(x0, x1, 0.62), yh], [lerp(x0, x1, 0.65), yh - 4], [lerp(x0, x1, 0.7), yh - 5], [lerp(x0, x1, 0.75), yh - 3.5], [lerp(x0, x1, 0.8), yh]]), { w: 0.4 });
+      }
+      if (k === 2) {
+        for (let t = 0; t <= 12; t++) { const x = lerp(x0 + 2, x1 - 2, t / 12); s += ln(x, y0 + 1, x, y0 + 2.6, { w: 0.3 }); }
+        const num = (x, y, n) => ln(x, y + 2, x, y + 4.5, { w: 0.25 }) + `<circle cx="${f(x)}" cy="${f(y)}" r="1.7" fill="#fff" stroke="${INK}" stroke-width="0.3"/>` + txt(x, y + 0.75, n, { size: 1.9, c: INK, anchor: 'middle', weight: 700 });
+        s += num(lerp(x0, x1, 0.3) + 3.5, yh - 9.5, '1') + num(lerp(x0, x1, 0.7), yh - 8.5, '2') + num(lerp(x0, x1, 0.2), yh - 8, '3');
+      }
+    }
+    return s;
+  },
+  range(w, h) {
+    const cw = w / 3, base = h - 7;
+    let s = '';
+    const cx = cw / 2, vy = 5, bw = 11;                     // 1 · unit of measure: a road in perspective, 100 m units
+    s += ln(cx - bw, base, cx - 0.6, vy, { w: 0.4 }) + ln(cx + bw, base, cx + 0.6, vy, { w: 0.4 });
+    for (let k = 1; k <= 3; k++) { const y = vy + (base - vy) / (1 + k * 1.1), hw = lerp(0.6, bw, (y - vy) / (base - vy)); s += ln(cx - hw - 1.5, y, cx + hw + 1.5, y, { w: 0.35 }) + txt(k % 2 ? cx + hw + 2.5 : cx - hw - 2.5, y + 0.8, `${k * 100} m`, { size: 1.9, anchor: k % 2 ? 'start' : 'end' }); }
+    s += poly([[cx - 2, vy + 1], [cx + 2, vy + 1], [cx + 2, vy - 2], [cx - 2, vy - 2]], { w: 0.4 });
+    s += txt(cx, h - 2, 'units of 100 m', { size: 2.1, c: INK, anchor: 'middle', weight: 700 });
+    const x2 = cw + 4;                                       // 2 · known sizes
+    s += poly([[x2, base], [x2 + 4, base], [x2 + 4, base - 9], [x2, base - 9]], { w: 0.4 }) + txt(x2 + 2, base - 10.5, '2 m', { size: 1.9, anchor: 'middle' });
+    s += poly([[x2 + 8, base], [x2 + 20, base], [x2 + 20, base - 13], [x2 + 8, base - 13]], { w: 0.4 }) + ln(x2 + 8, base - 6.5, x2 + 20, base - 6.5, { w: 0.3, dash: '1 0.8' }) + txt(x2 + 14, base - 14.5, '3 m / storey', { size: 1.9, anchor: 'middle' });
+    s += path(`M${f(x2 + 24)} ${f(base)} L${f(x2 + 24)} ${f(base - 3.5)} L${f(x2 + 28)} ${f(base - 4)} L${f(x2 + 30)} ${f(base - 6.5)} L${f(x2 + 36)} ${f(base - 6.5)} L${f(x2 + 38)} ${f(base - 4)} L${f(x2 + 41)} ${f(base - 3.5)} L${f(x2 + 41)} ${f(base)} Z`, { w: 0.4 }) + txt(x2 + 32.5, base - 8, '4.5 m', { size: 1.9, anchor: 'middle' });
+    s += txt(cw * 1.5, h - 2, 'known sizes', { size: 2.1, c: INK, anchor: 'middle', weight: 700 });
+    const x3 = cw * 2 + 4, x4 = w - 4, ly = base - 8;      // 3 · bracket
+    s += ln(x3, ly, x4, ly, { w: 0.4 }) + ln(x3, ly - 2, x3, ly + 2, { w: 0.4 }) + ln(x4, ly - 2, x4, ly + 2, { w: 0.4 }) + txt(x3, ly + 5, 'nearest 200', { size: 1.9 }) + txt(x4, ly + 5, '400 furthest', { size: 1.9, anchor: 'end' });
+    s += arrow((x3 + x4) / 2, ly - 9, (x3 + x4) / 2, ly - 1, { w: 0.4 }) + txt((x3 + x4) / 2, ly - 10.5, '≈ 300 m', { size: 2.2, c: INK, anchor: 'middle', weight: 700 });
+    s += txt(cw * 2.5, h - 2, 'bracket, take the middle', { size: 2.1, c: INK, anchor: 'middle', weight: 700 });
+    return s;
+  },
   capstone(w, h) {
     const items = ['3 thumbnails', '4 passes', 'field note', 'redraw the cup'];
     let s = '';
@@ -762,7 +871,7 @@ function sheet(front, back) {                              // front always lands
 function buildPages(refs) {
   const coverBody = `<div class="cv-series">${esc(book.series)}</div><div class="cv-title">${esc(book.title)}</div><div class="cv-sub">${esc(book.subtitle)}</div>
     ${refs.img({ scene: 'farmhouse', seed: 31, notes: true }, { width: AW, overlay: null })}
-    <div class="cv-meta">27 lessons · lines → shapes → proportion → space → light → scenes</div><div class="cv-dev">For Kindle Scribe, reMarkable, pen tablets and loose-leaf print — write directly on the pages</div>`;
+    <div class="cv-meta">33 lessons · lines → shapes → proportion → space → light → in the field → scenes</div><div class="cv-dev">For Kindle Scribe, reMarkable, pen tablets and loose-leaf print — write directly on the pages</div>`;
   const howBody = `<div class="h-title">How this book works</div>
     <div class="h-lead">Every lesson is one sheet:</div>
     <div class="spread-demo"><div><b>Theory</b><span>the idea behind the skill — how seeing works, why the technique works, and how artists have solved the problem</span></div><div><b>Practice</b><span>a one-line prompt, one or two examples, and room to draw</span></div></div>
@@ -799,12 +908,12 @@ function lessonSheet(l, refs) {
   if (!t) throw new Error(`no theory for ${l.id}`);
   const drill = DRILLS.includes(l.practice.type);
   // the technique diagram appears once per lesson: as the worked example on drill pages, otherwise as the theory figure
-  const ref = l.life && l.life.ref, FW = 68;
-  const float = !drill ? '' : ref ? `<div class="th-float" style="width:${FW}mm">${refs.img(ref, { width: FW })}<div class="ex-cap">${overlayNote(ref)}</div></div>`
+  const ref = l.theoryRef || (drill && l.life && l.life.ref), FW = 68;
+  const float = l.theoryRef ? `<div class="th-float" style="width:${FW}mm">${refs.img(ref, { width: FW })}<div class="ex-cap">${esc(l.theoryRef.cap)}</div></div>` : !drill ? '' : ref ? `<div class="th-float" style="width:${FW}mm">${refs.img(ref, { width: FW })}<div class="ex-cap">${overlayNote(ref)}</div></div>`
     : TF[l.id] ? `<div class="th-float" style="width:${FW}mm"><div class="ex-one">${svg(FW, 46, TF[l.id](FW, 46))}</div></div>` : '';
-  const fig = drill ? '' : `<figure class="th-fig">${svg(AW, 42, D[l.diagram](AW, 42))}</figure>`;
+  const fig = drill || !l.diagram ? '' : `<figure class="th-fig">${svg(AW, l.dh || 42, D[l.diagram](AW, l.dh || 42))}</figure>`;
   const front = `${head(l, 'THEORY')}<div class="body theory"><div class="th-key">${esc(t.key)}</div>
-    <div class="th-text">${float}${t.sections.map(([h, p]) => `<div class="th-sec"><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join('')}</div>
+    <div class="th-text">${float}${t.sections.map(([h, p]) => `<div class="th-sec"><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join('')}${t.field ? `<div class="th-field"><b>In the field</b> ${esc(t.field)}</div>` : ''}</div>
     <div class="vfill"></div>${fig}${t.note ? `<div class="th-note">${esc(t.note)}</div>` : ''}</div>`;
   sheet(['learn', front, { id: l.id, label: `${l.id} · theory` }], ['practice', practicePage(l, refs, t, drill), { label: `${l.id} · practice` }]);
 }
@@ -815,6 +924,23 @@ function practicePage(l, refs, t, drill) {
   if (drill) {
     inner = `<div class="ex-h">Example</div><div class="ex-one">${svg(AW, 46, D[l.diagram](AW, 46))}</div><div class="ex-h">Your turn</div><div class="frame grow"></div>`;
   } else if (sp.type === 'refPractice') inner = refAndDraw(refs, sp.ref, overlayNote(sp.ref));
+  else if (sp.type === 'fieldSketch') inner = `<div class="ex-h">Example</div><div class="rad-top">${refs.img(sp.ref, { width: AW * 0.62 })}<div class="rad-text small">${overlayNote(sp.ref)}<br><br>Orientation first. Big lines next. Then number the landmarks and label them in capitals with a rough range. No shading.</div></div><div class="ex-h">Your turn</div><div class="frame grow fs-frame"><div class="fs-head">PLACE ____________ · DATE ______ · TIME ______ · FACING ______</div><div class="fs-north">N ↑</div></div>`;
+  else if (sp.type === 'memoryDrill') inner = `<div class="ex-h">From memory</div><div class="frame grow"></div><div class="ex-h" style="margin-top:2.5mm">Then turn back and check — add what you missed in dashed lines</div><div class="mchk">${['ways in and out', 'layout: counter, tables, windows', 'how many people, and where', 'signs and writing', 'where the light comes from', 'anything you could not place'].map(t => `<span>☐ ${t}</span>`).join('')}</div><div class="repline" style="margin-top:2mm">missed this time: ______ · last time: ______<span></span></div>`;
+  else if (sp.type === 'planGrid') inner = `<div class="ex-h">Your map — north up</div><div class="frame grow gridpaper"><div class="fs-north">N ↑</div><div class="keybox">KEY &nbsp;■ building &nbsp;— path &nbsp;- - route &nbsp;① landmark &nbsp;▶ exit &nbsp;|—| about ___ m</div></div>`;
+  else if (sp.type === 'sectorTemplate') {
+    const sh = PD - 44, O = [AW / 2, sh - 4], R = sh - 9, a0 = -2.25, a1 = -0.89, at = (a, r) => [O[0] + Math.cos(a) * r, O[1] + Math.sin(a) * r];
+    let g = ln(...O, ...at(a0, R), { w: 0.5 }) + ln(...O, ...at(a1, R), { w: 0.5 }) + dot(...O, 1.2) + txt(O[0] + 2.5, O[1] + 1, 'YOU', { size: 2.4, c: INK, weight: 700 });
+    [0.33, 0.66, 1].forEach(k => { g += pline(Array.from({ length: 41 }, (_, i) => at(lerp(a0, a1, i / 40), R * k)), { w: 0.3, dash: '1.2 0.9', c: GUIDE }); const e = at(a1, R * k); g += txt(e[0] - 2, e[1] - 1.5, '____ m', { size: 2.2, anchor: 'end' }); });
+    const l = at(a0, R), r = at(a1, R);
+    g += txt(l[0] - 1, l[1] + 3, 'L', { size: 2.8, c: INK, weight: 700, anchor: 'end' }) + txt(r[0] + 1, r[1] + 3, 'R', { size: 2.8, c: INK, weight: 700 });
+    inner = `<div class="ex-h">From one spot — shade what you can’t see</div>${svg(AW, sh, g)}<div class="ex-h" style="margin-top:2mm">Reference points</div>${[1, 2, 3, 4, 5].map(n => `<div class="recl"><span>${n}</span><i></i><span>range ______ m</span></div>`).join('')}`;
+  }
+  else if (sp.type === 'panoramaStrips') {
+    const m = refs.meta(sp.ref), W = 1860, top = Math.max(0, Math.min(...m.envelopes.map(e => e[1])) - 250), bot = Math.min(1395, m.horizon + 190), sc = AW / W;
+    const strip = () => svg(AW, 33, ln(0, 3, AW, 3, { w: 0.35 }) + Array.from({ length: 13 }, (_, k) => ln(AW * k / 12, 1.5, AW * k / 12, 4.5, { w: 0.3 })).join('') + txt(0.5, 8.5, 'L ____°', { size: 2.2 }) + txt(AW - 0.5, 8.5, '____° R', { size: 2.2, anchor: 'end' }) + poly([[0, 10], [AW, 10], [AW, 32.5], [0, 32.5]], { w: 0.35 }));
+    inner = `<div class="ex-h">Example</div><div class="crop" style="height:${f((bot - top) * sc)}mm"><div style="margin-top:${f(-top * sc)}mm">${refs.img(sp.ref, { width: AW })}</div></div><div class="ex-cap">${overlayNote(sp.ref)}</div><div class="ex-h" style="margin-top:2mm">Your panoramas</div>${strip()}${strip()}`;
+  }
+  else if (sp.type === 'rangeLog') inner = `<div class="ex-h">Sketch and number six landmarks</div><div class="frame grow"></div><table class="rlog"><tr><th>no.</th><th>landmark</th><th>estimate</th><th>method</th><th>checked</th><th>error</th></tr>${[1, 2, 3, 4, 5, 6].map(n => `<tr><td>${n}</td><td></td><td></td><td></td><td></td><td></td></tr>`).join('')}</table>`;
   else if (sp.type === 'gridTransfer') inner = gridTransfer(refs, sp, PD);
   else if (sp.type === 'horizonFind') inner = horizonFind(refs, PD);
   else if (sp.type === 'threeValue') inner = threeValue(refs, sp, PD);
@@ -1012,13 +1138,30 @@ ul.how li { margin-bottom: 0.8mm; }
 .plate-cap { font: 2.4mm "JetBrains Mono", monospace; color: #555; margin-top: 1.5mm; text-align: right; }
 .prog { border-collapse: collapse; width: 100%; font: 2.55mm/1.25 Inter, sans-serif; }
 .prog th { font: 700 2.2mm "JetBrains Mono", monospace; text-align: left; border-bottom: 0.4mm solid #000; padding: 0.8mm; }
-.prog td { border-bottom: 0.25mm solid #ccc; padding: 1.05mm 0.8mm; white-space: nowrap; }
+.prog td { border-bottom: 0.25mm solid #ccc; padding: 0.55mm 0.8mm; white-space: nowrap; }
 .prog td:first-child { white-space: normal; }
 .about p { font: 3.2mm/1.5 Inter, sans-serif; margin-bottom: 3mm; }
 .th-key { font: 800 4.5mm/1.25 Inter, sans-serif; border-left: 1.2mm solid #000; padding: 0.4mm 0 0.4mm 3mm; margin: 0.5mm 0 1.5mm; }
 .how .kinds { font-size: 2.75mm; }
 .how .kinds td { padding: 0.75mm 1mm; }
 .th-float { float: right; margin: 1.5mm 0 1.5mm 4mm; }
+.th-field { margin-top: 2.6mm; border: 0.35mm dashed #000; padding: 1.4mm 2.2mm; font: 2.95mm/1.4 Inter, sans-serif; }
+.th-field b { font: 700 2.4mm "JetBrains Mono", monospace; letter-spacing: 0.3mm; text-transform: uppercase; margin-right: 1mm; }
+.crop { overflow: hidden; border: 0.3mm solid #999; flex: none; }
+.crop .ref img { border: 0; }
+.fs-frame { margin-top: 0; }
+.fs-head { font: 2.4mm "JetBrains Mono", monospace; padding: 1.3mm 2mm; border-bottom: 0.25mm solid #999; color: #333; }
+.fs-north { position: absolute; right: 2.5mm; top: 7.5mm; width: 9mm; height: 9mm; border: 0.35mm solid #000; border-radius: 50%; background: #fff; font: 700 2.4mm/9mm "JetBrains Mono", monospace; text-align: center; }
+.gridpaper { background-image: radial-gradient(circle, #8a8a8a 0.22mm, transparent 0.3mm); background-size: 5mm 5mm; margin-top: 0; }
+.gridpaper .fs-north { top: 2.5mm; }
+.keybox { position: absolute; left: 2mm; bottom: 2mm; background: #fff; border: 0.3mm solid #000; padding: 1mm 1.5mm; font: 2.2mm "JetBrains Mono", monospace; }
+.mchk { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8mm 4mm; font: 2.8mm Inter, sans-serif; }
+.recl { display: flex; align-items: flex-end; gap: 2mm; height: 8mm; font: 2.7mm Inter, sans-serif; }
+.recl i { flex: 1; border-bottom: 0.3mm solid #000; }
+.rlog { border-collapse: collapse; width: 100%; font: 2.6mm Inter, sans-serif; margin-top: 2mm; }
+.rlog th { font: 700 2.2mm "JetBrains Mono", monospace; text-align: left; border-bottom: 0.4mm solid #000; padding: 0.8mm; }
+.rlog td { border-bottom: 0.25mm solid #999; height: 7mm; padding: 0 0.8mm; }
+.rlog td:first-child { width: 8mm; font-weight: 700; }
 .th-float .ex-one { margin-bottom: 0; }
 .th-sec h3 { font: 700 2.7mm "JetBrains Mono", monospace; letter-spacing: 0.35mm; text-transform: uppercase; margin: 3mm 0 0.8mm; }
 .th-sec p { font: 3.3mm/1.5 Inter, sans-serif; color: #111; }
