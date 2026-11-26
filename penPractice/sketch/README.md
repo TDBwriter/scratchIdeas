@@ -6,7 +6,9 @@ Builds the complete **Sketch What You See** workbook (release R2) from:
 - `lessons.mjs`: lesson structure (part, title, diagram, practice type, reference sketches) and the guide-line notes
 - the pencil-sketch generator (`../../sketchArt/sketch.mjs`): the reference pictures
 
-**Status: e-ink edition rebuilt as one theory/practice sheet per lesson, waiting for approval.** After approval, the same builder produces the Letter and A4 loose-leaf print editions (`--page letter` / `--page a4`). Those need a review pass.
+**Status: e-ink edition rebuilt as one theory/practice sheet per lesson, waiting for approval.** Its mirror, the handbook of techniques and history, is in `../handbook/`.
+
+`node build.mjs --figs FILE` exports every diagram and pencil sketch as JSON for the handbook, then stops. After approval, the same builder produces the Letter and A4 loose-leaf print editions (`--page letter` / `--page a4`). Those need a review pass.
 
 ```sh
 cd penPractice/sketch
@@ -39,20 +41,18 @@ Requires Playwright (Chromium) and ImageMagick.
 
 Field sketching as a practical skill: you observe terrain, angles, distances and ways in and out deliberately instead of glancing past them. A sketch keeps what matters and strips the noise. The sketches are made from public places, for navigation, orientation and everyday awareness.
 
-The part draws on the **Manual of Field Sketching and Reconnaissance** (War Office, London, 1903; public domain). It quotes the manual's rules, uses four of its plates (in `plates/`, credited in `../../inkArt/licences.csv`), and builds its conventions into the practice pages: the "Sketch of ___ from ___ facing ___" heading, the field-book column read from the bottom up, and the base line with intersecting rays.
+The workbook teaches the methods with no history, quotations or historical plates; those live only in the mirrored handbook (`../handbook/`), and neither book refers to the other. The practice pages use the field-sketch conventions: a “Sketch of ___ from ___ facing ___” heading, a field-book column read from the bottom up, and a base line with intersecting rays.
 
 | Lesson | Theory | Practice |
 |---|---|---|
-| S6.1 The field sketch | Sketch vs photo; orientation first; big lines, then numbered labels; “nothing but what has been seen” (1903) and the FM 3-25.26 definition | An annotated farm scene, then a frame with a SKETCH OF / FROM / FACING / DATE / SIGNED header and a north arrow |
-| S6.2 Drawing from memory | Seeing vs noticing; Kim’s Game (Kipling, 1901); look with a plan; the check is the lesson | Study the diner sketch on the theory page for 60 s, turn over, draw from memory, then check against a list of what is often missed |
-| S6.3 Finding north | Sun at solar noon, the shadow stick, the watch method (“very rough”, 1903), the Pole Star and Southern Cross, magnetic vs true north | Shadow-stick frame, a log comparing five methods against the phone, then add north to a sketch |
-| S6.4 The route log | Traverses; the field-book column (bottom up); distance by time (~80 m a minute); “small errors in bearings neutralise one another”. Plate XIV beside the text | Field-book column and plotting frame side by side |
-| S6.5 Area sketches: mapping by eye | Eye-sketching: pace a base line, draw rays from each end, fix landmarks where rays cross; long base; words beat symbols. Plate IV beside the text | Example of intersection, then dot-grid paper with a ready base line A–B |
+| S6.1 The field sketch | Sketch vs photo; orientation first; big lines, then numbered labels; only what you see | An annotated farm scene, then a frame with a SKETCH OF / FROM / FACING / DATE / SIGNED header and a north arrow |
+| S6.2 Drawing from memory | Seeing vs noticing; look, cover, recall, check; look with a plan; the check is the lesson | Study the diner sketch on the theory page for 60 s, turn over, draw from memory, then check against a list of what is often missed |
+| S6.3 Finding north | Sun at solar noon, the shadow stick, the watch method, the Pole Star and Southern Cross, magnetic vs true north | Shadow-stick frame, a log comparing five methods against the phone, then add north to a sketch |
+| S6.4 The route log | Traverses; the field-book column (bottom up); distance by time (~80 m a minute); errors partly cancel. A drawn field-book page | Field-book column and plotting frame side by side |
+| S6.5 Area sketches: mapping by eye | Eye-sketching: pace a base line, draw rays from each end, fix landmarks where rays cross; long base; words beat symbols. A drawn area sketch | Example of intersection, then dot-grid paper with a ready base line A–B |
 | S6.6 What you can and can’t see | Vantage-point sketches, limits, reference points, dead ground, range arcs | Field-of-view fan template plus reference-point lines with ranges |
-| S6.7 Panoramic sketches | Outline, unshaded; exaggerate what matters; heading and names on leader lines. The 1899 Tugela sketch (Plate XVIII) beside the text | Example panorama with a bearing scale, then two strips with heading lines and bearing rulers |
+| S6.7 Panoramic sketches | Outline, unshaded; heading and names on leader lines; exaggerate what matters; sub-sketches. The panorama built in three steps | Example panorama with a bearing scale, then two strips with heading lines and bearing rulers |
 | S6.8 Judging distance | How distance fools you; a unit you know; known sizes; bracket, then check | Six numbered landmarks plus an estimate / method / checked / error log |
-
-The Part 6 opener shows the manual’s Fig. 21.
 
 **In the field asides:** eight earlier theory pages tie their skill to observation:
 - angles → bearings

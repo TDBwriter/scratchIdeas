@@ -16,7 +16,7 @@ export const parts = [
   { n: 3, name: 'Proportion', intro: 'Get sizes and positions right: box it in, measure by comparison, and check what lines up with what.', cover: { scene: 'buildingFront', seed: 31 } },
   { n: 4, name: 'Space', intro: 'Make it look deep. Eye level, overlap, and perspective with one and two vanishing points.', cover: { scene: 'cityStreet', seed: 31 } },
   { n: 5, name: 'Light', intro: 'Make it look solid. Build a value scale, light simple forms, group shadows into shapes, and suggest texture.', cover: { scene: 'farmhouse', seed: 32 } },
-  { n: 6, name: 'In the field', intro: 'Sketching as observation, after the field sketchers of a century ago: sketches you can use, drawing from memory, finding north, route logs, mapping by eye, what you can and can’t see, panoramas, and judging distance.', cover: { scene: 'nature', seed: 32 }, fig: { file: 'landscape-fig21.png', cap: '“Even indifferent draughtsmen can produce landscape sketches which will serve to convey useful information.” Fig. 21 and words from the Manual of Field Sketching and Reconnaissance, 1903.' } },
+  { n: 6, name: 'In the field', intro: 'Sketching as observation: sketches you can use, drawing from memory, finding north, route logs, mapping by eye, what you can and can’t see, panoramas, and judging distance.', cover: { scene: 'nature', seed: 32 } },
   { n: 7, name: 'Putting it together', intro: 'Plan with thumbnails, draw in four passes, sketch real places quickly — then draw a scene from life.', cover: { scene: 'diner', seed: 32 } },
 ];
 
@@ -261,13 +261,10 @@ export const lessons = [
   { id: 'S6.2', part: 6, title: 'Drawing from memory', diagram: null, practice: { type: 'memoryDrill' },
     theoryRef: { scene: 'diner', seed: 28, overlay: null, cap: 'Study this scene for 60 seconds — the layout, the ways in and out, the people, the signs — then turn over and draw it from memory.' } },
   { id: 'S6.3', part: 6, title: 'Finding north', diagram: 'north', dh: 38, practice: { type: 'northLog' } },
-  { id: 'S6.4', part: 6, title: 'The route log', diagram: null, practice: { type: 'routeLog' },
-    theoryPlate: { file: 'field-book-1903.png', w: 50, cap: 'A field-book page from the 1903 manual (Plate XIV): times, bearings and rates up the middle column, rivers and tracks either side — read from the bottom up.' } },
-  { id: 'S6.5', part: 6, title: 'Area sketches: mapping by eye', diagram: null, practice: { type: 'baseLine' },
-    theoryPlate: { file: 'symbols-1902.png', w: 72, cap: 'Symbols for field sketching, from the 1903 manual (Plate IV). Where a symbol could be misread, write the word.' } },
+  { id: 'S6.4', part: 6, title: 'The route log', diagram: 'fieldBook', dh: 46, practice: { type: 'routeLog' } },
+  { id: 'S6.5', part: 6, title: 'Area sketches: mapping by eye', diagram: 'areaSketch', dh: 42, practice: { type: 'baseLine' } },
   { id: 'S6.6', part: 6, title: 'What you can and can’t see', diagram: 'sector', dh: 50, practice: { type: 'sectorTemplate' } },
-  { id: 'S6.7', part: 6, title: 'Panoramic sketches', diagram: null,
-    theoryPlate: { file: 'tugela-1899.png', w: 72, cap: 'Landscape sketch of the Tugela at Colenso, 3 December 1899: outline only, names on leader lines, ranges in yards. From the 1903 manual (Plate XVIII).' }, practice: { type: 'panoramaStrips', ref: { scene: 'farmhouse', seed: 29, overlay: 'panorama' } } },
+  { id: 'S6.7', part: 6, title: 'Panoramic sketches', diagram: 'panoramaSteps', dh: 46, practice: { type: 'panoramaStrips', ref: { scene: 'farmhouse', seed: 29, overlay: 'panorama' } } },
   { id: 'S6.8', part: 6, title: 'Judging distance', diagram: 'range', practice: { type: 'rangeLog' } },
 
   // ---------------- Part 7: Putting it together

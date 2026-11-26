@@ -10,6 +10,7 @@ Four releases, one shared foundation. This builds on `penPracticeSeries.md` (con
 | R4 | **Cursive Coach**: cursive training with your finger | Phone app | iPhone first, Android later |
 | R5 | **Join It Up**: modern cursive workbook | PDF workbook | Same as R1 |
 | R6 | **Street Hand**: graffiti-style writing (street caps, bounce, handstyle, throw-ups) | PDF workbook | Same as R1 |
+| R2b | **Sketch What You See — Techniques and History**: the handbook that mirrors R2 unit for unit | PDF reading book | Same as R1 |
 
 Titles are working names. Plus **R0: the free sampler** (already built), used for device testing and as a giveaway that brings people to the paid books.
 
@@ -101,6 +102,12 @@ Titles are working names. Plus **R0: the free sampler** (already built), used fo
 **Promise:** learn to draw what's in front of you, not what you think it looks like.
 
 **Status:** the e-ink edition is rebuilt as **one sheet per lesson — theory on the front, practice on the back** (92 pages = 46 sheets, 35 lessons in 8 parts — including **Part 6, In the field**, built on the public-domain 1903 *Manual of Field Sketching and Reconnaissance*: field sketches, drawing from memory, finding north, route logs, mapping by eye, what you can and can’t see, panoramas, judging distance; `penPractice/out/sketch/sketch-what-you-see-eink.pdf`, builder in `penPractice/sketch/`) and is waiting for final approval. The handwriting books follow once it is approved. Print editions come next.
+
+**Two mirrored books.** R2 is split in two:
+- **The workbook** (`penPractice/sketch/`, 92 pages): instruction and practice, with no history.
+- **The handbook** (`penPractice/handbook/`, 106 pages): every technique in depth, plus its history, quotations and public-domain plates from the 1903 *Manual of Field Sketching and Reconnaissance* and Fulmer's *Military Panoramic Sketching* (1917).
+
+They share the same 8 parts and 35 units (same IDs, titles and order), but neither book ever cites the other. TC 3-25.26 is distribution-restricted, so it is used only for facts, in our own words.
 
 **Format rule for every edition:**
 - Print is **loose leaf, double-sided**, not bound.

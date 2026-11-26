@@ -17,3 +17,8 @@ out/cursive/*.html
 out/street/refs/
 out/street/thumbs/
 out/street/*.html
+!out/handbook/
+out/handbook/thumbs/
+out/handbook/plates/
+out/handbook/*.html
+out/handbook/figs.json

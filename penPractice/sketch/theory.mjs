@@ -10,7 +10,6 @@ export const theory = {
       ['The mind corrects the eye', 'Perception edits what you see before you notice. A plate at an angle is an ellipse on the retina but looks round; a person across the street is tiny but looks normal-sized; a white wall in shadow is grey but looks white. Psychologists call these the constancies. They are why beginners draw tabletops as rectangles and far things too big: the drawing reports what the mind knows. Observational drawing reports the uncorrected picture.'],
       ['Eye, arm, page', 'The hand can only copy what the eye has measured, so keep subject and page close together in your line of sight — every long glance back and forth is a chance to forget. Hold the pen loosely and let the arm move; fingers are for details.'],
     ],
-    note: 'John Ruskin called it “the innocence of the eye” in The Elements of Drawing (1857): seeing shapes and colours as if you had never learned what things are.',
     prompt: 'Slow loops, then fast loops. Then a cup from memory and the same cup from life — date both; you will draw it again at the end.',
   },
 
@@ -51,12 +50,11 @@ export const theory = {
   'S1.4': {
     key: 'Let the pen move only as fast as your eye moves along the edge.',
     sections: [
-      ['What a contour is', 'A contour is an edge where a form turns away from you — not just the outline, but every fold, seam and overlap inside it. Following a contour slowly forces you to look at the edge itself instead of your idea of the object, which is why contour drawing has been a foundation exercise in art schools for nearly a century.'],
+      ['What a contour is', 'A contour is an edge where a form turns away from you — not just the outline, but every fold, seam and overlap inside it. Following a contour slowly forces you to look at the edge itself instead of your idea of the object.'],
       ['Eye and hand together', 'In contour drawing the eye and the pen move at the same speed, as if the pen were touching the object. Each glance at the page breaks that link and lets memory take over, so you look down only at corners and junctions. The result is wobbly and specific — full of observations a quick outline never makes.'],
       ['Edges carry form', 'Where one contour disappears behind another, it tells the eye which part is nearer; where a line curves around a form, it describes the volume without any shading. A few inner contours — the line of a cuff, the crease of a bag — make a flat outline suddenly solid.'],
       ['Slow is the point', 'Contour drawing is deliberately slow, the opposite of the quick line in S1.1. The two work together: slow looking to find the edge, quick drawing to state it. Most sketches use both.'],
     ],
-    note: 'Kimon Nicolaides made contour drawing central to his classes at the Art Students League in New York; his book The Natural Way to Draw (1941) is still in print.',
     prompt: 'Follow the sample with your eye, then draw it slowly, in one continuous line. Then your other hand, a shoe, a crumpled paper bag.',
   },
 
@@ -67,7 +65,6 @@ export const theory = {
       ['Why the results look strange', 'With nothing to check against, small errors pile up: proportions drift and lines miss their joins. What survives are the observations — the exact bulge of a knuckle, the angle of a lip — often more accurate than in a careful drawing, because memory had no chance to substitute a symbol.'],
       ['What it trains', 'Experienced artists look up at their subject constantly; beginners spend most of their time looking at the page. A few minutes of blind drawing shifts that balance, and the habit carries into every drawing after it.'],
     ],
-    note: 'Blind contour was popularised by Kimon Nicolaides, and for beginners by Betty Edwards’ Drawing on the Right Side of the Brain (1979).',
     field: 'Observers train the same way: look hard, then record without looking — see Drawing from memory (S6.2).',
     prompt: 'Four two-minute blind contours. Set a timer, don’t look down, keep the pen moving.',
   },
@@ -133,7 +130,6 @@ export const theory = {
       ['Ratios survive any size', 'Real sizes don’t matter, only ratios — and ratios hold whether the drawing is a thumbnail or a wall. That is why measuring by comparison works at any scale.'],
       ['Keep the arm still', 'The arm must stay at the same distance for every measurement, or the unit quietly changes. Closing one eye removes the double image two eyes give a nearby pen.'],
     ],
-    note: 'Measuring by comparison is old workshop practice, and the basis of the sight-size method still taught in classical ateliers.',
     field: 'The same unit trick estimates size and distance: a door is about 2 m, a storey about 3 m — count them (S6.8).',
     prompt: 'One window is the unit. Tick how many windows tall each building is, then draw the three facades to those heights.',
   },
@@ -153,7 +149,7 @@ export const theory = {
     key: 'A grid breaks one hard drawing into many easy ones.',
     sections: [
       ['Small problems', 'Copying a whole scene is hard; copying what is inside one small square is easy. A grid divides the reference and the drawing into matching squares, so every line has a nearby landmark: it crosses this square a third of the way down.'],
-      ['An old tool', 'Artists have used grids for centuries to copy and enlarge. Leon Battista Alberti described a “veil” — a thin cloth with a grid of threads held between eye and subject — in 1435, and Albrecht Dürer published woodcuts of artists drawing through such grids a century later.'],
+      ['Make your own grid', 'Rule a grid over the reference — on clear film, tracing paper, or with a photo app’s grid — and the same number of squares on your page. The squares must keep the same proportions, or the drawing stretches. Fewer, larger squares make you judge more yourself.'],
       ['Training wheels', 'The grid trains your eye to judge positions inside a space. With fewer, larger squares you judge more yourself — and eventually the envelope, measuring and alignments take over.'],
     ],
     prompt: 'Copy the scene square by square — only what is inside each square.',
@@ -174,7 +170,7 @@ export const theory = {
     key: 'Near things are big, low, overlapping and sharp; far things small, high, pale and soft.',
     sections: [
       ['Cues the eye trusts', 'Long before perspective was formalised, painters showed depth with cues the eye reads automatically. Overlap: whatever covers something else is in front. Size: the same kind of thing looks smaller further away. Height: on the ground, further things sit higher up the picture, closer to the horizon.'],
-      ['Air between you and things', 'Air scatters light, so distant things lose contrast and detail and drift towards the colour of the sky. Leonardo da Vinci wrote about it; it is called aerial or atmospheric perspective. In pencil it means far things lighter and softer, near things darker and crisper.'],
+      ['Air between you and things', 'Air scatters light, so distant things lose contrast and detail and drift towards the colour of the sky. It is called aerial or atmospheric perspective. In pencil it means far things lighter and softer, near things darker and crisper.'],
       ['Use several at once', 'Each cue alone is weak; together they are convincing. A near tree overlapping a smaller, paler, higher tree reads as depth instantly, with no vanishing points at all.'],
       ['Three bands', 'Landscape painters often think in three bands — foreground, middle ground, background — each with its own size, detail and darkness. The lake scene in the sketch is built that way.'],
     ],
@@ -187,7 +183,7 @@ export const theory = {
     sections: [
       ['Why lines converge', 'Things look smaller the further away they are, so the two rails of a track, which stay the same distance apart, look closer together in the distance — until far away they meet at a single point on the horizon: the vanishing point.'],
       ['One point', 'Face straight down a street or a hallway and every edge running away from you heads for the same vanishing point, while edges across your view stay horizontal and uprights stay vertical. That is one-point perspective — the simplest case and a very common view.'],
-      ['A Renaissance discovery', 'Filippo Brunelleschi demonstrated linear perspective in Florence around 1415, and Leon Battista Alberti wrote down a method for painters in 1435. Within a generation it had changed European painting.'],
+      ['Where the point sits', 'The vanishing point is always on the horizon, at your eye level. Look straight down a street and it sits right in front of you; turn your head and it moves with you. A box above eye level shows its underside, one below it shows its top.'],
       ['A check, not a cage', 'Draw what you see, then extend a few receding lines. If they meet near one point on the horizon, the space will feel right; if not, you know which edge to fix.'],
     ],
     prompt: 'Boxes above, on and below the horizon, every receding edge to the one vanishing point. Then the street in the sketch overleaf, or a hallway from life.',
@@ -210,7 +206,7 @@ export const theory = {
       ['Building blocks', 'A car is a large box with a smaller box on top; a lamp post is a tall cylinder; a toaster is a box with rounded edges. Building an object from these solids first gets its perspective and proportions right before any detail.'],
       ['The cylinder', 'A cylinder is two ellipses joined by straight sides. Its ellipses follow S2.2 — rounder further from eye level — and its centre line passes through the middle of both at right angles to their long axes. A cylinder whose top and bottom disagree is the commonest error.'],
       ['Draw through', 'Draw the hidden back edges of boxes and ellipses lightly, as if the object were glass. It shows at once whether the form is consistent, and the extra lines vanish when you darken the visible edges.'],
-      ['Cézanne’s advice', 'In a 1904 letter Paul Cézanne advised treating nature “by means of the cylinder, the sphere and the cone”. Generations of artists have taken it literally as a way to simplify.'],
+      ['Add and subtract', 'Complicated objects are solids added together or cut away: a mug is a cylinder plus a curved handle, a house a box plus a triangular prism, a chair a box with parts removed. Build the main solid first, then add or carve.'],
     ],
     prompt: 'Boxes and cylinders above, at and below eye level — draw through the hidden edges. Then the cars and lamp posts overleaf, or a lamp from life.',
   },
@@ -222,7 +218,6 @@ export const theory = {
       ['A few clear steps', 'Real scenes hold countless tones, but drawings work best with a few clearly separated steps. A five-step scale — white, light, middle, dark, near-black — trains the hand to make each one and the eye to tell them apart.'],
       ['Values are relative', 'The same grey looks lighter on black and darker on white. The eye judges value by comparison, so judge every tone against its neighbours, never on its own.'],
     ],
-    note: 'Albert Munsell’s colour system, from the early 1900s, measures value on a scale from 0 (black) to 10 (white).',
     prompt: 'Match each sample bar: five even steps, white to near-black. Then a plain mug by a window in three of your five values.',
   },
 
@@ -232,7 +227,7 @@ export const theory = {
       ['The parts of light', 'Any lit form has a light side facing the light, a shadow side turned away, and a cast shadow thrown on the surface beside it. On a round form the darkest band of the shadow side is the core shadow; inside the shadow, a little reflected light bounces back from the surroundings.'],
       ['Planes and turns', 'A box has flat planes, so each face takes one even value and the change happens at the edges. A cylinder turns one way, so its value changes in bands; a sphere turns every way, so its value changes in all directions. The kind of turn tells you whether to shade in steps or in gradients.'],
       ['One light, every object', 'Every object in a scene must agree about where the light comes from. Cast shadows are the quickest check: they all point away from the light.'],
-      ['Chiaroscuro', 'Renaissance painters called modelling form with light and dark chiaroscuro — “light-dark”. It is still the core of making things look solid.'],
+      ['Keep shadows in shadow', 'Reflected light brightens the shadow side, but it is never as light as the lit side. Keep every value in the shadow darker than every value in the light and the form holds together.'],
     ],
     prompt: 'A box, a cylinder and a ball lit from one side: light side, shadow side, cast shadow. Then the house and barn overleaf, or an orange and a box under one lamp.',
   },
@@ -242,7 +237,7 @@ export const theory = {
     sections: [
       ['Simplify the tones', 'A real scene has endless values; a strong drawing groups them into three or four. Squinting blurs away detail and merges similar tones into large shapes, revealing the pattern of light and dark that holds a picture together.'],
       ['Shadow shapes', 'Shadows are shapes like any other. Outlining a shadow and filling it with one even tone is faster and more convincing than shading every object separately.'],
-      ['Notan', 'The Japanese idea of notan — the balance of light and dark — entered Western art teaching through Arthur Wesley Dow’s book Composition (1899). A good value pattern still reads as a tiny thumbnail.'],
+      ['Test it small', 'A good value pattern reads even as a tiny thumbnail. If the picture still makes sense at the size of a stamp, the lights and darks are doing their job.'],
     ],
     field: 'Squinting turns a landscape into the masses a field sketch needs: ridges, tree lines, buildings, open ground.',
     prompt: 'Copy the scene in three values: darks first, then middles; leave the lights. Then a view from your window and a room lit by one lamp.',
@@ -264,9 +259,8 @@ export const theory = {
       ['Why sketch instead of photograph', 'A photograph records everything equally. A sketch records what you decided mattered — the road, the ridge, the bridge, the gap in the trees — and making that decision is the observation. It also works without batteries, signal or a camera.'],
       ['Orientation first', 'Without orientation a sketch is a picture; with it, a tool. Note where you are, the date and time, which way you face (or a north arrow), and the left and right limits of the view. Anyone — including you, next month — can then stand in the same place and match it to the ground.'],
       ['Big lines, then labels', 'Block in what structures the view — horizon, ridges, roads, tree lines, building edges — then only the details that help someone find their way. Number them and label them in capitals instead of shading.'],
-      ['Only what you see', '“Nothing but what has been seen should be represented,” says the 1903 manual, “and the tendency to sacrifice truth to effect must be guarded against.” A road that disappears behind a hill stops on the page; a guess gets a question mark.'],
+      ['Only what you see', 'Draw nothing you have not seen, and never trade truth for effect. A road that disappears behind a hill stops on the page; a guess gets a question mark.'],
     ],
-    note: 'The US Army map-reading manual (FM 3-25.26): a sketch is “a free-hand drawing of a map or picture of an area or route of travel”.',
     prompt: 'Field-sketch the scene: place, time and facing first; then left and right limits, the big lines, and numbered, labelled landmarks — no shading. Then a real view.',
   },
 
@@ -274,7 +268,7 @@ export const theory = {
     key: 'Look hard for a minute, then draw from memory — and check what you missed.',
     sections: [
       ['Seeing is not noticing', 'We see far more than we notice. Ask someone to sketch the room they just left and they will miss doors, windows and most of what was on the walls. Drawing from memory trains noticing: you study a scene knowing you must draw it, and the effort of recall shows exactly what you skipped.'],
-      ['Kim’s Game', 'In Rudyard Kipling’s novel Kim (1901) a boy is trained as an observer by memorising trays of objects, then listing them. Kim’s Game became a staple of scouting and of observation training: look, cover, recall, check.'],
+      ['Look, cover, recall, check', 'The drill has four steps: look hard for a set time, cover the view, draw everything you remember, then uncover and check. Keeping the time short and the check honest is what makes it work.'],
       ['Look with a plan', 'Memory works best with a structure. Take in the layout first — walls, doors, the counter — then the people and big objects, then the details. A rough plan of a space is easier to remember than a list, because every thing has a place.'],
       ['The check is the lesson', 'Comparing the memory drawing with the real scene, and marking what you missed in a different line, is where the improvement happens. Over a few weeks the list of misses gets shorter — and you start noticing exits and layouts without trying.'],
     ],
@@ -286,19 +280,18 @@ export const theory = {
     sections: [
       ['Why north matters', 'A sketch is only as useful as its orientation, and phones run out. The old methods are rougher, but they never fail — and they make you notice where the sun is.'],
       ['The sun and a shadow', 'The sun is due south at solar noon in the northern hemisphere (due north in the southern), and shadows are shortest then. Solar noon is rarely 12:00 on the clock — time zones and summer time move it. A stick does better: mark the tip of its shadow, wait twenty minutes, mark it again. The line from the first mark to the second runs roughly west to east.'],
-      ['The watch method — roughly', 'Hold an analogue watch flat and point the hour hand at the sun: halfway between the hour hand and 12 lies south (in the northern hemisphere; on summer time use 1 instead of 12). The 1903 manual calls it “very rough” — but it beats guessing.'],
+      ['The watch method — roughly', 'Hold an analogue watch flat and point the hour hand at the sun: halfway between the hour hand and 12 lies south (in the northern hemisphere; on summer time use 1 instead of 12). It is rough — but it beats guessing.'],
       ['At night, and with a compass', 'The Pole Star sits within a degree of true north; south of the equator, the long axis of the Southern Cross points towards the south pole of the sky. A compass points to magnetic north, a few degrees off true north — note which north you used.'],
     ],
-    note: '“The estimated position of the north should be laid down on the sketch, and the means by which it was fixed, noted against it.” — the 1903 manual',
     prompt: 'Find north three ways — shadow stick, watch and phone — and log how far apart they are. Then add north to your last field sketch, with how you found it.',
   },
 
   'S6.4': {
     key: 'Walk, note, plot: a route recorded as legs, directions and landmarks.',
     sections: [
-      ['A notebook map', 'Before cheap maps and satellites, routes were surveyed as traverses: a chain of straight legs, each with a direction and a length. The sketcher did not draw while walking; the figures went into a field book and were plotted later. It still works — and it trains you to notice every turn.'],
+      ['A notebook map', 'A route can be recorded as a traverse: a chain of straight legs, each with a direction and a length. You do not draw while walking; the figures go into a field book and are plotted later. It trains you to notice every turn.'],
       ['The field book', 'Rule a column down the middle of the page. In it, book each leg: the time, the direction (a bearing, or just “left at the church”) and the distance in paces or minutes. Either side, note what you pass — a stream, a gate, a junction — with a tiny sketch. Start at the bottom of the page and work up, so the page runs the way you walk.'],
-      ['Distance by time', 'Counting paces is tiring and distracting, so the 1903 manual preferred time: at a steady pace, minutes convert to distance — an easy walk covers about 80 metres a minute. Small errors partly cancel over a long route: “it is wonderful how the number of small errors in bearings neutralise one another.”'],
+      ['Distance by time', 'Counting paces is tiring and distracting, so use time: at a steady pace, minutes convert to distance — an easy walk covers about 80 metres a minute. Over a long route, small errors in direction partly cancel each other out.'],
       ['Plot it', 'Afterwards, draw the route leg by leg at a chosen scale: north up, each leg at its direction and length, landmarks either side. Where the plot closes on a known point, the gap shows how good the log was.'],
     ],
     prompt: 'Log a short walk in the field-book column — start at the bottom, one line per leg, landmarks either side. Then plot it in the frame, north up.',
@@ -307,10 +300,10 @@ export const theory = {
   'S6.5': {
     key: 'Two ends of a line, rays to every landmark — where the rays cross, the landmark is.',
     sections: [
-      ['From the ground to from above', 'An area sketch is a plan — the view from above — of a place you can see and walk around: a park, a square, the streets by a station. The 1903 manual taught it with nothing but paper, pencil, a board and a straight edge: “sketching without instruments, sometimes called eye-sketching”.'],
+      ['From the ground to from above', 'An area sketch is a plan — the view from above — of a place you can see and walk around: a park, a square, the streets by a station. All it needs is paper, pencil, a board and a straight edge.'],
       ['Base line and rays', 'Choose two points you can walk between — two benches, the ends of a path — as a base line; pace it and draw it to scale. At one end, lay the straight edge from that point towards each landmark and draw a faint ray. Walk to the other end and do the same. Where the two rays to a landmark cross, that is where it goes. This is intersection, the idea behind triangulation and every map.'],
-      ['Long base, distant points', '“Try to establish at the outset as long a base as possible”: rays from the ends of a short base cross at shallow angles and smear the position. Fill in between the fixed points by eye and by pacing — and, the manual adds, never go over the same ground twice.'],
-      ['Words beat symbols', 'North arrow, scale bar, key, routes, landmarks, and the ways in and out. Where a symbol might be misread, write the word: “It is far better to write descriptions on the face of a sketch, in language that cannot be mistaken.”'],
+      ['Long base, distant points', 'Make the base as long as you can: rays from the ends of a short base cross at shallow angles and smear the position. Fill in between the fixed points by eye and by pacing, and never go over the same ground twice.'],
+      ['Words beat symbols', 'North arrow, scale bar, key, routes, landmarks, and the ways in and out. Where a symbol might be misread, write the word instead — words on the face of a sketch cannot be mistaken.'],
     ],
     prompt: 'Pace a base line, draw it to scale, then draw rays to five landmarks from each end. Mark where they cross, then fill in the plan by eye.',
   },
@@ -330,9 +323,9 @@ export const theory = {
     key: 'A panorama is the skyline as a strip, with every landmark numbered and placed.',
     sections: [
       ['The view as a strip', 'A panoramic sketch shows the view from one place as a long, low strip: the horizon, the ridgelines and rooftops, and the features that stand out against them. It is the classic observer’s sketch — for describing a view to someone else, planning a route across it, and recognising the place again.'],
-      ['Outline, unshaded', '“The sketch should be in outline, unshaded, except in the foreground.” Start with eye level (S4.1), then the skylines far to near — hills, ridges, rooftops, tree lines — with overlap (S4.2) showing which is in front. “It is permissible to exaggerate the heights of features which are important but do not show up well.”'],
-      ['Heading and names', 'The heading says what, from where and which way: “Sketch of Linton Hill from Marden Railway Bridge facing north.” Names go opposite the features, on leader lines above the skyline, with rough ranges — as in the 1899 sketch beside this text.'],
-      ['A working tradition', 'Landscape sketching was a standard observer’s skill a century ago, before cameras were practical in the field. Geography students still draw annotated field sketches today.'],
+      ['Outline, unshaded', 'Draw in outline and leave out shading, except perhaps in the foreground. Start with eye level (S4.1), then the skylines far to near — hills, ridges, rooftops, tree lines — with overlap (S4.2) showing which is in front.'],
+      ['Heading and names', 'The heading says what, from where and which way: “Sketch of the ridge from the bridge, facing north.” Names go opposite the features, on leader lines above the skyline, with rough ranges.'],
+      ['Exaggerate what matters', 'A faithful copy of a wide view is a thin strip with little height. Stretch the vertical a little so important features show, and add a small sub-sketch of any detail too small to read in the strip.'],
     ],
     prompt: 'Read the example, then sketch a real view as a panorama: horizon, skylines far to near, numbered landmarks with rough ranges and bearings.',
   },

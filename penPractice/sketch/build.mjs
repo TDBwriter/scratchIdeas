@@ -27,6 +27,7 @@ for (let i = 0; i < argv.length; i++) {
   if (argv[i] === '--page') opt.page = argv[++i];
   else if (argv[i] === '--out') opt.out = resolve(argv[++i]);
   else if (argv[i] === '--refs') opt.refs = true;
+  else if (argv[i] === '--figs') opt.figs = resolve(argv[++i]);   // export diagrams and sketches as JSON, then stop
 }
 const PAGES = { eink: { w: 157.5, h: 210, pad: 9 }, letter: { w: 215.9, h: 279.4, pad: 13 }, a4: { w: 210, h: 297, pad: 13 } };
 const PAGE = PAGES[opt.page];
@@ -830,6 +831,18 @@ const D = {
     s += txt(cw * 2.5, h - 2, 'Pole Star, from the Plough', { size: 2.1, c: INK, anchor: 'middle', weight: 700 });
     return s;
   },
+  fieldBook(w, h) {
+    const cx = w / 2, c0 = cx - 14, c1 = cx + 14, top = 6, bot = h - 6, rows = [['7:52', '035°', '4 min'], ['7:48', '350°', '6 min'], ['7:42', '270°', '3 min'], ['7:39', '090°', '5 min']];
+    let s = ln(c0, top, c0, bot, { w: 0.5 }) + ln(c1, top, c1, bot, { w: 0.5 }) + txt(cx, top - 1.5, 'TO BRIDGE', { size: 2.2, c: INK, anchor: 'middle', weight: 700 }) + txt(cx, bot + 4.5, 'FROM STATION ⊙ 7:35', { size: 2.2, c: INK, anchor: 'middle', weight: 700 });
+    const step = (bot - top) / (rows.length + 0.6);
+    rows.slice().reverse().forEach(([t, d, m], i) => { const y = bot - (i + 0.8) * step; s += ln(c0, y + 2.6, c1, y + 2.6, { w: 0.2, c: FAINT }) + txt(c0 + 1.2, y, t, { size: 2.1 }) + txt(cx + 2, y, d, { size: 2.1, c: INK, anchor: 'middle' }) + txt(c1 - 1.2, y, m, { size: 2.1, anchor: 'end' }); });
+    const yS = bot - 1.8 * step + 1, yG = bot - 3.3 * step + 1;
+    s += path(quadThrough([4, yS - 3], [16, yS + 1], [c0 - 1, yS - 1]), { w: 0.4 }) + txt(4, yS + 3, 'stream, plank bridge', { size: 2 });
+    s += ln(c1 + 1, yG, w - 18, yG - 4, { w: 0.4, dash: '1.2 0.9' }) + txt(c1 + 3, yG + 3.5, 'track to farm', { size: 2 });
+    const yC = bot - 2.8 * step; s += poly([[c0 - 12, yC + 1], [c0 - 6, yC + 1], [c0 - 6, yC - 4], [c0 - 9, yC - 6.5], [c0 - 12, yC - 4]], { w: 0.4 }) + txt(c0 - 14, yC + 0.5, 'church', { size: 2, anchor: 'end' });
+    s += arrow(w - 6, bot - 4, w - 6, top + 8, { w: 0.35 }) + txt(w - 7.5, top + 6, 'read up', { size: 2, anchor: 'end' });
+    return s;
+  },
   intersection(w, h) {
     const A = [w * 0.22, h - 7], B = [w * 0.6, h - 7], L = [[w * 0.12, 9, '1 tree'], [w * 0.43, 13, '2 kiosk'], [w * 0.76, 8, '3 gate']];
     let s = ln(...A, ...B, { w: 0.9 }) + dot(...A, 1.1) + dot(...B, 1.1) + txt(A[0] - 2, A[1] + 1, 'A', { size: 2.5, c: INK, weight: 700, anchor: 'end' }) + txt(B[0] + 2, B[1] + 1, 'B', { size: 2.5, c: INK, weight: 700 });
@@ -935,7 +948,7 @@ function buildPages(refs) {
     for (const l of ls) lessonSheet(l, refs);
   }
 
-  sheet(['about', `<div class="h-title">About this book</div><p>Every pencil sketch in this book was generated for it; nothing is copied from other books or courses. The four historical plates in Part 6 come from the Manual of Field Sketching and Reconnaissance (War Office, London, 1903), a public-domain work, scanned from the University of Toronto Library copy (Internet Archive: manualoffieldske00grea). Typefaces: Inter and JetBrains Mono (SIL Open Font License); handwritten notes in Caveat (SIL Open Font License).</p><p>Pages are sized to the Kindle Scribe screen (157.5 × 210 mm) and the reMarkable 2. Every lesson is one sheet — theory on the front, practice on the back — so it works as loose leaf printed double-sided, or page by page on an e-reader, where you can erase and practise as often as you like. Print editions on Letter and A4 keep the same real sizes.</p><p class="small">${esc(book.series)} · ${esc(book.title)} · e-ink edition</p>`, { id: 'about', label: 'about', hints: false }],
+  sheet(['about', `<div class="h-title">About this book</div><p>Every pencil sketch in this book was generated for it; nothing is copied from other books or courses. Typefaces: Inter and JetBrains Mono (SIL Open Font License); handwritten notes in Caveat (SIL Open Font License).</p><p>Pages are sized to the Kindle Scribe screen (157.5 × 210 mm) and the reMarkable 2. Every lesson is one sheet — theory on the front, practice on the back — so it works as loose leaf printed double-sided, or page by page on an e-reader, where you can erase and practise as often as you like. Print editions on Letter and A4 keep the same real sizes.</p><p class="small">${esc(book.series)} · ${esc(book.title)} · e-ink edition</p>`, { id: 'about', label: 'about', hints: false }],
     ['backcover', `<div class="bc-in"><div class="cv-series">${esc(book.series)}</div><div class="bc-title">${esc(book.title)}</div>${refs.img({ scene: 'nature', seed: 31, notes: true }, { width: AW, overlay: null })}<div class="bc-note">Want more practice? Print any sheet again — every sheet stands on its own.</div></div>`, { label: '', hints: false }, 'backcover']);
 }
 
@@ -1244,7 +1257,23 @@ ul.how li { margin-bottom: 0.8mm; }
 // ---------- render
 mkdirSync(opt.out, { recursive: true });
 const refs = makeRefs();
-cpSync(join(HERE, 'plates'), join(opt.out, 'plates'), { recursive: true });   // public-domain plates from the 1903 manual
+if (opt.figs) {
+  const W = 128, out = { diagrams: {}, tf: {}, refs: {} }, dh = { intersection: 42 };
+  for (const l of lessons) if (l.diagram) dh[l.diagram] = Math.max(l.dh || 46, 44);
+  for (const [k, fn] of Object.entries(D)) out.diagrams[k] = svg(W, dh[k] || 46, fn(W, dh[k] || 46));
+  for (const [k, fn] of Object.entries(TF)) out.tf[k] = svg(68, 46, fn(68, 46));
+  const abs = h => h.replace(/src="refs\//g, `src="${pathToFileURL(opt.out).href}/refs/`);
+  for (const l of lessons) {
+    const r = l.theoryRef || (l.life && l.life.ref) || (l.practice && l.practice.ref);
+    if (!r) continue;
+    out.refs[l.id] = l.practice.type === 'threeValue'
+      ? `<div class="pair">${abs(refs.img(r, { width: W / 2 - 2, overlay: null }))}${abs(refs.img(r, { width: W / 2 - 2, overlay: null, suffix: '-3v' }))}</div>`
+      : abs(refs.img(r, { width: W }));
+  }
+  writeFileSync(opt.figs, JSON.stringify(out));
+  console.log(`wrote ${Object.keys(out.diagrams).length} diagrams, ${Object.keys(out.tf).length} small figures, ${Object.keys(out.refs).length} sketches to ${opt.figs}`);
+  process.exit(0);
+}
 buildPages(refs);
 const pagesHtml = pageList.join('\n').replace(/\{\{p:([^}]+)\}\}/g, (_, id) => { if (!pageOf[id]) throw new Error(`no page for ${id}`); return String(pageOf[id]); });
 const html = `<!doctype html><html><head><meta charset="utf-8"><title>${esc(book.title)}</title><style>
